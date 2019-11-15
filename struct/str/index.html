@@ -1,0 +1,2088 @@
+
+
+
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Курс основ програмування мовою Python">
+      
+      
+      
+        <meta name="author" content="Руслан Іськов aka Ruiner">
+      
+      
+        <meta name="lang:clipboard.copy" content="Скопіювати в буфер">
+      
+        <meta name="lang:clipboard.copied" content="Скопійовано в буфер">
+      
+        <meta name="lang:search.language" content="en, ru">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Збігів не знайдено">
+      
+        <meta name="lang:search.result.one" content="Знайдено 1 збіг">
+      
+        <meta name="lang:search.result.other" content="Знайдено # збігів">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Символьні рядки - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-gray" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Перейти до основного контенту
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Python Essential" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Python Essential
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Символьні рядки
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Python Essential" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Про цей курс" class="md-nav__link">
+      Про цей курс
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Мотивація
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Мотивація
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../motivate/miths_edu/" title="Міфи про навчання програмуванню" class="md-nav__link">
+      Міфи про навчання програмуванню
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Методології програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Методології програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/number_system/" title="Поняття системи числення" class="md-nav__link">
+      Поняття системи числення
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/typing/" title="Типізація" class="md-nav__link">
+      Типізація
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/hash/" title="Хеш. Хеш-функції" class="md-nav__link">
+      Хеш. Хеш-функції
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Парадигми програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Парадигми програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/paradigmas/" title="Основні парадигми програмування" class="md-nav__link">
+      Основні парадигми програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/imperative/" title="Імперативне програмування" class="md-nav__link">
+      Імперативне програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/oop/" title="Об'єктно-орієнтоване програмування" class="md-nav__link">
+      Об'єктно-орієнтоване програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/funct/" title="Декларативне програмування" class="md-nav__link">
+      Декларативне програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/resume/" title="Резюме" class="md-nav__link">
+      Резюме
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Функції
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Функції
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/strategies/" title="Стратегії обчислення" class="md-nav__link">
+      Стратегії обчислення
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/args/" title="Параметри і аргументи" class="md-nav__link">
+      Параметри і аргументи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/args_kwargs/" title="Функції зі змінною кількістю аргументів" class="md-nav__link">
+      Функції зі змінною кількістю аргументів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/buildin_functions/" title="Вбудовані функції Python" class="md-nav__link">
+      Вбудовані функції Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/docstring/" title="Документування коду" class="md-nav__link">
+      Документування коду
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/func_as_object/" title="Функції як об'єкти" class="md-nav__link">
+      Функції як об'єкти
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/scope/" title="Області видимості" class="md-nav__link">
+      Області видимості
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/lambda/" title="Анонімні функції" class="md-nav__link">
+      Анонімні функції
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/closure/" title="Замикання" class="md-nav__link">
+      Замикання
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/decorator/" title="Декоратори" class="md-nav__link">
+      Декоратори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/recursion/" title="Рекурсія" class="md-nav__link">
+      Рекурсія
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Об'єктно-орієнтоване програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Об'єктно-орієнтоване програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/oop_basis/" title="Що таке об'єктно-орієнтоване програмування" class="md-nav__link">
+      Що таке об'єктно-орієнтоване програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/create/" title="ООП в Python" class="md-nav__link">
+      ООП в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/constructor/" title="Конструктори і деструктори" class="md-nav__link">
+      Конструктори і деструктори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/static_and_class/" title="Статичні та класові методи" class="md-nav__link">
+      Статичні та класові методи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/incapsulation/" title="Інкапсуляція" class="md-nav__link">
+      Інкапсуляція
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/inheritance/" title="Успадкування" class="md-nav__link">
+      Успадкування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/inheritance_multiple/" title="Множинне успадкування" class="md-nav__link">
+      Множинне успадкування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/polymorphism/" title="Поліморфізм" class="md-nav__link">
+      Поліморфізм
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Виняткові ситуації
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Виняткові ситуації
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/exceptions/" title="Винятки" class="md-nav__link">
+      Винятки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/handling/" title="Обробка винятків" class="md-nav__link">
+      Обробка винятків
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/warnings/" title="Попередження" class="md-nav__link">
+      Попередження
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/eafp_vs-lbyl/" title="EAFP vs LBYL" class="md-nav__link">
+      EAFP vs LBYL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/context_manager/" title="Менеджери контекста" class="md-nav__link">
+      Менеджери контекста
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Ітерабельні об'єкти
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Ітерабельні об'єкти
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/iterable/" title="Ітератори" class="md-nav__link">
+      Ітератори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/magic_iter/" title="Реалізація за допомогою __iter__" class="md-nav__link">
+      Реалізація за допомогою __iter__
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/magic_getitem/" title="Реалізація за допомогою __getitem__" class="md-nav__link">
+      Реалізація за допомогою __getitem__
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/generator/" title="Генератори" class="md-nav__link">
+      Генератори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/generator_expressions/" title="Генератори-вирази" class="md-nav__link">
+      Генератори-вирази
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Типи та структури даних
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Типи та структури даних
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1" checked>
+    
+    <label class="md-nav__link" for="nav-8-1">
+      Послідовності
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        Послідовності
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sequence/" title="Послідовності в Python" class="md-nav__link">
+      Послідовності в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../list/" title="Списки" class="md-nav__link">
+      Списки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tuple/" title="Кортежі" class="md-nav__link">
+      Кортежі
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../range/" title="Діапазони" class="md-nav__link">
+      Діапазони
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Символьні рядки
+      </label>
+    
+    <a href="./" title="Символьні рядки" class="md-nav__link md-nav__link--active">
+      Символьні рядки
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Робота з окремими символами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Кодування символьних рядків
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Форматування рядків
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Наіменування
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Приведення
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Формат
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Додаткові матеріали:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bin_seq/" title="Бінарні послідовності" class="md-nav__link">
+      Бінарні послідовності
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      Відображення та множини
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        Відображення та множини
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hashable/" title="Об'єкти, що хешуються" class="md-nav__link">
+      Об'єкти, що хешуються
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mapingss/" title="Відображення в Python" class="md-nav__link">
+      Відображення в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sets/" title="Множини в Python" class="md-nav__link">
+      Множини в Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../stack_queue/" title="Стеки і черги" class="md-nav__link">
+      Стеки і черги
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Магічні методи
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Магічні методи
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/magic_method/" title="Життевий цикл об'єкта" class="md-nav__link">
+      Життевий цикл об'єкта
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/object_presentation/" title="Представлення класів" class="md-nav__link">
+      Представлення класів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/compare/" title="Оператори порівняння" class="md-nav__link">
+      Оператори порівняння
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/numberic/" title="Числові магічні методи" class="md-nav__link">
+      Числові магічні методи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/attributes/" title="Доступ до атрибутів" class="md-nav__link">
+      Доступ до атрибутів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/sequences/" title="Контейнери" class="md-nav__link">
+      Контейнери
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Ввід та вивід
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Ввід та вивід
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/files_streams/" title="Файли і потоки" class="md-nav__link">
+      Файли і потоки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/open_close/" title="Відкриття і закриття потоків" class="md-nav__link">
+      Відкриття і закриття потоків
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/read_write/" title="Читання з потоків і запис в потоки" class="md-nav__link">
+      Читання з потоків і запис в потоки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/serialization/" title="Серіалізація об'єктів" class="md-nav__link">
+      Серіалізація об'єктів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/internet/" title="Взаємодія з Інтернет" class="md-nav__link">
+      Взаємодія з Інтернет
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Модулі і пакети
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Модулі і пакети
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/module/" title="Поняття модуля" class="md-nav__link">
+      Поняття модуля
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/module_python/" title="Модулі в Python" class="md-nav__link">
+      Модулі в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/module_object/" title="Модулі як об'єкти" class="md-nav__link">
+      Модулі як об'єкти
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/packages/" title="Пакети" class="md-nav__link">
+      Пакети
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/pip/" title="Встановлення пакетів" class="md-nav__link">
+      Встановлення пакетів
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Виконання програм
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Виконання програм
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/modes/" title="Інтерпретатор Python" class="md-nav__link">
+      Інтерпретатор Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/args/" title="Передача аргументів скрипту" class="md-nav__link">
+      Передача аргументів скрипту
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/venv/" title="Віртуальні оточення" class="md-nav__link">
+      Віртуальні оточення
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Елементи функціонального програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Елементи функціонального програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functionale/intro/" title="Поняття функціонального програмування" class="md-nav__link">
+      Поняття функціонального програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functionale/fp/" title="Функціональне програмування в Python" class="md-nav__link">
+      Функціональне програмування в Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Батарейки
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Батарейки
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/pprint/" title="Модуль pprint" class="md-nav__link">
+      Модуль pprint
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/ramdom/" title="Модуль rabdom" class="md-nav__link">
+      Модуль rabdom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/itertools/" title="Модуль itertools" class="md-nav__link">
+      Модуль itertools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/os_path/" title="Модуль os.path" class="md-nav__link">
+      Модуль os.path
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/datetime/" title="Модуль datetime" class="md-nav__link">
+      Модуль datetime
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../go_ahead/" title="Що далі?" class="md-nav__link">
+      Що далі?
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Робота з окремими символами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Кодування символьних рядків
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Форматування рядків
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Наіменування
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Приведення
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Формат
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Додаткові матеріали:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Символьні рядки</h1>
+                
+                <blockquote>
+<p><strong><em>Символьнлий рядок</em></strong> — немутабельна послідовність кодів символів Юнікод. </p>
+</blockquote>
+<p>Символьні рядки представлені класом <code>str</code>. </p>
+<p>Створюються символьні рядки за допомогою літералів "лапки" або "апостроф". Сусідні літерали склеюються:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;This is &#39;</span>  <span class="s2">&quot;a long&quot;</span> <span class="s1">&#39;string&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;This is a longstring&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>Символи Юнікод можна задавати вказуючи їх код у шістнадцятковій системі числення після префікса <code>\u</code>:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\u0457</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;ї&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>Також можна вказати назву символа в стандарті Юнікод:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\N{GRINNING FACE}</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="err">😀</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\N{BLACK CHESS PAWN}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="err">♟</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h3 id="_1">Робота з окремими символами<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Python не надає нам окремого типу даних для окремого символа. Якщо нам необхідно виконувати певні операції з символами, ми використовуємо символьні рядки довжиною 1. В Python  є дві функції для роботи з символами:</p>
+<ul>
+<li><code>chr(code)</code> — повертає символ з кодом <code>code</code></li>
+<li><code>ord(ch)</code> — повертає код символа <code>ch</code>  </li>
+</ul>
+<p>Приклади:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;ї&#39;</span><span class="p">)</span>
+<span class="mi">1111</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">1111</span><span class="p">)</span>
+<span class="s1">&#39;ї&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="nb">ord</span><span class="p">()</span> <span class="n">expected</span> <span class="n">a</span> <span class="n">character</span><span class="p">,</span> <span class="n">but</span> <span class="n">string</span> <span class="n">of</span> <span class="n">length</span> <span class="mi">3</span> <span class="n">found</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h3 id="_2">Кодування символьних рядків<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Щоб закодувати символьний рядок використовуючи певну кодову таблицю використовують метод:</p>
+<div class="codehilite"><pre><span></span>encode(encoding=&#39;UTF-8&#39;,errors=&#39;strict&#39;)
+</pre></div>
+
+
+<p>Параметр <code>encoding</code> — це назва кодової таблиці, за замовчуванням зазвичай <code>UTF-8</code>. </p>
+<p>Параметр <code>errors</code> вказує, що робити якщо у процесі кодування відбуваються помилки. Значення за замовчуванням — <code>strict</code> — означає, що у випадку виникнення помилки буде піднято виняток <code>UnicodeError</code>. </p>
+<p>Метод повертає об'єкт класа <code>bytes</code> — послідовність окремих байт.</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;abc&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+<span class="sa">b</span><span class="s1">&#39;abc&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;Вітаю&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xd0\x92\xd1\x96\xd1\x82\xd0\xb0\xd1\x8e</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;Вітаю&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;cp1251&#39;</span><span class="p">)</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xc2\xb3\xf2\xe0\xfe</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h3 id="_3">Форматування рядків<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Метод str.format() дозволяє виконувати підстановку змінних, форматувати значення і об'єднувати елементы в один рядок шляхом позиційного форматування. Використовуючи форматування рядків код програми стає більш читабельним. </p>
+<p>Заголовок метода:</p>
+<div class="codehilite"><pre><span></span> str.format(*args, **kwargs)
+</pre></div>
+
+
+<p>Тут, як зовсім не важко здогадатись, <code>args</code> — позиційні аргументи, і <code>kwargs</code> — відповідно іменовані.</p>
+<p>Рядок, для якого викликається цей метод, може містити як звичайний текст, так і спеціальні плейсхолдери (маркери) які розташовують в фігурних дужках. У подальшому плейсхолдери буде замінено на веним чином відформатовані дані, звичайний текст залишиться без змін. </p>
+<p>Тобто метод повертає копію символьного рядка, у якому плейсхолдери замінено текстовими значениями з відповідних аргументів. </p>
+<p>Декілька прикладів рядка з плейсхолдером:</p>
+<div class="codehilite"><pre><span></span>&#39;This is a string with {placeholder}&#39; # один плейсхолдер
+&#39;{}+{}={}&#39; # три плейсхолдера
+&#39;String contains {{}}&#39; # якщо треба включити фігурні дужки, їх подвоюють
+</pre></div>
+
+
+<p>Плейсхолдер може включати в себе:</p>
+<ul>
+<li><em>наіменування</em> — необов'язково</li>
+<li><em>приведення</em> — необов'язково, починається з символа "!", розташовується за іменуванням</li>
+<li><em>формат</em> — необов'язково, починається з символа ":", розташовується за приведенням</li>
+</ul>
+<h4 id="_4">Наіменування<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>Наіменування являє собою ім'я або індекс. Ім'я вказує на відповідний іменований аргумент функції <code>format</code>. При цьому плейсхолдери з однаковим іменем можна використовувати декілька раз:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;Hello {name}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Kitty&#39;</span><span class="p">)</span>
+<span class="s1">&#39;Hello Kitty&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;Hello {name}, bye {name}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Kitty&#39;</span><span class="p">)</span>
+<span class="s1">&#39;Hello Kitty, bye Kitty&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>У вищенаведеному прикладі плейсхолдер і іменем <code>name</code> відповідає іменованому аргументу <code>name</code> функції <code>format</code>. </p>
+<p>В наіменуванні замість імені можна вказати індекс. У такому разі індекс буде вказувати на відповідний позиційний аргумент функції <code>format</code>:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;I have {0} and {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;an apple&#39;</span><span class="p">,</span> <span class="s1">&#39;a plum&#39;</span><span class="p">)</span>
+<span class="s1">&#39;I have an apple and a plum&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;I have {1} and {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;an apple&#39;</span><span class="p">,</span> <span class="s1">&#39;a plum&#39;</span><span class="p">)</span>
+<span class="s1">&#39;I have a plum and an apple&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>Вказувати можна тільки "реальні" індекси:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;I have {0} and {2}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;an apple&#39;</span><span class="p">,</span> <span class="s1">&#39;a plum&#39;</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">tuple</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>Якщо індекси складають послідовність (0, 1, 2...), тобто йдуть підряд, то їх (індекси) може бути пропущено усі разом, але не вибірково:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{}+{}={}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="s1">&#39;2+3=5&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>Часом у функцію <code>format</code> зручно передавати позиційні та іменовані аргументи "розпаковуючи"  відповідно кортежі та словники:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{}-{}-{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
+<span class="s1">&#39;1-2-3&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">values</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{}-{}-{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
+<span class="s1">&#39;2-3-4&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{}-{}-{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="s1">&#39;0-1-2&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{one}-{two}-{three}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
+<span class="s1">&#39;1-2-3&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>В наіменуванні також можна дістатись до певного елемента контейнера вказавши індекс у квадратних дужках (викликається магічний метод <code>__getitem__</code>):</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span><span class="s1">&#39;def&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{0[0]}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="s1">&#39;abc&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{0[0][1]}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="s1">&#39;b&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{some_list[0][1]}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">some_list</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
+<span class="s1">&#39;b&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{[0][1]}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="s1">&#39;b&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<p>Також можна вказати атрибут об'єкта через символ ".". Буде задіяно <code>getattr()</code>:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Temp</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">attr</span> <span class="o">=</span> <span class="s1">&#39;some attribute&#39;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">Temp</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;Object with {.attr}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="s1">&#39;Object with some attribute&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h4 id="_5">Приведення<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>За замовчуванням відформатоване значення повертає метод <code>__format__()</code>. 
+Але бувають випадки, коли необхідно виконати примусове приведення, наприклад, до символьного рядка. </p>
+<p>Підтримується 3 додаткові приведення:</p>
+<table>
+<thead>
+<tr>
+<th>значення</th>
+<th>функція</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!s</td>
+<td>str()</td>
+</tr>
+<tr>
+<td>!r</td>
+<td>repr()</td>
+</tr>
+<tr>
+<td>!a</td>
+<td>ascii()</td>
+</tr>
+</tbody>
+</table>
+<p>Приклад:</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Temp</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;str method&#39;</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;repr method&#39;</span>
+    <span class="k">def</span> <span class="nf">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_spec</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;format method&#39;</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Temp</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{!s}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{!r}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+</pre></div>
+
+
+<p>Результат виконання буде наступним:</p>
+<div class="codehilite"><pre><span></span>format method
+str method
+repr method
+&gt;&gt;&gt;
+</pre></div>
+
+
+<h4 id="_6">Формат<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>Формат визначає, як саме має бути представлено значення, включаючи інформацію про довжину, вирівнювання, додаток до рядка, точність для чисел, інше. Кожен тип може мати свою міні-мову форматування. Більшість вбудованих в Python типів використовують загальну міні-мову. </p>
+<p>Специфікація формата виглядає так:</p>
+<div class="codehilite"><pre><span></span>&lt;заповнювач&gt; &lt;вирівнювання&gt; &lt;знак&gt; # 0 &lt;ширина&gt; , .&lt;точність&gt; &lt;тип&gt;
+</pre></div>
+
+
+<p>Усі складові є необов'язковими. Ось їх значення:</p>
+<ul>
+<li>заповнювач — символ, крім "{" або "}"</li>
+<li>вирівнювання — один з символів "&lt;", "&gt;", "=", "^"</li>
+<li>знак — один з символів "+", "-", " "</li>
+<li>ширина — ціле число</li>
+<li>точність — ціле число</li>
+<li>тип — один з символів "b", "c", "d", "e", "E", "f", "F", "g", "G", "n", "o", "s", "x", "X", "%"</li>
+</ul>
+<p>Вирівнювання відбуваються за допомогою заповнювача. Можливі наступні варіанти вирівнювання: </p>
+<table>
+<thead>
+<tr>
+<th>символ</th>
+<th>значення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td>символ-заповнювач буде праворуч (вирівнювання об'єкта по лівому краю), за замовчуванням</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>вирівнювання об'єкта по правому краю</td>
+</tr>
+<tr>
+<td>=</td>
+<td>заповнювач буде після знака, але перед цифрами (тільки для числових типів)</td>
+</tr>
+<tr>
+<td>^</td>
+<td>вирівнювання по центру</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;Знак&gt; може приймати наступні значення:</p>
+<table>
+<thead>
+<tr>
+<th>символ</th>
+<th>значення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>знак буде присутнім для усіх чисел</td>
+</tr>
+<tr>
+<td>-</td>
+<td>мінус для від'ємних, нічого для додатніх</td>
+</tr>
+<tr>
+<td><code>&lt;пробіл&gt;</code></td>
+<td>мінус для від'ємних, пробіл для додатніх</td>
+</tr>
+</tbody>
+</table>
+<p>Складова &lt;тип&gt; може приймати наступні значення:</p>
+<table>
+<thead>
+<tr>
+<th>символ</th>
+<th>значення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d, i, u</td>
+<td>десяткове число</td>
+</tr>
+<tr>
+<td>o</td>
+<td>число у вісімковій системі численння</td>
+</tr>
+<tr>
+<td>x</td>
+<td>число у шістнадцятковій системі числення, букви у нижньому регістрі</td>
+</tr>
+<tr>
+<td>X</td>
+<td>число у шістнадцятковій системі числення, букви у верхньому регістрі</td>
+</tr>
+<tr>
+<td>e</td>
+<td>дійсне число у експоненціальній формі, знак експоненти у нижньому регістрі</td>
+</tr>
+<tr>
+<td>E</td>
+<td>дійсне число у експоненціальній формі, знак експоненти у верхньому регістрі</td>
+</tr>
+<tr>
+<td>f, F</td>
+<td>дійсне число, звичайний формат</td>
+</tr>
+<tr>
+<td>c</td>
+<td>символ (рядок з одного символа) або код символа</td>
+</tr>
+<tr>
+<td>s</td>
+<td>символьний рядок</td>
+</tr>
+<tr>
+<td>%</td>
+<td>дійсне число помножене на 100, знак процента за ним</td>
+</tr>
+</tbody>
+</table>
+<p>Декілька прикладів:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;start {:&gt;30} end&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;right aligned&#39;</span><span class="p">)</span>
+<span class="s1">&#39;start                  right aligned end&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;start {:^30} end&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;centered&#39;</span><span class="p">)</span>
+<span class="s1">&#39;start            centered            end&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;start{:*^30}end&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;centered&#39;</span><span class="p">)</span>  <span class="c1"># зірочка як заповнювач</span>
+<span class="s1">&#39;start***********centered***********end&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{:+f}; {:+f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">)</span>  <span class="c1"># знак числа присутній завжди</span>
+<span class="s1">&#39;+3.140000; -3.140000&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{: f}; {: f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">)</span>  <span class="c1"># пробіл для додатніх замість мінуса</span>
+<span class="s1">&#39; 3.140000; -3.140000&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;int: {0:d};  hex: {0:x};  oct: {0:o};  bin: {0:b}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="s1">&#39;int: 42;  hex: 2a;  oct: 52;  bin: 101010&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;{:.2%}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">.</span><span class="mi">987654321</span><span class="p">)</span>
+<span class="s1">&#39;98.77%&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+
+<h2 id="_7">Додаткові матеріали:<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">Python Docs: Text Sequence Type — str</a></li>
+<li><a href="https://docs.python.org/3/howto/unicode.html">Python Docs: Unicode HOWTO</a></li>
+</ul>
+<hr />
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../range/" title="Діапазони" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Діапазони
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../bin_seq/" title="Бінарні послідовності" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Бінарні послідовності
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Руслан Іськов
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ru.js"></script>
+              
+            
+          
+          
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

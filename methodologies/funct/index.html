@@ -1,0 +1,1741 @@
+
+
+
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Курс основ програмування мовою Python">
+      
+      
+      
+        <meta name="author" content="Руслан Іськов aka Ruiner">
+      
+      
+        <meta name="lang:clipboard.copy" content="Скопіювати в буфер">
+      
+        <meta name="lang:clipboard.copied" content="Скопійовано в буфер">
+      
+        <meta name="lang:search.language" content="en, ru">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Збігів не знайдено">
+      
+        <meta name="lang:search.result.one" content="Знайдено 1 збіг">
+      
+        <meta name="lang:search.result.other" content="Знайдено # збігів">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Декларативне програмування - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-gray" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Перейти до основного контенту
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Python Essential" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Python Essential
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Декларативне програмування
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Python Essential" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Про цей курс" class="md-nav__link">
+      Про цей курс
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Мотивація
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Мотивація
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../motivate/miths_edu/" title="Міфи про навчання програмуванню" class="md-nav__link">
+      Міфи про навчання програмуванню
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Методології програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Методології програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../number_system/" title="Поняття системи числення" class="md-nav__link">
+      Поняття системи числення
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../typing/" title="Типізація" class="md-nav__link">
+      Типізація
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hash/" title="Хеш. Хеш-функції" class="md-nav__link">
+      Хеш. Хеш-функції
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Парадигми програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Парадигми програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../paradigmas/" title="Основні парадигми програмування" class="md-nav__link">
+      Основні парадигми програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../imperative/" title="Імперативне програмування" class="md-nav__link">
+      Імперативне програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../oop/" title="Об'єктно-орієнтоване програмування" class="md-nav__link">
+      Об'єктно-орієнтоване програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Декларативне програмування
+      </label>
+    
+    <a href="./" title="Декларативне програмування" class="md-nav__link md-nav__link--active">
+      Декларативне програмування
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Функціональне програмування
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Логічне програмування
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resume/" title="Резюме" class="md-nav__link">
+      Резюме
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Функції
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Функції
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/strategies/" title="Стратегії обчислення" class="md-nav__link">
+      Стратегії обчислення
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/args/" title="Параметри і аргументи" class="md-nav__link">
+      Параметри і аргументи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/args_kwargs/" title="Функції зі змінною кількістю аргументів" class="md-nav__link">
+      Функції зі змінною кількістю аргументів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/buildin_functions/" title="Вбудовані функції Python" class="md-nav__link">
+      Вбудовані функції Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/docstring/" title="Документування коду" class="md-nav__link">
+      Документування коду
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/func_as_object/" title="Функції як об'єкти" class="md-nav__link">
+      Функції як об'єкти
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/scope/" title="Області видимості" class="md-nav__link">
+      Області видимості
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/lambda/" title="Анонімні функції" class="md-nav__link">
+      Анонімні функції
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/closure/" title="Замикання" class="md-nav__link">
+      Замикання
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/decorator/" title="Декоратори" class="md-nav__link">
+      Декоратори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/recursion/" title="Рекурсія" class="md-nav__link">
+      Рекурсія
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Об'єктно-орієнтоване програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Об'єктно-орієнтоване програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/oop_basis/" title="Що таке об'єктно-орієнтоване програмування" class="md-nav__link">
+      Що таке об'єктно-орієнтоване програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/create/" title="ООП в Python" class="md-nav__link">
+      ООП в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/constructor/" title="Конструктори і деструктори" class="md-nav__link">
+      Конструктори і деструктори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/static_and_class/" title="Статичні та класові методи" class="md-nav__link">
+      Статичні та класові методи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/incapsulation/" title="Інкапсуляція" class="md-nav__link">
+      Інкапсуляція
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/inheritance/" title="Успадкування" class="md-nav__link">
+      Успадкування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/inheritance_multiple/" title="Множинне успадкування" class="md-nav__link">
+      Множинне успадкування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/polymorphism/" title="Поліморфізм" class="md-nav__link">
+      Поліморфізм
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Виняткові ситуації
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Виняткові ситуації
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/exceptions/" title="Винятки" class="md-nav__link">
+      Винятки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/handling/" title="Обробка винятків" class="md-nav__link">
+      Обробка винятків
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/warnings/" title="Попередження" class="md-nav__link">
+      Попередження
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/eafp_vs-lbyl/" title="EAFP vs LBYL" class="md-nav__link">
+      EAFP vs LBYL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/context_manager/" title="Менеджери контекста" class="md-nav__link">
+      Менеджери контекста
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Ітерабельні об'єкти
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Ітерабельні об'єкти
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/iterable/" title="Ітератори" class="md-nav__link">
+      Ітератори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/magic_iter/" title="Реалізація за допомогою __iter__" class="md-nav__link">
+      Реалізація за допомогою __iter__
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/magic_getitem/" title="Реалізація за допомогою __getitem__" class="md-nav__link">
+      Реалізація за допомогою __getitem__
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/generator/" title="Генератори" class="md-nav__link">
+      Генератори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/generator_expressions/" title="Генератори-вирази" class="md-nav__link">
+      Генератори-вирази
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Типи та структури даних
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Типи та структури даних
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      Послідовності
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        Послідовності
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/sequence/" title="Послідовності в Python" class="md-nav__link">
+      Послідовності в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/list/" title="Списки" class="md-nav__link">
+      Списки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/tuple/" title="Кортежі" class="md-nav__link">
+      Кортежі
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/range/" title="Діапазони" class="md-nav__link">
+      Діапазони
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/str/" title="Символьні рядки" class="md-nav__link">
+      Символьні рядки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/bin_seq/" title="Бінарні послідовності" class="md-nav__link">
+      Бінарні послідовності
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      Відображення та множини
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        Відображення та множини
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/hashable/" title="Об'єкти, що хешуються" class="md-nav__link">
+      Об'єкти, що хешуються
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/mapingss/" title="Відображення в Python" class="md-nav__link">
+      Відображення в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/sets/" title="Множини в Python" class="md-nav__link">
+      Множини в Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/stack_queue/" title="Стеки і черги" class="md-nav__link">
+      Стеки і черги
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Магічні методи
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Магічні методи
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/magic_method/" title="Життевий цикл об'єкта" class="md-nav__link">
+      Життевий цикл об'єкта
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/object_presentation/" title="Представлення класів" class="md-nav__link">
+      Представлення класів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/compare/" title="Оператори порівняння" class="md-nav__link">
+      Оператори порівняння
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/numberic/" title="Числові магічні методи" class="md-nav__link">
+      Числові магічні методи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/attributes/" title="Доступ до атрибутів" class="md-nav__link">
+      Доступ до атрибутів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/sequences/" title="Контейнери" class="md-nav__link">
+      Контейнери
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Ввід та вивід
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Ввід та вивід
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/files_streams/" title="Файли і потоки" class="md-nav__link">
+      Файли і потоки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/open_close/" title="Відкриття і закриття потоків" class="md-nav__link">
+      Відкриття і закриття потоків
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/read_write/" title="Читання з потоків і запис в потоки" class="md-nav__link">
+      Читання з потоків і запис в потоки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/serialization/" title="Серіалізація об'єктів" class="md-nav__link">
+      Серіалізація об'єктів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/internet/" title="Взаємодія з Інтернет" class="md-nav__link">
+      Взаємодія з Інтернет
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Модулі і пакети
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Модулі і пакети
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/module/" title="Поняття модуля" class="md-nav__link">
+      Поняття модуля
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/module_python/" title="Модулі в Python" class="md-nav__link">
+      Модулі в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/module_object/" title="Модулі як об'єкти" class="md-nav__link">
+      Модулі як об'єкти
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/packages/" title="Пакети" class="md-nav__link">
+      Пакети
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../module/pip/" title="Встановлення пакетів" class="md-nav__link">
+      Встановлення пакетів
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Виконання програм
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Виконання програм
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/modes/" title="Інтерпретатор Python" class="md-nav__link">
+      Інтерпретатор Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/args/" title="Передача аргументів скрипту" class="md-nav__link">
+      Передача аргументів скрипту
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/venv/" title="Віртуальні оточення" class="md-nav__link">
+      Віртуальні оточення
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Елементи функціонального програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Елементи функціонального програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functionale/intro/" title="Поняття функціонального програмування" class="md-nav__link">
+      Поняття функціонального програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functionale/fp/" title="Функціональне програмування в Python" class="md-nav__link">
+      Функціональне програмування в Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Батарейки
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Батарейки
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/pprint/" title="Модуль pprint" class="md-nav__link">
+      Модуль pprint
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/ramdom/" title="Модуль rabdom" class="md-nav__link">
+      Модуль rabdom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/itertools/" title="Модуль itertools" class="md-nav__link">
+      Модуль itertools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/os_path/" title="Модуль os.path" class="md-nav__link">
+      Модуль os.path
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/datetime/" title="Модуль datetime" class="md-nav__link">
+      Модуль datetime
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../go_ahead/" title="Що далі?" class="md-nav__link">
+      Що далі?
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Функціональне програмування
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Логічне програмування
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Декларативне програмування</h1>
+                
+                <blockquote>
+<p><strong><em>Декларативне програмування</em></strong> — це парадигма програмування, відповідно до якої програма деяким чином описує що потрібно отримати як результат, а не як це треба зробити.</p>
+</blockquote>
+<p>Тому декларативне програмування часто називаютьописовим. 
+Тут головним є чітке формулювання мети і результатів роботи задачі, а не послідовність отримання цього результату. Вибір і застосування необхідного для вирішення задачі алгоритму — проблема виконуючої системи (алгоритм роботи з даними "зашитий" в неї).</p>
+<p>Так, декларативними є:
+- опис web-сторінок на HTML — вони описують, що містить сторінка та що має відображатись (заголовок, шрифт, текст, зображення), але не містять інструкцій як її слід відображати; 
+- опис SQL-запитів, які конкретизують властивості даних, які слід отримати від бази даних, але не процес отримання цих даних; 
+- опис XML-документів тощо.</p>
+<p>Такий підхід має високий ступінь абстракції і легко формалізується математичними засобами. Фактично програміст оперує не набором інструкцій, а абстрактними поняттями, часто досить узагальненими.</p>
+<p>Декларативні мови найкраще використовувати у випадках, коли "дані управляють програмою": 
+при написанні експертних систем, при конструюванні трансляторів з мов програмування, для більшості задач штучного інтелекту. Саме там їх використання призводить до найбільшої ефективності.</p>
+<p>Різновидами декларативного програмування є функціональне та логічне програмування.</p>
+<h2 id="_1">Функціональне програмування<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong><em>Функціональне програмування</em></strong> — це підхід до побудови програм, який грунтується на абстракції математичної функції і передбачає, що програма є сукупністю визначень математичних функцій, а її виконання полягає в обчисленні відповідних виразів. </p>
+</blockquote>
+<p>При цьому функції можуть визначатися через інші функції 
+(як композиція3 функцій) або рекурсивно (через самих себе). 
+У процесі виконання програми функції отримують параметри, обчислюють і повертають результат, у разі необхідності обчислюючи значення інших функцій. </p>
+<p>Слід зазначити, що існують відмінності в розумінні математичної функції у функціональному програмуванні і функції в процедурному програмуванні. Зокрема, функція в математиці не може змінити викликаючого її оточення і запам'ятати результати своєї роботи, а тільки надає результат обчислення функції. Тобто, у функційному програмуванні програму можна представити як обчислення послідовності функцій без станів. </p>
+<p>На відміну від імперативного програмування, де існує поняття поточного кроку виконання і поточного стану, що змінюється у часі, у функціональному програмуванні поняття часу відсутнє. Ще однією особливість функціональних мов є їх безтиповість (відсутність типів даних). </p>
+<p>Таким чином, функціональне програмування є способом створення програм, в яких єдиною дією є виклик функції, єдиним способом розбиття програми є створення нового імені функції та задання для цього імені виразу, що обчислює значення функції, а єдиною операцією, що використовується при визначенні функцій, — композиція функцій. Такий підхід дає можливість прозорого моделювання тексту програм математичними засобами. Основна специфіка функціональних мов програмування полягає в тому, що функції обмінюються між собою даними безпосередньо, тобто без використання проміжних змінних і присвоювань. </p>
+<p>До відомих функціональних мов програмування належить LISP (List Processing), що розглядається фахівцями як основна мова програмування систем штучного інтелекту, Mathematica (символьні обчислення), XSLT (XML), Haskell, Scheme та ін. </p>
+<p>Наприклад, обчислення факторіала числа на LISP: </p>
+<div class="codehilite"><pre><span></span><span class="c1">;; обчислення факторіала</span>
+<span class="p">(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">fact</span> <span class="nv">n</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">cond</span> <span class="p">((</span><span class="nb">=</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">&gt;</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">*</span> <span class="nv">n</span> <span class="p">(</span><span class="nv">fact</span> <span class="p">(</span><span class="nb">-</span> <span class="nv">n</span> <span class="mi">1</span><span class="p">))))))</span>
+<span class="c1">;; виведення значення 5!</span>
+<span class="p">(</span><span class="nb">print</span> <span class="p">(</span><span class="nv">fact</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+
+<p>Цей приклад використовує рекурсивне визначення факторіала. Вирази в LISP визначаються за дужками і можуть записуватися в кілька рядків. Визначення функції здійснюється з використанням <code>defun</code>. Математичні вирази записуються у префіксній формі, тобто вираз <code>а+b*x</code> має вид: <code>+(а,*(b,х)). Стандартна функція</code>cond<code>служить для організації умовного виконання,</code>print` — для виведення. </p>
+<p>Функціональне програмування застосовується для вирішення задач, які важко сформулювати в термінах послідовних операцій — переважно задач, пов'язаних з розпізнаванням образів, спілкуванням на природній мові, реалізацією експертних систем, автоматизованим доведенням теорем, символьними обчисленнями, тобто задач, які традиційно відносять до області штучного інтелекту. </p>
+<h2 id="_2">Логічне програмування<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong><em>Логічне програмування</em></strong> — це підхід до побудови програм, який грунтується на логіці предикатів і передбачає, що програма являє собою опис відомостей про задачу (фактів), припущень, достатніх для її вирішення (правил виведення), і твердження, яке потрібно довести. Виконання програми полягає у доведенні цього твердження.</p>
+</blockquote>
+<p>Факти (аксіоми) і правила виведення, які утворюють базу знань певної предметної області, виражаються в термінах предикатів. Твердження, яке вимагається довести, вводиться в програму як цільова функція. Виконання програми полягає у тому, щоб визначити за допомогою механізмів логічного виведення, чи витікає задане цільове твердження (запит) з наявних фактів і правил. Для виконання програми (логічного виведення результату) використовується вбудована система автоматичного пошуку. </p>
+<p>Таким чином, у логічній програмі має місце умовний поділ на дані (факти) і код (правила, запити). Але цей поділ досить умовний: факти, правила і запити мають одну і ту ж форму запису — у вигляді предикатної функції. </p>
+<p>Також слід зазначити, що програма на логічній мові програмування описує неалгоритм вирішення задачі, а логічну модель предметної області — деякі факти щодо властивостей предметної області і відношенняміж цими властивостями, а також правила виведення нових властивостей і відношень з уже заданих. Рішення задачі (отримання відповіді на запит) здійснються не шляхом виконання команд, а за допомогою механізмів керованого логічного виведення нових фактів на основі заданих фактів і правил виводу, які реалізуються програмною системою автоматично. </p>
+<!--
+Це свідчить про декларативність мови логічного програмування, яка влучно виражена у формулі Р.Ковальского: «алгоритм = логіка + керування». 
+-->
+
+<p>Основне завдання програміста — вдало описати у вигляді системи логічних формул предметну область і таку множину відношень на ній, які з достатнім ступенем повноти описують задачу. </p>
+<p>Найбільш поширеною мовою логічного програмування є мова <strong><em><code>PROLOG</code></em></strong> (PROgramming in LOGic — програмування в термінах логіки). До мов логічного програмування також відносять Planner, Mercury, Fril та ін. </p>
+<p>Наприклад, на основі декількох аксіом про те, що полюбляє Мері і на основі пари правил робиться висновок про те, що полюбляє Бет:</p>
+<div class="codehilite"><pre><span></span><span class="s s-Atom">predicates</span>
+  <span class="s s-Atom">nondeterm</span> <span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">symbol</span><span class="p">,</span> <span class="s s-Atom">symbol</span><span class="p">)</span>
+  <span class="s s-Atom">nondeterm</span> <span class="nf">fruit</span><span class="p">(</span><span class="s s-Atom">symbol</span><span class="p">)</span>
+  <span class="s s-Atom">nondeterm</span> <span class="nf">color</span><span class="p">(</span><span class="s s-Atom">symbol</span><span class="p">,</span> <span class="s s-Atom">symbol</span><span class="p">)</span>
+
+<span class="s s-Atom">clauses</span>
+  <span class="c1">% що полюбляє Мері</span>
+  <span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">mary</span><span class="p">,</span> <span class="s s-Atom">pears</span><span class="p">).</span>
+  <span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">mary</span><span class="p">,</span> <span class="s s-Atom">popcorn</span><span class="p">).</span>
+  <span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">mary</span><span class="p">,</span> <span class="s s-Atom">apples</span><span class="p">).</span>
+
+  <span class="c1">% що полюбляє Бет</span>
+  <span class="c1">% Бет полюбляє те, що полюбляє Мері, якщо це фрукт і якщо він червоний</span>
+  <span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">beth</span><span class="p">,</span> <span class="nv">X</span><span class="p">):-</span><span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">mary</span><span class="p">,</span> <span class="nv">X</span><span class="p">),</span> <span class="nf">fruit</span><span class="p">(</span><span class="nv">X</span><span class="p">),</span> <span class="nf">color</span><span class="p">(</span><span class="nv">X</span><span class="p">,</span> <span class="s s-Atom">red</span><span class="p">).</span>
+  <span class="c1">% Бет полюбляє те, що полюбляє Мері, якщо це кукурудза</span>
+  <span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">beth</span><span class="p">,</span> <span class="nv">X</span><span class="p">):-</span><span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">mary</span><span class="p">,</span> <span class="nv">X</span><span class="p">),</span> <span class="nv">X</span><span class="o">=</span><span class="s s-Atom">popcorn</span><span class="p">.</span>
+
+  <span class="c1">% дані</span>
+  <span class="nf">fruit</span><span class="p">(</span><span class="s s-Atom">pears</span><span class="p">).</span>  
+  <span class="nf">fruit</span><span class="p">(</span><span class="s s-Atom">apples</span><span class="p">).</span>
+
+  <span class="nf">color</span><span class="p">(</span><span class="s s-Atom">pears</span><span class="p">,</span> <span class="s s-Atom">yellow</span><span class="p">).</span>
+  <span class="nf">color</span><span class="p">(</span><span class="s s-Atom">oranges</span><span class="p">,</span> <span class="s s-Atom">orange</span><span class="p">).</span>
+  <span class="nf">color</span><span class="p">(</span><span class="s s-Atom">apples</span><span class="p">,</span> <span class="s s-Atom">red</span><span class="p">).</span>
+  <span class="nf">color</span><span class="p">(</span><span class="s s-Atom">apples</span><span class="p">,</span> <span class="s s-Atom">yellow</span><span class="p">).</span>
+</pre></div>
+
+
+<p>Відповіддю на запит:</p>
+<div class="codehilite"><pre><span></span><span class="s s-Atom">goal</span>
+  <span class="nf">likes</span><span class="p">(</span><span class="s s-Atom">beth</span><span class="p">,</span> <span class="s s-Atom">apples</span><span class="p">).</span>
+</pre></div>
+
+
+<p>буде: </p>
+<div class="codehilite"><pre><span></span>Yes
+</pre></div>
+
+
+<p>тобто істина (хоча в явному вигляді цього факту описано не було). </p>
+<p>Логічні програми відрізняються принципово низькою швидкодією, так як обчислення здійснюються методом проб і помилок (за допомогою пошуку з поверненнями). Однак, важливою перевагою такого підходу є достатньо високий рівень машинної незалежності, а також можливість відкатів — повернення до попередньої підцілі при негативному результаті аналізу одного з варіантів в процесі пошуку рішення (скажімо, чергового ходу при грі в шахи), що позбавляє від необхідності пошуку вирішення шляхом повного перебору варіантів і збільшує ефективність реалізації. </p>
+<hr>
+
+<p>Декларативні мови найкраще використовувати у випадках, коли "дані керують програмою": при написанні експертних систем, при конструюванні трансляторів з мов програмування, для більшості задачштучного інтелекту. Саме там їх використання призводить до найбільшої ефективності. </p>
+<!-- https://studfiles.net/preview/5994723/ -->
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../oop/" title="Об'єктно-орієнтоване програмування" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Об'єктно-орієнтоване програмування
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../resume/" title="Резюме" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Резюме
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Руслан Іськов
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ru.js"></script>
+              
+            
+          
+          
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1778 @@
+
+
+
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Курс основ програмування мовою Python">
+      
+      
+      
+        <meta name="author" content="Руслан Іськов aka Ruiner">
+      
+      
+        <meta name="lang:clipboard.copy" content="Скопіювати в буфер">
+      
+        <meta name="lang:clipboard.copied" content="Скопійовано в буфер">
+      
+        <meta name="lang:search.language" content="en, ru">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Збігів не знайдено">
+      
+        <meta name="lang:search.result.one" content="Знайдено 1 збіг">
+      
+        <meta name="lang:search.result.other" content="Знайдено # збігів">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Встановлення пакетів - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-gray" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#python-pip" tabindex="1" class="md-skip">
+        Перейти до основного контенту
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Python Essential" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Python Essential
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Встановлення пакетів
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Python Essential" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Про цей курс" class="md-nav__link">
+      Про цей курс
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Мотивація
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Мотивація
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../motivate/miths_edu/" title="Міфи про навчання програмуванню" class="md-nav__link">
+      Міфи про навчання програмуванню
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Методології програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Методології програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/number_system/" title="Поняття системи числення" class="md-nav__link">
+      Поняття системи числення
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/typing/" title="Типізація" class="md-nav__link">
+      Типізація
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/hash/" title="Хеш. Хеш-функції" class="md-nav__link">
+      Хеш. Хеш-функції
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Парадигми програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Парадигми програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/paradigmas/" title="Основні парадигми програмування" class="md-nav__link">
+      Основні парадигми програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/imperative/" title="Імперативне програмування" class="md-nav__link">
+      Імперативне програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/oop/" title="Об'єктно-орієнтоване програмування" class="md-nav__link">
+      Об'єктно-орієнтоване програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/funct/" title="Декларативне програмування" class="md-nav__link">
+      Декларативне програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../methodologies/resume/" title="Резюме" class="md-nav__link">
+      Резюме
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Функції
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Функції
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/strategies/" title="Стратегії обчислення" class="md-nav__link">
+      Стратегії обчислення
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/args/" title="Параметри і аргументи" class="md-nav__link">
+      Параметри і аргументи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/args_kwargs/" title="Функції зі змінною кількістю аргументів" class="md-nav__link">
+      Функції зі змінною кількістю аргументів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/buildin_functions/" title="Вбудовані функції Python" class="md-nav__link">
+      Вбудовані функції Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/docstring/" title="Документування коду" class="md-nav__link">
+      Документування коду
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/func_as_object/" title="Функції як об'єкти" class="md-nav__link">
+      Функції як об'єкти
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/scope/" title="Області видимості" class="md-nav__link">
+      Області видимості
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/lambda/" title="Анонімні функції" class="md-nav__link">
+      Анонімні функції
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/closure/" title="Замикання" class="md-nav__link">
+      Замикання
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/decorator/" title="Декоратори" class="md-nav__link">
+      Декоратори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functions/recursion/" title="Рекурсія" class="md-nav__link">
+      Рекурсія
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Об'єктно-орієнтоване програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Об'єктно-орієнтоване програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/oop_basis/" title="Що таке об'єктно-орієнтоване програмування" class="md-nav__link">
+      Що таке об'єктно-орієнтоване програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/create/" title="ООП в Python" class="md-nav__link">
+      ООП в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/constructor/" title="Конструктори і деструктори" class="md-nav__link">
+      Конструктори і деструктори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/static_and_class/" title="Статичні та класові методи" class="md-nav__link">
+      Статичні та класові методи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/incapsulation/" title="Інкапсуляція" class="md-nav__link">
+      Інкапсуляція
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/inheritance/" title="Успадкування" class="md-nav__link">
+      Успадкування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/inheritance_multiple/" title="Множинне успадкування" class="md-nav__link">
+      Множинне успадкування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../oop/polymorphism/" title="Поліморфізм" class="md-nav__link">
+      Поліморфізм
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Виняткові ситуації
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Виняткові ситуації
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/exceptions/" title="Винятки" class="md-nav__link">
+      Винятки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/handling/" title="Обробка винятків" class="md-nav__link">
+      Обробка винятків
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/warnings/" title="Попередження" class="md-nav__link">
+      Попередження
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/eafp_vs-lbyl/" title="EAFP vs LBYL" class="md-nav__link">
+      EAFP vs LBYL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exceptions/context_manager/" title="Менеджери контекста" class="md-nav__link">
+      Менеджери контекста
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Ітерабельні об'єкти
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Ітерабельні об'єкти
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/iterable/" title="Ітератори" class="md-nav__link">
+      Ітератори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/magic_iter/" title="Реалізація за допомогою __iter__" class="md-nav__link">
+      Реалізація за допомогою __iter__
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/magic_getitem/" title="Реалізація за допомогою __getitem__" class="md-nav__link">
+      Реалізація за допомогою __getitem__
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/generator/" title="Генератори" class="md-nav__link">
+      Генератори
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iterable/generator_expressions/" title="Генератори-вирази" class="md-nav__link">
+      Генератори-вирази
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Типи та структури даних
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Типи та структури даних
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
+    
+    <label class="md-nav__link" for="nav-8-1">
+      Послідовності
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-1">
+        Послідовності
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/sequence/" title="Послідовності в Python" class="md-nav__link">
+      Послідовності в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/list/" title="Списки" class="md-nav__link">
+      Списки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/tuple/" title="Кортежі" class="md-nav__link">
+      Кортежі
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/range/" title="Діапазони" class="md-nav__link">
+      Діапазони
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/str/" title="Символьні рядки" class="md-nav__link">
+      Символьні рядки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/bin_seq/" title="Бінарні послідовності" class="md-nav__link">
+      Бінарні послідовності
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
+    
+    <label class="md-nav__link" for="nav-8-2">
+      Відображення та множини
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-2">
+        Відображення та множини
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/hashable/" title="Об'єкти, що хешуються" class="md-nav__link">
+      Об'єкти, що хешуються
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/mapingss/" title="Відображення в Python" class="md-nav__link">
+      Відображення в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/sets/" title="Множини в Python" class="md-nav__link">
+      Множини в Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../struct/stack_queue/" title="Стеки і черги" class="md-nav__link">
+      Стеки і черги
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Магічні методи
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Магічні методи
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/magic_method/" title="Життевий цикл об'єкта" class="md-nav__link">
+      Життевий цикл об'єкта
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/object_presentation/" title="Представлення класів" class="md-nav__link">
+      Представлення класів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/compare/" title="Оператори порівняння" class="md-nav__link">
+      Оператори порівняння
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/numberic/" title="Числові магічні методи" class="md-nav__link">
+      Числові магічні методи
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/attributes/" title="Доступ до атрибутів" class="md-nav__link">
+      Доступ до атрибутів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../magic/sequences/" title="Контейнери" class="md-nav__link">
+      Контейнери
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Ввід та вивід
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Ввід та вивід
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/files_streams/" title="Файли і потоки" class="md-nav__link">
+      Файли і потоки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/open_close/" title="Відкриття і закриття потоків" class="md-nav__link">
+      Відкриття і закриття потоків
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/read_write/" title="Читання з потоків і запис в потоки" class="md-nav__link">
+      Читання з потоків і запис в потоки
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/serialization/" title="Серіалізація об'єктів" class="md-nav__link">
+      Серіалізація об'єктів
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../io/internet/" title="Взаємодія з Інтернет" class="md-nav__link">
+      Взаємодія з Інтернет
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+    
+    <label class="md-nav__link" for="nav-11">
+      Модулі і пакети
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Модулі і пакети
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../module/" title="Поняття модуля" class="md-nav__link">
+      Поняття модуля
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../module_python/" title="Модулі в Python" class="md-nav__link">
+      Модулі в Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../module_object/" title="Модулі як об'єкти" class="md-nav__link">
+      Модулі як об'єкти
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../packages/" title="Пакети" class="md-nav__link">
+      Пакети
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Встановлення пакетів
+      </label>
+    
+    <a href="./" title="Встановлення пакетів" class="md-nav__link md-nav__link--active">
+      Встановлення пакетів
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-pip" class="md-nav__link">
+    Менеджер пакетів Python pip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Додаткові матеріали:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Виконання програм
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Виконання програм
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/modes/" title="Інтерпретатор Python" class="md-nav__link">
+      Інтерпретатор Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/args/" title="Передача аргументів скрипту" class="md-nav__link">
+      Передача аргументів скрипту
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interpreter/venv/" title="Віртуальні оточення" class="md-nav__link">
+      Віртуальні оточення
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Елементи функціонального програмування
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Елементи функціонального програмування
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functionale/intro/" title="Поняття функціонального програмування" class="md-nav__link">
+      Поняття функціонального програмування
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../functionale/fp/" title="Функціональне програмування в Python" class="md-nav__link">
+      Функціональне програмування в Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Батарейки
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Батарейки
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/pprint/" title="Модуль pprint" class="md-nav__link">
+      Модуль pprint
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/ramdom/" title="Модуль rabdom" class="md-nav__link">
+      Модуль rabdom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/itertools/" title="Модуль itertools" class="md-nav__link">
+      Модуль itertools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/os_path/" title="Модуль os.path" class="md-nav__link">
+      Модуль os.path
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../battaries/datetime/" title="Модуль datetime" class="md-nav__link">
+      Модуль datetime
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../go_ahead/" title="Що далі?" class="md-nav__link">
+      Що далі?
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-pip" class="md-nav__link">
+    Менеджер пакетів Python pip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Додаткові матеріали:
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Встановлення пакетів</h1>
+                
+                <p>В процесі розробки програмного забезпечення на Python часто виникає необхідність скористатись пакетом, яки в даний момент відсутній на вашому комп'ютері. </p>
+<p>Необхідність в встановленні додаткового пакета виникне дуже швидко, якщо ви вирішите попрацювати над задачею за межами базового функціоналу Python. 
+Наприклад: робота з web, обробка зображень чи аудіо, криптографія, інше. 
+У цьому випадку буде необхідно взнати, який пакет містить неообхідний нам функціонал, 
+знайти його, завантажити, розмістити у потрібному каталозі і вже тоді почати використовувати. 
+Усе це можна зробити вручну, але було б непогано автоматизувати цей процес. 
+До того ж завантажувати пакети з невідомих джерел може бути небезпечним. </p>
+<p>І для Python усі ці задачі вже вирішено. </p>
+<p>Існує так званий <strong><em><code>Python Package Index</code></em></strong> (PyPI, каталог пакетів Python).
+Це репозиторій, відкритий для всіх розробників на Python. </p>
+<blockquote>
+<p><strong><em>Репозито́рій (сховище)</em></strong> — місце, де зберігаються і підтримуються будь-які дані. 
+Найячастіше дані в репозиторії зберігаються у вигляді файлів, 
+доступних для подальшого розповсюдження по мережі. </p>
+</blockquote>
+<p>В PyPI ви зможете знайти пакети для вирішення практично будь-яких задач. 
+Також ви маєте можливість викладати в цей репозиторій пакети створені вами. </p>
+<h3 id="python-pip">Менеджер пакетів Python pip<a class="headerlink" href="#python-pip" title="Permanent link">&para;</a></h3>
+<p>Для завантаження і встановленлня пакетів з PyPI використовують спеціальну утиліту <code>pip</code>. 
+Починаючи з Python 2.7.9 і Python 3.4 ця програма встановлюється автоматично разом з інтерпретатором. </p>
+<p><code>pip</code> — суто консольна утиліта, вона не має графічного інтерфейсу. 
+Як правило вона вже прописана у змінній середовища <code>PATH</code> і доступна для використання з командного рядка. 
+Отже її можна запускати як самостійно:</p>
+<div class="codehilite"><pre><span></span>pip &lt;аргументи&gt;
+</pre></div>
+
+
+<p>так і як модуль Python:</p>
+<div class="codehilite"><pre><span></span>python -m pip &lt;аргументи&gt;
+</pre></div>
+
+
+<p><code>pip</code> дозволяє встановити саму останню версію пакета, конкретну версію або скористатись логічним виразом за допомогою якого можна вказати що вам, наприклад, потрібна версія не нижче вказаної. </p>
+<table>
+<thead>
+<tr>
+<th>команда</th>
+<th>пояснення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pip install django</code></td>
+<td>встановити останню версію пакета Django</td>
+</tr>
+<tr>
+<td><code>pip install django==2.0</code></td>
+<td>встановити пакет Django версії 2.0</td>
+</tr>
+<tr>
+<td><code>pip install django&gt;=2.0</code></td>
+<td>встановити пакет Django версії не нижче 2.0</td>
+</tr>
+</tbody>
+</table>
+<p>За замовчуванням пакети встановлюються з PyPI. 
+Але можна явно вказати де саме знаходиться пакет: </p>
+<table>
+<thead>
+<tr>
+<th>команда</th>
+<th>пояснення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pip install -e git+https://gitrepo.com/ProjectName.git</code></td>
+<td>встановити пакет з git-репозиторія</td>
+</tr>
+<tr>
+<td><code>pip install --index-url http://pypackage.com/ ProjectName</code></td>
+<td>встановити з альтернативного репозиторія</td>
+</tr>
+<tr>
+<td><code>pip install ./dist/ProjectName.tar.gz</code></td>
+<td>встановити з вказаного файла</td>
+</tr>
+</tbody>
+</table>
+<p>Для того, щоб видалити пакет (наприклад, пакет Djanog) скористаємось командою:</p>
+<div class="codehilite"><pre><span></span>pip uninstall django
+</pre></div>
+
+
+<p>Для оновлення пакета викорисовуємо ключ <code>–upgrade</code>: </p>
+<div class="codehilite"><pre><span></span>pip install --upgrade django
+</pre></div>
+
+
+<p>Щоб дізнатись список усіх встановлених пакетів: </p>
+<div class="codehilite"><pre><span></span>pip list
+</pre></div>
+
+
+<p>Отримати детальну інформацію про пакет: </p>
+<div class="codehilite"><pre><span></span>pip show requests
+</pre></div>
+
+
+<p>Якщо ви не знаєте точної назви пакета, або бажаєте переглянути пакети у назві яких міститься певне слово, скористайтесь пошуком:</p>
+<div class="codehilite"><pre><span></span>pip search django
+</pre></div>
+
+
+<p><code>pip</code> також використовується для формування списка встановлених пакетів з вказанням версії кожного пакета:</p>
+<div class="codehilite"><pre><span></span>pip freeze
+</pre></div>
+
+
+<p>Можна записати всю інформацію в текстовий файл і</p>
+<div class="codehilite"><pre><span></span>pip freeze &gt; requirements.txt
+</pre></div>
+
+
+<p>Це корисно при работі у великих проектах, 
+При необхідності можна відновити всю бібліотеку одною командою:</p>
+<div class="codehilite"><pre><span></span>pip install −r requirements.txt
+</pre></div>
+
+
+<p>При цьому будуть встановлені пакети необхідних версій. 
+Назва файла <code>requirements.txt</code> є традиційною для виконання таких операцій, 
+крім того деякі програми, які виконують певні дії з пакетами, можуть шукати файл саме з такою назвою. </p>
+<p>Отримати довідку по командам <code>pip</code> можна так:</p>
+<div class="codehilite"><pre><span></span> pip help
+</pre></div>
+
+
+<h2 id="_1">Додаткові матеріали:<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://pypi.org/">Python Package Index</a></li>
+<li><a href="https://packaging.python.org/">Python Packaging User Guide</a></li>
+<li><a href="https://pip.pypa.io/en/stable/">pip - The Python Package Installer</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../packages/" title="Пакети" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Пакети
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../interpreter/modes/" title="Інтерпретатор Python" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Інтерпретатор Python
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Руслан Іськов
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ru.js"></script>
+              
+            
+          
+          
+            <script src="../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
