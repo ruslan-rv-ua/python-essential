@@ -1,0 +1,6 @@
+﻿- name: John
+  age: 32
+- name: Bill
+- name: Jane Doe
+  age: 25
+- name: Mary
