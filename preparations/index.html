@@ -40,7 +40,7 @@
     
     
       
-        <title>Go ahead - Python Essential</title>
+        <title>Підготовка - Python Essential</title>
       
     
     
@@ -89,6 +89,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#_1" tabindex="1" class="md-skip">
+        Перейти до основного контенту
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -111,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Go ahead
+                Підготовка
               
             </span>
           
@@ -165,11 +169,56 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../preparations/" title="Підготовка" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Підготовка
+      </label>
+    
+    <a href="./" title="Підготовка" class="md-nav__link md-nav__link--active">
       Підготовка
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Список літератури
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Посилання
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -1404,20 +1453,88 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Зміст</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Список літератури
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Посилання
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Go ahead</h1>
-                
-                <p>Стаття в процесі редагування</p>
+                <h1 id="_1">Підготовка<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>При проходженні даного курсу ми будемо користуватись наступним програмним забезпеченням:</p>
 <ul>
-<li>метакласи</li>
-<li>асинхронне програмування</li>
-<li>корутини</li>
-<li>каринг</li>
+<li>інтерпретатором <a href="https://www.python.org/">cPython</a> версії 3.6+</li>
+<li>програмою невізуального доступу до екрану <a href="https://www.nvaccess.org/">NVDA</a> версії 2018.01+</li>
+<li>додатком до NVDA: <a href="https://addons.nvda-project.org/addons/virtualRevision.uk.html">Virtual Review</a></li>
+<li>додатком до NVDA: <a href="https://addons.nvda-project.org/addons/indentNav.uk.html">IndentNav</a></li>
+<li>редактором коду <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a> зі встановленим плагіном <a href="https://github.com/mpcabd/PyNPP">PyNPP</a></li>
+<li>програмою для передачі демонстраційного коду <a href="#">BlindBoard</a></li>
+</ul>
+<h2 id="_2">Список літератури<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Марк Лутц - "Вивчаємо Python" 5-е видання.</strong></p>
+<p>Пітонівська "біблія".</p>
+<p>П'яте видання "Learning Pytho" — це підручник, написаний доступною мовою, розрахований на індивідуальну швидкість навчання і заснований на матеріалах навчальних курсів, які автор, Марк Лутц, веде вже протягом десяти років. Видання значно розширено і доповнено відповідно до змін, що з'явилися в нових версіях Python 3.3 та Python 2.7. У книзі представлені:
+- основні типи об'єктів мови Python, порядок їх створення і роботи з ними;
+- функції як основний процедурний елемент мови;
+- методи роботи з модулями та класами;
+- включені описи моделей та інструкцій обробки виключень;
+- а також огляд інструментів розробки;</p>
+<p>Кожен розділ закінчується контрольними запитаннями з відповідями на них, а кожна частина --- практичними завданнями, відповіді до яких наведено у додатку.</p>
+</li>
+<li>
+<p><strong>Марк Лутц - "Кишеньковий довідник Python"</strong></p>
+</li>
+<li>
+<p><strong>“Укус Питона” – “A Byte of Python”</strong>
+    Популярне безкоштовне видання. Дуже легко читається. Багато прикладів коду.</p>
+<p><a href="https://wombat.org.ua/AByteOfPython/">Читати</a></p>
+</li>
+</ol>
+<h2 id="_3">Посилання<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.python.org/3/">Документація Python 3.6</a></li>
+<li><a href="https://docs.python.org/3/reference/index.html">Довідник Python</a></li>
+<li><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 — Style Guide for Python Code</a></li>
+<li><a href="https://pypi.org/">PyPI - the Python Package Index</a></li>
 </ul>
                 
                   
@@ -1435,6 +1552,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Про цей курс" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Назад
+                </span>
+                Про цей курс
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../methodologies/number_system/" title="Поняття системи числення" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Вперед
+                </span>
+                Поняття системи числення
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
