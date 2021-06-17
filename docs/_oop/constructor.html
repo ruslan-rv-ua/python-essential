@@ -1,0 +1,477 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Конструктор класа - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Конструктор класа
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Деструктор класа
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Конструктор класа</h1>
+<p>В ООП конструктором класа називають метод, який автоматично викликається при створенні об'єктів. Його також можна назвати конструктором об'єктів класа. Ім'я такого метода зазвичай регламентується синтаксисом конкретнї мови програмування. В Python роль конструктора виконує метод <code>__init__()</code>.
+Об'єкт створюється в момент виклику класа по імені, і в цей момент викликається метод <strong>init</strong>(), якщо його визначено в класі.</p>
+<p>*Для "просунутих":<br />
+В Python наявність пар знаків підкреслення попереду і позаду в імені метода говорить про те, що він належить до групи методів перевантаження операторів. Якщо подібні методи визначені у класі, то об'єкти можуть брати участь в таких операціях як додавання, віднімання, викликатись як функції та інше. 
+При цьому методи перевантаження операторів не треба викликати по імені. Викликом для них є сам факт участі об'єкта в певній операції. У випадку конструктора класа — це операція створення об'єкта. 
+*</p>
+<p>Необхідність конструкторів пов'язана з тим, що часто об'єкти повинні мати власні властивості одразу. Припустимо маємо клас Person, об'єкти котрого обов'язково повинні мати ім'я. Якщо клас буде описано наступним способом:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</code></pre></div>
+
+<p>то створення об'єкта можливе без полів. Для встановлення імені метод set_name() неообхідно викликати окремо:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jane Doe&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span><span class="o">.</span><span class="n">name</span>
+<span class="s1">&#39;Jane Doe&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Наявність конструктора не дозволить створити об'єкт без полів:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Jane Doe&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Тут при виклику класа в круглих дужках передаються значення, котрі будуть присвоєні параметрам метода <strong>init</strong>(). Перший параметр – self – посилання на сам щойно створений об'єкт.</p>
+<p>Тепер, якщо ми спробуємо створити об'єкт, не передавши нічого в конструктор, то буде "викинуто" вийняткову ситуацію, і об'єкт не буде створено:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="fm">__init__</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;name&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Однак буває, що необхідно допустити створення об'єкта, якщо деякі дані в конструктор не передаються. У такому випадку параметрам конструктора класа задаємо значення за замовчуванням:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">phone</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phone</span> <span class="o">=</span> <span class="n">phone</span>
+</code></pre></div>
+
+<p>Якщо викликати конструктор без параметра <code>phone</code>, то буде використано значення за замовчуванням. Однак поля <code>name</code> і <code>phone</code> будуть у всіх об'єктів:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Jane Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;+380971234567&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">phone</span>
+<span class="p">(</span><span class="s1">&#39;Jane Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;+380971234567&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p2</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">p2</span><span class="o">.</span><span class="n">phone</span>
+<span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Крім того, конструктору зовсім не обов'язковоо приймати будь-які параметри, крім self. Значення полям можуть назначатись як завгодно. Також не обов'язково, щооб в конструкторі виконувалось встановлення атрибутів об'єкта. Там може бути, наприклад, код, який створює об'єкти інших класів.</p>
+<h3 id="_2">Деструктор класа</h3>
+<p>Окрім конструктора об'єктів в ООП є зворотній йому метод – деструктор. Він викликається, коли об'єкт знищується.</p>
+<p>В Python об'єкт знищується, коли зникають усі пов'язані з ним змінні або їм присвоюється інше значення, в результаті чого зв'язок з старим об'єктом втрачається. Видалити змінну також можна за допомогою <code>del</code>.</p>
+<p>В Python функцію деструктора виконує метод <code>__del__()</code>. 
+Але в Python деструктор використовується рідко, інтерпретатор і без нього добре впорається зі "сміттям".</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,762 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>"Магічні" методи. Перевизначення операторів - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              "Магічні" методи. Перевизначення операторів
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Конструювання та ініціалізація
+  </a>
+  
+    <nav class="md-nav" aria-label="Конструювання та ініціалізація">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__new__cls" class="md-nav__link">
+    __new__(cls, [...])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__init__self" class="md-nav__link">
+    __init__(self, [...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__del__self" class="md-nav__link">
+    __del__(self)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Представлення своїх класів
+  </a>
+  
+    <nav class="md-nav" aria-label="Представлення своїх класів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__str__self" class="md-nav__link">
+    __str__(self)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__repr__self" class="md-nav__link">
+    __repr__(self)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Магічні методи порівняння
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Числові магічні методи
+  </a>
+  
+    <nav class="md-nav" aria-label="Числові магічні методи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Унарні оператори і функції
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Звичайні арифметичні оператори
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Відбиті арифметичні оператори
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Складні присвоєння
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Магичні методи перетворення типів
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">"Магічні" методи. Перевизначення операторів</h1>
+<p>Спеціальний, або магічний метод — це метод, який викликається неявно, часто щоб виконати операцію для певного типа. Наприклад, можна визначити <strong>bool</strong> метод, щоб вказати чи є об'єкт True/False в булевому контексті. Таким чином дуже багато аспектів поведінки об'єктів в Python можна змінити.</p>
+<p>Імена магічних методів починаються і закінчуються двома символами підкреслення, наприклад:</p>
+<div class="codehilite"><pre><span></span><code>__init__
+__getattr__
+__eq__
+</code></pre></div>
+
+<h3 id="_2">Конструювання та ініціалізація</h3>
+<p>Нам вже відомий самий базовий магічний метод, <code>__init__</code>. За його допомоги ми можемо ініціалізвати об'єкт. Однак, коли ми напишемо:</p>
+<div class="codehilite"><pre><span></span><code>x = SomeClass()
+</code></pre></div>
+
+<p>'<strong>init</strong>' це не саме перше, що викликається. Насправді екземпляр об'єкта створює метод <code>__new__</code>, а вже потім ініціалізатор. На іншому кінці життєвого цикла об'єкта знаходиться метод <code>__del__</code>. Давайте детальніше розглянемо ці три магічних метода.</p>
+<h4 id="__new__cls"><code>__new__(cls, [...])</code></h4>
+<p>Конструктор класа. Це перший метод, який буде викликано при створенні об'єкта. Він приймає в якості параметрів клас і потім будь-які інші аргументи, які буде передано в <code>__init__</code>. <code>__new__</code> використовується дуже рідко, але деколи буває корисним, зокрема, коли клас успадковується від немутабельного (immutable) типа, такого як кортеж (tuple) чи рядок.</p>
+<h4 id="__init__self"><code>__init__(self, [...)</code></h4>
+<p>Ініціалізатор класа. Йому передається усе, з чим було викликано конструктор. Наприклад, якщо ми напишемо</p>
+<div class="codehilite"><pre><span></span><code>x = SomeClass(10, &#39;foo&#39;)
+</code></pre></div>
+
+<p><code>__init__</code> отримає 10 і 'foo' в якості аргументів. 
+<code>__init__</code> майже повсемістно використовується при визначенні класів. 
+Майже завжди цей метод помилково називають конструктором.</p>
+<h4 id="__del__self"><code>__del__(self)</code></h4>
+<p>Якщо <code>__new__</code> і <code>__init__</code> — конструктори об'єкта, <code>__del__</code> — його деструктор. Він не визначає поведінку для оператора <code>del</code>, 
+тому цей код не є еквівалентним <code>x.__del__(). 
+Він визначає поведінку об'єкта у той час, коли за об'єкт береться збиральник сміття. 
+Це може бути доволі зручно для об'єктів, які можуть потребувати додаткових "чисток" під час видалення, наприклад сокети чи файлові об'єкти. 
+Однак пам'ятайте, що</code><strong>del</strong><code>не може слугувати заміною для хороших програмістських практик. 
+Завжди завершуйте з'єднання, якщо закінчили з нми працювати і так далі! Фактично, через відсутність гарантії виклику,</code><strong>del</strong>` не повинен використовуватись майже ніколи. Використовуйте його з обережністю!</p>
+<h3 id="_3">Представлення своїх класів</h3>
+<p>Часто буває корисним представлення класа у вигляді символьного рядка. В Python існує декілька методів, які ви можете визначити для налаштування поведінки вбудованих функцій при представленні вашого класа.</p>
+<h4 id="__str__self"><code>__str__(self)</code></h4>
+<p>Визначає поведінку функції <code>str()</code>, яка була викликана для екземпляра вашого класа.</p>
+<h4 id="__repr__self"><code>__repr__(self)</code></h4>
+<p>Визначає поведінку функції 'repr()', викликаної для екземпляра вашого класа. Головна відмінність від <code>str()</code> — в цільовій аудиторії. <code>repr()</code> більше призначено для машино-орієнтованого вивода, більш того, це по можливості має бути валідний код на Python) для створення екземпляра класа. <code>str()</code> признзачено для читання людьми.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{name}</span><span class="s1"> &lt;</span><span class="si">{email}</span><span class="s1">&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="k">return</span> <span class="s1">&#39;Person(&quot;</span><span class="si">{name}</span><span class="s1">&quot;, &quot;&lt;</span><span class="si">{email}</span><span class="s1">&gt;&quot;)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;johnny@nowhere.com&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="s1">&#39;John Doe &lt;johnny@nowhere.com&gt;&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">John</span> <span class="n">Doe</span> <span class="o">&lt;</span><span class="n">johnny</span><span class="nd">@nowhere</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="s1">&#39;Person(&quot;John Doe&quot;, &quot;&lt;johnny@nowhere.com&gt;&quot;)&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span>
+<span class="n">Person</span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;johnny@nowhere.com&gt;&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_4">Магічні методи порівняння</h3>
+<p>В Python є багато магічних методів, створених для визначення інтуітивного порівняння між об'єктами використовуючи оператори. Крім того, вони надають спосіб перевизначити поведінку Pytho за замовчуванням для порівняння об'єктів (по посиланню). Ось список цих методів і що вони роблять:</p>
+<ul>
+<li>
+<p><code>__eq__(self, other)</code><br />
+Визначає поведінку оператора рівності, <code>==</code>.</p>
+</li>
+<li>
+<p><code>__ne__(self, other)</code><br />
+Визначає поведінку оператора нерівності, <code>!=</code>.</p>
+</li>
+<li>
+<p><code>__lt__(self, other)</code><br />
+Визначає поведінку оператора "меньше ніж", <code>&lt;</code></p>
+</li>
+<li>
+<p><code>__gt__(self, other)</code><br />
+Визначає поведінку оператора "більше ніж", <code>&gt;</code></p>
+</li>
+<li>
+<p><code>__le__(self, other)</code><br />
+Визначає поведінку оператора "меньше або дорівнює", <code>&lt;=</code></p>
+</li>
+<li>
+<p><code>__ge__(self, other)</code><br />
+Визначає поведінку оператора "більше або дорівнює", <code>&gt;=</code></p>
+</li>
+</ul>
+<p>Реалізуємо клас, який описує слово. Ми можемо порівнювати слова лексиграфічно (по алфавіту), що є дефолтною поведнінкою при порівнянні символьних рядків, але можемо захотіти використовувати при порівнянні будь-який інший критерій, наприклад, довжина або ж кількість складні. Давайте порівнювати по довжині:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Word</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+        <span class="c1"># Використовуємо __new__, оскільки тип str — немутабельний</span>
+        <span class="c1"># і ми повинні ініціалізувати його раніше (при створенні)</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Перевірку на еквівалентність ми залишили від <code>str</code>.</p>
+<p>Є можливість не визначати кожну з перевірок, а визначити тільки ті, на основі яких можна однозначно визначити інші, наприклад <code>__ge__</code>. А решту для нас може зробити декоратор <code>total_ordering</code> з вбудованого модуля <code>functools</code>. Достатньо перед визначенням класа вказати:</p>
+<div class="codehilite"><pre><span></span><code>@total_ordering
+class ...
+</code></pre></div>
+
+<h3 id="_5">Числові магічні методи</h3>
+<p>Ми можемо визначити поведінку об'єктів для числових операторів. Існує їх немало, і для кращої організації розіб'ємо їх на 5 категорій: унарні оператори, звичайні арифметичні оператори, відбиті арифметичні оператори, складні присвоєння і перетворення типів. Розглянемо деякі з них:</p>
+<h4 id="_6">Унарні оператори і функції</h4>
+<ul>
+<li>
+<p><code>__pos__(self)</code><br />
+Визначає поведінку для унарного плюса <code>(+some_object)</code></p>
+</li>
+<li>
+<p><code>__neg__(self)</code><br />
+Визначає поведінку для унарного мінуса <code>(-some_object)</code></p>
+</li>
+<li>
+<p><code>__abs__(self)</code><br />
+Визначає поведінку для вбудованої функції <code>abs()</code></p>
+</li>
+<li>
+<p><code>__round__(self)</code><br />
+Визначає поведінку для вбудованої функції <code>round()</code>. <code>n</code> — це кількість знаків, до якого округлити</p>
+</li>
+<li>
+<p><code>__floor__(self)</code><br />
+Визначає поведінку для <code>math.floor()</code></p>
+</li>
+<li>
+<p><code>__ceil__(self)</code><br />
+Визначає поведінку для <code>math.ceil()</code></p>
+</li>
+<li>
+<p><code>__trunc__(self)</code><br />
+Визначає поведінку для <code>math.trunc()</code></p>
+</li>
+</ul>
+<h4 id="_7">Звичайні арифметичні оператори</h4>
+<ul>
+<li>
+<p><code>__add__(self, other)</code><br />
+Додавання</p>
+</li>
+<li>
+<p><code>__sub__(self, other)</code><br />
+Віднімання</p>
+</li>
+<li>
+<p><code>__mul__(self, other)</code>
+Множення</p>
+</li>
+<li>
+<p><code>__floordiv__(self, other)</code><br />
+Цілочислене ділення, оператор <code>//</code></p>
+</li>
+<li>
+<p><code>__truediv__(self, other)</code>
+Ділення, оператор <code>/</code></p>
+</li>
+<li>
+<p><code>__mod__(self, other)</code><br />
+Залишок від ділення, оператор <code>%</code></p>
+</li>
+<li>
+<p><code>__divmod__(self, other)</code><br />
+Визначає поведінку для вбудованої функції <code>divmod()</code></p>
+</li>
+<li>
+<p><code>__pow__(self, other)</code><br />
+Підведення у ступінь, оператор <code>**</code></p>
+</li>
+</ul>
+<h4 id="_8">Відбиті арифметичні оператори</h4>
+<p>Відбиті оператори — це не якась нова концепція. Якщо звичайна операція додавання ми записуємо як:</p>
+<div class="codehilite"><pre><span></span><code>some_object + other
+</code></pre></div>
+
+<p>то відбите додавання виглядає так:</p>
+<div class="codehilite"><pre><span></span><code>other + some_object
+</code></pre></div>
+
+<p>Таким чином усі ці магичні методи роблять те ж саме, що і їх звичайні версії, але для аргументів, які знаходяться праворуч, і тільки у випадку, якщо для лівого операнда не визначено відповідного метода. Наприклад, операція <code>x + y</code> буде спочатку намагатись викликати <code>x.__add__(y)</code>, і тільки у тому випадку, якщо це не   вийшло, буде намагатись викликати y.<strong>radd</strong>(x). Аналогічно для решти методів.</p>
+<ul>
+<li><code>__radd__(self, other)</code></li>
+<li><code>__rsub__(self, other)</code></li>
+<li><code>__rmul__(self, other)</code></li>
+<li><code>__rfloordiv__(self, other)</code></li>
+<li><code>__rtruediv__(self, other)</code></li>
+<li><code>__rmod__(self, other)</code></li>
+<li><code>__rdivmod__(self, other)</code></li>
+<li><code>__rpow__</code></li>
+</ul>
+<h4 id="_9">Складні присвоєння</h4>
+<p>Складні присвоєння — це комбінація "звичайного" оператора і присвоєння. </p>
+<div class="codehilite"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># тобто x = x + 1</span>
+</code></pre></div>
+
+<p>Кожен з цих методів повинен повертати значеня, котре буде присвоєно змінній зліва. Наприклад, для <code>a += b</code>, <strong>iadd</strong> має повернути <code>a + b</code>, що буде присвоєно <code>a</code>.</p>
+<ul>
+<li><code>__iadd__(self, other)</code></li>
+<li><code>__isub__(self, other)</code></li>
+</ul>
+<p>і так далі.</p>
+<h4 id="_10">Магичні методи перетворення типів</h4>
+<p>В Python є багато магичних методів для визначення поведнінки для вбудованих функцій перетворення типів:</p>
+<ul>
+<li>
+<p><code>__int__(self)</code><br />
+Перетворення в <code>int</code></p>
+</li>
+<li>
+<p><code>__float__(self)</code></p>
+</li>
+</ul>
+<p>та інші.</p>
+<h2 id="_11">Додаткові матеріали</h2>
+<p><a href="https://docs.python.org/3/reference/datamodel.html#specialnames">Документація Python: спеціальні методи</a></p>
+<!---
+https://ru.stackoverflow.com/questions/646280/%d0%9c%d0%b0%d0%b3%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b8%d0%b5-%d0%bc%d0%b5%d1%82%d0%be%d0%b4%d1%8b/647069#647069
+
+https://www.severcart.org/blog/all/python_getattr/
+
+
+
+ --->
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

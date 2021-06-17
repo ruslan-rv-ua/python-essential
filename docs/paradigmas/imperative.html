@@ -1,0 +1,560 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Імперативне програмування - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Імперативне програмування
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Імперативне програмування
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="imperative.html" class="md-nav__link md-nav__link--active">
+        Імперативне програмування
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Процедурне програмування
+  </a>
+  
+    <nav class="md-nav" aria-label="Процедурне програмування">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Процедурне програмування
+  </a>
+  
+    <nav class="md-nav" aria-label="Процедурне програмування">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Імперативне програмування</h1>
+<blockquote>
+<p><strong><em>Імперативне програмування</em></strong> — це підхід до побудови програм, що використовує алгоритмічну декомпозицію задачі, при якій програма представляється як послідовність дій (команд), які повинен виконати комп'ютер покроковим чином. Оскільки імперативна програма дуже схожа на накази комп'ютеру, то імперативне програмування іноді називають наказовим.</p>
+</blockquote>
+<p>Концептуальною ідеєю імперативного підходу до розробки програм є алгоритмічна структура програмного коду, яка передбачає роз'єднання у програмах даних і дій, що виконуються над ними. Активним суб’єктом у імперативних програмах вважається алгоритм, який повинен виконати всі необхідні для досягнення потрібного результату дії над пасивними даними. Таким чином, наголос у імперативному програмуванні робиться на верховенстві алгоритму над даними. </p>
+<p>Імперативна парадигма програмування є відображенням архітектури традиційних ЕОМ, яка була запропонована фон Нейманом. Теоретичною основою імперативногопрограмування служить алгоритмічна система під назвою «машина Т’юринга» — абстрактнийобчислювальнийпристрій, що виконує послідовність команд програми, яка, таким чином, переходить з одного стану в інший. Відповідно програма в імперативному програмуванні розглядається як послідовність дій, які змінюють стан компьютера. </p>
+<p>Якщо розглядати стан комп'ютера як стан пам'яті, тобто значень комірок пам'яті, то імперативна програма — це послідовність операторів, які перетворюють початковий стан пам'яті, тобто значення вихідних даних, у заключний, тобто у результати. Концепції пам'яті як сховища значень, поточного кроку виконання і поточного стану, що змінюється у часі, є фундаментальними в імперативному програмуванні.</p>
+<p>Моделлю обробки даних при імперативному підході є послідовне виконання команд, які задають алгоритм вирішення задачі. Коротко це можна представити наступною нотацією:</p>
+<blockquote>
+<p>програма = послідовність дій.</p>
+</blockquote>
+<p>Базовими поняттями імперативної парадигми програмування є поняття оператора (команди), що задає дію по обробці даних, та поняття змінної, якій може бути присвоєно значення, що зберігається в памяті комп'ютера; базовою операцією є операція присвоєння, що служить для зміни вмісту областей пам'яті. </p>
+<p>Основна задача програміста при написанні імперативної програми — звести рішення задачі до послідовності операторів, які вміє виконувати процесор комп'ютера.</p>
+<p>Кожна парадигма програмування має відповідну інструментальну підтримку. Найбільш відомі і поширені імперативні мови програмування:</p>
+<ul>
+<li>Fortran (1954)</li>
+<li>Algol (1960)</li>
+<li>C (1972)</li>
+</ul>
+<p>Оскільки практично всі сучасні комп'ютери орієнтовані на послідовні обчислення, імперативне програмування явно виграє в ефективності реалізації прикладних задач, для яких важлива швидкість виконання. Окрім цього, робота із зовнішніми пристроями, як правило, описується в термінах послідовного виконання операцій, що робить такі задачі ідеальними для імперативної реалізації.</p>
+<h2 id="_2">Процедурне програмування</h2>
+<blockquote>
+<p><strong><em>Процедурне програмування</em></strong> — це програмування в імперативному стилі, при якому оператори які виконуються послідовно можна зібрати у підпрограми, тобто більш крупні цілістні одиниці кода за допомогою механізмів самої мови програмування.</p>
+</blockquote>
+<p>Процедурне програмування засноване на концепції виклику процедури. Процедури, також відомі як підпрограми, методи, або функції (це не математичні функції, але функції, подібні до тих, які використовуються в функціональному програмуванні). Процедури містять певну послідовність кроків для виконання. В ході виконання програми будь-яка процедура може бути викликана з будь-якого місця програми, включно з самої процедури, яка викликається (рекурсивний виклик). </p>
+<p>Процедурна парадигма була хронологічно першої і довгий час превалювала. В даний час вона поступово поступається своїм місцем об'єктно-орієнтованій парадигмі, хоча все ще займає близько половини ринку розробки програмного забезпечення. Вона застосовується на всіх рівнях розробки програмного забезпечення.</p>
+<p>Декомпозиція при процедурному підході полягає в тому, що завдання, що реалізується програмою, ділиться на підзадачі, а вони в свою чергу — на більш дрібні етапи, тобто виконується покрокова деталізація алгоритму розв'язання задачі.</p>
+<p>Виконання процедур природно назвати процесом, причому з одного процесу може активізуватися інший, що є головним способом управління загальним процесом. У момент активізації може проводитися передача даних, які носять в такому випадку назву "параметрів". Закінчення виконання процедури пов'язано з поверненням результату і функції управління в викликаючу програму.</p>
+<p>Можливі переваги:
+* Можливість повторного використання одного і того ж коду з різних місць програми без його копіювання
+* Легше відстежити потік виконання програми, ніж у випадку використання операторів GOTO або JUMP (перехід на конкретно вказану точку програми), що можуть зробити з складної програми так званий «спагетті-код».
+* Можливість підтримки модульності і структурності.</p>
+<p>До процедурних мов програмування можна віднести наступні:
+* C
+* Pascal
+* Python</p>
+<h3 id="_3">Додаткові матеріали</h3>
+<ol>
+<li><a href="https://uk.wikipedia.org/wiki/%D0%86%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F">Вікіпедія: імперативне програмування</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0_%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">Вікіпедія: Машина Т'юрінга</a></li>
+<li><a href="https://habr.com/post/187154/">Спагетти-статья о спагетти-коде</a></li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="paradigmas.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Парадигми у програмуванні" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Парадигми у програмуванні
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="oop.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Об&#39;єктно-орієнтоване програмування" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Об'єктно-орієнтоване програмування
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

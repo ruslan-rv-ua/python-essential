@@ -1,0 +1,569 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Open close - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Open close
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Відкриття файла
+  </a>
+  
+    <nav class="md-nav" aria-label="Відкриття файла">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffering" class="md-nav__link">
+    buffering
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Закриття файла
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Робота за допомогою менеджера контекста
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Open close</h1>
+                
+                <p>Розглянемо основні операції з файлами. </p>
+<h3 id="_1">Відкриття файла</h3>
+<p>Для створення файлових об'єктів нам не обов'язково інстанціювати об'єкти відповідних класів — Python надає нам більш зручний інтерфейс. </p>
+<p>Відкрити файл можна за допомогою функції <code>open()</code>. Ця функція знаходиться в модулі <code>io</code>, але доступна з глобального простору імен (автоматично імпортується в модуль <code>__builtins__</code>). </p>
+<div class="codehilite"><pre><span></span><code><span class="nb">open</span><span class="p">(</span>
+    <span class="n">file</span><span class="p">,</span> 
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> 
+    <span class="n">buffering</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">newline</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">closefd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">opener</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Функція повертає об'єкт файла.</p>
+<p>Параметри функції <code>open()</code>:</p>
+<ul>
+<li><code>file</code> – им'я файла або файловий дескриптор;</li>
+<li><code>mode</code> – режим відкриття файла;</li>
+<li><code>encoding</code> – кодування файла;</li>
+<li><code>buffering</code> – керування буферізацією;</li>
+<li><code>errors</code> — як обробляти помилки;</li>
+<li><code>newline</code> — як обробляти символ нового рядка;</li>
+<li><code>closefd</code> — вказує, чи потрібно закривати дескриптор файла;</li>
+<li><code>opener</code> — об'єкт, який відкриває файл, має повертати дескриптор файла;</li>
+</ul>
+<p>Розглянемо деякі з них детальніше. </p>
+<h5 id="file"><code>file</code></h5>
+<ul>
+<li>Ім'я файла у вигляді символьного рядка включаючи абсолютний чи відносний шлях</li>
+<li>Дескриптор файла (ціле число) якщо ви вже відкрили потік низькорівневою функцією</li>
+</ul>
+<p>Для корректного створення шляху до файла використовується функція <code>join</code> з вбудованого модуля <code>os.path</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span><span class="err">`</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;windows&#39;</span><span class="p">,</span><span class="s1">&#39;system32&#39;</span><span class="p">)</span> <span class="c1"># для Windows</span>
+<span class="s1">&#39;..</span><span class="se">\\</span><span class="s1">windows</span><span class="se">\\</span><span class="s1">system32&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h5 id="mode"><code>mode</code></h5>
+<p>Режим відкриття файла. Символьний рядок який складається з одного, двох чи трьох символів. </p>
+<p>Перший символ:</p>
+<table>
+<thead>
+<tr>
+<th>символ</th>
+<th>значення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>r</code></td>
+<td>відкрити для читання (за замовчуванням)</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>відкрити для запису, вміст файла перед цим видаляється</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>відкрити для виняткового створення (піднімається <code>FileExistsError</code> якщо файл вже існує)</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>відкрити для запису, додаючи дані у кінець файла якщо він вже існує</td>
+</tr>
+</tbody>
+</table>
+<p>Другий або третій символ (необов'язкові, порядок не має значення):</p>
+<table>
+<thead>
+<tr>
+<th>символ</th>
+<th>значення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b</code></td>
+<td>бінарний режим</td>
+</tr>
+<tr>
+<td><code>t</code></td>
+<td>текстовий режим (за замовчуванням)</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>відкрити для читання і запису</td>
+</tr>
+</tbody>
+</table>
+<h5 id="buffering"><code>buffering</code></h5>
+<p>Ціле число, вказує розмір буфера.</p>
+<ul>
+<li>якщо менше 0 — використовується стандартний блочний буфер</li>
+<li>якщо 0 — буферизація не використовується</li>
+<li>якщо більше 0 — вказує розмір буфера</li>
+</ul>
+<h3 id="_2">Закриття файла</h3>
+<p>Після закінчення роботи з файлом необхідно обов'язково його закрити, особливо якщо файл було відкрито для запису. Для закриття файла використовується метод файлового об'єкта <code>close()</code>. </p>
+<p>При використанні буферизованого доступу вміст буфера записується в файл при його заповненні або коли викликаються методи <code>flush()</code> або <code>close()</code>. Якщо не закрити файл, є ймовірність втратити дані що ще знаходяться у буфері і не записані на носій інформації. 
+Крім того, якщо файл відкрито для запису, його буде заблоковано для відкриття для запису іншими процесами до того, поки файл не буде закрито. 
+Усі відкриті файли автоматично закриваються при видаленні відповідних файлових об'єктів з пам'яті збиральником сміття інтерпретатора Python і при завершенні роботи самого інтерпретатора. Однак необхідно тримати файли відкритими мінімально необхідний час. </p>
+<p>Примусово "зкинути" буфер можна за допомогою метода <code>flush()</code>. </p>
+<h3 id="_3">Робота за допомогою менеджера контекста</h3>
+<p>Усі файлові об'єкти є менеджерами контекста:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="c1"># perform actions on file</span>
+</code></pre></div>
+
+<p>Таким чином файл буде гарантовано закрито як тільки буде виконано усі необхідні дії над ним. </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

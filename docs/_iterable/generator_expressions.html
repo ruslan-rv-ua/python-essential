@@ -1,0 +1,490 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Generator expressions - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generator expressions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Шахівниця
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Generator expressions</h1>
+                
+                <p>Деякі прості генератори можна записати у вигляді виразів. Такі вирази виглядають так:</p>
+<ol>
+<li>Вираз з деякими змінними.</li>
+<li>Одне чи декілька ключових слів <code>for</code>. Задається які значення будуть приймати вищезгадані змінні. Синтаксис відповідає заголовку цикла <code>for</code>.</li>
+<li>Нуль або більше умов, які фільтрують значення змінних. Синтаксис відповідає заголовку оператора <code>if</code>. </li>
+</ol>
+<p>Такі вирази називають <strong><em>виразами-генераторами</em></strong> (generator expressions).</p>
+<p>Приклад. Необхідно отримати послідовність парних ступеней числа 2 від 0 до 10 включно. Напишемо спочатку "звичайний" генератор:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">pow2_gen</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+<span class="o">...</span>             <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="o">...</span>                     <span class="k">yield</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">x</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Спробуємо знайти суму цих чисел. Функція <code>sum()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), отже ми сміливо можемо передати їй генератор:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">pow2_gen</span><span class="p">()))</span>
+<span class="mi">1365</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>А тепер напишемо генератор-вираз:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span>
+<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x0000029D8FF1FFC0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="mi">1365</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Зауважте: вираз для генератора ми включили у круглі дужки. Якщо цього не зробити, виникає неоднозначність і Python не може точно інтрерпретувати такий вираз.</p>
+<h3 id="_1">Шахівниця</h3>
+<p>Спробуємо за допомогою генератор-вираза отримати усі клітинки шахівниці білого кольору:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGH&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rows</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">white_fields_generator</span> <span class="o">=</span> <span class="p">(</span>
+<span class="o">...</span>     <span class="n">column</span> <span class="o">+</span> <span class="n">row</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span>
+<span class="o">...</span>     <span class="k">if</span> <span class="p">(</span><span class="n">columns</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="o">...</span> <span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Давайте отримаємо усі білі клітинки одним символьним рядком:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">white_fields_generator</span><span class="p">))</span>
+<span class="n">A2</span> <span class="n">A4</span> <span class="n">A6</span> <span class="n">A8</span> <span class="n">B1</span> <span class="n">B3</span> <span class="n">B5</span> <span class="n">B7</span> <span class="n">C2</span> <span class="n">C4</span> <span class="n">C6</span> <span class="n">C8</span> <span class="n">D1</span> <span class="n">D3</span> <span class="n">D5</span> <span class="n">D7</span> <span class="n">E2</span> <span class="n">E4</span> <span class="n">E6</span> <span class="n">E8</span> <span class="n">F1</span> <span class="n">F3</span> <span class="n">F5</span> <span class="n">F7</span> <span class="n">G2</span> <span class="n">G4</span> <span class="n">G6</span> <span class="n">G8</span> <span class="n">H1</span> <span class="n">H3</span> <span class="n">H5</span> <span class="n">H7</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Метод <code>str.join()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), а  генератор і є ітерабельним об'єктом.</p>
+<p>А давайте отримаємо усі білі клітинки перших двох рядів шахівниці. Будемо використовувати генератор як звичайний ітератор самим "примітивним" способом — використовуючи функцію <code>next()</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">white_fields_generator</span> <span class="o">=</span> <span class="p">(</span><span class="n">column</span> <span class="o">+</span> <span class="n">row</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="p">(</span><span class="n">columns</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">white_fields_generator</span><span class="p">))</span>
+<span class="o">...</span>
+<span class="n">A2</span>
+<span class="n">A4</span>
+<span class="n">A6</span>
+<span class="n">A8</span>
+<span class="n">B1</span>
+<span class="n">B3</span>
+<span class="n">B5</span>
+<span class="n">B7</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Зауважте: перед використанням генератор треба створити знову.</p>
+<p>Можна і по-іншому, подумайте який спосіб краще:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">white_fields_generator</span> <span class="o">=</span> <span class="p">(</span><span class="n">column</span> <span class="o">+</span> <span class="n">row</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="p">(</span><span class="n">columns</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">white_fields_generator</span><span class="p">)[:</span><span class="mi">8</span><span class="p">])</span>
+<span class="p">[</span><span class="s1">&#39;A2&#39;</span><span class="p">,</span> <span class="s1">&#39;A4&#39;</span><span class="p">,</span> <span class="s1">&#39;A6&#39;</span><span class="p">,</span> <span class="s1">&#39;A8&#39;</span><span class="p">,</span> <span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B5&#39;</span><span class="p">,</span> <span class="s1">&#39;B7&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,588 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Handling - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Handling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Обробка винятків в Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Передача винятка на один рівень вгору
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    Блок else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    Блок finally
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Handling</h1>
+                
+                <blockquote>
+<p><strong><em>Обробка виняткових ситуацій</em></strong> (exception handling) або <strong><em>обрабка винятків</em></strong> — механізм мов програмування, призначений для опису реакції 
+програми на помилки часу виконання та інші можливі проблеми
+(винятки), які можуть виникнути при виконанні програми і призводять до 
+неможливості (або ж безглуздості) подальшого відпрацювання програмою її базового 
+алгоритма.</p>
+</blockquote>
+<h3 id="python">Обробка винятків в Python</h3>
+<p>Для обробки виняткових ситуацій в Python використовують спеціальну конструкцію:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># область дії обробника</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">Exception1</span><span class="p">:</span> 
+    <span class="c1"># обробник винятка Exception1</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="p">(</span><span class="n">Exception2</span><span class="p">,</span> <span class="n">Exception3</span><span class="p">):</span>
+    <span class="c1"># обробник винятків Exception2 і Exception3</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">Exception4</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span> 
+    <span class="c1"># обробник винятка Exception4</span>
+    <span class="c1"># екземпляр винятка доступний під іменем exception</span>
+    <span class="k">pass</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># стандартний обробник, перехоплює усі винятки</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<p>Блок <code>try</code> задає область дії обробника винятків. Якщо при виконанні операторів в даному блоці було піднято виняток, їх виконання переривається і керування переходить до одного з обробників. Якщо не виникло жодного винятка, блоки <code>except</code> пропускаються.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="o">...</span> <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Division by zero detected&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Division</span> <span class="n">by</span> <span class="n">zero</span> <span class="n">detected</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Після <code>except</code> можна вказати клас винятка, який ми плануємо перехопити, або ж одразу декілька класів, об'єднавши їх у кортеж.</p>
+<p>При перехопленні винятка створюється екземпляр відповідного класа, і ми маємо можливість отримати його:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
+<span class="o">...</span>     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="o">...</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;oops!&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">catched</span> <span class="o">=</span> <span class="n">e</span>
+<span class="o">...</span>
+<span class="n">oops</span><span class="err">!</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">catched</span>
+<span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s1">&#39;division by zero&#39;</span><span class="p">,)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Якщо ж після <code>except</code> не нічого не вказати, то будуть перехоплені усі винятки які ми не перехопили раніше. Бажано уникати такого перехоплення винятків, треба перехоплювати конкретні винятки.</p>
+<p>Блоки <code>except</code> обробляються від гори до низу і керування передається не більше, ніж одному обробнику. 
+Тому при необхідності по-різному обробляти винятки, які знаходяться в ієрархії успадкування, спочатку треба вказувати обробники меньш загальних винятків, а потім — більш загальних. 
+Саме тому стандартний блок <code>except</code> може бути тільки останнім.</p>
+<p>Приклад. У наступному коді ми ніколи не перехопимо ділення на нуль:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
+<span class="o">...</span>     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="o">...</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Some exception catched&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zero division catched&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Some</span> <span class="n">exception</span> <span class="n">catched</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Якщо жоден з заданих блоків <code>except</code> не перехопив виняток, то його буде перехоплено найближчим зовнішнім блоком <code>try/except</code>, у якому є відповідний обробник. Якщо ж програма зовсім не перехопила виняток, то інтерпретатор завершує виконання програми і виводить 
+інформацію про виняткову ситуацію в стандартний потік помилок <code>sys.stderr</code>. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">raise</span> <span class="ne">ValueError</span>
+<span class="o">...</span> <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Division by zero&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Але у цього правила є винятки:</p>
+<ul>
+<li>якщо виняток виник в деструкторі об'єкта, виконання програми не завершується, а в стандартний потік помилок виводиться попередження <code>"Exception ignored"</code> з інформацією про сам виняток.</li>
+</ul>
+<p>Приклад. Наступний код:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ZeroDivisionError</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Creating object&#39;</span><span class="p">)</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Deleting object&#39;</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">obj</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>дасть наступний результат:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Creating</span> <span class="nb">object</span>
+<span class="n">Deleting</span> <span class="nb">object</span>
+<span class="ne">Exception</span> <span class="n">ignored</span> <span class="ow">in</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">bound</span> <span class="n">method</span> <span class="n">MyClass</span><span class="o">.</span><span class="fm">__del__</span> <span class="n">of</span> <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">MyClass</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x000001AD476A97F0</span><span class="o">&gt;&gt;</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;d:\PythonEssential2019\exception_in_destructor.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="fm">__del__</span>
+    <span class="k">raise</span> <span class="ne">ZeroDivisionError</span>
+<span class="ne">ZeroDivisionError</span><span class="p">:</span>
+<span class="n">Done</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_1">Передача винятка на один рівень вгору</h3>
+<p>Для того, щоб в обробнику винятка виконати певні дії, а потім передати виняток далі, на один рівень обробників вище (тобто, викинути той самий виняток ще раз), використовується  інструкція <code>raise</code> без параметрів:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">do_some_actions</span><span class="p">()</span> <span class="c1"># дії, які можуть призвести до винятка</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span> <span class="c1"># обробник винятка</span>
+    <span class="n">handle_exception</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span> <span class="c1"># певні дії з перехопленим винятком</span>
+    <span class="k">raise</span>
+</code></pre></div>
+
+<h3 id="else">Блок else</h3>
+<p>В конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>else</code>. Оператори всередині нього виконуються, якщо не виникло жодного винятка.</p>
+<h3 id="finally">Блок finally</h3>
+<p>Також  конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>finally</code>. 
+Оператори всередині блока <code>finally</code> виконуються незалежно від того, чи виникла виняткова ситуація чи ні.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
+<span class="o">...</span>     <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="o">...</span> <span class="k">finally</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finally block is always executed&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Finally</span> <span class="n">block</span> <span class="ow">is</span> <span class="n">always</span> <span class="n">executed</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Блок <code>finally</code> використовується для виконання так званих "дій по очистці" (cleanup actions), тобто дій, направлених на звільнення ресурсів: закриття файлів, видалення тимчасових об'єктів, тощо.</p>
+<p>Блок <code>finally</code> виконується перед виходом з оператора <code>try/except</code> завжди, навіть якщо одне з його відгалужень містить оператор <code>return</code> (коли оператор <code>try/except</code> знаходиться всередині функції), <code>break</code> чи <code>continue</code> (коли оператор <code>try/except</code> знаходиться всередині цикла) або ж виник інший необроблений виняток при обробці даного винятка.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">try</span><span class="p">:</span>
+<span class="o">...</span>             <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="o">...</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="o">...</span>             <span class="k">return</span> <span class="s1">&#39;We have catched: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">finally</span><span class="p">:</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finally block is always executed&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">())</span>
+<span class="n">Finally</span> <span class="n">block</span> <span class="ow">is</span> <span class="n">always</span> <span class="n">executed</span>
+<span class="n">We</span> <span class="n">have</span> <span class="n">catched</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

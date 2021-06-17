@@ -1,0 +1,509 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Обробка винятків як керування ходом виконання програми - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Обробка винятків як керування ходом виконання програми
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lbyl-vs-eafp" class="md-nav__link">
+    LBYL vs EAFP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Обробка винятків як керування ходом виконання програми</h1>
+<p>В статично типізованих мовах програмування компілятор контроює, чи реалізує клас, екземпляром якого є певний об'єкт, певний інтерфейс. При динамічній качиній типізації відповідальність за це лежить на програмісті. </p>
+<p>Як же можна з'ясувати, чи реалізує якийсь клас певний інтерфейс (наприклад, метод)? 
+Існує два протилежних підходи до реалізації таких перевірок.</p>
+<p>Перший полягає у тому, що ми маємо можливість дійсно перевірити, чи реалізує клас певний інтерфейс, тобто чи має він певний атрибут. Зробити це можна за допомогою функції:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">hasattr</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Функція повертає <code>True</code> якщо <code>object</code> має атрибут з ідентифікатором <code>name</code> і <code>False</code> в інших випадках.</p>
+<p>Отже перевірка наявності інтерфейса і подальше його використання можуть виглядати так:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">show_info</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">show_info</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No information&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Інший спосіб полягає у тому, що ми не перевіряємо наявність певного інтерфейса, а одразу ж пробуємо його використовувати. Якщо інтерфейс не реалізовано, то, звісна річ, виникне виняткова ситуація. Але ми можемо перехопити виняток і обробити його так як нам потрібно!</p>
+<p>Повертаючись до попереднього прикладу:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">show_info</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No information&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Отже ми маємо два різних підходи (стилі) написання коду, вони навіть мають свої назви:</p>
+<ul>
+<li>Look Before You Leap (LBYL, "Не спитавши броду не лізь у воду"). Стиль, який характеризується наявністю багатьох перевірок і умовних операторів. В контексті качиної типізації може означати перевірку наявності необхідних атрибутів за допомогою функції <code>hasattr</code>.</li>
+<li>Easier to Ask for Forgiveness than Permission (EAFP, "простіше попросити вибачення, ніж
+дозволу").  Стиль, який характеризується наявністю блоків <code>try/except</code>. В контексті качиної
+типізації — написання кода виходячи з припущення, що певний об'єкт реалізує необхідний інтерфейс, і обробка винятка <code>AttributeError</code> в іншому випадку.</li>
+</ul>
+<p><code>LBYL</code> і <code>EAFP</code> — це доволі загальні стилі написання кода на динамічних мовах програмування, які стосуються не тільки качиної типізації. Наприклад: </p>
+<ul>
+<li>перевірка існування ключа у словнику (LBYL) або обробка винятка <code>KeyError</code> (EAFP)</li>
+<li>перевірка існування файла (LBYL) або обробка винятка <code>IOError</code> (EAFP).</li>
+</ul>
+<p>Давайте напишемо рішення однієї і тої ж задачі використовуючи обидва стилі.</p>
+<p>Задача: попросити користувача ввести два цілих числа, кожне окремо, і вивести результат ділення першого на друге. Користувач робить ввод даних поки введені дані не будуть коректними, тобто користувач має ввести саме цілі числа, крім того друге з них не повинно дорівнювати 0.</p>
+<p>Спочатку напишемо "звичайним" для нас на даний момент способом:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter first integer: &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">n1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not integer number!&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter second integer: &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">n2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Can not divide by zero!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not integer number!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Зауважте, що цей код ще зовсім не досконалий: ми, наприклад, не враховуємо, що користувач може вводити від'ємні цілі числа, для цього нам треба обробляти можливий знак мінус. Спробуйте зробити це самостійно і оцінити код який отримаєте.</p>
+<p>А тепер давайте вирішимо цю ж саму задачу дещо іншим способом:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">n1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter first integer: &#39;</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not number!&#39;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">n2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter second integer: &#39;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not number!&#39;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Can not divide by zero!&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Тут ми не робимо ніяких перевірок даних, які ввів користувач. Ми просто перетворюємо символьний рядок на ціле число, і якщо нам це не вдалося, то робимо висновок, що введені користувачем дані не є цілим числом. Тепер ми можемо вводити і від'ємні цілі числа, і усе працюватиме як слід! </p>
+<p>І, наприклад, якщо ми захочемо, щоб користувач мав змогу вводити не тільки цілі числа, а й дійсні, ми просто будемо перетворювати введені користувачем дані до типа <code>float</code>. Уявіть (а краще спробуйте реалізувати) перевірку введених даних на відповідність дійсним числам без використання обробки винятків і оцініть складність і читабельність такого кода.</p>
+<p>Аналогічно відбувається і перевірка — чи є друге введене користувачем число нулем.</p>
+<p>Порівняйте другий варіант з першим по читабельності кода.</p>
+<h3 id="lbyl-vs-eafp"><code>LBYL</code> vs <code>EAFP</code></h3>
+<p>В Python часто надають перевагу другому стилю — EAFP. </p>
+<ul>
+<li>код простіше читається дякуючи відсутності зайвих перевірок;</li>
+<li>винятки в Python працюють достатньо швидко;</li>
+<li>позбавляємось ризику виникнення стану перегонів у багатопоточних середовищах, що деколи 
+трапляється при використанні підхода LBYL.</li>
+</ul>
+<p>Однак користуватись винятками і їх обробкою для керуванням ходу виконання програми треба обережно і вдумливо, якщо це дійсно є виправданим. Необережне і невміле використання цього методу може призвести до серйозних помилок в реалізації алгоритму які, зазвичай, ще й важко виявити. Не зловживайте <code>EAFP</code> і по можливості уникайте.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

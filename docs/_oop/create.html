@@ -1,0 +1,558 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>ООП в Python - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ООП в Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Створення класів і об'єктів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Клас як модуль
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Клас як створювач об'єктів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Зміна полів об'єкта
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="python">ООП в Python</h1>
+<p>Насамперед зауважимо, що в Python існує дві реалізації класів: так звані "класи старого типу" і "класи нового типу". Цей "розподіл" починається з Python версії 2.2. В класи нового типу було внесено відносно суттєві зміни задля покращення реалізації ООП. В Python починаючи з версії 3.0 підтримуються лише класи нового типу, класи старого типу не підтримуються як застарілі. В даному кусрі ми розглядаємо лише класи нового типу.</p>
+<h3 id="_1">Створення класів і об'єктів</h3>
+<p>В мові програмування Python класи створюють за допомогою команди class, після якої вказують им'я класа, потім ставиться двокрапка, далі з нового рядка і з відступом реалізується тіло класа:</p>
+<div class="codehilite"><pre><span></span><code>class NameOfClass:
+    pass
+</code></pre></div>
+
+<p>Якщо клас є дочірнім, то батьківські класи перераховуються у круглих дужках після імені класа:</p>
+<div class="codehilite"><pre><span></span><code>class MyClass(ParentClass):
+    pass
+</code></pre></div>
+
+<p>Об'єкт створюється шляхом виклику класа за його именем. При цьому після імені класа обов'язково ставляться дужки. Оскільки у програмному коді важливо не згубити посилання на щойно створений об'єкт, то зазвичай його пов'язують зі змінною. Отже створення об'єкта найчастіше виглядає так:</p>
+<div class="codehilite"><pre><span></span><code>class MyClass(ParentClass):
+    pass
+
+obj = MyClass()
+obj2 = MyClass()
+</code></pre></div>
+
+<h3 id="_2">Клас як модуль</h3>
+<p>В Python клас можна представити подібно модулю. Так само як у модулі у ньому можуть бути свої змінні зі значеннями і функції. Так само як у модулі у класа є власний простір імен, доступ до якого можливий через ім'я клас:</p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; class Adder:
+...     n = 5
+...     def add(v):
+...             return v + Adder.n
+...
+&gt;&gt;&gt; Adder.n
+5
+&gt;&gt;&gt; Adder.add(4)
+9
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>Однак у випадку класів використовується дещо інша термінологія. Імена, визначені в класі, називаються атрибутами цього класа. В вищенаведеному прикладі імена n і add — це атрибути клас Adder. Атрибутb-змінні часто називають полями і деколи властивостями. Атрибути-функції називаються методами. Кількість полів і методів у класі може бути довільною.</p>
+<h3 id="_3">Клас як створювач об'єктів</h3>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; a = Adder()
+&gt;&gt;&gt; a.n
+5
+&gt;&gt;&gt; a.add(4)
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: add() takes 1 positional argument but 2 were given
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>Інтерпретатор повідомляє нам, що <code>add()</code> приймає тільки один аргумент, а було передано два. Звідки ж взявся другий аргумент, і хто він такий, якщо у дужках було вказано тільки одне число 4?</p>
+<p>Клас створює об'єкти, які у певному сенсі є його спадкоємцями. Це означає, що якщо у об'єкта немає власного поля n, то інтерпретатор шукає його на один рівень вище, тобто у класі. Таким чином, якщо ми присвоюємо об'єкту поле с таким самим ім'ям як у класі, то воно перекриває, або перевизначає, поле клас:</p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; a.n = 10
+&gt;&gt;&gt; a.n
+10
+&gt;&gt;&gt; Adder.n
+5
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>Тут змінні <code>a.n</code> і <code>Adder.n</code> — це різні змінні. Перша знаходиться у просторі імен об'єкта, друга — у просторі класа <code>Adder</code>. Якщо б ми не додали поле <code>n</code> до об'єкта <code>a</code>, то інтерпретатор піднявся б вище по дереву наслідування і прийшов би у кла, де би і знайшов це поле.</p>
+<p>Щодо методів, то вони також наслідуються об'єктами клас. У даному випадку у об'єкта <code>a</code> немає свого власного метода <code>add</code>, отже, він шукається в клас <code>Adder</code>. Однак від клас <code>Adder</code> може бути породжено багато об'єктів. Методи ж найчастіше призначаються для обробки об'єктів. Таким чином, коли викликається метод, у нього треба передати конкретний об'єкт, який він буде обробляти.</p>
+<p>Зрозуміло, що екземпляр, що передається — це об'єкт, до якого застосовується метод. Вираз <code>a.add()</code> виконується інтерпретатором наступним чином:</p>
+<ol>
+<li>Шукаю атрибут <code>add()</code> у об'єкта <code>a</code>. Не знайшов.</li>
+<li>Тоді йду шукати у клас <code>Adder</code>, так як він створив об'єкт <code>a</code>.</li>
+<li>Тут знайшов метод. Передаю йому об'єкт, до якого цей метод треба застосувати, і аргумент, що вказано у дужках.</li>
+</ol>
+<p>Іншими словами, вираз</p>
+<div class="codehilite"><pre><span></span><code>a.add(4)
+</code></pre></div>
+
+<p>перетвоюється у вираз</p>
+<div class="codehilite"><pre><span></span><code>Adder.add(a, 4)
+</code></pre></div>
+
+<p>Таким чином, інтерпретатор спробував передати у метод add() класа Adder два фргумента — об'єкт a і число 4. Але ми запрограмували метод add() так, щоо він приймає тільки один параметр. В Python визначення методів не передбачають прийняття об'єкта як зрозуміле за замовчуванням. Об'єкт що приймається треба вказувати явно.</p>
+<p>За згодою у Python для посилання на об'єкт використовується ім'я <code>self</code>. Ось так повинен виглядати метод add(), якщо ми плануємо викликати його через об'єкти:</p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; class Adder:
+...     n = 5
+...     def add(self, v):
+...             return v + self.n
+...
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>Змінна self зв'язується з об'ктом, до якого було застосовано даний метод, і через цю змінну ми отримуємо доступ до атрибутів об'єкта. Коли цей же метод застосовується до іншого об'єкта, то self зв'яжеться вже з саме цим іншим об'єктом, і через цю змінну будуть вилучатись тільки його поля.</p>
+<p>Давайте протестємо оновлений метод:</p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; class Adder:
+...     n = 5
+...     def add(self, v):
+...             return v + self.n
+...
+&gt;&gt;&gt; a = Adder()
+&gt;&gt;&gt; b = Adder()
+&gt;&gt;&gt; a.n = 10
+&gt;&gt;&gt; a.add(3)
+13
+&gt;&gt;&gt; b.add(4)
+9
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>Тут від класа Adder створюється два об'єкта – a та b. Для об'єкта a заводиться власне поле n. Об'єкт b, не має такого поля, отже успадковує n від клас Adder. Переконаємось у цьому:</p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; a.n is Adder.n
+False
+&gt;&gt;&gt; b.n is Adder.n
+True
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>У методі add() вираз self.n – це звернення до поля n, переданого об'єкта, і не важливо, на якому рівні наслідування його буде знайдено.</p>
+<h3 id="_4">Зміна полів об'єкта</h3>
+<p>В Python об'єкту можна не тільки перевизначати поля і методи, успадковані від класа, але можна додавати нові, яких немає у класі:</p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; a.test = &#39;Hi&#39;
+&gt;&gt;&gt; a.test
+&#39;Hi&#39;
+&gt;&gt;&gt; Adder.test
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+AttributeError: type object &#39;Adder&#39; has no attribute &#39;test&#39;
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>Однак у програмуванні так не прийнято, тому що тоді об'єкти одного класа будуть відрізнятись між собою по набору атрибутів. Це затруднить автоматизацію їх обробки, внесе у програму хаос.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

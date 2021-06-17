@@ -1,0 +1,660 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Рекурсія - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Рекурсія
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Стек викликів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Рекурсивні виклики функцій
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Обчислення факторіалу
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Числа Фібоначчі
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    «Ханойські вежі»
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Рекурсія</h1>
+<p><em>Замість епіграфу: щоб зрозуміти рекурсію треба спочатку зрозуміти рекурсію.</em></p>
+<blockquote>
+<p><strong><em>Рекурсія</em></strong> — випадок, коли функція викликає сама себе. </p>
+</blockquote>
+<h3 id="_2">Стек викликів</h3>
+<blockquote>
+<p><strong><em>стек викликів (call stack)</em></strong> — це структура даних у вигляді стека, яка зберігає інформацію про активні підпрограми комп'ютерної програми. Такий тип стека також відомий під назвами стек виконання, стек управління або рантайм стек, часто скорочується до просто "стек". Хоча підтримка функціонування стека викликів дуже важлива для будь-якої програми, деталі роботи зі стеком зазвичай приховані під час роботи з високорівневими мовами програмування. </p>
+</blockquote>
+<p>Стек викликів використовується для декількох пов'язаних цілей, але головне його призначення — відслідковувати точку повернення з кожної активної підпрограми, тобто адресу інструкції куди має бути повернуте виконання після завершення підпрограми. (Активними підпрограмами вважаються такі, що були виликані, але ще не завершили виконання поверненням.) </p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">c</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">param</span>
+
+<span class="n">a</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+<p>У зв'язку з тим, що стек викликів влаштований як стек, підпрограма, що викликає заштовхує адресу повернення на верхівку стека, а підпрограма яку викликають, після завершення своєї роботи, виштовхує адресу повернення зі стека і повертає керування інструкції за цією адресою. Якщо підпрограма, яку викликали викликає іншу підпрограму або рекурсивно саму себе, тоді вона заштовхує наступну адресу повернення на верхівку стека, і т.д. Якщо розмір стека поглинає увесь виділений під стек простір, тоді виникає помилка <strong><em>переповнення стека</em></strong> (stack overflow), яка зазвичай призводить до краху програми. Додавання запису про підпрограму іноді називається <strong><em>намотування</em></strong> (winding); відповідно, видалення запису — <strong><em>розмотування</em></strong> (unwinding). </p>
+<p>Стек викликів може мати додаткові призначення, залежно від мови програмуання і архітектури комп'ютера. Серед них можуть бути: </p>
+<ul>
+<li>Локальне сховище даних – Підпрограма часто потребує пам'ять для збереження значень локальних змінних, змінних значення яких відомі тільки під час виконання підпрограми і не зберігаються по виході з неї. Часто буває зручно виділяти для таких змінних місце просто рухаючи верхівку стека достатньо, щоб забезпечити необхідний простір. Це дуже швидке рішення у порівнянні з розташуванням в купі. Зауважимо, що кожна окрема підпрограма має свій окремий простір у стеку для локальних змінних.</li>
+<li>Передача параметрів – Підпрогами часто вимагають від коду, що їх викликає параметри, і розташування значень цих параметрів у стеку не є незвичним рішенням. Якщо параметрів всього декілька і їхній розмір малий, тоді для передачі їх в підпрограму можна використати регістри процесора, але якщо розмір парамерів не дозволяє зужиткувати цей спосіб передачі, буде необхідний простір в пам'яті. Стек добре працює для передачі таких параметрів, особливо через те, що з кожним викликом наступної підпрограми значення параметрів змінюються, щоразу для них виділяється окреме місце.</li>
+<li>Стек обчислення – Операнди арифметичних або логічних операцій зазвичай розташовують в регістрах і тоді провадять над ними певні дій. Однак, в деяких ситуаціях операнди можуть накопичуватися до довільної глибини, тоді постає питання використання чогось відмінного від регістрів. Стек подібних операндів, скоріше схожий на RPN калькулятор, називається стеком обчислення, і може розташовуватися у стеку викликів.</li>
+<li>Вказівник на поточний об'єкт - Деякі об’єктозорієнтовані мови програмування (наприклад, C++),при виклику функції зберігають вказівник this разом з аргументами функції у стеку. Вказівник this вказує на об'єкт пов'язаний з методом, що викликається.</li>
+</ul>
+<p>та інші.</p>
+<h3 id="_3">Рекурсивні виклики функцій</h3>
+<p>Рекурсі буває:</p>
+<ul>
+<li><strong>проста</strong>, коли функція викликає сама себе безпосередньо</li>
+<li><strong>непряма</strong> або складна, коли функція викликає себе через іншу функцію, наприклад функція A викликає функцію B, а функція B викликає функцію A.</li>
+</ul>
+<p>Кількість вкладених викликів функції називають <em>глибиною рекурсії</em>.</p>
+<p>Реалізація рекурсивних викликів функцій у мовах програмування, за правило, опирається на механізм стека викликів — адреса повернення і локальлні
+змінні функції, записуються у стек, завдяки чому кожен наступний
+рекурсивний виклик цієї функції використовує свій набір локальлних змінних  і
+за рахунок цього працює корректно. Оборотною стороною цього досить простого по
+структурі механізму є те, що на кожен рекурсивний виклик потрібно
+деяка кількість оперативної пам'яті комп'ютера, і при надвеликій
+глибині рекурсії може статися переповнення стека викликів.</p>
+<p>Рекурсивна програма дозволяє описувати обчислення, які повторюються, або ж навіть потенційно нескінченні обчислення, без явних повторів частин програми і
+використання циклів.</p>
+<p>Щоб рекурсія не стала "вічною" функція повинна мати <em>умову виходу</em>. Тобто умову, при виконанні якої функція повертає якийсь результат.</p>
+<p>Розглянемо використання рекурсії на практиці.</p>
+<h2 id="_4">Обчислення факторіалу</h2>
+<p>Факторіал натурального числа <code>n</code>  — добуток натуральних чисел від одиниці до <code>n</code>  включно, позначається  <code>n!</code>.</p>
+<p>Функцію обчислення факторіалу можна записати наступним способом:</p>
+<blockquote>
+<p>F(1) = 1<br />
+F(n) = n*F(n-1), n&gt;1</p>
+</blockquote>
+<p>Запишемо вищенаведене мовою Python:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># умова виходу</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="_5">Числа Фібоначчі</h2>
+<p>Числа Фібоначчі — послідовність натуральних чисел, перші два члени якої — одиниці, а кожний наступний — сума значень двох попередніх чисел.</p>
+<div class="codehilite"><pre><span></span><code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, …
+</code></pre></div>
+
+<p>Формально послідовність можна відобразити так:</p>
+<blockquote>
+<p>F(1) = 1<br />
+F(2) = 1<br />
+F(n) = F(n-1) + F(n-2), n&gt;=2</p>
+</blockquote>
+<p>Нам залишається тільки записати формальне відображення мовою Python:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Зауважимо, що такий алгоритм знаходження послідовності Фібоначчі не є ефективним, оскільки числа обчислюються декілька раз. Наприклад, якщо ми хочемо знайти число Фібоначчі з номером 5, то виклик функції <code>fib()</code> буде таким:</p>
+<div class="codehilite"><pre><span></span><code>fib(5)
+    fib(4)
+        fib(3)
+            fib(2)
+            fib(1)
+        fib(2)
+    fib(3)
+        fib(2)
+        fib(1)
+</code></pre></div>
+
+<p>Нескладно підрахувати, що функція <code>fib()</code>:</p>
+<ul>
+<li>з аргументом 2 викликалась 3 рази</li>
+<li>з аргументом 3 викликалась 2 рази</li>
+<li>з аргументом 1 викликалась 2 рази</li>
+<li>з аргументом 4 викликалась 1 раз</li>
+<li>з аргументом 5 викликалась 1 раз</li>
+</ul>
+<p>Тобто усього було 9 викликів!</p>
+<p>А чи можна зробити так, щоб уникнути повторних обчислень? Можна! Якщо ми будемо запам'ятовувати значення, які функція порахувала для певних аргументів, то ми можемо уникнути повторних рекурсивних викликів. Прийом називається "мемоізація".</p>
+<blockquote>
+<p><strong><em>Мемоизация</em></strong> (memoization, запам'ятовування) — збережежння результатів виконання функцій для запобігання повторних обчислень. Це один з способів оптимізації, який застосовується для збільшення швидкості виконання комп'ютерних програм. </p>
+</blockquote>
+<p>Перед викликом функції перевіряється, чи викликалась функція раніше: </p>
+<ul>
+<li>якщо не викликалась, функція викликається і результат її виконання зберігається;</li>
+<li>якщо викликалась, використовується збережений результат.</li>
+</ul>
+<p>Найзручніше реалізувати мемоізацію за допомогою декоратора. Напишемо декоратор, який мемоізує конкретно нашу функцію, яка приймає лише один аргумент:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">memoize</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span><span class="p">:</span>
+            <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@memoize</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">1</span>
+</code></pre></div>
+
+<p>Тепер обчислення виконуються набагато швидше! Для прикладу знаходження 5-го числа Фібоначчі послідовність виклику функції <code>fib()</code> буде таким:</p>
+<div class="codehilite"><pre><span></span><code>fib(5)
+    fib(4)
+        fib(3)
+            fib(2)
+            fib(1)
+</code></pre></div>
+
+<p>Бібліотека Python вже має декоратор для мемоізації функцій, він знаходиться у модулі <code>functools</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">1</span>
+</code></pre></div>
+
+<p>Взагалі питання про доцільність використання рекурсивних функцій у програмуванні неоднозначне: з одного боку, рекурсивна форма може бути структурно простіша і наочніше, особливо коли сам алгоритм, який треба реалізувати, по своїй суті рекурсивний. З іншого боку зазвичай рекомендується уникати рекурсивних програм, котрі призводять (або у деяких умовах можуть призводити) до занадто великої глибини рекурсії.</p>
+<h2 id="_6">«Ханойські вежі»</h2>
+<p>Однією з класичних задач, де рекурсія проявляється у всій своїй красі, є задача про Ханойські вежі.</p>
+<p>Одна із прадавніх легенд говорить: «У непрохідних джунглях недалеко від міста Ханоя є храм бога Брами. У ньому перебуває бронзова плита із трьома алмазними стрижнями. На один зі стрижнів бог при створенні миру нанизав 64 диски різних діаметрів із чистого золота. Найбільший диск лежить на бронзовій плиті, а інші утворюють піраміду, що зужується догори. Це вежа Брами. Працюючи день і ніч, жерці храму переносять диски з одного стрижня на інший, дотримуючись законів Брами:<br />
+1) диски можна переміщати з одного стрижня на іншій тільки по одному;<br />
+2) не можна класти більший диск на менший;<br />
+3) не можна відкладати диски убік, при переносі дисків з одного стрижня на інший можна використовувати проміжний третій стрижень, на якому диски повинні перебувати теж тільки у вигляді піраміди, що зужується догори.<br />
+Коли всі 64 диска будуть перенесені з одного стрижня на інший, настане кінець світу».</p>
+<p>Ця прадавня легенда покладена в основу завдання про Ханойську вежу: перемістити n дисків зі стрижня 1 на стрижень 3, використовуючи проміжний стрижень 2 дотримуючись законів Брами. </p>
+<p>Давайте спробуемо знайти алгоритм вирішення цієї задачі.</p>
+<p>Якщо вежа складається з одного диска, то він переноситься за один хід: 1-3. </p>
+<p>Вежа із двох дисків переноситься за три ходи: 1—2, 1-3, 2-3. </p>
+<p>Для переносу вежі із трьох дисків буде потрібно вже сім ходів: 1-3, 1-2, 3-2, 1-3, 2-1, 2-3, 1-3. Зверніть увагу, за перші три ходи ми переносимо вежу із двох верхніх дисків на другий проміжний стрижень. Потім переносимо найбільший диск із першого стрижня на третій і ще раз проробляємо добре знайому нам операцію: переносимо вежу із двох дисків на третій диск. </p>
+<p>Отже, щоб перенести вежу із чотирьох дисків з першого стрижня на третій, необхідно діяти за планом: </p>
+<ol>
+<li>перенести вежу із трьох верхніх дисків з першого стрижня на другий (7 ходів);</li>
+<li>найбільший диск перенести з першого стрижня на третій (1 хід); </li>
+<li>перенести вежу із трьох дисків із другого стрижня на третій (7 ходів).</li>
+</ol>
+<p>Усього на перенос буде потрібно 15 ходів. </p>
+<p>Міркуючи аналогічним образом, порахуємо число ходів, необхідних для переносу вежі з п'яти дисків: 15 + 1 + 15 = 2 * 15 + 1 = 31. </p>
+<p>Для вежі з 6 дисків одержуємо: 2 * 31 + 1 = 63 і т.д. </p>
+<p>Розглянутий нами алгоритм рішення завдання «Ханойська вежа» має одну дивну властивість: у ході його виконання для вежі, що полягає з <code>n</code> дисків, ми використовуємо алгоритм для трохи більш простої ситуації — переносу вежі, що полягає з <code>n-1</code> дисків. У свою чергу, в алгоритмі для вежі з 'n-1' дисків використовується цей же алгоритм для <code>n-2</code> дисків і т.д. </p>
+<p>Давайте сформулюємо задачу: </p>
+<ul>
+<li>є три стрижні умовно позначені <code>1</code>, <code>2</code>, <code>3</code>.</li>
+<li>на стрижні <code>1</code> знаходиться піраміда з <code>n</code> дисків</li>
+<li>треба перекласти піраміду зі стрижня <code>1</code> на стрижень <code>3</code> користуючись стрижнем <code>2</code> як допоміжним</li>
+</ul>
+<p>Алгоритм вирішення буде таким:</p>
+<ul>
+<li>якщо на стрижні <code>1</code> лише один диск, то перекладаємо його на стрижень <code>3</code>, інакше:</li>
+<li>перекласти <code>n-1</code> дисків зі стрижня <code>1</code> на допоміжний стрижень <code>2</code></li>
+<li>перекласти один диск зі стрижня <code>1</code> на стрижень <code>3</code></li>
+<li>перекласти піраміду з <code>n-1</code> дисків зі стрижня <code>2</code> на стрижень <code>3</code> користуючись стрижнем <code>1</code> як допоміжним  </li>
+</ul>
+<p>``</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">s3</span><span class="p">)</span> <span class="c1"># просто перекласти 1 диск</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># перекласти `n-1` дисків зі стрижня `1` на стрижень `2`</span>
+        <span class="c1"># користуючись стрижнем `3` як допоміжним</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s3</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+        <span class="c1"># перекласти 1 диск</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">s3</span><span class="p">)</span>
+        <span class="c1"># перекласти `n-1` дисків зі стрижня `2` на стрижень `3`</span>
+        <span class="c1"># користуючись стрижнем `1` як допоміжним</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s3</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Цей код можна зробити трохи "компактнішим":</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s3</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">s3</span><span class="p">)</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s3</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Використовуємо:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hanoi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hanoi</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hanoi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

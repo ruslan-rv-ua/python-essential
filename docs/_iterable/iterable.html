@@ -1,0 +1,569 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Iterable - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Iterable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Ітерабельні об'єкти
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Ітератор
+  </a>
+  
+    <nav class="md-nav" aria-label="Ітератор">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Отримання значень ітерабельного об'єктів
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    Як працює for
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Iterable</h1>
+                
+                <p>Пригадаємо цикл <code>for ... in</code>. Давайте за допомогою цього цикла переберемо усі елементи списка:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="mi">1</span>
+<span class="mi">3</span>
+<span class="mi">5</span>
+<span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Зі списком усе зрозуміло: при черговому проході, або ж іншими словами — при кожній ітерації, ми отримуємо один черговий елемент списка. Доречі, список є контейнером.</p>
+<blockquote>
+<p><strong><em>Контейнер</em></strong> — це тип даних, який інкапсулює в себе значення інших типів.</p>
+</blockquote>
+<p>Тепер спробуємо так:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Результат для нас вже очікуваний, але що ж то за <code>range</code> такий?</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">range</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Хм... це якийсь об'єкт типу <code>range</code>! А ще, як нам вже відомо, за допомогою цикла <code>for</code> можна ітеруватись по текстових файлах, символьним рядкам...
+І при цьому та сама конструкція Python виконує над об'єктами різних типів дуже схожі дії, а саме "перебирає" по одному значенню вміст цього об'єкта.</p>
+<p>З цього виникає декілька питань?</p>
+<ul>
+<li>що спільного є у об'єктів які можна ітерувати за допомогою цикла <code>for</code>?</li>
+<li>чи можемо ми якось це використати, наприклад створити свій тип даних по якому теж можна буде ітеруватись?</li>
+<li>чи можна використати ці властивості ще якимось чином?</li>
+</ul>
+<h3 id="_1">Ітерабельні об'єкти</h3>
+<blockquote>
+<p><strong><em>Ітерабельний об'єкт</em></strong> (в оригіналій термінології — іменник <em>iterable</em>) — це об'єкт, 
+який може повертати значення по одному за раз. </p>
+</blockquote>
+<p>Приклади: усі контейнери і послідовності (списки, символьні рядки і т.д.), файли.</p>
+<p>Ітерабельні об'єкти можуть бути використані всередині цикла <code>for</code>, а також у багатьох  інших випадках, коли очікується послідовність, наприклад як аргумент для функції \
+<code>sum()</code>.</p>
+<h3 id="_2">Ітератор</h3>
+<p>Щоб об'єкт став ітерабельним, з нього треба побудувати ще один спеціальний об'єкт, який називається <strong><em>ітератор</em></strong>. Для певного ітерабельного об'єкта за допомогою ітератора ми будемо отримувати значення з цього ітерабельного об'єкта. Ітератор як би створює потік даних, які містяться у ітерабельному об'єкті.</p>
+<p>Ітератор є "одноразовим": якщо ми знову захочемо "пробігтись" по ітерабельному об'єкту, то нам треба буде отримати новий ітератор для цього ітерабельлного об'єкта. </p>
+<p>Отримати ітератор для певного об'єкта можна за допомогою функції <code>iter()</code>. Ця функція робить наступне:</p>
+<ol>
+<li>Перевіряє, чи містить переданий ії об'єкт магічний метод <code>__iter__()</code>. Якщо так, то вона викликає цей магічний метод, а він у свою чергу повинен повернути об`єкт-ітератор.</li>
+<li>Якщо ж такого магічного метода немає, тоді функція <code>iter()</code> очікує що переданий їй об'єкт має магічний метод <code>__getitem__()</code>. У такому випадку Python побудує і створить ітератор самостійно.</li>
+</ol>
+<p>Отже, щоб об'єкт був ітерабельним, він повинен коректно реалізовувати один з двох або ж обидва магічні методи: <code>__iter__()</code> та <code>__getitem__()</code>. При таких умовах Python може побудувати ітератор для даного об'єкта. І, відповідно, такий об'єкт ми можемо використовувати у циклі <code>for</code>, передавати функціям які очікують послідовності, тощо. </p>
+<p>Давайте спробуємо отримати ітератори для деяких сутностей Python:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
+<span class="o">&lt;</span><span class="n">str_iterator</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000020BDD63F198</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
+<span class="o">&lt;</span><span class="n">list_iterator</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000020BDD63F1D0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">({})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
+<span class="o">&lt;</span><span class="n">dict_keyiterator</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000020BDD32A3B8</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">({}</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
+<span class="o">&lt;</span><span class="n">dict_valueiterator</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000020BDD306638</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">({}</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span>
+<span class="o">&lt;</span><span class="n">dict_itemiterator</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000020BDD32A3B8</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h4 id="_3">Отримання значень ітерабельного об'єктів</h4>
+<p>Щоб отримати від ітератора чергове значення ітерабельного об'єкта, починаючи з першого, використовують функцію <code>next()</code>. Ця функція у свою чергу викликає магічний метод ітератора <code>__next__()</code></p>
+<p>При кожному виклику <code>__next__()</code> повертає чергове значення з ітерабельного об'єкта, аж доки ці значення не закінчаться. Коли ж усі значення вичерпано, при черговому і кожному наступному виклику <code>__next__()</code> має викинути один з винятків — <code>StopIteration</code> або <code>IndexError</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="s1">&#39;bye&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="s1">&#39;b&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="s1">&#39;y&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="s1">&#39;e&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">StopIteration</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Крім того кожен ітератор має реалізовувати магічний метод <code>__iter__()</code> (так само, як і сам ітерабельний об'єкт). Цей метод має повертати сам ітератор, зазвичай він виглядає так:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div>
+
+<p>Можна зробити висновок, що ітератор і сам є ітерабельним об'єктом і може бути використаним всюди, де очікуються ітерабельні об'єкти. </p>
+<p>Отже циклом <code>for</code> ми можемо "пробігтись" як по самому ітерабельному об'єкту, так і по його ітератору. Але треба пам'ятати, що по самому ітерабельному об'єкту ми можемо ітеруватись багато раз, а по його ітератору лише один.</p>
+<h4 id="for">Як працює <code>for</code></h4>
+<p>По усім вищенаведеним правилам працює і вже добре відомий нам цикл <code>for</code>:</p>
+<ul>
+<li>створює для ітерабельного об'єкта ітератор;</li>
+<li>потім за допомогою ітератора отримує чергове значення для ітерабельного об'єкта до тих пір, доки не виникне виняток <code>StopIteration</code>. </li>
+</ul>
+<p>Ми навіть можемо самостійно реалізувати такий цикл:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">my_for</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">callback_func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="o">...</span>             <span class="k">try</span><span class="p">:</span>
+<span class="o">...</span>                     <span class="n">value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
+<span class="o">...</span>                     <span class="n">callback_func</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="o">...</span>             <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+<span class="o">...</span>                     <span class="k">break</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">loop_body</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">my_for</span><span class="p">(</span><span class="s1">&#39;bye&#39;</span><span class="p">,</span> <span class="n">loop_body</span><span class="p">)</span>
+<span class="n">b</span>
+<span class="n">y</span>
+<span class="n">e</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Просто, і ніякої магії! Така сама логіка реалізована для цикла <code>for</code>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

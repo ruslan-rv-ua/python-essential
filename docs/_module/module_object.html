@@ -1,0 +1,543 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Module object - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module object
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Модуль як скрипт
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Оформлення коду
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Module object</h1>
+                
+                <!---
+Толково:
+https://devpractice.ru/python-modules-and-packages/
+-->
+
+<p>Імпортувати модуль можна за допомогою оператора import. Після ключового слова <code>import</code> вказують назву імпортованого модуля або розділені комою імена імпортованих модулів:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">requests</span>
+</code></pre></div>
+
+<p>Але зауважимо, що хорошою практикою в Python є імпортування модулів по одному у кожному рядку.</p>
+<p>Пам'ятаєте, що в Python усе є об'єкт? При імпортуванні модуля Python створює відповідний об'єкт а також ім'я, яке пов'язує з цим модулем. Ім'я об'єкта модуля буде співпадати з назвою самого модуля, але це можна змінити. Достатньо при імпортуванні модуля вказати інше ім'я після ключового слова <code>as</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">mathplotlib</span> <span class="k">as</span> <span class="nn">mp</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Модуль завантажується лише один раз. Усі наступні спроби імпортування просто повертають посилання на вже імпортований модуль. </p>
+<p>При імпорті модуля виконується увесь його вміст, рядок за рядком! 
+Тобто, наприклад, якщо у модулі присутні 
+виклики функції <code>print()</code>, 
+то при імпорті цього модуля вони спрацюють. </p>
+<p>Кожен модуль задає новий простір імен, атрибути якого відповідають іменам, визначеним у файлі:</p>
+<p>Можна імпортувати тільки певні імена з модуля, після чого вони стануть доступними як глобальні імена поточного модуля.  Зробити це можна за допомогою оператора <code>from...import</code>. 
+Після ключового слова <code>from</code> вказують ім'я модуля, з якого ведеться імпорт, потім після 
+ключового слова <code>import</code> через кому перераховують імена того, що ми хочемо імпортувати. 
+Також після кожного імені можна вказати ключове слово <code>as</code> і альтернативне ім'я:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pi</span>
+<span class="mf">3.141592653589793</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Синтаксис оператора довзволяє перерахувати декілька імен через кому і, можливо, переіменувати деякі з них:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">usefull</span> <span class="kn">import</span> <span class="n">long_function_name</span> <span class="k">as</span> <span class="n">lfn</span><span class="p">,</span> <span class="n">func</span>
+</code></pre></div>
+
+<p>Оператор <code>from...import</code> можна концептуально представити наступним способом:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">usefull</span>
+<span class="n">lfn</span> <span class="o">=</span> <span class="n">usefull</span><span class="o">.</span><span class="n">long_function_name</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">usefull</span><span class="o">.</span><span class="n">func</span>
+<span class="k">del</span> <span class="n">usefull</span>
+</code></pre></div>
+
+<p>Якщо після <code>from...import</code> вказати зірочку, 
+то з модуля буде імпортовано усі сутності, 
+імена яких не починається з символа підкреслення: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">json</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loads</span><span class="p">(</span><span class="n">dumps</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">))</span>
+<span class="s1">&#39;123&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Але зауважте, що усе імпортоване стане глобальним для поточного модуля. тому такий спосіб імпорта не завжди є хорошою практикою. </p>
+<p>При створенні модуля ми можемо обмежити імпорт з зірочкою<br />
+присвоївши спеціальній змінній модуля <code>__all__</code> список з ідентифікаторами модуля. 
+Наприклад, якщо у модулі <code>usefull</code> ми визначимо:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">__all__</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+
+<p>то при імпорті усього вмісту цього модуля:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">usefull</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>
+
+<p>не буде імпортовано нічого.</p>
+<p>Слід зауважити, щоо <code>import</code> і <code>from</code> — це виконувані вирази, і виконуються вони у процесі виконання скрипта, а не на етапі компіляції. Це дозволяє гнучко підходити до процесі імпортування: використовувати умовні вирази і подібне.</p>
+<p>Доступ до певної сутності модуля відбувається вказуючи її ім'я в якості атрибута модуля:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">attr</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">attr</span>
+<span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">math</span><span class="o">.</span><span class="n">attr</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>В модулі завжди присутні спеціальні атрибути, розглянемо деякі з них.</p>
+<p><strong><em><code>__file__</code></em></strong> — містить шлях до файла модуля:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">json</span><span class="o">.</span><span class="vm">__file__</span>
+<span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Python36</span><span class="se">\\</span><span class="s1">lib</span><span class="se">\\</span><span class="s1">json</span><span class="se">\\</span><span class="s1">__init__.py&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p><strong><em><code>__name__</code></em></strong> — містить ім'я модуля:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">json</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="s1">&#39;json&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p><strong><em><code>__cached__</code></em></strong> — містить шлях до файла зкомпільованого байт-кода:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">json</span><span class="o">.</span><span class="n">__cached__</span>
+<span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Python36</span><span class="se">\\</span><span class="s1">lib</span><span class="se">\\</span><span class="s1">json</span><span class="se">\\</span><span class="s1">__pycache__</span><span class="se">\\</span><span class="s1">__init__.cpython-36.pyc&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_1">Модуль як скрипт</h3>
+<p>Модуль можна виконати передавши його інтерпретатору в якості аргумента і вказавши ключи <code>-m</code>:</p>
+<div class="codehilite"><pre><span></span><code>c:\&gt;python -m http.server
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+</code></pre></div>
+
+<p>У цьому випадку змінна <code>__name__</code> всередині модуля буде мати спеціальне значення <code>__main__</code>. 
+Це дозволяє визначити блок коду, який буде виконано лише у тому випадку, коли ваш модуль було запущено як скрипт:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># модуль usefull</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">f</span><span class="p">()</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Running test&#39;</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="_2">Оформлення коду</h3>
+<p>Згідно PEP8 імпорт модулів оформляється наступним чином:</p>
+<ol>
+<li>Усі імпорти — на початку файла.</li>
+<li>Спочатку вказуємо оператори <code>import</code>, імена модулів відсортовано у лексиграфічному порядку.</li>
+<li>Потім вказуємо оператори <code>from...import</code>, імена відсортовано у лексиграфічному порядку.</li>
+<li>Два порожніх рядки текста вкінці.</li>
+<li>Уникаємо імпорту "з зірочкою".</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

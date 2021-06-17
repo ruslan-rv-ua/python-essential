@@ -1,0 +1,607 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Context manager - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Context manager
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Контекст-менеджер як клас
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contextlib" class="md-nav__link">
+    contextlib
+  </a>
+  
+    <nav class="md-nav" aria-label="contextlib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contextlibcontextmanagerfunc" class="md-nav__link">
+    contextlib.contextmanager(func)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contextlibnestedmgr1-mgr2-mgrn" class="md-nav__link">
+    contextlib.nested(mgr1, mgr2, ..., mgrN)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contextlibclosingobject" class="md-nav__link">
+    contextlib.closing(object)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Context manager</h1>
+                
+                <!---
+Менеджери контекста дозволяють виділяти та звільняти ресурси суто по необхідності. 
+Самим популярним прикладом менеджера контекста — використання оператора `with`.
+-->
+
+<blockquote>
+<p><strong><em>Менеджер контекста</em></strong> (context manager) – об'єкт, який створює контекст виконання всередині оператора <code>with</code> і реалізує два методи: <code>_enter_</code> та <code>_exit_</code>. </p>
+</blockquote>
+<p>Менеджери контекста використовуються для збереження і відновлення глобального стану, блокування і розблокування ресурсів, автоматичного закрыття файлів та інше. </p>
+<p>Припустимо, у вас є дві пов'язані операції, які ви хочете виконати у парі, помістивши між ними блок кода. Менеджери контекста дозволяють зробити саме це. Наприклад:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;some_file&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_file</span><span class="p">:</span>
+    <span class="n">opened_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Цей код відкриває файл, записує в нього дані і закриває після цього файл. При виникненні помилки при запису даних в файл менеджер контекста спробує його закрити. Цей код є еквівалентним наступному:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;some_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Порівнявши з попереднім блоком кода можна зауважити заміну шаблоного кода на використання <code>with</code>. </p>
+<!---
+Основна перевага використання `with` — це гарантія закрыття файла незалежно від того, 
+як буде завершено вкладений код.
+--->
+
+<p>Синтаксис конструкції <code>with ... as</code> виглядає так: </p>
+<div class="codehilite"><pre><span></span><code>with &lt;вираз&gt; as &lt;змінна&gt;:
+    &lt;блок коду&gt;
+</code></pre></div>
+
+<p>Частина <code>as ...</code> є необов'язковою. </p>
+<p>Якщо в конструкції <code>with ... as</code> було декілька виразів, то це еквівалентно декільком вкладеним конструкціям. Наприклад: </p>
+<div class="codehilite"><pre><span></span><code>with A() as a, B() as b:
+    # some code
+</code></pre></div>
+
+<p>еквівалентнло наступному:</p>
+<div class="codehilite"><pre><span></span><code>with A() as a:
+    with B() as b:
+        # some code
+</code></pre></div>
+
+<p>Розглянемо як можна створити власний менеджер контекста. </p>
+<h3 id="-">Контекст-менеджер як клас</h3>
+<p>Щоб об'єкт став менеджером контекста він має реалізовувати два спеціальних метода:</p>
+<ul>
+<li><code>__enter__()</code></li>
+<li><code>__exit__()</code></li>
+</ul>
+<p>Нагадаємо собі ще раз конструкцію <code>with</code>:</p>
+<div class="codehilite"><pre><span></span><code>with &lt;вираз&gt; as &lt;змінна&gt;:
+    &lt;блок коду&gt;
+</code></pre></div>
+
+<p>При виконанні даного блока відбувається наступне: </p>
+<ol>
+<li>Виконується вираз в конструкції <code>with ... as</code>.</li>
+<li>Завантажується спеціальний метод <code>__exit__</code> для подальшого використання. </li>
+<li>Виконується спеціальний метод <code>__enter__</code>. Якщо конструкція <code>with</code> включає в себе <code>as</code>, то значення,  яке повертається методом <code>__enter__</code> пов'язується зі вказаною змінною.</li>
+<li>Виконується блок коду.</li>
+<li>Викликається метод <code>__exit__</code>, незалежно чи виконався блок коду чи під час його виконання сталась виняткова ситуація. </li>
+</ol>
+<p>Метод <code>__enter__()</code> має повертати ресурс, над яким виконуються дії в рамках даного контекста. </p>
+<p>У методі <code>__exit__()</code> можна обробити виняткові ситуації, які виникли під час виконання блока коду. Йому передаються три параметри: </p>
+<ul>
+<li>exception_class — клас винятка</li>
+<li>exception_value — екземпляр винятка</li>
+<li>traceback — інформація про виняток</li>
+</ul>
+<p>Якщо під час виконання блока жодного винятка не було піднято, усім цим параметрам передається значення <code>None</code>. </p>
+<p>Якщо метод <code>__exit__()</code> повертає <code>True</code> — вважається, що винятки оброблено у цьому методі і нагору вони не піднімаються. </p>
+<p>Давайте спробуємо створити власний контекст-менеджер. </p>
+<p>Припустимо нам треба виконати певні дії помінявши перед цим поточну робочу директорію нашої програми у файловій системі, а потім встановити поточну директорію такою, як була раніше. Нам знадобляться дві функції з модуля <code>os</code>:</p>
+<ul>
+<li><code>os.chdir()</code> — встановлює поточну директорію</li>
+<li><code>os.getcwd()</code> — повертає поточну директорію</li>
+</ul>
+<p>Наш менеджер контекста може виглядати так:</p>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+<p>from os import chdir, getcwd</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">chdir</span><span class="p">,</span> <span class="n">getcwd</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">cd</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">old_path</span> <span class="o">=</span> <span class="n">getcwd</span><span class="p">()</span>
+<span class="o">...</span>             <span class="n">chdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="o">...</span>             <span class="n">chdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">old_path</span><span class="p">)</span>
+<span class="o">...</span>             <span class="k">return</span> <span class="kc">False</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Спробуємо скористатись щойно створеним менеджером контекста (у вас результат буде іншим):</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="n">c</span><span class="p">:</span>\\<span class="n">dev</span>\<span class="k">with</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">cd</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="o">...</span>
+<span class="n">c</span><span class="p">:</span>\
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="n">c</span><span class="p">:</span>\\<span class="n">dev</span>\<span class="k">with</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="contextlib"><code>contextlib</code></h3>
+<p>Вбудований модуль <code>contextlib</code> надає декоратори та інші корисні функції для створення менеджерів контекста. Далі розглянемо лише деякі з них, з рештою ознайомтесь самостійно. </p>
+<h4 id="contextlibcontextmanagerfunc"><code>contextlib.contextmanager(func)</code></h4>
+<div class="codehilite"><pre><span></span><code>`func` — функція-генероатор
+</code></pre></div>
+
+<p>Декоратор, який створює менеджер контекста з функції-генератора. Використання наступне:</p>
+<div class="codehilite"><pre><span></span><code><span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">statements</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">value</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">error</span> <span class="n">handling</span> <span class="p">(</span><span class="k">if</span> <span class="nb">any</span><span class="p">)</span>
+    <span class="n">инструкции</span>
+</code></pre></div>
+
+<p>Коли інтерпретатор зустрічає інструкцію <code>with foo(args) as value</code>, він викликає функцію-генератор з вказаними аргументами. Ця функція виконується до першої інструкції <code>yield</code>. Значення, яке повертає інструкциія <code>yield</code>, пов'язується зі змінною <code>value</code>. Після цього починається виконання тіла інструкції <code>with</code>. По закінченню виконання тіла інструкції <code>with</code> відновлюється робота функції-генератора. Якщо всередині тіла інструкції <code>with</code> виникає виняткова ситуація, виняток буде передано функції-генератору, де його можна обробити. Якщо помилка не може бути оброблена функциєю-генератором, вона повинна повторно підняти виняток.</p>
+<h4 id="contextlibnestedmgr1-mgr2-mgrn"><code>contextlib.nested(mgr1, mgr2, ..., mgrN)</code></h4>
+<p>Функція, яка викликає декілька менеджерів контекста (<code>mgr1, mgr2 і так далі) у вигляді єдиної операції. Повертає кортеж, який містить різні значення які повертаються инструкціями</code>with`. 
+Інструкція:</p>
+<div class="codehilite"><pre><span></span><code>`with nested(m1,m2) as (x,y)`
+</code></pre></div>
+
+<p>це те ж саме, що і інструкція </p>
+<div class="codehilite"><pre><span></span><code>`with m1 as x: with m2 as y`
+</code></pre></div>
+
+<p>Варто зауважити, що якщо у вкладеному менеджері контекста буде перехоплено і оброблено виняток, то зовнішні менеджери не отримають про це ніякої інформації.</p>
+<h4 id="contextlibclosingobject"><code>contextlib.closing(object)</code></h4>
+<p>Створює менеджер контекста, який автоматично повертає метод <code>object.close()</code> по закінченню виконання тіла інструкції <code>with</code>. </p>
+<h2 id="_1">Додаткові матеріали</h2>
+<ol>
+<li><a href="https://docs.python.org/3/reference/compound_stmts.html#with">Документація Python: оператор <code>with</code></a></li>
+<li><a href="https://docs.python.org/3/library/contextlib.html">Документація Python: модуль contextlib</a></li>
+</ol>
+<!--
+https://python-scripts.com/contextlib
+
+--->
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

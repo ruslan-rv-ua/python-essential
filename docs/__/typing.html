@@ -1,0 +1,566 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Typing - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#explicit-implicit" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Typing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explicit-implicit" class="md-nav__link">
+    Явна (explicit) і неявна (implicit) типізація
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-dynamic" class="md-nav__link">
+    Статична (static) і динамічна (dynamic) типізація
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strong-weak" class="md-nav__link">
+    Сильна (сувора, strong) і слабка (несувора, weak) типізація
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Класифікація деяких мов програмування
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Typing</h1>
+                
+                <p>Мови програмування по типізації прийнято ділити на два великих табори — типізовані і нетипізовані (бестипові). До першого наприклад належать C, Python, Scala, PHP і Lua, а до другого — мова асемблера, Forth і Brainfuck.</p>
+<p>Так як «бестипова типізація» по своїй суті дуже проста, далі вона ні на які інші види не ділиться. А ось типізовані мови разділяються ще на декілька категорій:</p>
+<h3 id="explicit-implicit">Явна (explicit) і неявна (implicit) типізація</h3>
+<p>Явно-типізовані мови відрізняються тим, що тип нових змінних, функцій і їх аргументів треба задавати явно. Відповідно мови з неявною типізацією перекладають цю задачу на компілятор чи інтерпретатор.</p>
+<p>Переваги явної типізації:</p>
+<ul>
+<li>Наявність у кожної функції сигнатури (наприклад int add(int, int)) дозволяє без проблем вивзначити, що функція робить.</li>
+<li>Програміст одразу ж записує, якого типа значення можутб зберігатись у конкретній змінній, що знижує необхідність запам'ятовувати це.</li>
+</ul>
+<p>Переваги неявної типізації:</p>
+<ul>
+<li>Скорочення запису.</li>
+<li>Стійкість до змін. Наприклад якщо в функції тимчасова змінна була того ж типу, що і вхідний аргумент, то в явно типізованій мові при зміні типа вхідного аргумента потрібно буде змінити ще й тип тимчасової змінної.</li>
+</ul>
+<h3 id="static-dynamic">Статична (static) і динамічна (dynamic) типізація</h3>
+<p>Статична визначається тим, що кінцеві типи змінних і функцій встановлюються на етапі компіляції, в цей же момент відбувається перевірка типів. Тобто вже компілятор на 100% впевнений, який тип де знаходиться. В динамічній типізації усі типи з'ясовуються вже під час виконання програми. </p>
+<p>Зауважте, що неявна типізація не рівносильна динамічній, а явна — статичній.</p>
+<p>Переваги статичної типізації:</p>
+<ul>
+<li>Перевірки типів відбуваються тільки один раз — на етапі компіляції. А це означає, що нам не треба буде постійно з'ясовувати, чи не намагаємось ми поділити число на рядок (і або видати помилку, або ж виконати перетворення).</li>
+<li>Швидкість виконання. З попереднього пункта ясно, що статично типізовані мови  практично завжди швидше динамічно типізованих.</li>
+<li>При деяких додаткових умовах дозволяє виявляти потенційні помилки вже на етапі компіляції.</li>
+<li>Прискорення розробки при підтримці IDE (відсіювання вариантів, які заздалегіть не підходять по типу).</li>
+</ul>
+<p>Переваги динамічної типізації:</p>
+<ul>
+<li>Простота створення універсальних колекцій.</li>
+<li>Зручність опису узагальнених алгоритмів (наприклад сортування масива, яке буде працювати не тільки на списках цілих чисел, але і на списках символьних рядків).</li>
+<li>Легкість в освоєнні — мови з динамічною типізациєю зазвичай дуже непогані для того, щоб почати програмувати.</li>
+</ul>
+<h3 id="strong-weak">Сильна (сувора, strong) і слабка (несувора, weak) типізація</h3>
+<p>Сильна типізація виділяється тим, що мова не дозволяє змішувати у виразах різні типи і не виконує автоматичні неявні перетворення, наприклад не можна відняти з рядка множину. Мови зі слабкою типізацією виконують багато неявних перетворень автоматично, навіть якщо може відбутись втрата точності або перетворення неоднозначне.</p>
+<p>Слабку типізацію часто плутають з динамічною, що зовсім неправильно. Динамічно типізована мова може бути і слабо і сильно типізована.</p>
+<p>Переваги сильної типізації:</p>
+<ul>
+<li>Надійність — ви отримаєте вийняткову ситуацію або помилку компіляції, на противагу неправиьлної поведінки.</li>
+<li>Швидкість — замість прихованих перетворень, котрі можуть бути доволі затратними, з сильною типізацією необхідно писати їх явно, що заставлє програміста як мінімум знати, що ця ділянка кода може бути повільним.</li>
+<li>Розуміння роботи програми — знову ж таки, замість неявного приведення типів, програміст пише усе сам, отже хоча б приблизно розуміє, що порівняння тядка і числа виконується не само по собі і не чарівним способом.</li>
+<li>Визначеність — коли ви пишете перетворення вручну ви точно знаєте, що ви перетворюєте і в що саме. Також ви завжди будете розуміти, що такі перетворення можуть призвести до втрати точності і до невірних результатів.</li>
+</ul>
+<p>Переваги слабкої типізації:</p>
+<ul>
+<li>Зручність використання змішаних виразів.</li>
+<li>Абстрагування від типізації і зосередженість на задачі.</li>
+<li>Скорочення запису</li>
+</ul>
+<h3 id="_1">Класифікація деяких мов програмування</h3>
+<table>
+<thead>
+<tr>
+<th>мова</th>
+<th>типізація</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>динамічна сильна неявна</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>динамічна слабка неявна</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>динамічна сильна неявна</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>статична сильна явна</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>динамічна слабка неявна</td>
+</tr>
+<tr>
+<td>C</td>
+<td>статична слабка явна</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>статична слабка явна</td>
+</tr>
+<tr>
+<td>Perl</td>
+<td>динамічна слабка неявна</td>
+</tr>
+<tr>
+<td>Objective-C</td>
+<td>статична слабка явна</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>статична сильна явна</td>
+</tr>
+<tr>
+<td>Haskell</td>
+<td>статична сильна неявна</td>
+</tr>
+<tr>
+<td>Common Lisp</td>
+<td>динамічна сильна неявна</td>
+</tr>
+<tr>
+<td>D</td>
+<td>статична сильна явна</td>
+</tr>
+<tr>
+<td>Delphi</td>
+<td>статична сильна явна</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">Додаткові матеріали</h2>
+<ul>
+<li><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%82%D0%B8%D0%BF%D0%BE%D0%B2">Система типов</a></li>
+<li><a href="http://progopedia.ru/typing/">типизации</a></li>
+</ul>
+<!-- https://habr.com/post/161205/ -->
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

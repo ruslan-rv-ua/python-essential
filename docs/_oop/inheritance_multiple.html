@@ -1,0 +1,618 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Множинне успадкування - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Множинне успадкування
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Лінеарізація і множинна спадковість
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Пошук методів і лінеарізація
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Множинне успадкування</h1>
+<blockquote>
+<p><strong><em>Множинна спадко́вість</em></strong> — властивість деяких обʼєктно-орієнтованих мов програмування, в яких класи можуть успадкувати поведінку і властивості більш ніж від одного суперкласу (безпосереднього батьківського класу). Це відрізняється від простого спадкування, у випадку якого клас може мати тільки один суперклас. </p>
+</blockquote>
+<p>Python підтримує множинну спадковість:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я біжу!&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">...</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я лечу!&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">...</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">...</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">Я</span> <span class="n">біжу</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">fly</span><span class="p">()</span>
+<span class="n">Я</span> <span class="n">лечу</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>У вищенаведеному прикладі клас <code>Pegasus</code> успадкував від класа <code>Horse</code> метод <code>run()</code>, а від класа <code>Eagle</code> — метод <code>fly()</code>.</p>
+<p>Зауважимо, що у множинної спадковості є як переваги, так і недоліки. 
+До переваг можна віднести те, що множинна спадковість дозволяє проектувати доволі складні і гнучкі ієрархії класів. 
+Але разом з тим використання цього механізму може призвести до появи у коді доволі серйозних помилок. Сама наявність множинної спадковості може бути індикатором наявності помилок в проектуванні архітектури вашого застосунку, тому що множинна спадковість на практиці використовується вкрай рідко. І якщо у вас виникає думка використати множинну спадковість, то треба добре подумати, чи правильно ви розбиваєте предметну область на класи взагалі. І тільки якщо ви дійдете до висновку, що використання множинної спадковості доречне і дійсно може спростити код, тоді вже можете використовувати її.</p>
+<h3 id="_2">Лінеарізація і множинна спадковість</h3>
+<p>При множинній спадковості виникає питання: а як саме треба виконувати лінеарізацію класів? Атже варіантів обійти всю ієрархію класів коли у одного класа є більше ніж один базовий клас можна побудувати декілька. При цьому не повинна "ламатись" логічна структура успадкування, це напряму впливає на алгоритм пошуку атрибутів в ієрархії класів.</p>
+<p>Самий простий приклад де виникає неоднозначність пошуку методів — задача ромбовидного успадкування. Вивчіть самостійно наступний код і зробіть припущення, що буде виведено в результаті його виконання:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am Animal&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am Eagle&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">hello</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Підходів побудови лінеаризації при множинній спадковості існує декілька, в різних мовах програмування можуть використовуватись різні підходи. А в декотрих мовах програмування, які підтримують парадигму ООП, множинне успадкування відсутнє.</p>
+<p>В Python використовується алгоритм C3-лінеаризації, котрий дозволяє побудувати стійкий список з самого класа і усіх його предків (батьків і прабатьків). Цей алгоритм вирішує більшість проблем при лінеаризації множинного успадкування. Алгоритм відносно складний, зовсім спрощено його можна представити так:</p>
+<ul>
+<li>у список додається клас об'єкта (далі — дочірній клас)</li>
+<li>у список додаються базові класи дочірнього класа у тому порядку, як вони вказані при декларації дочірнього класа</li>
+<li>у список додаються базові класи базових класів і так далі рекурсивно аж до класа <code>object</code></li>
+<li>якщо якийсь клас опиняється у списку двічі — залишається тільки останнє його входження</li>
+</ul>
+<p>Як результат, ми рухаємось по рівням, не звертаємось до базового класа до того, як звернемось до усіх його нащадків, навіть якщо нащадків у цього базового класа декілька.</p>
+<p>Алгоритм забезпечує пошук перевизначеного метода базового класа, якщо цей метод перевизначено хоча б у одному нащадку цього базового класа.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Pegasus</span>
+<span class="n">Eagle</span>
+<span class="n">Horse</span>
+<span class="n">Animal</span>
+<span class="nb">object</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Як видно з прикладу, лінеарізація обходить усі класи нашої ієрархії. </p>
+<p>Класи <code>Eagle</code> і <code>Horse</code> йдуть у тій послідовності, як перераховані при визначенні класа <code>Pegasus</code>. Давайте поміняємо їх місцями і подивимось як це вплине на лінеарізацію:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Pegasus</span>
+<span class="n">Horse</span>
+<span class="n">Eagle</span>
+<span class="n">Animal</span>
+<span class="nb">object</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_3">Пошук методів і лінеарізація</h3>
+<p>Як згадувалось раніше, доступ до атрибутів базового класа можна отримати шляхом прямого вказання назви класа і, власне, атрибута. Існує ще один спосіб, який позбавлений недоліків попереднього.</p>
+<p>Існує спеціальний клас <code>super</code>, екземпляри якого є спеціальними проксі-об'єктами (об'єктами-посередниками), які прив'язані до даної ієрархії класів і які надають доступ до атрибутів наступного класа в лінеаризації 
+того класа, в якому було створено об'єкт <code>super</code>.</p>
+<p>Таким чином, за допомогою <code>super</code> можна отримати доступ до атрибутів суперкласа, не вказуючи його імені, причому це буде давати коректні результати навіть при використанні множинного успадкування.</p>
+<p>Приклад:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">super</span><span class="p">(</span><span class="n">MyClass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Якщо при створенні екземпляра класа <code>super</code> не вказувати параметри, то автоматично будуть отримані поточні клас і його екземпляр:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Приклад використання <code>super()</code> при простому успадкуванні:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi, I am&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">...</span> <span class="k">class</span> <span class="nc">Employee</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">salary</span> <span class="o">=</span> <span class="n">salary</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My salary is&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">salary</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;janE&#39;</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="n">Hi</span><span class="p">,</span> <span class="n">I</span> <span class="n">am</span> <span class="n">Jane</span>
+<span class="n">My</span> <span class="n">salary</span> <span class="ow">is</span> <span class="mi">120</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>З класа <code>Employee</code> ми отримуємо доступ до атрибутів класа <code>Person</code> за допомогою <code>super()</code>. Зауважте: нам тепер не треба вказувати навіть поточний екземпляр класа.</p>
+<p>Тепер звернемось до множинної спадковості:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">can_run</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">can_fly</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">can_run</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">can_fly</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">can_run</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">can_fly</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Щоб краще зрозуміти, як це працює, давайте спочатку вивчимо лінеаризацію класа <code>Pegasus</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">Pegasus</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Horse</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Eagle</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Animal</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Тепер покроково:</p>
+<ol>
+<li>В класі <code>Pegasus</code> конструктора не оголошено, отже згідно лінеаризації викликаємо конструктор класа <code>Horse</code></li>
+<li>В конструкторі <code>Horse</code> за допомогою <code>super()</code> викликається конструктор "попереднього" класа, згідно MRO це буде конструктор класа <code>Eagle</code></li>
+<li>В конструкторі <code>Eagle</code> за допомогою <code>super()</code> викликається конструктор "попереднього" класа, згідно MRO це буде конструктор класа <code>Animal</code></li>
+</ol>
+<h2 id="_4">Додаткові матеріали</h2>
+<p><a href="https://ru.wikipedia.org/wiki/C3-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F">C3-линеаризация</a></p>
+<!---
+https://otus.ru/nest/post/165/
+--->
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

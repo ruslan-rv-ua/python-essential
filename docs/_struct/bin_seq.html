@@ -1,0 +1,549 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Послідовності бінарних даних - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Послідовності бінарних даних
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bytes" class="md-nav__link">
+    bytes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bytearray" class="md-nav__link">
+    bytearray
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Додаткові матеріали:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Послідовності бінарних даних</h1>
+<p>Основні вбудовані класи для роботи з послідовностями бінарних даних в Python — це <code>bytes</code> і <code>bytearray</code>.</p>
+<h3 id="bytes"><code>bytes</code></h3>
+<blockquote>
+<p><strong><em>Байти</em></strong> — немутабельна послідовність окремих байт (чисел у діапазоні від 0 до 255). </p>
+</blockquote>
+<p>Оскільки більшість основних бінарних протоколів базуються на кодуванні тексту ASCII, об'єкти байтів працюють з ASCII-сумісними символами і це нагадує роботу з символьними рядками. Синтаксис для літералів байтів в значній мірі такий же, як і для літералів символьного рядка, за винятком того, що додається префікс <code>b</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;Hi there!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="sa">b</span><span class="s1">&#39;Hi there!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Допускаються лише ASCII-символи, тобто значення до 127 включно:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;Привіт!&#39;</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="nb">bytes</span> <span class="n">can</span> <span class="n">only</span> <span class="n">contain</span> <span class="n">ASCII</span> <span class="n">literal</span> <span class="n">characters</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Інші значення задаються у шістнадцятковій системі числення, до значення додається префікс <code>\x</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\xff</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\xff</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">255</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>"Сирі" байти (аналогічно "сирим" рядкам) теж допускаються:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="sa">rb</span><span class="s1">&#39;\n&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">n&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Створити байтову послідовність можна за допомогою конструктора класа вказавши її довжину, при цьому створена послідовність буде заповнена значенням <code>0</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00\x00</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Також можна передати конструктору ітерабельний об'єкт цілих чисел:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x01\x02\x03\x04</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Можна створити послідовність байт з символьного рядка, для цього треба вказати кодування, в якому ми хочемо отримати наш рядок:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="s1">&#39;ї&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xd1\x97</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Клас <code>bytes</code> має метод <code>fromhex()</code> який дозволяє створити об'єкт з символьного рядка. Рядок повинен складатись з пар шістнадцяткових цифр, пробіли ігноруються:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s1">&#39;41f0 F1f2  &#39;</span><span class="p">)</span>
+<span class="sa">b</span><span class="s1">&#39;A</span><span class="se">\xf0\xf1\xf2</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Є також метод який виконує "зворотню дію" — повертає шістнадцяткове представленя байтового об'єкта як символьний рядок:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="s1">&#39;A</span><span class="se">\xf0\xf1\xf2</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="s1">&#39;41f0f1f2&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Ще один важливий метод класа <code>bytes</code>:</p>
+<div class="codehilite"><pre><span></span><code> decode(encoding=&quot;utf-8&quot;, errors=&quot;strict&quot;)
+</code></pre></div>
+
+<p>Метод декодує послідовність байт з вказаного кодування у символьний рядок:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xd0\x92\xd1\x96\xd1\x82\xd0\xb0\xd1\x8e</span><span class="s1">!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+<span class="s1">&#39;Вітаю!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Другий параметр цього метода вказує, що робити якщо під час декодування відбувається помилка. Значення за замовчуванням <code>strict</code> означає, що у разі виникнення помилки буде піднято виняток <code>UnicodeError</code>. Також за допомогою цього параметра можна вказати, що усі помилки декодування будуть ігноруватись, замінятись на певний символ, інше (докладніше — читайте у документації Python). </p>
+<p>Як ви могли вже зауважити, 
+в залежності від значення кожного байта застосовуються різні способи відображення:</p>
+<ul>
+<li>для байтів з діапазона символів ASCII, які мають графічне відображення — від пробіла до <code>~</code> — выводится сам символ ASCII. </li>
+<li>для байтів, які відповідають символам табуляції, нового рядка, бекслеш та інших виводяться відповідні ескейп-послідовності.</li>
+<li>для решти байтів виводиться шістнадцяткове представлення, наприклад <code>\x00</code>.</li>
+</ul>
+<hr />
+<p><code>bytes</code> підтримує усі методи <code>str</code> крім тих, що стосуються форматування (format, format_map), і ще декількох, які напряму залежать від особливостей Unicode, у тому числі casefold, isdecimal, isidentifier, isnumeric, isprintable і encode. 
+Це означає, що при работі з бінарними послідовностями ми можемо користуватись знайомими методами символьних рядків, наприклад endswith, replace, strip, upper і десятками інших, тільки аргументи мають бути типу <code>bytes</code>, а не <code>str</code>.</p>
+<h3 id="bytearray"><code>bytearray</code></h3>
+<blockquote>
+<p><strong><em>Масив байтів</em></strong> — мутабельна послідовність окремих байт (чисел у діапазоні від 0 до 255). </p>
+</blockquote>
+<p>Головна відмінність масива байтів від байт — це те, що перша є мутабельною послідовністю. Отже ми можемо використовувати усі методи, які властиві мутабельним послідовностям:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">65</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;A</span><span class="se">\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;A</span><span class="se">\x00\x00\x00</span><span class="s1">A&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="mi">65</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;A</span><span class="se">\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00</span><span class="s1">A&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_2">Додаткові матеріали:</h3>
+<p><a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">Python docs: послідовності бінарних даних</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,614 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Документація в Python - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Документація в Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Документація в Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="docstring.html" class="md-nav__link md-nav__link--active">
+        Документація в Python
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    Need help?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Документування коду
+  </a>
+  
+    <nav class="md-nav" aria-label="Документування коду">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приклади
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Завдання
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    Need help?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Документування коду
+  </a>
+  
+    <nav class="md-nav" aria-label="Документування коду">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приклади
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Завдання
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="python">Документація у Python</h1>
+<p>Оскільки у мовах програмування, у тому числі Python, існує велика кількість вбудованих та третьосторонніх модулів, то пам'ятати їх усі, у тому числі і їх функціонал, неможливо. </p>
+<h2 id="need-help">Need help?</h2>
+<p>Інтерпретатор Python надає чудову можливість отримати вбудованими засобами довідку або документацію практичино до усього, до чого вона тільки існує, за допомогою вбудованої функції:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">help</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Якщо функція викликається без аргументів, довідкова система запускається у інтерактивному режимі.
+Якщо функції передано символьний рядок, то виконується спроба інтерпретувати її як ім'я модуля, функції, класу, метода або розділу документації, після чого довідка виводиться у консоль. Якщо ж функції передано об'єкт будь-якого іншого типу, довідка герерується по даним цього об'єкта (docstring).</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">method_descriptor</span><span class="p">:</span>
+
+<span class="n">split</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">S</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span>
+
+    <span class="n">Return</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">S</span><span class="p">,</span> <span class="n">using</span> <span class="n">sep</span> <span class="k">as</span> <span class="n">the</span>
+    <span class="n">delimiter</span> <span class="n">string</span><span class="o">.</span>  <span class="n">If</span> <span class="n">maxsplit</span> <span class="ow">is</span> <span class="n">given</span><span class="p">,</span> <span class="n">at</span> <span class="n">most</span> <span class="n">maxsplit</span>
+    <span class="n">splits</span> <span class="n">are</span> <span class="n">done</span><span class="o">.</span> <span class="n">If</span> <span class="n">sep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span> <span class="ow">or</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">any</span>
+    <span class="n">whitespace</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">separator</span> <span class="ow">and</span> <span class="n">empty</span> <span class="n">strings</span> <span class="n">are</span>
+    <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">result</span><span class="o">.</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Функцію <code>help()</code> використовують, в основному, у інтерактивному режимі інтерпретатора.</p>
+<h2 id="_1">Документування коду</h2>
+<p>Під час написання коду до практично усіх сутностей Python (функція, метод, клас, модуль) ми одразу ж можемо створювати документацію. Робиться це за допомогою docstring.</p>
+<p><em>docstring</em> — це "особливий вид" коментаря. Перший коментар, що стоїть на самому початку модуля, функції та ін. і є docstring, або <em>рядком документації</em>.</p>
+<p>Основні відміни docstring від звичайних коментарів:</p>
+<ul>
+<li>до рядків документації можна отримати доступ під час виконання програми</li>
+<li>рядки документації зберігаються у байт-коді</li>
+<li>до рядків документації мають доступ інтерпретатор, середовище розробки</li>
+</ul>
+<p>Напряму доступ до рядків документації можна отримати через атрибут (поле) <code>__doc__</code> відповідних об'єктів.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="n">S</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span>
+
+<span class="n">Return</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">S</span><span class="p">,</span> <span class="n">using</span> <span class="n">sep</span> <span class="k">as</span> <span class="n">the</span>
+<span class="n">delimiter</span> <span class="n">string</span><span class="o">.</span>  <span class="n">If</span> <span class="n">maxsplit</span> <span class="ow">is</span> <span class="n">given</span><span class="p">,</span> <span class="n">at</span> <span class="n">most</span> <span class="n">maxsplit</span>
+<span class="n">splits</span> <span class="n">are</span> <span class="n">done</span><span class="o">.</span> <span class="n">If</span> <span class="n">sep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span> <span class="ow">or</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">any</span>
+<span class="n">whitespace</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">separator</span> <span class="ow">and</span> <span class="n">empty</span> <span class="n">strings</span> <span class="n">are</span>
+<span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">result</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>При роботі з інтерпретатором у інтерактивному режимі зручно використовувати функцію <code>help()</code>.</p>
+<p>Згідно PEP8 <code>docstring</code> оформляється наступним чином:</p>
+<ul>
+<li>текст заключають у потрійні лапки</li>
+<li>текст може починатись одразу після відкриваючих лапок або ж з наступного рядка</li>
+<li>закриваючі лапки мають розташовуватись у окремому рядку</li>
+</ul>
+<p>Написання документації, так само як і коментарів до початкового коду, є дуже важливим! 
+Основне призначення коментарів – пояснити що робить код, як він працює. Основне призначення рядків документації – коротко описати в цілому для чого призначено об'єкт, які аргументи приймає, і що повертає. </p>
+<p>Супроводжуйте ваші функції якісною документацією і програмісти, котрі будуть працювати з вашим кодом після вас, будуть вдячні вам.
+Зауважимо: документування прийнято виконувати англійською мовою. Багато проектів мають відкритий код, доступні у Вебі, їх вивчають і модифікують програмісти з різних країн. Використання однієї мови дозвояє їм розуміти один одного. Тому професійний програміст має володіти английською хоча б на початковому рівні. Google Translate – теж варіант.</p>
+<h4 id="_2">Приклади</h4>
+<p>Оголосимо функцію і одразу ж створимо до неї документацію:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">rectangle_square</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<span class="o">...</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">...     Calculates and returns square of rectangle with &#39;width&#39; and &#39;height&#39;</span>
+<span class="s2">...     &quot;&quot;&quot;</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">rectangle_square</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">rectangle_square</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+
+<span class="n">rectangle_square</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+    <span class="n">Calculates</span> <span class="ow">and</span> <span class="n">returns</span> <span class="n">square</span> <span class="n">of</span> <span class="n">rectangle</span> <span class="k">with</span> <span class="s1">&#39;width&#39;</span> <span class="ow">and</span> <span class="s1">&#39;height&#39;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rectangle_square</span><span class="o">.</span><span class="vm">__doc__</span>
+<span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">Calculates and returns square of rectangle with &#39;width&#39; and &#39;height&#39;</span><span class="se">\n\t</span><span class="s2">&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rectangle_square</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="mi">300</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="_3">Завдання</h2>
+<ol>
+<li>Скориставшись функцією <code>help()</code> ознайомтесь з документацією тих сутностей Python, що вас цікавить найбільше на даний момент.</li>
+<li>Спробуйте вивчити документацію до функції <code>help()</code></li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="strategies.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Стратегії обчислення" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Стратегії обчислення
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

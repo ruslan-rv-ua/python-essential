@@ -1,0 +1,911 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Декоратори - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Декоратори
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документація в Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Декоруємо подарунки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Декоруємо зручно!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Практикум: хто швидше?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Ланцюжки з декораторів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Декоруємо функції з параметрами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Декоратори з параметрами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    "Ввічливі" декоратори
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    Резюме
+  </a>
+  
+    <nav class="md-nav" aria-label="Резюме">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    Шаблони декораторів
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Декоратори</h1>
+<h3 id="_2">Декоруємо подарунки</h3>
+<p>Уявімо, що у нас є певний предмет, який ми хочемо комусь подарувати. 
+Давайте оформимо цей подарунок як функцію:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">gift_function</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я — подарунок!&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gift_function</span><span class="p">()</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">подарунок</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Але щоб наш подарунок виглядав привабливо, давайте обгорнемо його у привабливе святкове упакування. Упакування ми теж представимо функцією, яка, буде в якості аргумента приймати наш подарунок, ну, саме той подарунок, який нам і треба обгорнути:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">wrap_function</span><span class="p">(</span><span class="n">gift_to_wrap_function</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я — святкова обгортка! Я обгорну подарунок.&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">gift_to_wrap_function</span><span class="p">()</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Подарунок обгорнуто!&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">wrap_function</span><span class="p">(</span><span class="n">gift_function</span><span class="p">)</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">святкова</span> <span class="n">обгортка</span><span class="err">!</span> <span class="n">Я</span> <span class="n">обгорну</span> <span class="n">подарунок</span><span class="o">.</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">подарунок</span><span class="err">!</span>
+<span class="n">Подарунок</span> <span class="n">обгорнуто</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>І уявімо собі людину, яка займається обгортанням подарунків у святкове упакування. Назвемо її "декоратором".</p>
+<p>Що потрібно декоратору? Упакування у нього вже є, він добре підготувався до виконання своїх обов'язків. Отже йому лише треба дати той подарунок, який треба "декорувати" святковою обгорткою.</p>
+<p>Що буде робити декоратор? Візме упакування, обгорне ним подарунок, і поверне вже упакований подарунок.</p>
+<p>Декоратор у нас теж буде функцією:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">decorator_function</span><span class="p">(</span><span class="n">gift_to_wrap_function</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrap_function</span><span class="p">():</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я — святкова обгортка! Я обгорну подарунок.&#39;</span><span class="p">)</span>
+<span class="o">...</span>             <span class="n">gift_to_wrap_function</span><span class="p">()</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Подарунок обгорнуто!&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrap_function</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">decorated_gift_function</span> <span class="o">=</span> <span class="n">decorator_function</span><span class="p">(</span><span class="n">gift_function</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Давайте подивимось що ми тепер маємо:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">gift_function</span><span class="p">()</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">подарунок</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">decorated_gift_function</span><span class="p">()</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">святкова</span> <span class="n">обгортка</span><span class="err">!</span> <span class="n">Я</span> <span class="n">обгорну</span> <span class="n">подарунок</span><span class="o">.</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">подарунок</span><span class="err">!</span>
+<span class="n">Подарунок</span> <span class="n">обгорнуто</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Упс... Два подарунки — декорований і не декорований! 
+А має ж бути один подарунок — просто той, що був раніше недекорованим став декорованим. Давайте виправимо помилку:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">gift_function</span> <span class="o">=</span> <span class="n">decorator_function</span><span class="p">(</span><span class="n">gift_function</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gift_function</span><span class="p">()</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">святкова</span> <span class="n">обгортка</span><span class="err">!</span> <span class="n">Я</span> <span class="n">обгорну</span> <span class="n">подарунок</span><span class="o">.</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">подарунок</span><span class="err">!</span>
+<span class="n">Подарунок</span> <span class="n">обгорнуто</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Те, що треба! Віддали подарунок декоратору, і отримали його вже декорованим.</p>
+<p>Які можна зробити висновки на даний момент?</p>
+<p>Ми взяли функцію, за допомогою декоратора додали до неї певний функціонал, і таким чином отримали цю функцію, але вже "покращену".</p>
+<h3 id="_3">Декоруємо зручно!</h3>
+<p>Декоратори — дуже корисна і зручна штука, і на практиці декоратори застосовуються досить часто. Тому для декораторів в Python придумали спеціальний синтаксис, який дозволяє використовувати декоратори більш зручно. 
+З вищенаведеного прикладу наступний запис:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">gift_iphone</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я — айфон!&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gift_iphone</span> <span class="o">=</span> <span class="n">decorator_function</span><span class="p">(</span><span class="n">gift_iphone</span><span class="p">)</span>
+</code></pre></div>
+
+<p>буде ідентичним такому:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nd">@decorator_function</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">gift_iphone</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я — айфон!&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gift_iphone</span><span class="p">()</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">святкова</span> <span class="n">обгортка</span><span class="err">!</span> <span class="n">Я</span> <span class="n">обгорну</span> <span class="n">подарунок</span><span class="o">.</span>
+<span class="n">Я</span> <span class="err">—</span> <span class="n">айфон</span><span class="err">!</span>
+<span class="n">Подарунок</span> <span class="n">обгорнуто</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Тобто спочатку вказуємо ім'я декоратора після значка <code>@</code>, і на наступному рядку ту функцію, яку треба декорувати вищенаведеним декоратором. </p>
+<p>Давайте на прикладах розглянемо як ще можна використовувати декоратори.</p>
+<h3 id="_4">Практикум: хто швидше?</h3>
+<p>Задача: написати функцію яка повертає символьнлий рядок з одного мільйона пробілів.</p>
+<p>Задачу можна вирішити багатьма способами, ось наприклад:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">):</span>
+<span class="o">...</span>             <span class="n">res</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Яка з функцій буде виконуватись швидше? Щоб з'ясувати, давайте просто заміряємо час який треба на виконання кожної з функцій.</p>
+<p>Для вимірювання часу скористаємось функцією <code>clock()</code>  з вбудованого модуля <code>timie</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">clock</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">t1</span> <span class="o">=</span> <span class="n">clock</span><span class="p">()</span>
+<span class="o">...</span>     <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f2:&#39;</span><span class="p">,</span> <span class="n">clock</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">f2</span><span class="p">()</span>
+<span class="n">f2</span><span class="p">:</span> <span class="mf">8.621491873839204e-05</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Ми написали код для функції <code>f2()</code>, який вимірює і виводить час необхідний для виконання цієї функції. І вже тут ми бачимо наступні недоліки:</p>
+<ul>
+<li>ми змінили функцію, час роботи якої хочемо вимірювати</li>
+<li>для інших функції для вирішення задачі так само треба буде змінити код, причому код цей буде кожного разу повторюватись</li>
+</ul>
+<p>А чи не можна було б зробити таку штуку, щоб кожна функція вимірювала і виводила б час потрібний на її виконання? І тут на допомогу приходять декоратори. За допомогою декоратора ми зможемо як би розширити можливості функції, що передамо йому.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+<span class="o">...</span>         <span class="n">t1</span> <span class="o">=</span> <span class="n">clock</span><span class="p">()</span>
+<span class="o">...</span>         <span class="n">func</span><span class="p">()</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="n">clock</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@timeit</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@timeit</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">):</span>
+<span class="o">...</span>             <span class="n">res</span> <span class="o">+=</span> <span class="s1">&#39; &#39;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f1</span><span class="p">()</span>
+<span class="mf">0.001224114997057768</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f2</span><span class="p">()</span>
+<span class="mf">0.28307779048941484</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_5">Ланцюжки з декораторів</h3>
+<p>Синтаксис Python дозволяє одночасне використання декількох декораторів.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">bread</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)</span>
+<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">salad</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Зеленина&#39;</span><span class="p">)</span>
+<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Зеленина&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@bread</span>
+<span class="o">...</span> <span class="nd">@salad</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">stake</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;М&#39;ясо&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">stake</span><span class="p">()</span>
+<span class="n">Хліб</span>
+<span class="n">Зеленина</span>
+<span class="n">М</span><span class="s1">&#39;ясо</span>
+<span class="n">Зеленина</span>
+<span class="n">Хліб</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Застосування тих самих декораторів, але без "магічного" символа <code>@</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">stake</span> <span class="o">=</span> <span class="n">bread</span><span class="p">(</span><span class="n">salad</span><span class="p">(</span><span class="n">stake</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Зауважте що послідовність застосування декораторів має значення:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nd">@salad</span>
+<span class="o">...</span> <span class="nd">@bread</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">stake</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;М&#39;ясо&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">stake</span><span class="p">()</span>
+<span class="n">Зеленина</span>
+<span class="n">Хліб</span>
+<span class="n">М</span><span class="s1">&#39;ясо</span>
+<span class="n">Хліб</span>
+<span class="n">Зеленина</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_6">Декоруємо функції з параметрами</h3>
+<p>У попередніх прикладах ми декорували функції, які не мали ніяких параметрів. А як щодо функцій з параметрами?</p>
+<p>Припустимо маємо таку функцію:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>При певних умовах ми отримаємо помилку:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">div</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="n">div</span>
+<span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Давайте спробуємо створити декоратор, який буде перевіряти вхідні параметри функції:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">smart_div</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am going to divide&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="o">...</span>             <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="o">...</span>                     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops! cannot divide&quot;</span><span class="p">)</span>
+<span class="o">...</span>                     <span class="k">return</span>
+<span class="o">...</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Такий варіант поверне <code>None</code> якщо умова спрацює:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nd">@smart_div</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">div</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">I</span> <span class="n">am</span> <span class="n">going</span> <span class="n">to</span> <span class="n">divide</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">0</span>
+<span class="n">Oops</span><span class="err">!</span> <span class="n">cannot</span> <span class="n">divide</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">div</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">I</span> <span class="n">am</span> <span class="n">going</span> <span class="n">to</span> <span class="n">divide</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">1</span>
+<span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Можна зауважити, параметри вкладеної функції-обгортки <code>wrapper()</code> всередині декоратора такі самі як і у функції, що декорується. Знаючи це ми можемо створити "загальний" декоратор, який буде працювати з будь-якою кількістю параметрів.</p>
+<p>Напишемо декоратор, який буде повідомляти нам, що ми передали функції, яку він декорує:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">works_for_all</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I got next parameters:&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="o">...</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@works_for_all</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">I</span> <span class="n">got</span> <span class="nb">next</span> <span class="n">parameters</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,)</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_7">Декоратори з параметрами</h3>
+<p>Давайте напишемо декоратор, який буде готувати нам сендвічі:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">make_sandwich</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)</span>
+<span class="o">...</span>             <span class="n">func</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@make_sandwich</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sandwich</span><span class="p">(</span><span class="s2">&quot;М&#39;ясо&quot;</span><span class="p">)</span>
+<span class="n">Хліб</span>
+<span class="n">М</span><span class="s1">&#39;ясо</span>
+<span class="n">Хліб</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Непогано. Але як щодо ситуації, коли для приготування сендвіча ми захочемо використовувати не хліб, а, припустимо, тости? Напрошується ідея повідомити декоратору що ми хочемо використовувати в якості "обгортки" нашого сендвіча, тобто передати декоратору якісь параметри.</p>
+<p>Отже, декоратор приймає свої параметри, але потім він ще має прийняти функцію, яку має декорувати, а потім ще й аргументи декорованої функції. Таким чином нам доведеться зробити аж 3 функції:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">make_sandwich</span><span class="p">(</span><span class="n">sandwich_cover</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>             <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>                     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_cover</span><span class="p">)</span>
+<span class="o">...</span>                     <span class="n">func</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>                     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_cover</span><span class="p">)</span>
+<span class="o">...</span>             <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">decorator</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@make_sandwich</span><span class="p">(</span><span class="s1">&#39;Тост&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sandwich</span><span class="p">(</span><span class="s2">&quot;Ковбаса&quot;</span><span class="p">)</span>
+<span class="n">Тост</span>
+<span class="n">Ковбаса</span>
+<span class="n">Тост</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@make_sandwich</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sandwich</span><span class="p">(</span><span class="s2">&quot;Сало&quot;</span><span class="p">)</span>
+<span class="n">Хліб</span>
+<span class="n">Сало</span>
+<span class="n">Хліб</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Функція <code>make_sandwich</code> приймає в якості параметра "обгортку" для сендвіча <code>sandwich_cover</code> і повертає функцію <code>decorator</code> яка, як і раніше, приймає тільки функцію що треба декорувати і повертає свою внутрішню функцію <code>wrapper</code>, яка у свою чергу приймає аргументи декорованої функції <code>func</code>.</p>
+<p>Те ж саме можна написати "без магії":</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sandwich</span> <span class="o">=</span> <span class="n">make_sandwich</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)(</span><span class="n">sandwich</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sandwich</span><span class="p">(</span><span class="s2">&quot;Сало&quot;</span><span class="p">)</span>
+<span class="n">Хліб</span>
+<span class="n">Сало</span>
+<span class="n">Хліб</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>З декораторів з параметрами теж можна будувати ланцюжки:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nd">@make_sandwich</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="nd">@make_sandwich</span><span class="p">(</span><span class="s1">&#39;Хрін&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">super_sandwich</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">super_sandwich</span><span class="p">(</span><span class="s2">&quot;Сало&quot;</span><span class="p">)</span>
+<span class="n">Хліб</span>
+<span class="n">Хрін</span>
+<span class="n">Сало</span>
+<span class="n">Хрін</span>
+<span class="n">Хліб</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_8">"Ввічливі" декоратори</h3>
+<p>Розглянемо наступний приклад:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@decorator</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
+<span class="o">...</span>     <span class="s2">&quot;This is docstring for some_func() function&quot;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">decorator</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">wrapper</span> <span class="n">at</span> <span class="mh">0x000002167F6DF2F0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="s1">&#39;wrapper&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">some_func</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">wrapper</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+
+<span class="n">wrapper</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Упс... Після декорування функція <code>some_func</code> не тільки "забула як її звати", але ще й втратила докстрінги! Це не є добре. Давайте виправимо ситуацію:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
+<span class="o">...</span>     <span class="n">wrapper</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="o">...</span>     <span class="n">wrapper</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span>
+<span class="o">...</span>     <span class="n">wrapper</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__module__</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nd">@decorator</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
+<span class="o">...</span>     <span class="s2">&quot;This is docstring for some_func() function&quot;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">decorator</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">wrapper</span> <span class="n">at</span> <span class="mh">0x000002167FAB5C80</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="s1">&#39;some_func&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">some_func</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">some_func</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+
+<span class="n">some_func</span><span class="p">()</span>
+    <span class="n">This</span> <span class="ow">is</span> <span class="n">docstring</span> <span class="k">for</span> <span class="n">some_func</span><span class="p">()</span> <span class="n">function</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Чудово! А щоб при створенні чергового декоратора уникнути рутини можна скористатись вже готовою функцією <code>wraps</code> з вбудованого модуля <code>functools</code>. І що тут цікаво, що <code>wraps</code> теж є декоратором!</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
+<span class="o">...</span>     <span class="s2">&quot;This is docstring for some_func() function&quot;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="s1">&#39;some_func&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">some_func</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">some_func</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+
+<span class="n">some_func</span><span class="p">()</span>
+    <span class="n">This</span> <span class="ow">is</span> <span class="n">docstring</span> <span class="k">for</span> <span class="n">some_func</span><span class="p">()</span> <span class="n">function</span>
+
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="_9">Резюме</h2>
+<ul>
+<li>декоратор — спосіб модифікувати поведінку функції, зберігаючи читабельність кода</li>
+<li>декоратори дещо сповільнюють виклики функцій</li>
+<li>порядок вказання декораторів має значення </li>
+</ul>
+<h3 id="_10">Шаблони декораторів</h3>
+<p>Декоратор без параметрів:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="k">def</span> <span class="nf">назва_декоратора</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">):</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="n">функція_що_декорується</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">)</span>
+        <span class="o">...</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</code></pre></div>
+
+<p>Декоратор з параметрами:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="k">def</span> <span class="nf">назва_декоратора</span><span class="p">(</span><span class="n">параметри_декоратора</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">):</span>
+            <span class="o">...</span>
+            <span class="n">функція_що_декорується</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">)</span>
+            <span class="o">...</span>
+        <span class="k">return</span> <span class="n">inner</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
