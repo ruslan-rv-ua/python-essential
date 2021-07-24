@@ -30,7 +30,9 @@ theme:
   name: material
   language: uk
   icon:
-    logo: material/library
+    logo: material/language-python
+    # logo: fontawesome/brands/python
+  # favicon: fontawesome/brands/python.svg
   palette:
     scheme: slate # default
     primary: 'black'
@@ -42,6 +44,9 @@ theme:
     # or - navigation.tabs.sticky
     # - navigation.sections
     # - navigation.expand
+    # - toc.integrate
+    # - navigation.indexes
+    # - navigation.top
     # - toc.integrate
 
 # css overrides to make high contrast theme
@@ -78,8 +83,10 @@ extra:
 
 # Extensions
 markdown_extensions:
-  - toc:
-      permalink: false
+  # - toc:
+      # permalink: false
+      # slugify: !!python/name:pymdownx.slugs.uslugify
+      # toc_depth: 3
   - admonition
   - codehilite:
       guess_lang: false
@@ -113,12 +120,19 @@ nav:
     - Декларативне програмування: paradigmas/declarative.md
     - Резюме: paradigmas/resume.md
   - Функції:
+    - Стек викликів: functions/call_stack.md
     - Стратегії обчислення: functions/strategies.md
     # - Параметри і аргументи: functions/args.md
     # - Змінна кількість аргументів: functions/args_kwargs.md
     # - Області видимості: functions/scope.md
     # # - Вбудовані функції Python: functions/buildin_functions.md
-    - Документація в Python: functions/docstring.md
+    - Документування функцій: functions/docstring.md
+  # - Об'єктно-орієнтоване програмування:
+    # - Що таке ООП: oop/oop_basis.md
+    # - Класи і об'єкти: oop/classes.md
+    # - Життєвий цикл об'єкта: oop/object_lifecycle.md
+    # - Ініціалізація об'єктів: oop/init.md
+    # - Представлення об'єктів: oop/object_presentation.md
   # - Елементи функціонального програмування:
     # - Функціональне програмування: functional_programming/intro.md
     # - "Функції як об'єкти": functional_programming/func_as_object.md
@@ -127,6 +141,10 @@ nav:
     # - Рекурсія: functional_programming/recursion.md
     # - Замикання: functional_programming/closure.md
     # - Декоратори: functional_programming/decorator.md
-  # - Що далі?:
-    # - Міфи про навчання: whats_next/miths_edu.md
+  # - Батарейки:
+    # - Модуль datetime: batteries/datetime.md
+    # - Модуль itertools: batteries/itertools.md
+  - Що далі?:
+    - Корисні ресурси: whats_next/resources.md
+    - Міфи про навчання: whats_next/miths_edu.md
 

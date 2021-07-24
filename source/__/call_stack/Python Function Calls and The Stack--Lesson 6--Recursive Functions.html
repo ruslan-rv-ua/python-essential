@@ -1,0 +1,189 @@
+﻿<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><script class="darkreader darkreader--proxy"></script>
+  <meta charset="utf-8">
+ <!--[ if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
+ <![endif]-->
+ <style data-savepage-href="../theStack.css">/*theStack.css  P. Conrad for CS8, Fall 2010, UCSB CS Dept
+  stylesheet for lessons on Python and the Stack */
+
+body  { background-color:#003399; 
+	font-family:Arial, Helvetica, sans-serif;}
+code {white-space:pre;}
+
+#container {
+	background-color:white; color: black;
+    	width:800px; 
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	padding: 1em;
+}
+
+h1, h2 {text-align:center;}
+.arrow { color: red; font-size: 90%;}
+td.arrowCell { height: 1.3em;
+		font-size: 90%;
+		padding-top:0px; padding-bottom:0px;
+		margin-top:0px; margin-bottom:0px;}
+
+div#floatRight {width:20em; float:right;  border: #000066 inset 5px; 
+margin-left:1em;}
+td.buttonRow {text-align:center;}
+span.button {font-size: 300%; margin-left:1em; margin-right:1em;
+}
+
+span.button:hover { background-color:#99FFFF;}
+span#currStep { width: 2em; text-align:center; white-space:pre;
+font-family:"Courier New", Courier, monospace;}
+
+td.lineNum {font-family:"Courier New", Courier, monospace; font-size: 90%; color: #666666; font-style: italic;}
+
+footer {font-size: 80%;}
+
+#cellBottom {text-align:center;}
+td.stackCell {width:15em; text-align:center; height: 3em;}
+.subtle {font-style:italic; font-size:80%; font-family:sans-serif; color:#ccc; }
+</style>
+ 
+  <style>
+#container { width:1100px;}
+div#floatRight {width:44em; }
+   code {font-size: 120%;}
+  </style>
+  <title>Python Function Calls and The Stack--Lesson 6--Recursive Functions</title>
+  <script type="text/javascript" language="javascript"></script>
+  <script type="text/javascript" language="javascript" data-savepage-src="../js/stackDiagrams.js"></script><meta name="darkreader" content="0794132890fd6bdcf974ad4de1471e9a">
+  
+
+<style id="savepage-cssvariables">
+  :root {
+  }
+</style>
+<script id="savepage-shadowloader" type="application/javascript">
+  "use strict";
+  window.addEventListener("DOMContentLoaded",
+  function(event) {
+    savepage_ShadowLoader(5);
+  },false);
+  function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+</script>
+<meta name="savepage-url" content="https://sites.cs.ucsb.edu/~pconrad/cs8/topics.beta/theStack/06/">
+<meta name="savepage-title" content="Python Function Calls and The Stack--Lesson 6--Recursive Functions">
+<meta name="savepage-pubdate" content="Unknown">
+<meta name="savepage-from" content="https://sites.cs.ucsb.edu/~pconrad/cs8/topics.beta/theStack/06/">
+<meta name="savepage-date" content="Thu Jul 22 2021 16:54:23 GMT+0300 (за східноєвропейським літнім часом)">
+<meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="25.12">
+<meta name="savepage-comments" content="">
+  </head>
+<body>
+<div id="container">
+<h1>Python Function Calls and the Stack—Lesson 6</h1>
+
+<div id="floatRight">
+<table id="outerTable">
+<tbody><tr id="outerTableRow">
+<td id="leftTableCell"><table id="theStack01CodeTable" class="codeTable">
+  <thead>
+    <tr>
+      <th colspan="3"><a data-savepage-href="code/theStack06.py" href="https://sites.cs.ucsb.edu/~pconrad/cs8/topics.beta/theStack/06/code/theStack06.py">code/theStack06.py</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="line1"><td class="lineNum">1</td><td id="arrow1" class="arrowCell"></td><td><code>def sumList(theList):</code></td></tr>
+<tr id="line2"><td class="lineNum">2</td><td id="arrow2" class="arrowCell"></td><td><code> if (theList==[]):</code></td></tr>
+<tr id="line3"><td class="lineNum">3</td><td id="arrow3" class="arrowCell"></td><td><code>  return 0</code></td></tr>
+<tr id="line4"><td class="lineNum">4</td><td id="arrow4" class="arrowCell"></td><td><code> else:</code></td></tr>
+<tr id="line5"><td class="lineNum">5</td><td id="arrow5" class="arrowCell"></td><td><code>  return theList[0] + sumList(theList[1:])</code></td></tr>
+<tr id="line6"><td class="lineNum">6</td><td id="arrow6" class="arrowCell"></td><td><code></code></td></tr>
+<tr id="line7"><td class="lineNum">7</td><td id="arrow7" class="arrowCell"></td><td><code>def go():</code></td></tr>
+<tr id="line8"><td class="lineNum">8</td><td id="arrow8" class="arrowCell"></td><td><code>  total = sumList([10,20,30])</code></td></tr>
+<tr id="line9"><td class="lineNum">9</td><td id="arrow9" class="arrowCell"></td><td><code>  print("total=",total)</code></td></tr>
+<tr id="line10"><td class="lineNum">10</td><td id="arrow10" class="arrowCell"></td><td><code></code></td></tr>
+<tr id="line11"><td class="lineNum">11</td><td id="arrow11" class="arrowCell"><span class="arrow">☛</span></td><td><code>go()</code></td></tr>
+<tr id="line12"><td class="lineNum"></td><td id="arrow12" class="arrowCell"></td><td class="subtle">—end of file—</td></tr>
+<tr id="line13"><td class="lineNum"></td><td id="arrow13" class="arrowCell"></td><td class="subtle"></td></tr>
+    <tr>
+      <td colspan="3" class="buttonRow"><span class="button" id="leftButton" onclick="changeStepWithAssignments(-1);">⍃</span><span class="button" id="rightButton" onclick="changeStepWithAssignments(1);">⍄</span></td>
+    </tr>
+    
+  </tbody>
+  <tfoot>
+  <tr><td colspan="3"><p>Press the ⍄ key above to move forward through the program, and the ⍃ key to move back.</p></td></tr></tfoot><tfoot>
+</tfoot></table></td> 
+<!-- id="leftTableCell" -->
+<td id="rightTableCell">
+
+<table id="stackTable">
+<tbody><tr><td class="stackCell" id="cell16"></td></tr>
+<tr><td class="stackCell" id="cell15"></td></tr>
+<tr><td class="stackCell" id="cell14"></td></tr>
+<tr><td class="stackCell" id="cell13"></td></tr>
+<tr><td class="stackCell" id="cell12"></td></tr>
+<tr><td class="stackCell" id="cell11"></td></tr>
+<tr><td class="stackCell" id="cell10"></td></tr>
+<tr><td class="stackCell" id="cell9"></td></tr>
+<tr><td class="stackCell" id="cell8"></td></tr>
+<tr><td class="stackCell" id="cell7"></td></tr>
+<tr><td class="stackCell" id="cell6"></td></tr>
+<tr><td class="stackCell" id="cell5"></td></tr>
+<tr><td class="stackCell" id="cell4"></td></tr>
+<tr><td class="stackCell" id="cell3"></td></tr>
+<tr><td class="stackCell" id="cell2"></td></tr>
+<tr><td class="stackCell" id="cell1"></td></tr>
+<tr>
+  <td class="stackCell" id="cell0" style="border: 1px solid black; --darkreader-inline-border-top:#fbe5c3; --darkreader-inline-border-right:#fbe5c3; --darkreader-inline-border-bottom:#fbe5c3; --darkreader-inline-border-left:#fbe5c3;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""><strong>__main__</strong><br>done</td></tr>
+<tr><td class="stackCell" id="cellbottom"><span class="subtle">—bottom of stack—</span></td>
+</tr>
+</tbody></table></td> <!-- id="leftTableCell" -->
+</tr> <!-- id="outerTableRow" -->
+</tbody></table> 
+<!-- id=outerTable -->
+
+</div>
+
+<p>In <a data-savepage-href="../05" href="https://sites.cs.ucsb.edu/~pconrad/cs8/topics.beta/theStack/05">Lesson 5</a> we learned about how return values are handled on the stack.  Previously, we saw how the stack is used to keep track of:</p>
+<ul>
+  <li>where to go back to when a function returns (lessons 1,2)</li>
+  <li>local variables (lessons 3,4)</li>
+</ul>
+
+<p>Now, we'll put that all together by tracking a recursive function that adds up the numbers in a list.</p>
+
+<p>Notice how each recursive call creates a new call frame—and how the stack keeps growing as long as there
+are more recursive calls.  The stack stops growing when we reach the base case.</p>
+<p>Notice how as we work back from the base case, the return value of each recursive call is used by the previous recursive call, 
+and added into the sum.</p>
+
+<p>As you can see, there is a complex dance that takes place when a recursive function does its  work.  But part of the beauty of recursion is that it is <em>not necessary to think about all of that detail</em> when writing recursive functions.</p>  
+
+<p>Understanding how it works "under the hood" can help us see that recursion really isn't magic, or mystical. We can also see that when a recursive function is computing, it is <em>doing a lot of the hard work for us.</em></p>
+
+<p>For example, consider writing a recursive function on a list:</p>
+<ul>
+<li>if the base case is correct</li>
+<li>and if the combining of the first item on the list with the recursive call on the rest of the list is correct</li>
+<li>then, the whole function is correct.</li>
+</ul>
+
+<p>We do not have to concern ourselves with the details of how it all works—we can treat the recursive call as an abstraction of the fact that the function will compute an answer correctly.   As long as we are making smaller and smaller lists with each recursive call, we will eventually hit the base case, and all the combining steps will happen as they should.</p>
+
+										    <p>With a for loop, <em>we the programmer</em> have to do all the work of figuring out how to accumulate a result from a series of steps.  With recursion, we really only have to think about one base case, and one step—and we let the stack take care of the rest.  Once you get used to it, it really can be a lot easier than working with a for loop or a while loop.</p>
+
+<p>This is the end of this series of lessons—but there is still much more to learn about the stack, and recursion.
+If you continue your study of Computer Science, this topic will be revisited in CS1,CS24,CS32,CS56,CS160 and CS162</p>
+<footer>
+<hr style="clear:both;">
+
+   <p>Copyright 2010 by <a href="http://www.cs.ucsb.edu/~pconrad">Phill Conrad</a>, <a data-savepage-href="http://www.cs.ucsb.edu" href="http://www.cs.ucsb.edu/">UCSB CS Dept</a>, for 
+   <a href="http://www.cs.ucsb.edu/~pconrad/cs8">CS8</a>.  Permission to use and adapt for non-commerical educational purposes is hereby granted, provided this copyright notice is maintained; all other rights reserved.  Acknowledgements: thanks to 
+<a href="http://www.cs.ucsb.edu/~omer">Omer Egecioglu</a> 
+   Richard Macklin, Matthew Byington, and Leif Dreizler for helpful suggestions 
+on early versions of these lessons.
+</p>
+
+</footer>
+</div>
+<!-- id="container"-->
+
+
+</body></html>

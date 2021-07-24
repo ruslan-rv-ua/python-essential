@@ -1,0 +1,664 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Життєвий цикл об'єкта - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Життєвий цикл об'єкта
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparations.html" class="md-nav__link">
+        Підготовка
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Парадигми програмування
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Парадигми програмування" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Парадигми програмування
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+        Парадигми у програмуванні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/imperative.html" class="md-nav__link">
+        Імперативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/oop.html" class="md-nav__link">
+        Об'єктно-орієнтоване програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/declarative.html" class="md-nav__link">
+        Декларативне програмування
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paradigmas/resume.html" class="md-nav__link">
+        Резюме
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Функції
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Функції" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Функції
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/call_stack.html" class="md-nav__link">
+        Стек викликів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/strategies.html" class="md-nav__link">
+        Стратегії обчислення
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/docstring.html" class="md-nav__link">
+        Документування функцій
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Що далі?
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Що далі?" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Що далі?
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../whats_next/resources.html" class="md-nav__link">
+        Корисні ресурси
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../whats_next/miths_edu.html" class="md-nav__link">
+        Міфи про навчання
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-" class="md-nav__link">
+    Час життя Python-об'єкта
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Список атрибутів об'єкта
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Спеціальні атрибути
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Життєвий цикл екземпляра класа
+  </a>
+  
+    <nav class="md-nav" aria-label="Життєвий цикл екземпляра класа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__new__cls" class="md-nav__link">
+    __new__(cls, [...])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__init__self" class="md-nav__link">
+    __init__(self, [...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__del__self" class="md-nav__link">
+    __del__(self)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Життєвий цикл об'єкта</h1>
+<h2 id="python-">Час життя Python-об'єкта</h2>
+<p>При створенні екземпляра класа Python створює в пам'яті відповідний об'єкт. 
+Пригадаємо основні характеристики об'єкта:</p>
+<ul>
+<li>значення (дані, стан об'єкта)</li>
+<li>тип даних</li>
+<li>ідентифікатор</li>
+</ul>
+<p>Для знищення об'єктів Python використовує алгоритм підрахунку посилань. Об'єкти видаляються як тільки на них більше немає посилань.</p>
+<p>В Python змінні не зберігають значення, а виступають в ролі посилань на об'єкти. 
+Тобто коли ви присвоюєте значення новій змінній, то спочатку створюється об'єкт з цим значенням, а вже потім змінна починає посилатись на нього. На один об'єкт може посилатись багато змінних.</p>
+<p>У Python-об'єкта є ще одна характеристика — лічильник посилань на об'єкт (reference counter). 
+Як тільки хтось посилається на об'єкт, лічильник посилань збільшується на 1. Якщо з будь-якої причини посилання пропадає, то це поле зменшується на 1.</p>
+<p>Приклади, коли кількість посилань збільшується:</p>
+<ul>
+<li>оператор присвоєння</li>
+<li>передача аргументів</li>
+<li>вставка нового об'єкта в <code>list</code> (збільшується кількість посилань для об'єкта)</li>
+<li>вираз виду <code>foo = bar</code> (<code>foo</code> починає посилатись на той самий обєкт, що і <code>bar</code>)</li>
+</ul>
+<p>В інтрерпретаторі Python є спеціальний механізм — збиральник сміття (garbage collector). 
+Спрощено це працює так: у певні моменти часу збиральник сміття "пробігається" по усім об'єктам в пам'яті, 
+і якщо лічильник посилань певного об'єкта дорівнює 0, то цей об'єкт знищується — пам'ять, яку займав об'єкт, звільняється і у подальшому може використовуватись повторно. </p>
+<p>Якщо видалений об'єкт містив посилання на інші об'єкти, то ці посилання також видаляються. Таким чином, видалення одного об'єкта може спричинити видалення інших.</p>
+<p>Наприклад, якщо видаляється список, то лічильник посилань у всіх його элементах зміншується на 1. Якщо усі об'єкти всередині списка більше ніде не використовуються, то їх тетакож будеь видалено.</p>
+<p>Змінні, які оголошено поза функціями, називаются глобальными. Як правило, життєвий цикл таких змінних дорівнює життю Python-процеса. Таким чином, кількість посилань на об'єкти на котрі посилаються глобальні змінні ніколи не падає до 0.</p>
+<p>Змінні, котрі оголошено всередині функції, мають локальну видимість. Як тільки інтерпретатор виходить з функції івн знищує усі посилання створені локальними змінними всередині неї. </p>
+<p>Дізнатись кількість посилань на об'єкт можна за допомогою функції getrefcount з модуля sys:</p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; from sys import getrefcount
+&gt;&gt;&gt; list1 = []
+&gt;&gt;&gt; getrefcount(list1)
+2
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>На список є два посилання:</p>
+<ol>
+<li>змінна <code>list1</code></li>
+<li>у момент виклику <code>getrefcount()</code> їй передається аргумент, це теж посилання</li>
+</ol>
+<h2 id="_2">Список атрибутів об'єкта</h2>
+<p>В Python є вбудована функція <code>dir()</code> за допомогою якої можна отримати список імен усіх атрибутів об'єкта 
+у вигляді списка. 
+Оскільки "в Python все є об'єкт" функції <code>dir()</code> можна передати практично будь-яку сутність, 
+будь то клас, екземпляр класа, модуль чи навіть функція: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">math</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">,</span> <span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">,</span> <span class="s1">&#39;acos&#39;</span><span class="p">,</span> <span class="s1">&#39;acosh&#39;</span><span class="p">,</span> <span class="s1">&#39;asin&#39;</span><span class="p">,</span> <span class="s1">&#39;asinh&#39;</span><span class="p">,</span> <span class="s1">&#39;atan&#39;</span><span class="p">,</span> <span class="s1">&#39;atan2&#39;</span><span class="p">,</span> <span class="s1">&#39;atanh&#39;</span><span class="p">,</span> <span class="s1">&#39;ceil&#39;</span><span class="p">,</span> <span class="s1">&#39;comb&#39;</span><span class="p">,</span> <span class="s1">&#39;copysign&#39;</span><span class="p">,</span> <span class="s1">&#39;cos&#39;</span><span class="p">,</span> <span class="s1">&#39;cosh&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;dist&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;erf&#39;</span><span class="p">,</span> <span class="s1">&#39;erfc&#39;</span><span class="p">,</span> <span class="s1">&#39;exp&#39;</span><span class="p">,</span> <span class="s1">&#39;expm1&#39;</span><span class="p">,</span> <span class="s1">&#39;fabs&#39;</span><span class="p">,</span> <span class="s1">&#39;factorial&#39;</span><span class="p">,</span> <span class="s1">&#39;floor&#39;</span><span class="p">,</span> <span class="s1">&#39;fmod&#39;</span><span class="p">,</span> <span class="s1">&#39;frexp&#39;</span><span class="p">,</span> <span class="s1">&#39;fsum&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;gcd&#39;</span><span class="p">,</span> <span class="s1">&#39;hypot&#39;</span><span class="p">,</span> <span class="s1">&#39;inf&#39;</span><span class="p">,</span> <span class="s1">&#39;isclose&#39;</span><span class="p">,</span> <span class="s1">&#39;isfinite&#39;</span><span class="p">,</span> <span class="s1">&#39;isinf&#39;</span><span class="p">,</span> <span class="s1">&#39;isnan&#39;</span><span class="p">,</span> <span class="s1">&#39;isqrt&#39;</span><span class="p">,</span> <span class="s1">&#39;ldexp&#39;</span><span class="p">,</span> <span class="s1">&#39;lgamma&#39;</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="s1">&#39;log10&#39;</span><span class="p">,</span> <span class="s1">&#39;log1p&#39;</span><span class="p">,</span> <span class="s1">&#39;log2&#39;</span><span class="p">,</span> <span class="s1">&#39;modf&#39;</span><span class="p">,</span> <span class="s1">&#39;nan&#39;</span><span class="p">,</span> <span class="s1">&#39;perm&#39;</span><span class="p">,</span> <span class="s1">&#39;pi&#39;</span><span class="p">,</span> <span class="s1">&#39;pow&#39;</span><span class="p">,</span> <span class="s1">&#39;prod&#39;</span><span class="p">,</span> <span class="s1">&#39;radians&#39;</span><span class="p">,</span> <span class="s1">&#39;remainder&#39;</span><span class="p">,</span> <span class="s1">&#39;sin&#39;</span><span class="p">,</span> <span class="s1">&#39;sinh&#39;</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">,</span> <span class="s1">&#39;tan&#39;</span><span class="p">,</span> <span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="s1">&#39;tau&#39;</span><span class="p">,</span> <span class="s1">&#39;trunc&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;cos&#39;</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="_3">Спеціальні атрибути</h2>
+<p>Атрибути, імена яких починаються і закінчуються двома знаками підкреслення, 
+є "внутрішніми" для Python. 
+Вони задають особливі властивості об'єктів. </p>
+<p>Приклади імен таких атрибутів:</p>
+<ul>
+<li><code>__doc__</code></li>
+<li><code>__class__</code></li>
+<li><code>__init__</code></li>
+<li><code>__bool__</code></li>
+</ul>
+<p>Серед спеціальних атрибутів є як дані, так і методи. 
+У документації Python такі методи називаються "метод зі спеціальними іменами", 
+однак у спільноті розробників найчастіше такі методи називають: </p>
+<ul>
+<li>магічний метод (magic method) </li>
+<li>спеціальний метод (special method) </li>
+<li>dunder method (від англ. Double UNDERscore — подвійний знак підкреслення)</li>
+</ul>
+<p>Спеціальні методи задають особливу поведінку об'єктів і як правило не викликаються напряму. 
+Їх викликає «у потрібні моменти часу» інтерпретатор. 
+Але при створенні класа ми можемо визначити свій власний спеціальний метод, іншими словами перевизначити метод. Це дозволяє, наприклад, змінити поведінку вбудованих функцій і операторів для екземплярів певного класа. </p>
+<p>Коли ви створюєте власний клас, а потім екземпляр цього класа, 
+то щойно створений екземпляр вже буде мати певну кількість атрибутів з подібними іменами:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">SomeClass</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">SomeClass</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;__class__&#39;</span><span class="p">,</span> <span class="s1">&#39;__delattr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__dict__&#39;</span><span class="p">,</span> <span class="s1">&#39;__dir__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__eq__&#39;</span><span class="p">,</span> <span class="s1">&#39;__format__&#39;</span><span class="p">,</span> <span class="s1">&#39;__ge__&#39;</span><span class="p">,</span> <span class="s1">&#39;__getattribute__&#39;</span><span class="p">,</span> <span class="s1">&#39;__gt__&#39;</span><span class="p">,</span> <span class="s1">&#39;__hash__&#39;</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">,</span> <span class="s1">&#39;__init_subclass__&#39;</span><span class="p">,</span> <span class="s1">&#39;__le__&#39;</span><span class="p">,</span> <span class="s1">&#39;__lt__&#39;</span><span class="p">,</span> <span class="s1">&#39;__module__&#39;</span><span class="p">,</span> <span class="s1">&#39;__ne__&#39;</span><span class="p">,</span> <span class="s1">&#39;__new__&#39;</span><span class="p">,</span> <span class="s1">&#39;__reduce__&#39;</span><span class="p">,</span> <span class="s1">&#39;__reduce_ex__&#39;</span><span class="p">,</span> <span class="s1">&#39;__repr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__setattr__&#39;</span><span class="p">,</span> <span class="s1">&#39;__sizeof__&#39;</span><span class="p">,</span> <span class="s1">&#39;__str__&#39;</span><span class="p">,</span> <span class="s1">&#39;__subclasshook__&#39;</span><span class="p">,</span> <span class="s1">&#39;__weakref__&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Звідки беруться усі ці спеціальні атрибути ми дізнаємось у подальшому.</p>
+<p>Не слід створювати свої власні (нестандартні) спеціальні атрибути!</p>
+<h2 id="_4">Життєвий цикл екземпляра класа</h2>
+<p>При створенні екземпляра класа інтерпретатор автоматично викликає послідовно два спеціальних метода: 
+<code>__new__</code> та <code>__init__</code>. 
+На іншому кінці життєвого цикла об'єкта знаходиться метод <code>__del__</code>. 
+Давайте детальніше розглянемо ці три магічних метода. </p>
+<h3 id="__new__cls"><code>__new__(cls, [...])</code></h3>
+<p>Це перший метод, який буде викликано при створенні об'єкта. 
+Власне це і є "створювач" екземплярів класа. 
+В парадигмі ООП такий метод називається конструктором. </p>
+<p>Конструктор приймає в якості параметрів клас і потім будь-які інші аргументи, 
+які було вказано при створенні екземпляра. 
+Наприклад:</p>
+<div class="codehilite"><pre><span></span><code>x = SomeClass(10, &#39;foo&#39;)
+</code></pre></div>
+
+<p>Конструктору буде передано: </p>
+<ul>
+<li>клас SomeClass</li>
+<li>значення 10 типу int</li>
+<li>значення 'foo' типу str</li>
+</ul>
+<p>Усі аргументи у подальшому буде передано спеціальному методу <code>__init__()</code>. </p>
+<p>В Python конструктор перевизначається вкрай рідко, лише для вирішення певних спеціальних задач. </p>
+<h3 id="__init__self"><code>__init__(self, [...)</code></h3>
+<p>Ініціалізатор класа. 
+Йому передається екземпляр класа а також усе, з чим було викликано конструктор. </p>
+<p>Ініціалізатор майже повсемістно використовується при визначенні класів. 
+Майже завжди цей метод помилково називають конструктором. </p>
+<h3 id="__del__self"><code>__del__(self)</code></h3>
+<p>Викликається при знищенні екземпляра. 
+В парадигмі ООП такий метод називається деструктором. </p>
+<p>Деструктор не визначає поведінку для оператора <code>del</code>. 
+Він визначає поведінку об'єкта у той час, коли за об'єкт береться збиральник сміття. 
+Тому наступні рядки коду не є еквівалентними: </p>
+<div class="codehilite"><pre><span></span><code>del x
+x.__del__()
+</code></pre></div>
+
+<!--
+Це може бути доволі зручно для об'єктів, які можуть потребувати додаткових "чисток" під час видалення, наприклад сокети чи файлові об'єкти. 
+Однак пам'ятайте, що `del` не може слугувати заміною для хороших програмістських практик. 
+Завжди завершуйте з'єднання, якщо закінчили з нми працювати і так далі! 
+-->
+<p>Фактично, через відсутність гарантії виклику у визначений момент, 
+деструктор в Python не повинен використовуватись майже ніколи. 
+Використовуйте його з обережністю! </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
