@@ -13,19 +13,19 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
-        <title>Параметри і аргументи функцій - Python Essential</title>
+        <title>Позиційні і іменовані - Python Essential</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -44,11 +44,11 @@
     
     
     
-      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+      <link rel="stylesheet" href="../../stylesheets/dark_theme.css">
     
-      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+      <link rel="stylesheet" href="../../stylesheets/codehilite.css">
     
-      <link rel="stylesheet" href="../stylesheets/fixes.css">
+      <link rel="stylesheet" href="../../stylesheets/fixes.css">
     
     
       
@@ -67,7 +67,7 @@
     <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -86,7 +86,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+    <a href="../../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89z"/></svg>
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Параметри і аргументи функцій
+              Позиційні і іменовані
             
           </span>
         </div>
@@ -136,7 +136,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+    <a href="../../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89z"/></svg>
@@ -155,7 +155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         Про цей курс
       </a>
     </li>
@@ -170,7 +170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../preparations.html" class="md-nav__link">
+      <a href="../../preparations.html" class="md-nav__link">
         Підготовка
       </a>
     </li>
@@ -206,7 +206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+      <a href="../../paradigmas/paradigmas.html" class="md-nav__link">
         Парадигми у програмуванні
       </a>
     </li>
@@ -218,7 +218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paradigmas/imperative.html" class="md-nav__link">
+      <a href="../../paradigmas/imperative.html" class="md-nav__link">
         Імперативне програмування
       </a>
     </li>
@@ -230,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paradigmas/oop.html" class="md-nav__link">
+      <a href="../../paradigmas/oop.html" class="md-nav__link">
         Об'єктно-орієнтоване програмування
       </a>
     </li>
@@ -242,7 +242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paradigmas/declarative.html" class="md-nav__link">
+      <a href="../../paradigmas/declarative.html" class="md-nav__link">
         Декларативне програмування
       </a>
     </li>
@@ -254,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paradigmas/resume.html" class="md-nav__link">
+      <a href="../../paradigmas/resume.html" class="md-nav__link">
         Резюме
       </a>
     </li>
@@ -273,12 +273,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Функції
@@ -296,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="call_stack.html" class="md-nav__link">
+      <a href="../call_stack.html" class="md-nav__link">
         Стек викликів
       </a>
     </li>
@@ -308,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="strategies.html" class="md-nav__link">
+      <a href="../strategies.html" class="md-nav__link">
         Стратегії обчислення
       </a>
     </li>
@@ -318,9 +320,97 @@
             
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Параметри і аргументи
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Параметри і аргументи" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Параметри і аргументи
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Позиційні і іменовані
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="post_and_kw.html" class="md-nav__link md-nav__link--active">
+        Позиційні і іменовані
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Позиційні аргументи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Іменовані аргументи
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
   
     <li class="md-nav__item">
-      <a href="docstring.html" class="md-nav__link">
+      <a href="../docstring.html" class="md-nav__link">
         Документування функцій
       </a>
     </li>
@@ -362,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../whats_next/resources.html" class="md-nav__link">
+      <a href="../../whats_next/resources.html" class="md-nav__link">
         Корисні ресурси
       </a>
     </li>
@@ -374,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../whats_next/miths_edu.html" class="md-nav__link">
+      <a href="../../whats_next/miths_edu.html" class="md-nav__link">
         Міфи про навчання
       </a>
     </li>
@@ -422,33 +512,6 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Іменовані аргументи
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Опціональні параметри
-  </a>
-  
-    <nav class="md-nav" aria-label="Опціональні параметри">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Створення значень опціональних парамтрів
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Лише по ключу!
   </a>
   
 </li>
@@ -519,90 +582,6 @@
 <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">positional</span> <span class="n">argument</span> <span class="n">follows</span> <span class="n">keyword</span> <span class="n">argument</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
-
-<h2 id="_4">Опціональні параметри</h2>
-<p>Деякі параметри функції можна зробити необов'язковими. 
-Для цього для них при визначенні функції треба вказати значення за замовчуванням. 
-Це значення буде присвоєно параметру якщо ми викликаючи функцію не вкажемо відповідний аргумент:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">product_info</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Product:&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Color:&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Price:&#39;</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">product_info</span><span class="p">(</span><span class="s1">&#39;Pen&#39;</span><span class="p">)</span>
-<span class="n">Product</span><span class="p">:</span> <span class="n">Pen</span>
-<span class="n">Color</span><span class="p">:</span> <span class="n">blue</span>
-<span class="n">Price</span><span class="p">:</span> <span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">product_info</span><span class="p">(</span><span class="s1">&#39;Pen&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">Product</span><span class="p">:</span> <span class="n">Pen</span>
-<span class="n">Color</span><span class="p">:</span> <span class="n">red</span>
-<span class="n">Price</span><span class="p">:</span> <span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">product_info</span><span class="p">(</span><span class="s1">&#39;Pen&#39;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">Product</span><span class="p">:</span> <span class="n">Pen</span>
-<span class="n">Color</span><span class="p">:</span> <span class="n">blue</span>
-<span class="n">Price</span><span class="p">:</span> <span class="mi">5</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h3 id="_5">Створення значень опціональних парамтрів</h3>
-<p><strong><em>Зауважте:</em></strong> 
-значення за замовчуванням обчислюються і створюються лише один раз, 
-а саме при створенні функції! 
-У цей момент вони зв'язуються з іменами відповідних параметрів. </p>
-<p>Тому будьте обережними якщо у якості значення за замовчуванням вказуєте мутабельні об'єкти. </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">modify_list</span><span class="p">(</span><span class="n">lst</span><span class="o">=</span><span class="p">[]):</span>
-<span class="o">...</span>     <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="n">lst</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Намагайтесь не використовувати мутабельні типи у якості значень за замовчуванням, 
-якщо, звісно, ви чітко не усвідомлюєтє що саме робите. 
-Вищенаведений код краще написати так:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">modify_list</span><span class="p">(</span><span class="n">lst</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">if</span> <span class="n">lst</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-<span class="o">...</span>             <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="o">...</span>     <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="n">lst</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_6">Лише по ключу!</h2>
-<p>В Python 3 є можливість явно вказати, щоб частина аргументів завжди передавалась тільки як ключові. Напишемо функцію яка виводить певну кількість елементів послідовності починаючи з кінця:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">tail</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="n">length</span><span class="p">:])</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Поміж параметрами функції ми поставили просто зірочку. Такий синтаксис означає, що усе що йде за зірочкою має передаватись тільки як ключові аргументи.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tail</span><span class="p">(</span><span class="s1">&#39;Hello, World&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">tail</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">1</span> <span class="n">positional</span> <span class="n">argument</span> <span class="n">but</span> <span class="mi">2</span> <span class="n">were</span> <span class="n">given</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Ми викликали функцію <code>tail()</code> передавши їй 2 позиційні аргументи, але інтерпретатор нам повідомляє, що ця функція може прийняти лише один позиційний аргумент. 
-Давайте виправимо ситуацію передавши функції другий аргумент по ключу:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tail</span><span class="p">(</span><span class="s1">&#39;Hello, World&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">World</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
                 
               
               
@@ -618,6 +597,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../strategies.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Стратегії обчислення" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Стратегії обчислення
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../docstring.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Документування функцій" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Документування функцій
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -642,10 +656,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
       
     
   </body>

@@ -122,9 +122,12 @@ nav:
   - Функції:
     - Стек викликів: functions/call_stack.md
     - Стратегії обчислення: functions/strategies.md
-    # - Параметри і аргументи: functions/args.md
-    # - Змінна кількість аргументів: functions/args_kwargs.md
-    # - Області видимості: functions/scope.md
+    - Параметри і аргументи: 
+      - Позиційні і іменовані: functions/args/post_and_kw.md
+      # - Опціональні: functions/args/default.md
+      # - Лише позиційні або іменовані: functions/args/pos_kw_only.md
+      # - Довільна кількість аргументів: functions/args/args_kwargs.md
+    # # - Області видимості: functions/scope.md
     # # - Вбудовані функції Python: functions/buildin_functions.md
     - Документування функцій: functions/docstring.md
   # - Об'єктно-орієнтоване програмування:

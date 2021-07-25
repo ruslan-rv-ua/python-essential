@@ -38,16 +38,22 @@
 Не дивлячись на відеоформат матеріалів відсотків 80-85 інформації доступно. 
 - [Учимся читать код, изучая стандартную библиотеку Python
 ](https://habr.com/ru/company/vdsina/blog/566134/)
+- [The Algorithms - Python](https://github.com/TheAlgorithms/Python)
 
 
 ## Розробка
 
+- [Awesome Python](https://github.com/vinta/awesome-python) — 
+список Python-фреймворків, бібліотек, ПЗ та інших ресурсів. Must have! 
 - [Public APIs](https://github.com/public-apis/public-apis) — 
 список безкоштовних API для використання у програмному забезпеченні та веброзробці.
 
 
 ## Статті
 
+- [wxpython. Доступность еще доступнее
+](https://habr.com/ru/post/505284/) — 
+як робити десктопні апплікації з wxpython доступними
 - [How to troubleshoot memory problems in Python](https://innovation.alteryx.com/how-to-troubleshoot-memory-problems-in-python/) — 
 "Як вирішити проблеми з пам'яттю в Python". 
 Читайте якщо у вашому проекті "тече" пам'ять і збиральник сміття не допомагає.

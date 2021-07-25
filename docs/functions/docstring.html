@@ -320,6 +320,45 @@
             
   
   
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Параметри і аргументи
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Параметри і аргументи" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Параметри і аргументи
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="args/post_and_kw.html" class="md-nav__link">
+        Позиційні і іменовані
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -362,27 +401,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Документування коду
+  <a href="#docstring" class="md-nav__link">
+    docstring
   </a>
-  
-    <nav class="md-nav" aria-label="Документування коду">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Приклади
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
+    Приклади
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     Завдання
   </a>
   
@@ -489,27 +522,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Документування коду
+  <a href="#docstring" class="md-nav__link">
+    docstring
   </a>
-  
-    <nav class="md-nav" aria-label="Документування коду">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Приклади
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
+    Приклади
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     Завдання
   </a>
   
@@ -537,25 +564,28 @@
 
 <p>Якщо функція викликається без аргументів, довідкова система запускається у інтерактивному режимі.
 Якщо функції передано символьний рядок, то виконується спроба інтерпретувати її як ім'я модуля, функції, класу, метода або розділу документації, після чого довідка виводиться у консоль. Якщо ж функції передано об'єкт будь-якого іншого типу, довідка герерується по даним цього об'єкта (docstring).</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
-<span class="n">Help</span> <span class="n">on</span> <span class="n">method_descriptor</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">print</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
 
-<span class="n">split</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-    <span class="n">S</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="n">Return</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">S</span><span class="p">,</span> <span class="n">using</span> <span class="n">sep</span> <span class="k">as</span> <span class="n">the</span>
-    <span class="n">delimiter</span> <span class="n">string</span><span class="o">.</span>  <span class="n">If</span> <span class="n">maxsplit</span> <span class="ow">is</span> <span class="n">given</span><span class="p">,</span> <span class="n">at</span> <span class="n">most</span> <span class="n">maxsplit</span>
-    <span class="n">splits</span> <span class="n">are</span> <span class="n">done</span><span class="o">.</span> <span class="n">If</span> <span class="n">sep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span> <span class="ow">or</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">any</span>
-    <span class="n">whitespace</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">separator</span> <span class="ow">and</span> <span class="n">empty</span> <span class="n">strings</span> <span class="n">are</span>
-    <span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">result</span><span class="o">.</span>
+    <span class="n">Prints</span> <span class="n">the</span> <span class="n">values</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stream</span><span class="p">,</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
+    <span class="n">Optional</span> <span class="n">keyword</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="n">file</span><span class="p">:</span>  <span class="n">a</span> <span class="n">file</span><span class="o">-</span><span class="n">like</span> <span class="nb">object</span> <span class="p">(</span><span class="n">stream</span><span class="p">);</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span>
+    <span class="n">sep</span><span class="p">:</span>   <span class="n">string</span> <span class="n">inserted</span> <span class="n">between</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">space</span><span class="o">.</span>
+    <span class="n">end</span><span class="p">:</span>   <span class="n">string</span> <span class="n">appended</span> <span class="n">after</span> <span class="n">the</span> <span class="n">last</span> <span class="n">value</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">newline</span><span class="o">.</span>
+    <span class="n">flush</span><span class="p">:</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">forcibly</span> <span class="n">flush</span> <span class="n">the</span> <span class="n">stream</span><span class="o">.</span>
 
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
 <p>Функцію <code>help()</code> використовують, в основному, у інтерактивному режимі інтерпретатора.</p>
-<h2 id="_2">Документування коду</h2>
+<h2 id="docstring">docstring</h2>
+<p>Але звідки ж функція <code>help()</code> бере дані документації?</p>
 <p>Під час написання коду до практично усіх сутностей Python (функція, метод, клас, модуль) ми одразу ж можемо створювати документацію. Робиться це за допомогою docstring.</p>
-<p><em>docstring</em> — це "особливий вид" коментаря. Перший коментар, що стоїть на самому початку модуля, функції та ін. і є docstring, або <em>рядком документації</em>.</p>
+<p><em>docstring</em> — це "особливий вид" коментаря. 
+Перший коментар, що стоїть на самому початку модуля, функції та ін. і є docstring, або <em>рядком документації</em>.</p>
 <p>Основні відміни docstring від звичайних коментарів:</p>
 <ul>
 <li>до рядків документації можна отримати доступ під час виконання програми</li>
@@ -563,14 +593,15 @@
 <li>до рядків документації мають доступ інтерпретатор, середовище розробки</li>
 </ul>
 <p>Напряму доступ до рядків документації можна отримати через атрибут (поле) <code>__doc__</code> відповідних об'єктів.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-<span class="n">S</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">print</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="n">Return</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">S</span><span class="p">,</span> <span class="n">using</span> <span class="n">sep</span> <span class="k">as</span> <span class="n">the</span>
-<span class="n">delimiter</span> <span class="n">string</span><span class="o">.</span>  <span class="n">If</span> <span class="n">maxsplit</span> <span class="ow">is</span> <span class="n">given</span><span class="p">,</span> <span class="n">at</span> <span class="n">most</span> <span class="n">maxsplit</span>
-<span class="n">splits</span> <span class="n">are</span> <span class="n">done</span><span class="o">.</span> <span class="n">If</span> <span class="n">sep</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span> <span class="ow">or</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">any</span>
-<span class="n">whitespace</span> <span class="n">string</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">separator</span> <span class="ow">and</span> <span class="n">empty</span> <span class="n">strings</span> <span class="n">are</span>
-<span class="n">removed</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">result</span><span class="o">.</span>
+<span class="n">Prints</span> <span class="n">the</span> <span class="n">values</span> <span class="n">to</span> <span class="n">a</span> <span class="n">stream</span><span class="p">,</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="n">keyword</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="n">file</span><span class="p">:</span>  <span class="n">a</span> <span class="n">file</span><span class="o">-</span><span class="n">like</span> <span class="nb">object</span> <span class="p">(</span><span class="n">stream</span><span class="p">);</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span>
+<span class="n">sep</span><span class="p">:</span>   <span class="n">string</span> <span class="n">inserted</span> <span class="n">between</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">space</span><span class="o">.</span>
+<span class="n">end</span><span class="p">:</span>   <span class="n">string</span> <span class="n">appended</span> <span class="n">after</span> <span class="n">the</span> <span class="n">last</span> <span class="n">value</span><span class="p">,</span> <span class="n">default</span> <span class="n">a</span> <span class="n">newline</span><span class="o">.</span>
+<span class="n">flush</span><span class="p">:</span> <span class="n">whether</span> <span class="n">to</span> <span class="n">forcibly</span> <span class="n">flush</span> <span class="n">the</span> <span class="n">stream</span><span class="o">.</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
@@ -584,8 +615,12 @@
 <p>Написання документації, так само як і коментарів до початкового коду, є дуже важливим! 
 Основне призначення коментарів – пояснити що робить код, як він працює. Основне призначення рядків документації – коротко описати в цілому для чого призначено об'єкт, які аргументи приймає, і що повертає. </p>
 <p>Супроводжуйте ваші функції якісною документацією і програмісти, котрі будуть працювати з вашим кодом після вас, будуть вдячні вам.
-Зауважимо: документування прийнято виконувати англійською мовою. Багато проектів мають відкритий код, доступні у Вебі, їх вивчають і модифікують програмісти з різних країн. Використання однієї мови дозвояє їм розуміти один одного. Тому професійний програміст має володіти английською хоча б на початковому рівні. Google Translate – теж варіант.</p>
-<h4 id="_3">Приклади</h4>
+Зауважимо: документування прийнято виконувати англійською мовою. 
+Багато проектів мають відкритий код, доступні у Вебі, їх вивчають і модифікують програмісти з різних країн. 
+Використання однієї мови дозвояє їм розуміти один одного. 
+Тому професійний програміст має володіти английською хоча б на початковому рівні. 
+Google Translate – теж варіант. </p>
+<h2 id="_2">Приклади</h2>
 <p>Оголосимо функцію і одразу ж створимо до неї документацію:</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">rectangle_square</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
 <span class="o">...</span>     <span class="s2">&quot;&quot;&quot;</span>
@@ -606,10 +641,10 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h2 id="_4">Завдання</h2>
+<h2 id="_3">Завдання</h2>
 <ol>
-<li>Скориставшись функцією <code>help()</code> ознайомтесь з документацією тих сутностей Python, що вас цікавить найбільше на даний момент.</li>
-<li>Спробуйте вивчити документацію до функції <code>help()</code></li>
+<li>Скориставшись функцією <code>help()</code> ознайомтесь з документацією тих сутностей Python, що вас цікавить найбільше на даний момент. </li>
+<li>Спробуйте вивчити документацію до функції <code>help()</code> </li>
 </ol>
                 
               
@@ -630,7 +665,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="strategies.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Стратегії обчислення" rel="prev">
+        <a href="args/post_and_kw.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Позиційні і іменовані" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -639,7 +674,7 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Стратегії обчислення
+              Позиційні і іменовані
             </div>
           </div>
         </a>

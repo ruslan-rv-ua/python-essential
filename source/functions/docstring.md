@@ -13,33 +13,31 @@
 Якщо функції передано символьний рядок, то виконується спроба інтерпретувати її як ім'я модуля, функції, класу, метода або розділу документації, після чого довідка виводиться у консоль. Якщо ж функції передано об'єкт будь-якого іншого типу, довідка герерується по даним цього об'єкта (docstring).
 
 	:::python
-    >>> help(str.split)
-    Help on method_descriptor:
+	>>> help(print)
+	Help on built-in function print in module builtins:
 
-    split(...)
-        S.split(sep=None, maxsplit=-1) -> list of strings
+	print(...)
+		print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
 
-        Return a list of the words in S, using sep as the
-        delimiter string.  If maxsplit is given, at most maxsplit
-        splits are done. If sep is not specified or is None, any
-        whitespace string is a separator and empty strings are
-        removed from the result.
+		Prints the values to a stream, or to sys.stdout by default.
+		Optional keyword arguments:
+		file:  a file-like object (stream); defaults to the current sys.stdout.
+		sep:   string inserted between values, default a space.
+		end:   string appended after the last value, default a newline.
+		flush: whether to forcibly flush the stream.
 
-    >>>    
+	>>>
 
 Функцію `help()` використовують, в основному, у інтерактивному режимі інтерпретатора.
 
+## docstring
 
-
-
-
-
-
-## Документування коду
+Але звідки ж функція `help()` бере дані документації?
 
 Під час написання коду до практично усіх сутностей Python (функція, метод, клас, модуль) ми одразу ж можемо створювати документацію. Робиться це за допомогою docstring.
 
-*docstring* — це "особливий вид" коментаря. Перший коментар, що стоїть на самому початку модуля, функції та ін. і є docstring, або *рядком документації*.
+*docstring* — це "особливий вид" коментаря. 
+Перший коментар, що стоїть на самому початку модуля, функції та ін. і є docstring, або *рядком документації*.
 
 Основні відміни docstring від звичайних коментарів:
 
@@ -50,14 +48,15 @@
 Напряму доступ до рядків документації можна отримати через атрибут (поле) `__doc__` відповідних об'єктів.
 
 	:::python
-	>>> print(str.split.__doc__)
-	S.split(sep=None, maxsplit=-1) -> list of strings
+	>>> print(print.__doc__)
+	print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
 
-	Return a list of the words in S, using sep as the
-	delimiter string.  If maxsplit is given, at most maxsplit
-	splits are done. If sep is not specified or is None, any
-	whitespace string is a separator and empty strings are
-	removed from the result.
+	Prints the values to a stream, or to sys.stdout by default.
+	Optional keyword arguments:
+	file:  a file-like object (stream); defaults to the current sys.stdout.
+	sep:   string inserted between values, default a space.
+	end:   string appended after the last value, default a newline.
+	flush: whether to forcibly flush the stream.
 	>>>
 
 При роботі з інтерпретатором у інтерактивному режимі зручно використовувати функцію `help()`.
@@ -72,13 +71,13 @@
 Основне призначення коментарів – пояснити що робить код, як він працює. Основне призначення рядків документації – коротко описати в цілому для чого призначено об'єкт, які аргументи приймає, і що повертає. 
 
 Супроводжуйте ваші функції якісною документацією і програмісти, котрі будуть працювати з вашим кодом після вас, будуть вдячні вам.
-Зауважимо: документування прийнято виконувати англійською мовою. Багато проектів мають відкритий код, доступні у Вебі, їх вивчають і модифікують програмісти з різних країн. Використання однієї мови дозвояє їм розуміти один одного. Тому професійний програміст має володіти английською хоча б на початковому рівні. Google Translate – теж варіант.
+Зауважимо: документування прийнято виконувати англійською мовою. 
+Багато проектів мають відкритий код, доступні у Вебі, їх вивчають і модифікують програмісти з різних країн. 
+Використання однієї мови дозвояє їм розуміти один одного. 
+Тому професійний програміст має володіти английською хоча б на початковому рівні. 
+Google Translate – теж варіант. 
 
-
-
-
-
-#### Приклади
+## Приклади
 
 Оголосимо функцію і одразу ж створимо до неї документацію:
 
@@ -101,16 +100,7 @@
 	300
 	>>>
 
-
-
-
-
-
-
-
-	
-
 ## Завдання
 
-1. Скориставшись функцією `help()` ознайомтесь з документацією тих сутностей Python, що вас цікавить найбільше на даний момент.
-1. Спробуйте вивчити документацію до функції `help()`
+1. Скориставшись функцією `help()` ознайомтесь з документацією тих сутностей Python, що вас цікавить найбільше на даний момент. 
+1. Спробуйте вивчити документацію до функції `help()` 
