@@ -1,0 +1,423 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Функції вищого порядку - Python Essential</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../stylesheets/fixes.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Python Essential" class="md-header__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Essential
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Функції вищого порядку
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Python Essential" class="md-nav__button md-logo" aria-label="Python Essential" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89z"/></svg>
+
+    </a>
+    Python Essential
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Про цей курс
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Функції як об'єкти
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Об'єкт першого класу
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Посилання на функції
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Функції вищого порядку
+  </a>
+  
+    <nav class="md-nav" aria-label="Функції вищого порядку">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Функції як аргументи
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">Функції вищого порядку</h1>
+<p>Ще одним принциповим положення функціонального програмування є функції вищого порядку. </p>
+<h2 id="_2">Функції як об'єкти</h2>
+<p>Вже не раз згадувалось, що "в Python усе є об'єкт". 
+І функції тут не вийняток. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">f</span> <span class="n">at</span> <span class="mh">0x000002877927F0D0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">function</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Тобто функції — це об'єкти, які належать до класу <code>function</code>.</p>
+<h2 id="_3">Об'єкт першого класу</h2>
+<p>Об'єкт називають «об'єктом першого класу», якщо:</p>
+<ul>
+<li>його може бути збережено у змінній або інших структурах даних;</li>
+<li>його може бути передано в функцію як аргумент;</li>
+<li>його може бути поверненим з функції як результат;</li>
+<li>його може бути створено під час виконання програми;</li>
+<li>він внутрішньо самоідентифікується (не залежить від іменування).</li>
+</ul>
+<p>Зауважте що термін «об'єкт» використовується тут у загальному розумінні і не обмежується об'єктами мови програмування.</p>
+<p>В Python функції — об'єкти першого класу.</p>
+<h2 id="_4">Посилання на функції</h2>
+<p>При оголошенні функції створюється об'єкт класу <code>function</code>, і паралельно створються змінна з іменем, вказаним після <code>def</code>. Пам'ятаючи, що змінні в Python — не що інше, як посилання на об'єкти, ми легко можемо посилатися на функцію за допомогою іншого імені:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">original</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It work&#39;s&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">original</span><span class="p">()</span>
+<span class="n">It</span> <span class="n">work</span><span class="s1">&#39;s</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">original</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">copy</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">original</span> <span class="n">at</span> <span class="mh">0x000002877927F158</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">copy</span><span class="p">()</span>
+<span class="n">It</span> <span class="n">work</span><span class="s1">&#39;s</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Зауважте що об'єкт класу <code>function</code> має своє ім'я.</p>
+<p>Давайте напишемо примітивний калькулятор який буде підтримувати усього чотири арифметичні операції. Нехай користувач вводить два операнди і операцію над ними, а програма виводить результат.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="n">operators</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;+&#39;</span><span class="p">:</span> <span class="n">add</span><span class="p">,</span>
+    <span class="s1">&#39;-&#39;</span><span class="p">:</span> <span class="n">sub</span><span class="p">,</span>
+    <span class="s1">&#39;*&#39;</span><span class="p">:</span> <span class="n">mul</span><span class="p">,</span>
+    <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="n">div</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">n1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter first operand: &#39;</span><span class="p">))</span>
+<span class="n">op</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter operator: &#39;</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter second operand: &#39;</span><span class="p">))</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">operators</span><span class="p">[</span><span class="n">op</span><span class="p">](</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="_5">Функції вищого порядку</h2>
+<blockquote>
+<p><strong><em>Функція вищого порядку</em></strong> — це така функція, яка приймає іншу функцію в якості аргумента та/або повертає іншу функцію.</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; def f(x):
+...     return x + 3
+...
+&gt;&gt;&gt; def g(function, x):
+...     return function(x) * function(x)
+...
+&gt;&gt;&gt; g(f, 7)
+100
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>У наведеному вище прикладі <code>g()</code> — функція вищого порядку.</p>
+<h3 id="_6">Функції як аргументи</h3>
+<p>Для початку давайте розглянемо ще одну вбудовану функцію Python:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">sorted</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Функція повертає список який складається з відсортованих елементів послідовності <code>iterable</code>.</p>
+<p>Необов'язкові аргументи:</p>
+<ul>
+<li><code>key</code> — функція з одним параметром. Цій функції будуть передаватись елементи <code>iterable</code>. Функція має повертати "ключ" сортування, тобто ті значення, по яким буде відбуватись порівняння елементів <code>iterable</code>. За замовчуванням дорівнює <code>None</code>, тобто усі елементи порівнюються "напряму".</li>
+<li><code>reverse</code> — типу <code>bool</code>. Якщо <code>True</code>, то елементи послідовності будуть відсортовані у зворотньому порядку.</li>
+</ul>
+<p>Простий приклад: маємо список символьних рядків, який треба відсортувати.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;jam&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;jam&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Отримали відсортований список рядків. Зауважте, що символьні рядки відсортовані у лексиграфічному порядку, тобто при порівнюванні рядкків між собою враховувався регістр букв (верхній чи нижній).</p>
+<p>А тепер припустимо, що нам потрібно відсортувати список символьнлих рядків не враховуючи регістр останніх. Найпростіше — приводити усі символьні рядки до одного регістру перед тим як порівнювати їх між собою.</p>
+<p>Отже функції <code>sorted()</code> можна передати як аргумент ще одну функцію, яка у свою чергу буде трошки "змінювати" наші символьні рядки. Визначимо останню:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">to_lower</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>І тепер передаємо її у якості аргументу:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">to_lower</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;jam&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;job&#39;</span><span class="p">,</span> <span class="s1">&#39;John&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="_7">Додаткові матеріали</h2>
+<ul>
+<li><a href="https://uk.wikipedia.org/wiki/Об%27єкт_першого_класу">Об'єкт першого класу — Вікіпедія</a></li>
+<li><a href="https://uk.wikipedia.org/wiki/Функція_вищого_порядку">Функція вищого порядку — Вікіпедія</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Ruslan Iskov
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -41,7 +41,7 @@
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Ліцензія Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 <br />
 Цей твір ліцензовано на умовах <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Ліцензії Creative Commons Міжнародна (CC BY-NC-ND 4.0)</a>. 
-Спрощено: 
+Суть ліцензії коротко і спрощено: 
 
 - твір можна вільно розповсюджувати у будь-якій формі
 - із зазначенням авторства

@@ -1,4 +1,4 @@
-# Project information
+    # Project information
 site_name: 'Python Essential'
 site_description: 'Навчальний курс з програмування мовою Python. Необхідне.'
 site_author: 'Ruslan Iskov'
@@ -64,6 +64,7 @@ plugins: []
         
 # Customization
 extra:
+  # disqus: <shortname>
   generator: false
 #   social:
 #    - type: 'github'
@@ -112,33 +113,109 @@ markdown_extensions:
 
 nav:
   - Про цей курс: index.md
-  - Підготовка: preparations.md
-  - Парадигми програмування:
-    - Парадигми у програмуванні: paradigmas/paradigmas.md
-    - Імперативне програмування: paradigmas/imperative.md
-    - Об'єктно-орієнтоване програмування: paradigmas/oop.md
-    - Декларативне програмування: paradigmas/declarative.md
-    - Резюме: paradigmas/resume.md
-  - Функції:
-    - Стек викликів: functions/call_stack.md
-    - Стратегії обчислення: functions/strategies.md
-    - Параметри і аргументи: 
-      - Позиційні і іменовані: functions/args/post_and_kw.md
+  # - Підготовка: preparations.md
+  # - Парадигми програмування:
+    # - Парадигми у програмуванні: paradigmas/paradigmas.md
+    # - Імперативне програмування: paradigmas/imperative.md
+    # - Об'єктно-орієнтоване програмування: paradigmas/oop.md
+    # - Декларативне програмування: paradigmas/declarative.md
+    # - Резюме: paradigmas/resume.md
+  # - Функції:
+    # - Параметри функцій: 
+      # - Позиційні та іменовані: functions/args/pos_and_kw.md
       # - Опціональні: functions/args/default.md
-      # - Лише позиційні або іменовані: functions/args/pos_kw_only.md
+      # - Лише позиційні або іменовані: functions/args/pos_and_kw_only.md
       # - Довільна кількість аргументів: functions/args/args_kwargs.md
-    # # - Області видимості: functions/scope.md
-    # # - Вбудовані функції Python: functions/buildin_functions.md
-    - Документування функцій: functions/docstring.md
+    # - Області видимості: functions/scope.md
+    # - Стек викликів: functions/call_stack.md
+    # - Стратегії обчислення: functions/strategies.md
+    # - Документування функцій: functions/docstring.md
   # - Об'єктно-орієнтоване програмування:
     # - Що таке ООП: oop/oop_basis.md
     # - Класи і об'єкти: oop/classes.md
     # - Життєвий цикл об'єкта: oop/object_lifecycle.md
     # - Ініціалізація об'єктів: oop/init.md
     # - Представлення об'єктів: oop/object_presentation.md
+    # - Інкапсуляція:
+      # - Інкапсуляція в ООП
+      # - Приховування атрибутів класа
+      # - Сетери і гетери
+      # - Властивості
+      # - Обчислювані властивості
+    # - Успадкування:
+      # - Успадкування в ООП
+      # - Успадкування в Python
+      # - Ієрархія класів
+      # - Успадкування і приватні атрибути
+      # - Лінеаризація
+      # - Перевизначення і пошук методів
+      # - Множинне успадкування
+      # - Лінеарізація і множинна спадковість
+      # - Пошук методів і лінеарізація
+    # - Поліморфізм:
+      # - Поліморфізм в ООП
+      # - Поліморфізм в Python
+      # - Качина типізація
+    # - Поведінка об'єктів:
+  # - Виняткові ситуації:
+    # - Винятки
+    # - Обробка винятків
+    # - Попередження
+    # - EAFP vs LBYL
+    # - assert
+    # - Менеджери контекста
+  # - Ітерабельні об'єкти:
+    # - Ітератори
+    # - Реалізація за допомогою __iter__
+    # - Реалізація за допомогою __getitem__
+    # - Генератори
+    # - Генератори-вирази
+  # - Ввід та вивід:
+    # - Файли і потоки
+    # - Відкриття і закриття потоків
+    # - Читання і запис
+    # - Серіалізація об'єктів
+  # - Модулі і пакети:
+    # - Модулі у програмуванні
+    # - Модулі в Python
+    # - Модулі як об'єкти
+    # - Пакети
+    # - Встановлення пакетів
+  # - Виконання програм:
+    # - Інтерпретатор Python
+    # - Програмне виконання коду
+    # - Передача аргументів скрипту
+    # - Віртуальні оточення
+  # - Типи та структури даних:
+    # - Типізація у програмуванні: types_and_data_structures/typing.md
+    # - Підказки типів в Python: types_and_data_structures/type_hinting.md
+    # - Числа:
+      # - Системи числення: types_and_data_structures/numbers/number_system.md
+      # - Цілі числа: types_and_data_structures/numbers/int.md
+      # - Дробові числа: types_and_data_structures/numbers/float.md
+      # - Комплексні числа: types_and_data_structures/numbers/complex.md
+      # - Булевий тип даних: types_and_data_structures/numbers/bool.md
+    # - Послідовності:
+      # - Послідовності в Python: types_and_data_structures/sequences/sequences.md
+      # - Списки: types_and_data_structures/sequences/list.md
+      # - Кортежі: types_and_data_structures/sequences/tuple.md
+      # - Діапазони: types_and_data_structures/sequences/range.md
+      # - Символьні рядки: types_and_data_structures/sequences/str.md
+      # - Бінарні послідовності: types_and_data_structures/sequences/bin_seq.md
+      # - Порівняння послідовностей: types_and_data_structures/sequences/seq_compare.md
+    # - Відображення та множини:
+      # - Хеш: types_and_data_structures/mappings_and_sets/hash.md
+      # - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
+      # - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
+      # - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
+  # - Присвоєння значень:
+    # - Моржовий оператор: assignment/walrus.md
+    # - Упаковка та розпаковка ітерабельних об'єктів: assignment/starr.md
+    # - Функція enumerate: assignment/enumerate.md
   # - Елементи функціонального програмування:
     # - Функціональне програмування: functional_programming/intro.md
-    # - "Функції як об'єкти": functional_programming/func_as_object.md
+    # - Чисті функції: functional_programming/pure_functions.md
+    # - Функції вищого порядку: functional_programming/higher_order_functions.md
     # - Анонімні функції: functional_programming/lambda.md
     # - Функції map(), filter(), reduce(): functional_programming/map_filter_reduce.md
     # - Рекурсія: functional_programming/recursion.md
@@ -147,7 +224,8 @@ nav:
   # - Батарейки:
     # - Модуль datetime: batteries/datetime.md
     # - Модуль itertools: batteries/itertools.md
-  - Що далі?:
-    - Корисні ресурси: whats_next/resources.md
-    - Міфи про навчання: whats_next/miths_edu.md
+  # - Наступні кроки:
+    # - Що далі?: go_ahead/whats_next.md
+    # - Корисні ресурси: go_ahead/resources.md
+    # - Міфи про навчання: go_ahead/miths_edu.md
 
