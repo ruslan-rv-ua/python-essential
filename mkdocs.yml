@@ -113,25 +113,25 @@ markdown_extensions:
 
 nav:
   - Про цей курс: index.md
-  # - Підготовка: preparations.md
-  # - Парадигми програмування:
-    # - Парадигми у програмуванні: paradigmas/paradigmas.md
-    # - Імперативне програмування: paradigmas/imperative.md
-    # - Об'єктно-орієнтоване програмування: paradigmas/oop.md
-    # - Декларативне програмування: paradigmas/declarative.md
-    # - Резюме: paradigmas/resume.md
-  # - Функції:
-    # - Параметри функцій: 
-      # - Позиційні та іменовані: functions/args/pos_and_kw.md
+  - Підготовка: preparations.md
+  - Парадигми програмування:
+    - Парадигми у програмуванні: paradigmas/paradigmas.md
+    - Імперативне програмування: paradigmas/imperative.md
+    - Об'єктно-орієнтоване програмування: paradigmas/oop.md
+    - Декларативне програмування: paradigmas/declarative.md
+    - Резюме: paradigmas/resume.md
+  - Функції:
+    - Параметри функцій: 
+      - Позиційні та іменовані: functions/args/pos_and_kw.md
       # - Опціональні: functions/args/default.md
       # - Лише позиційні або іменовані: functions/args/pos_and_kw_only.md
       # - Довільна кількість аргументів: functions/args/args_kwargs.md
     # - Області видимості: functions/scope.md
-    # - Стек викликів: functions/call_stack.md
-    # - Стратегії обчислення: functions/strategies.md
-    # - Документування функцій: functions/docstring.md
-  # - Об'єктно-орієнтоване програмування:
-    # - Що таке ООП: oop/oop_basis.md
+    - Стек викликів: functions/call_stack.md
+    - Стратегії обчислення: functions/strategies.md
+    - Документування функцій: functions/docstring.md
+  - Об'єктно-орієнтоване програмування:
+    - Що таке ООП: oop/oop_basis.md
     # - Класи і об'єкти: oop/classes.md
     # - Життєвий цикл об'єкта: oop/object_lifecycle.md
     # - Ініціалізація об'єктів: oop/init.md
