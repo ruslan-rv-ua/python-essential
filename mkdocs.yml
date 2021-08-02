@@ -123,12 +123,12 @@ nav:
   - Функції:
     - Параметри функцій: 
       - Позиційні та іменовані: functions/args/pos_and_kw.md
-      # - Опціональні: functions/args/default.md
-      # - Лише позиційні або іменовані: functions/args/pos_and_kw_only.md
-      # - Довільна кількість аргументів: functions/args/args_kwargs.md
+      - Опціональні: functions/args/default.md
+      - Лише позиційні або іменовані: functions/args/pos_and_kw_only.md
+      - Довільна кількість аргументів: functions/args/args_kwargs.md
     # - Області видимості: functions/scope.md
-    - Стек викликів: functions/call_stack.md
     - Стратегії обчислення: functions/strategies.md
+    - Стек викликів: functions/call_stack.md
     - Документування функцій: functions/docstring.md
   - Об'єктно-орієнтоване програмування:
     - Що таке ООП: oop/oop_basis.md
@@ -159,12 +159,12 @@ nav:
     # - Поведінка об'єктів:
   # - Виняткові ситуації:
     # - Винятки
+    # - assert
     # - Обробка винятків
     # - Попередження
     # - EAFP vs LBYL
-    # - assert
     # - Менеджери контекста
-  # - Ітерабельні об'єкти:
+  # - Ітератори та генератори:
     # - Ітератори
     # - Реалізація за допомогою __iter__
     # - Реалізація за допомогою __getitem__
@@ -195,19 +195,20 @@ nav:
       # - Дробові числа: types_and_data_structures/numbers/float.md
       # - Комплексні числа: types_and_data_structures/numbers/complex.md
       # - Булевий тип даних: types_and_data_structures/numbers/bool.md
-    # - Послідовності:
-      # - Послідовності в Python: types_and_data_structures/sequences/sequences.md
-      # - Списки: types_and_data_structures/sequences/list.md
-      # - Кортежі: types_and_data_structures/sequences/tuple.md
-      # - Діапазони: types_and_data_structures/sequences/range.md
-      # - Символьні рядки: types_and_data_structures/sequences/str.md
-      # - Бінарні послідовності: types_and_data_structures/sequences/bin_seq.md
-      # - Порівняння послідовностей: types_and_data_structures/sequences/seq_compare.md
-    # - Відображення та множини:
-      # - Хеш: types_and_data_structures/mappings_and_sets/hash.md
-      # - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
-      # - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
-      # - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
+    # - Контейнери: types_and_data_structures/containers.md
+      # - Послідовності:
+        # - Послідовності в Python: types_and_data_structures/sequences/sequences.md
+        # - Списки: types_and_data_structures/sequences/list.md
+        # - Кортежі: types_and_data_structures/sequences/tuple.md
+        # - Діапазони: types_and_data_structures/sequences/range.md
+        # - Символьні рядки: types_and_data_structures/sequences/str.md
+        # - Бінарні послідовності: types_and_data_structures/sequences/bin_seq.md
+        # - Порівняння послідовностей: types_and_data_structures/sequences/seq_compare.md
+      # - Відображення та множини:
+        # - Хеш: types_and_data_structures/mappings_and_sets/hash.md
+        # - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
+        # - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
+        # - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
   # - Присвоєння значень:
     # - Моржовий оператор: assignment/walrus.md
     # - Упаковка та розпаковка ітерабельних об'єктів: assignment/starr.md

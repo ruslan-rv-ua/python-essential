@@ -16,21 +16,41 @@ hide:
 Також ознайомтесь зі списком корисних ресурсів і порадани щодо подальшого розвитку.
 
 Наступним кроком мав би бути навчальний курс Python Advanced. 
+Приблизний навчальний план: 
 
 - алгоритми
+	- складність алгоритмів
+	- ...
 - регулярні вирази
-- dataclasses
 - каринг
-- дескриптори
-- сінглтон
-- метакласи <!-- https://medium.com/analytics-vidhya/metaprogramming-in-python-for-beginners-546adbc76f98 -->
+- ООП
+	- dataclasses
+	- __slots__
+	- дескриптори
+	- сінглтон
+	- метакласи <!-- https://medium.com/analytics-vidhya/metaprogramming-in-python-for-beginners-546adbc76f98 -->
 - багатопоточність
-- корутини
 - асинхронне програмування
+	- корутини
+	- ...
 - патерни проектування
-- модульне тестування: unittest, pytest
+- модульне тестування
+	- unittest
+	- pytest
 - налагодження програм
-- ...
+- розробка
+	- IDE:
+		- VS Code
+		- PyCharm
+	- Системи контроля версій:
+		- git
+		- github:
+			- github actions
+			- ...
+	- публікація проектів на PyPI
+	- автоматизація процесу розробки
+	- контейнеризація
+
 
 ## Python Special: NVDA addons
 

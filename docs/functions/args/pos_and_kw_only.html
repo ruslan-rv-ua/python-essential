@@ -273,12 +273,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Функції
@@ -294,12 +296,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
       
       <label class="md-nav__link" for="__nav_4_1">
         Параметри функцій
@@ -324,6 +328,89 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="default.html" class="md-nav__link">
+        Опціональні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Лише позиційні або іменовані
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="pos_and_kw_only.html" class="md-nav__link md-nav__link--active">
+        Лише позиційні або іменовані
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приклади
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Для чого
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="args_kwargs.html" class="md-nav__link">
+        Довільна кількість аргументів
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -335,8 +422,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../call_stack.html" class="md-nav__link">
-        Стек викликів
+      <a href="../strategies.html" class="md-nav__link">
+        Стратегії обчислення
       </a>
     </li>
   
@@ -347,8 +434,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../strategies.html" class="md-nav__link">
-        Стратегії обчислення
+      <a href="../call_stack.html" class="md-nav__link">
+        Стек викликів
       </a>
     </li>
   
@@ -433,6 +520,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приклади
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Для чого
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -447,103 +556,89 @@
                 <h1 id="_1">Лише позиційні або іменовані</h1>
 <!-- https://www.python.org/dev/peps/pep-0570/#how-to-teach-this -->
 
-<!--
-В Python 3 є можливість явно вказати, щоб частина аргументів завжди передавалась тільки як позиційні або тільки як ключові. 
-Узагальнено визначення функції виглядає так: 
+<p>В Python 3 є можливість явно вказати, щоб частина аргументів завжди передавалась тільки як позиційні або тільки як ключові. 
+Узагальнено визначення функції виглядає так: </p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">pos_or_kwd1</span><span class="p">,</span> <span class="n">pos_or_kwd2</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">kwd1</span><span class="p">,</span> <span class="n">kwd2</span><span class="p">):</span>
+</code></pre></div>
 
-    :::python
-    def f(pos1, pos2, /, pos_or_kwd1, pos_or_kwd2, *, kwd1, kwd2):
+<p>Аргументи можуть передаватись:</p>
+<ul>
+<li>pos1, pos2 — лише як позиційні</li>
+<li>pos_or_kwd1, pos_or_kwd2 — як позиційні або ключові</li>
+<li>kwd1, kwd2 — лише як ключові</li>
+</ul>
+<h2 id="_2">Приклади</h2>
+<p>Функції <code>standard_arg</code> можна передавати як позиційні, так і іменовані аргументи:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">standard_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">standard_arg</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">standard_arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">2</span>
+</code></pre></div>
 
-Аргументи можуть передаватись:
+<p>Функції <code>pos_only_arg</code> можна передавати лише позиційні аргументи:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">pos_only_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="o">/</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pos_only_arg</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pos_only_arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">pos_only_arg</span><span class="p">()</span> <span class="n">got</span> <span class="n">an</span> <span class="n">unexpected</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="s1">&#39;arg&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-- pos1, pos2 — лише як позиційні
-- pos_or_kwd1, pos_or_kwd2 — як позиційні або ключові
-- kwd1, kwd2 — лише як ключові
+<p>Функції <code>kwd_only_arg</code> можна передавати лише позиційні аргументи:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">kwd_only_arg</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">kwd_only_arg</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">kwd_only_arg</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">0</span> <span class="n">positional</span> <span class="n">arguments</span> <span class="n">but</span> <span class="mi">1</span> <span class="n">was</span> <span class="n">given</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">kwd_only_arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">3</span>
+</code></pre></div>
 
-## Приклади
+<p>І нарешті функція яка використовує усе одразу:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">combined_example</span><span class="p">(</span><span class="n">pos_only</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">standard</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">kwd_only</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">pos_only</span><span class="p">,</span> <span class="n">standard</span><span class="p">,</span> <span class="n">kwd_only</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">combined_example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">combined_example</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">2</span> <span class="n">positional</span> <span class="n">arguments</span> <span class="n">but</span> <span class="mi">3</span> <span class="n">were</span> <span class="n">given</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">combined_example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">kwd_only</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">combined_example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">standard</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">kwd_only</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">combined_example</span><span class="p">(</span><span class="n">pos_only</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">standard</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">kwd_only</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">combined_example</span><span class="p">()</span> <span class="n">got</span> <span class="n">an</span> <span class="n">unexpected</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="s1">&#39;pos_only&#39;</span>
+</code></pre></div>
 
-Функції `standard_arg` можна передавати як позиційні, так і іменовані аргументи:
+<h2 id="_3">Для чого</h2>
+<p>Рекомендації наступні:</p>
+<ul>
+<li>використовуйте тільки позиційні якщо імена не мають значення або не несуть смислового навантаження, 
+також кількість передаваних аргументів невелика і передаються вони завжди у тому ж самому порядку</li>
+<li>використовуйте тільки іменовані якщо імена мають смислове значення значення і у функції багато параметрів</li>
+</ul>
+<p>Подивимось визначення функції <code>sin()</code> з модуля <code>math</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">/</span><span class="p">):</span>
+</code></pre></div>
 
-    :::python
-    >>> def standard_arg(arg):
-    ...     print(arg)
-    >>> standard_arg(2)
-    2
-    >>> standard_arg(arg=2)
-    2
+<p>Функції ми передаємо лише одне число, і це просто число. Заплутатись важко, ім'я вказувати недоречно. </p>
+<p>А ось ще одна функція з модуля <code>json</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">skipkeys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check_circular</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allow_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separators</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</code></pre></div>
 
-Функції `pos_only_arg` можна передавати лише позиційні аргументи:
-
-    :::python
-    >>> def pos_only_arg(arg, /):
-    ...     print(arg)
-    >>> pos_only_arg(1)
-    1
-    >>> pos_only_arg(arg=1)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    TypeError: pos_only_arg() got an unexpected keyword argument 'arg'
-    >>>
-
-Функції `kwd_only_arg` можна передавати лише позиційні аргументи:
-
-    :::python
-    >>> def kwd_only_arg(*, arg):
-    ...     print(arg)
-    >>> kwd_only_arg(3)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    TypeError: kwd_only_arg() takes 0 positional arguments but 1 was given
-    >>> kwd_only_arg(arg=3)
-    3
-
-І нарешті функція яка використовує усе одразу:
-
-    :::python
-    >>> def combined_example(pos_only, /, standard, *, kwd_only):
-    ...     print(pos_only, standard, kwd_only)
-    >>> combined_example(1, 2, 3)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    TypeError: combined_example() takes 2 positional arguments but 3 were given
-    >>> combined_example(1, 2, kwd_only=3)
-    1 2 3
-    >>> combined_example(1, standard=2, kwd_only=3)
-    1 2 3
-    >>> combined_example(pos_only=1, standard=2, kwd_only=3)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    TypeError: combined_example() got an unexpected keyword argument 'pos_only'
-
-## Для чого
-
-Рекомендації наступні:
-
-- використовуйте тільки позиційні якщо імена не мають значення або не несуть смислового навантаження, 
-також кількість передаваних аргументів невелика і передаються вони завжди у тому ж самому порядку
-- використовуйте тільки іменовані якщо імена мають смислове значення значення і у функції багато параметрів
-
-Подивимось визначення функції `sin()` з модуля `math`:
-
-    :::python
-    def sin(x, /): 
-
-Функції ми передаємо лише одне число, і це просто число. Заплутатись важко, ім'я вказувати недоречно. 
-
-А ось ще одна функція з модуля `json`:
-
-    :::python
-    def dumps(obj, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
-
-Передаємо функції лише один якийсь об'єкт, а потім можна вказати ще багато аргументів. 
+<p>Передаємо функції лише один якийсь об'єкт, а потім можна вказати ще багато аргументів. 
 Запам'ятати порядок цих аргументів практично неможливо, тому легко заплутатись що саме ми передаємо коли викликаємо функцію. 
 Оголосивши параметри як лише іменовані ми не зможемо передати аргумент без імені, 
-тому помилитись неможливо:
-
-    :::python
-    dumps(some_object, indent=2, sort_keys=False)
-
--->
+тому помилитись неможливо:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">dumps</span><span class="p">(</span><span class="n">some_object</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
                 
               
               
@@ -559,6 +654,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="default.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Опціональні" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Опціональні
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="args_kwargs.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Довільна кількість аргументів" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Довільна кількість аргументів
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

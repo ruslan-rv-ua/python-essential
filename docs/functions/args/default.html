@@ -18,7 +18,7 @@
     
     
       
-        <title>Опціональні аргументи - Python Essential</title>
+        <title>Опціональні - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Опціональні аргументи
+              Опціональні
             
           </span>
         </div>
@@ -273,12 +273,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Функції
@@ -294,12 +296,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
       
       <label class="md-nav__link" for="__nav_4_1">
         Параметри функцій
@@ -324,6 +328,82 @@
   
 
           
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Опціональні
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="default.html" class="md-nav__link md-nav__link--active">
+        Опціональні
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення значень опціональних параметрів
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pos_and_kw_only.html" class="md-nav__link">
+        Лише позиційні або іменовані
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="args_kwargs.html" class="md-nav__link">
+        Довільна кількість аргументів
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -335,8 +415,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../call_stack.html" class="md-nav__link">
-        Стек викликів
+      <a href="../strategies.html" class="md-nav__link">
+        Стратегії обчислення
       </a>
     </li>
   
@@ -347,8 +427,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../strategies.html" class="md-nav__link">
-        Стратегії обчислення
+      <a href="../call_stack.html" class="md-nav__link">
+        Стек викликів
       </a>
     </li>
   
@@ -433,6 +513,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення значень опціональних параметрів
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -445,73 +540,66 @@
                 
                 
                 <h1 id="_1">Опціональні аргументи</h1>
-<!--
-Деякі параметри функції можна зробити необов'язковими. 
+<p>Деякі параметри функції можна зробити необов'язковими. 
 Для цього для них при визначенні функції треба вказати значення за замовчуванням. 
-Це значення буде присвоєно параметру якщо ми викликаючи функцію не вкажемо відповідний аргумент:
+Це значення буде присвоєно параметру якщо ми викликаючи функцію не вкажемо відповідний аргумент:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">product_info</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mi">7</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Product:&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Color:&#39;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Price:&#39;</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">product_info</span><span class="p">(</span><span class="s1">&#39;Pen&#39;</span><span class="p">)</span>
+<span class="n">Product</span><span class="p">:</span> <span class="n">Pen</span>
+<span class="n">Color</span><span class="p">:</span> <span class="n">blue</span>
+<span class="n">Price</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">product_info</span><span class="p">(</span><span class="s1">&#39;Pen&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">Product</span><span class="p">:</span> <span class="n">Pen</span>
+<span class="n">Color</span><span class="p">:</span> <span class="n">red</span>
+<span class="n">Price</span><span class="p">:</span> <span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">product_info</span><span class="p">(</span><span class="s1">&#39;Pen&#39;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">Product</span><span class="p">:</span> <span class="n">Pen</span>
+<span class="n">Color</span><span class="p">:</span> <span class="n">blue</span>
+<span class="n">Price</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    :::python
-    >>> def product_info(name, color='blue', price=7):
-    ...     print('Product:', name)
-    ...     print('Color:', color)
-    ...     print('Price:', price)
-    ...
-    >>> product_info('Pen')
-    Product: Pen
-    Color: blue
-    Price: 7
-    >>> product_info('Pen', 'red')
-    Product: Pen
-    Color: red
-    Price: 7
-    >>> product_info('Pen', price=5)
-    Product: Pen
-    Color: blue
-    Price: 5
-    >>>
-
-## Створення значень опціональних парамтрів
-
-***Зауважте:*** 
+<p>Такі аргументи називають опціональними (default arguments). </p>
+<h2 id="_2">Створення значень опціональних параметрів</h2>
+<p><strong><em>Зауважте:</em></strong> 
 значення за замовчуванням обчислюються і створюються лише один раз, 
 а саме при створенні функції! 
-У цей момент вони зв'язуються з іменами відповідних параметрів. 
+У цей момент вони зв'язуються з іменами відповідних параметрів. </p>
+<p>Тому будьте обережними якщо у якості значення за замовчуванням вказуєте мутабельні об'єкти. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">modify_list</span><span class="p">(</span><span class="n">lst</span><span class="o">=</span><span class="p">[]):</span>
+<span class="o">...</span>     <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">lst</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Тому будьте обережними якщо у якості значення за замовчуванням вказуєте мутабельні об'єкти. 
-
-    :::python
-    >>> def modify_list(lst=[]):
-    ...     lst.append(1)
-    ...     return lst
-    ...
-    >>> l = modify_list()
-    >>> l
-    [1]
-    >>> l = modify_list()
-    >>> l
-    [1, 1]
-    >>>
-
-Намагайтесь не використовувати мутабельні типи у якості значень за замовчуванням, 
+<p>Намагайтесь не використовувати мутабельні типи у якості значень за замовчуванням, 
 якщо, звісно, ви чітко не усвідомлюєтє що саме робите. 
-Вищенаведений код краще написати так:
-
-    :::python
-    >>> def modify_list(lst=None):
-    ...     if lst == None:
-    ...             lst = []
-    ...     lst.append(1)
-    ...     return lst
-    ...
-    >>> l = modify_list()
-    >>> l
-    [1]
-    >>> l = modify_list()
-    >>> l
-    [1]
-    >>>
-
--->
+Вищенаведений код краще написати так:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">modify_list</span><span class="p">(</span><span class="n">lst</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">if</span> <span class="n">lst</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="o">...</span>             <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="o">...</span>     <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">lst</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">modify_list</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
                 
               
               
@@ -527,6 +615,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="pos_and_kw.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Позиційні та іменовані" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Позиційні та іменовані
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="pos_and_kw_only.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Лише позиційні або іменовані" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Лише позиційні або іменовані
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -18,7 +18,7 @@
     
     
       
-        <title>Функції з довільною кількістю аргументів - Python Essential</title>
+        <title>Довільна кількість аргументів - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Функції з довільною кількістю аргументів
+              Довільна кількість аргументів
             
           </span>
         </div>
@@ -273,12 +273,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Функції
@@ -294,12 +296,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
       
       <label class="md-nav__link" for="__nav_4_1">
         Параметри функцій
@@ -324,6 +328,110 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="default.html" class="md-nav__link">
+        Опціональні
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pos_and_kw_only.html" class="md-nav__link">
+        Лише позиційні або іменовані
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Довільна кількість аргументів
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="args_kwargs.html" class="md-nav__link md-nav__link--active">
+        Довільна кількість аргументів
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#args" class="md-nav__link">
+    *args
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kwargs" class="md-nav__link">
+    **kwargs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Іменування
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Усі разом
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Завдання
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -335,8 +443,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../call_stack.html" class="md-nav__link">
-        Стек викликів
+      <a href="../strategies.html" class="md-nav__link">
+        Стратегії обчислення
       </a>
     </li>
   
@@ -347,8 +455,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../strategies.html" class="md-nav__link">
-        Стратегії обчислення
+      <a href="../call_stack.html" class="md-nav__link">
+        Стек викликів
       </a>
     </li>
   
@@ -433,6 +541,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#args" class="md-nav__link">
+    *args
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kwargs" class="md-nav__link">
+    **kwargs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Іменування
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Усі разом
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Завдання
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -445,101 +596,85 @@
                 
                 
                 <h1 id="_1">Функції з довільною кількістю аргументів</h1>
-<!--
-Напишемо функцію, яка визначає суму трьох чисел:
+<p>Напишемо функцію, яка визначає суму трьох чисел:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">adder</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">adder</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="mi">35</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    :::python
-    >>> def adder(x, y, z):
-    ...     return x + y + z
-    ...
-    >>> adder(10, 12, 13)
-    35
-    >>> 
+<p>Функція приймає 3 параметри. А що буде якщо передати функції більше трьох аргументів?</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">adder</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">adder</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">3</span> <span class="n">positional</span> <span class="n">arguments</span> <span class="n">but</span> <span class="mi">4</span> <span class="n">were</span> <span class="n">given</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Функція приймає 3 параметри. А що буде якщо передати функції більше трьох аргументів?
+<p>Цілком очікувано. 
+Але було б непогано, якби існував механізм, щоб функції можна було передавати змінну кількість аргументів...</p>
+<h2 id="args"><code>*args</code></h2>
+<p>Використовуючи <code>*args</code> в параметрах функції ми цим самим вказуємо, що тут функція може отримати невизначену наперед кількість неіменованих аргументів.
+Зірочка перед ідентифікатором означає, що це ім'я буде вказувати на кортеж, який і буде містити усі неіменовані аргументи, які ми передали функції.</p>
+<p>Отже тепер наша функція може виглядати так:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">adder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">res</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">adder</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="mi">50</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">adder</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+<span class="mi">140</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">adder</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">adder</span><span class="p">()</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    :::python
-    >>> adder(10, 12, 13, 15)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    TypeError: adder() takes 3 positional arguments but 4 were given
-    >>>
+<h2 id="kwargs"><code>**kwargs</code></h2>
+<p>Для передачі довільної кількості іменованих аргументів використовуємо синтаксис <code>**kwargs</code>. У цьому випадку <code>kwargs</code> — словник, що містить імена аргументів та їх значення.</p>
+<p>Створимо функцію, яка розповість про усі іменовані аргументи, що ми їй передали:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">all_i_have_got</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">all_i_have_got</span><span class="p">(</span><span class="n">apple</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">)</span>
+<span class="n">apple</span> <span class="ow">is</span> <span class="n">red</span>
+<span class="n">size</span> <span class="ow">is</span> <span class="n">big</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">all_i_have_got</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="s1">&#39;Aplle iPhone 5s&#39;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">99.99</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="s1">&#39;silver&#39;</span><span class="p">])</span>
+<span class="n">item</span> <span class="ow">is</span> <span class="n">Aplle</span> <span class="n">iPhone</span> <span class="mi">5</span><span class="n">s</span>
+<span class="n">price</span> <span class="ow">is</span> <span class="mf">99.99</span>
+<span class="n">colors</span> <span class="ow">is</span> <span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;silver&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">all_i_have_got</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">all_i_have_got</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">all_i_have_got</span><span class="p">()</span> <span class="n">takes</span> <span class="mi">0</span> <span class="n">positional</span> <span class="n">arguments</span> <span class="n">but</span> <span class="mi">1</span> <span class="n">was</span> <span class="n">given</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Цілком очікувано. 
-Але було б непогано, якби існував механізм, щоб функції можна було передавати змінну кількість аргументів...
-
-## `*args`
-
-Використовуючи `*args` в параметрах функції ми цим самим вказуємо, що тут функція може отримати невизначену наперед кількість неіменованих аргументів.
-Зірочка перед ідентифікатором означає, що це ім'я буде вказувати на кортеж, який і буде містити усі неіменовані аргументи, які ми передали функції.
-
-Отже тепер наша функція може виглядати так:
-
-    :::python
-    def adder(*args):
-        res = 0
-        for num in args:
-            res += num
-        return res
-    >>> adder(10, 12, 13, 15)
-    50
-    >>> adder(10, 12, 13, 15, 20, 70)
-    140
-    >>> adder(10)
-    10
-    >>> adder()
-    0
-    >>> 
-
-
-## `**kwargs`
-
-Для передачі довільної кількості іменованих аргументів використовуємо синтаксис `**kwargs`. У цьому випадку `kwargs` — словник, що містить імена аргументів та їх значення.
-
-Створимо функцію, яка розповість про усі іменовані аргументи, що ми їй передали:
-
-    :::python
-    >>> def all_i_have_got(**kwargs):
-    ...     for key in kwargs:
-    ...             print(f'{key} is {kwargs[key]}')
-    ...
-    >>> all_i_have_got(apple='red', size='big')
-    apple is red
-    size is big
-    >>> all_i_have_got(item='Aplle iPhone 5s', price=99.99, colors=['black','silver'])
-    item is Aplle iPhone 5s
-    price is 99.99
-    colors is ['black', 'silver']
-    >>> all_i_have_got()
-    >>> all_i_have_got(1)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    TypeError: all_i_have_got() takes 0 positional arguments but 1 was given
-    >>>
-
-## Іменування
-
-`args` і `kwargs` — це по суті звичайні параметри функції. 
+<h2 id="_2">Іменування</h2>
+<p><code>args</code> і <code>kwargs</code> — це по суті звичайні параметри функції. 
 Отже імена можна вказати будь-які, головне — це зірочки перед цими іменами. 
-Однак за домовленістю прийнято називати такі параметри саме так: 
+Однак за домовленістю прийнято називати такі параметри саме так: </p>
+<ul>
+<li><code>args</code> - скорочення від <code>ARGuments</code></li>
+<li><code>kwargs</code> — скорочення від <code>KeyWord ARGuments</code></li>
+</ul>
+<h2 id="_3">Усі разом</h2>
+<p>Якщо є бажання використовувати <code>args</code> та <code>kwargs</code> разом, то робиться це наступним чином:</p>
+<div class="codehilite"><pre><span></span><code>def func(positional, *args, **kwargs)
+</code></pre></div>
 
-- `args` - скорочення від `ARGuments`
-- `kwargs` — скорочення від `KeyWord ARGuments`
-
-## Усі разом
-
-Якщо є бажання використовувати `args` та `kwargs` разом, то робиться це наступним чином:
-
-    def func(positional, *args, **kwargs)
-
-Порядок слідування аргументів є важливим: спочатку позиційні аргументи, потім `args`, а вже за ними `kwargs`.
-
-## Завдання
-
-Напишіть функцію `my_min()`, яка повертає мінімальний з переданих їй аргументів. 
+<p>Порядок слідування аргументів є важливим: спочатку позиційні аргументи, потім <code>args</code>, а вже за ними <code>kwargs</code>.</p>
+<h2 id="_4">Завдання</h2>
+<p>Напишіть функцію <code>my_min()</code>, яка повертає мінімальний з переданих їй аргументів. 
 Кількість аргументів може бути довільною. 
-Якщо функції не передано жодного аргументу, має виникати вийняткова ситуація. 
--->
+Якщо функції не передано жодного аргументу, має виникати вийняткова ситуація. </p>
                 
               
               
@@ -555,6 +690,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="pos_and_kw_only.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Лише позиційні або іменовані" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Лише позиційні або іменовані
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../strategies.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Стратегії обчислення" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Стратегії обчислення
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

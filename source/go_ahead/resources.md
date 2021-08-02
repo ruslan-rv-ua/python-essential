@@ -31,26 +31,35 @@
 - [Python Cheatsheet](https://github.com/wilfredinni/python-cheatsheet) — 
 велика "шпаргалка" по Python, з прикладами. 
 Періодично оновлюється. Є окремий вебсайт, PDF-версія, Jupyter Notebook
+- [List of Free Learning Resources In Many Languages Awesome
+](https://github.com/EbookFoundation/free-programming-books) — 
+багато безкоштовних ресурсів для навчання: книги, онлайн-курси, подкасти, скрінкасти, збірки вправ, ...
 - [Web-технологии. Разработка на DJANGO](https://www.youtube.com/playlist?list=PLrCZzMib1e9qZwq95WVmGB-acnot5ka4a) — 
 Для тих, хто планує зайнятись веброзробкою і бекендом. 
 Підбірка відеолекцій (youtube-плейліст). 
 В основному розповідається про вебтехнології, дуже корисно для розуміння "як працює Інтернет" взагалі і веб зокрема. 
 Не дивлячись на відеоформат матеріалів відсотків 80-85 інформації доступно. 
-- [Учимся читать код, изучая стандартную библиотеку Python
-](https://habr.com/ru/company/vdsina/blog/566134/)
 - [The Algorithms - Python](https://github.com/TheAlgorithms/Python)
+- [Build your own X](https://github.com/danistefanovic/build-your-own-x) — 
+для тих, хто вважає що найкращий спосіб чомусь навчитись — практика
 
 
 ## Розробка
 
+- [Awesome](https://github.com/sindresorhus/awesome) — 
+велика збірка довідників по практично усій IT-сфері
 - [Awesome Python](https://github.com/vinta/awesome-python) — 
 список Python-фреймворків, бібліотек, ПЗ та інших ресурсів. Must have! 
 - [Public APIs](https://github.com/public-apis/public-apis) — 
 список безкоштовних API для використання у програмному забезпеченні та веброзробці.
+- [Design Resources for Developers](https://github.com/bradtraversy/design-resources-for-developers) — 
+величезна збірка ресурсів для фронтенда і графічного дизайну. Хай тут буде. 
 
 
 ## Статті
 
+- [Учимся читать код, изучая стандартную библиотеку Python
+](https://habr.com/ru/company/vdsina/blog/566134/)
 - [wxpython. Доступность еще доступнее
 ](https://habr.com/ru/post/505284/) — 
 як робити десктопні апплікації з wxpython доступними

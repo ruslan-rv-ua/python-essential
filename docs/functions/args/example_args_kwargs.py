@@ -25,7 +25,7 @@ def my_min(first, *args):
 
 def all_i_got(**kwargs):
     for key in kwargs:
-        print(key, 'is', kwargs[key])
+        print(f'{key} is {kwargs[key]}')
 		
 # all_i_got(item='Aplle iPhone 5s', price=99.99, colors=['black','silver'])
 

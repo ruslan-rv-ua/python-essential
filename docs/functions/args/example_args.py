@@ -27,6 +27,8 @@ def change_list(lst=[]):
 	return lst
 	
 l = change_list()
+l = change_list([2,4])
+l = change_list()
 
 def change_list(lst=None):
 	if lst is None:
