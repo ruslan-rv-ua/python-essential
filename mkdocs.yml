@@ -126,8 +126,8 @@ nav:
       - Опціональні: functions/args/default.md
       - Лише позиційні або іменовані: functions/args/pos_and_kw_only.md
       - Довільна кількість аргументів: functions/args/args_kwargs.md
-    # - Області видимості: functions/scope.md
     - Стратегії обчислення: functions/strategies.md
+    - Простори імен: functions/scope.md
     - Стек викликів: functions/call_stack.md
     - Документування функцій: functions/docstring.md
   - Об'єктно-орієнтоване програмування:

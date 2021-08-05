@@ -1,6 +1,8 @@
+from math import sin
 def sin(x, /):
 	
-def dumps(obj, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, 
+from json import dumps
+def dumps(obj, *, skipkeys, ensure_ascii, check_circular, allow_nan, cls, ...
 dumps(some_object, indent=2, sort_keys=False)
 
 def f(pos_only, /, standard, *, kwd_only):

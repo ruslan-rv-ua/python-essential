@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Лише позиційні або іменовані
 
 <!-- https://www.python.org/dev/peps/pep-0570/#how-to-teach-this -->

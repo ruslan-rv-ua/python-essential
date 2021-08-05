@@ -1,51 +1,39 @@
-def outer(arg):
-	def inner(x):
-		return x*x
-    return inner(arg)
+## intro
+x = 'global'
+def f():
+	x = 'local'
+	print(x)
+f()
 
-#-----
-LEGB
-Local — локальна (всередин≥ функції)
-Enclosing — локальна область функцій-обгорток, які у свою чергу містять інші функції
-Global — глобальна (модуль)
-Built-in — вбудована (зарезервовані значення Python)
+## global
+my_name = 'my_name'
+from random import *
+print(globals().keys())
 
-# enclosing
+## local
+def add_two(arg):
+    var = 2
+    print(list(locals().keys()))
+    return arg + var
 
+
+## enclosing
 def outer():
-    x = "x modified inside outer"
+    print('Start outer()')
     def inner():
-        print("inner():", x)
+        print('Start inner()')
+        print('End inner()')
     inner()
-    print("outer():", x)
-
+    print('End outer()')
 outer()
 
-# nonlocal
-
+## LEGB
+len = 'global'
 def outer():
-    x = "x modified inside outer"
+    len = 'enclosing'
     def inner():
-		nonlocal x
-        x = "x modified inside inner"
-        print("inner():", x)
+        len = 'local'
+        print(len)
     inner()
-    print("outer():", x)
-
 outer()
 
-min(1, 2)
-def min():
-	return 'Nothing to do'
-	
-print(min(1,2))
-
-
-def q(a, b, c):
-	
-	def helper(x):
-		return a*x*x + b*x + c
-		
-	return helper
-	
-	

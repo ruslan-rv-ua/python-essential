@@ -1,51 +1,20 @@
-def adder(a, b):
-	return a + b
-
-s = adder(3, 5)
-# print(s)
-
-# ---
-
-def adder(*args):
-    res = 0
-    for num in args:
-        res += num
-    return res
-	
-# ---
-
-def my_min(first, *args):
-	res = first
+def all_i_got(*args):
 	for arg in args:
-		if arg < res:
-			res = arg
-	return res
-	
+		print(arg)
 
+def all_i_got(*args, **kwargs):
+	for arg in args:
+		print(arg)
+	for arg in kwargs:
+		print(f'{arg} = {kwargs[arg]}')
 
-def all_i_got(**kwargs):
-    for key in kwargs:
-        print(f'{key} is {kwargs[key]}')
+def all_i_got(first, *args, **kwargs):
+	print(first)
+	for arg in args:
+		print(arg)
+	for arg in kwargs:
+		print(f'{arg} = {kwargs[arg]}')
+
 		
-# all_i_got(item='Aplle iPhone 5s', price=99.99, colors=['black','silver'])
-
-
-#---
-
-def tail(sequence, *, length=1):
-    print(sequence[-length:])
-
-# tail('Hello, World', 6)
-tail('Hello, World', length=6)
-
-
-	
-
-#---
-
-def f(a, b, *args, **kwargs):
-	print(a, b)
-	print(args)
-	print(kwargs)
-	
-# f(1, 2, 111, kw='some kw')
+all_i_got(1, 'text', named=7)
+all_i_got(named=7)

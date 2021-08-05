@@ -18,7 +18,7 @@
     
     
       
-        <title>Простори імен. Області видимості. - Python Essential</title>
+        <title>Простори імен - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Простори імен. Області видимості.
+              Простори імен
             
           </span>
         </div>
@@ -127,6 +127,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -273,12 +275,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Функції
@@ -381,6 +385,147 @@
             
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Простори імен
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="scope.html" class="md-nav__link md-nav__link--active">
+        Простори імен
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Простори імен в Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Простори імен в Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in" class="md-nav__link">
+    Built-in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global" class="md-nav__link">
+    Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    Local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enclosing" class="md-nav__link">
+    Enclosing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Область видимості
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Модифікація об'єктів поза областю видимості
+  </a>
+  
+    <nav class="md-nav" aria-label="Модифікація об'єктів поза областю видимості">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global_1" class="md-nav__link">
+    Інструкція global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nonlocal" class="md-nav__link">
+    Інструкція nonlocal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Кращі практики
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Резюме
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
   
     <li class="md-nav__item">
       <a href="call_stack.html" class="md-nav__link">
@@ -458,7 +603,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -468,6 +615,110 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Простори імен в Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Простори імен в Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in" class="md-nav__link">
+    Built-in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global" class="md-nav__link">
+    Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    Local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enclosing" class="md-nav__link">
+    Enclosing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Область видимості
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Модифікація об'єктів поза областю видимості
+  </a>
+  
+    <nav class="md-nav" aria-label="Модифікація об'єктів поза областю видимості">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global_1" class="md-nav__link">
+    Інструкція global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nonlocal" class="md-nav__link">
+    Інструкція nonlocal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Кращі практики
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Резюме
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -480,201 +731,357 @@
               
                 
                 
-                <h1 id="_1">Простори імен. Області видимості.</h1>
-<!--
-Спочатку трошки теорії:
+                <h1 id="_1">Простори імен</h1>
+<p>Спочатку трошки теорії:</p>
+<blockquote>
+<p><strong>Простір імен</strong>, також <em>про́стір назв</em> або <em>іменний про́стір</em> (англ. namespace) — концепція у програмуванні, призначена для розмежування різних множин ідентифікаторів і попередження конфліктів між їхніми іменами</p>
+</blockquote>
+<p>Якщо трошки простіше, то простір імен — це сукупність визначених в певний момент імен і інформації про сутності, на які вони посилаються. 
+Можна розглядати такий простір як словник, 
+у якому ключі є іменами, 
+а значення — самими сутностями. </p>
+<h2 id="python">Простори імен в Python</h2>
+<p>В Python розрізяють 4 простори імен: </p>
+<ul>
+<li>Local — локальний (всередині функції)</li>
+<li>Enclosing — охоплюючий (локальний простір функцій-обгорток, які у свою чергу містять інші функції)</li>
+<li>Global — глобальний (основний модуль)</li>
+<li>Built-in — вбудований (зарезервовані значення Python)</li>
+</ul>
+<p>Простори імен мають різні життєві цикли. 
+По мірі виконання програми інтерпретатор Python створює необхідні простори імен 
+і видаляє їх коли потреба в них зникає. </p>
+<h3 id="built-in">Built-in</h3>
+<p>Вбудований простір імен містить імена усіх вбудованих об'єктів Python. 
+Наприклад функції <code>len()</code> та <code>print()</code>, типи даних <code>int</code> та <code>list</code>. 
+Коли інтерпретатор запускається він автоматично створює вбудований простір імен 
+і знищує його по завершенні своєї роботи. </p>
+<h3 id="global">Global</h3>
+<p>Глобальний простір імен містить імена, 
+які визначаються на рівні основної програми (основного модуля програми) 
+або імпортуються в основний модуль з інших модулів. 
+Створюється одразу ж після завантаження основного модуля програми 
+і існує до завершення роботи інтерпретатора. </p>
+<p>Вбудована функція <code>globals()</code> повертає словник, 
+який містить усі імена з глобального простору і відповідні їм об'єкти. 
+Давайте подивимось які імена вже є у цьому просторі одразу після запуска інтерпретатора: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="nb">globals</span><span class="p">())</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">dict</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">globals</span><span class="p">()</span>
+<span class="p">{</span><span class="s1">&#39;__name__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">_frozen_importlib_external</span><span class="o">.</span><span class="n">SourceFileLoader</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x000001F0441E0AF0</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__annotations__&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;__builtins__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;builtins&#39;</span> <span class="p">(</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span><span class="p">)</span><span class="o">&gt;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">,</span> <span class="s1">&#39;__annotations__&#39;</span><span class="p">,</span> <span class="s1">&#39;__builtins__&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-> **Простір імен**, також *про́стір назв* або *іменний про́стір* (англ. namespace) — концепція у програмуванні, призначена для розмежування різних множин ідентифікаторів і попередження конфліктів між їхніми іменам
+<p>В глобальлному просторі вже є декілька імен. 
+Виглядають вони трохи дивно, але поки що не звертайте на це уваги, 
+у подальшому розберемось з цими іменами. </p>
+<p>Додамо ще одне ім'я у простір:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_variable</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">,</span> <span class="s1">&#39;__annotations__&#39;</span><span class="p">,</span> <span class="s1">&#39;__builtins__&#39;</span><span class="p">,</span> <span class="s1">&#39;my_variable&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-> **Область видимості** або **межі дії** (англ. scope) — це ділянка програми, де існує окрема множина імен, пов'язаних із певними даними (змінними) чи оголошеннями (функціями, класами тощо). Однакові імена можуть вживатися на різних ділянках програми (а отже мати різні межі дії), але мати різне значення (посилатися на різні дані) чи стосуватися різних оголошень.
+<p>І одразу усі імена з модуля <code>random</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">,</span> <span class="s1">&#39;__annotations__&#39;</span><span class="p">,</span> <span class="s1">&#39;__builtins__&#39;</span><span class="p">,</span> <span class="s1">&#39;my_variable&#39;</span><span class="p">,</span> <span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;randint&#39;</span><span class="p">,</span> <span class="s1">&#39;choice&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;randrange&#39;</span><span class="p">,</span> <span class="s1">&#39;shuffle&#39;</span><span class="p">,</span> <span class="s1">&#39;normalvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;lognormvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;expovariate&#39;</span><span class="p">,</span> <span class="s1">&#39;vonmisesvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;gammavariate&#39;</span><span class="p">,</span> <span class="s1">&#39;triangular&#39;</span><span class="p">,</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span> <span class="s1">&#39;betavariate&#39;</span><span class="p">,</span> <span class="s1">&#39;paretovariate&#39;</span><span class="p">,</span> <span class="s1">&#39;weibullvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;getstate&#39;</span><span class="p">,</span> <span class="s1">&#39;setstate&#39;</span><span class="p">,</span> <span class="s1">&#39;getrandbits&#39;</span><span class="p">,</span> <span class="s1">&#39;choices&#39;</span><span class="p">,</span> <span class="s1">&#39;SystemRandom&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Імена в Python також мають області видимості. 
-В залежності від місця у коді, де ім'я було визначене, визначається і область видимості, тобто, де це ім'я  буде доступним.
+<p>Функція <code>globals()</code> повертає посилання на активний словник з іменами і значеннями.<br />
+Отже через цей словник можна додавати в глобальний простір імен нові імена і відповідні їм значення: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;new_var&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Hi!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;__name__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">,</span> <span class="s1">&#39;__annotations__&#39;</span><span class="p">,</span> <span class="s1">&#39;__builtins__&#39;</span><span class="p">,</span> <span class="s1">&#39;my_variable&#39;</span><span class="p">,</span> <span class="s1">&#39;Random&#39;</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;randint&#39;</span><span class="p">,</span> <span class="s1">&#39;choice&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;randrange&#39;</span><span class="p">,</span> <span class="s1">&#39;shuffle&#39;</span><span class="p">,</span> <span class="s1">&#39;normalvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;lognormvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;expovariate&#39;</span><span class="p">,</span> <span class="s1">&#39;vonmisesvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;gammavariate&#39;</span><span class="p">,</span> <span class="s1">&#39;triangular&#39;</span><span class="p">,</span> <span class="s1">&#39;gauss&#39;</span><span class="p">,</span> <span class="s1">&#39;betavariate&#39;</span><span class="p">,</span> <span class="s1">&#39;paretovariate&#39;</span><span class="p">,</span> <span class="s1">&#39;weibullvariate&#39;</span><span class="p">,</span> <span class="s1">&#39;getstate&#39;</span><span class="p">,</span> <span class="s1">&#39;setstate&#39;</span><span class="p">,</span> <span class="s1">&#39;getrandbits&#39;</span><span class="p">,</span> <span class="s1">&#39;choices&#39;</span><span class="p">,</span> <span class="s1">&#39;SystemRandom&#39;</span><span class="p">,</span> <span class="s1">&#39;new_var&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-При використанні імен змінних у програмі, Python кожного разу шукає, створює або змінює ці імена у відповідному просторі імен. 
-Простір імен, який є доступним в кожен момент, залежить від області, в якій знаходиться код.
+<p>Останнє є еквівалентним наступному: </p>
+<div class="codehilite"><pre><span></span><code><span class="n">new_var</span> <span class="o">=</span> <span class="s1">&#39;Hi!&#39;</span>
+</code></pre></div>
 
-## Вкладені функції
+<h3 id="local">Local</h3>
+<p>Кожного разу при виклику функції інтерпретатор створює новий простір імен. 
+Цей простір є локальним для функції і існує до момента повернення з функції. 
+При черговому виклику функції ця процедура повторюється. </p>
+<p>Імена, які ініціалізуються всередині функції, попадають у локальний простір імен. </p>
+<p>Аналогічно функції <code>global()</code> вбудована функція <code>local()</code> повертає словник 
+з іменами з локального простору імен і відповідними значеннями: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">var</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="o">...</span>     <span class="k">return</span> <span class="n">arg</span> <span class="o">+</span> <span class="n">var</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dict_keys</span><span class="p">([</span><span class="s1">&#39;arg&#39;</span><span class="p">,</span> <span class="s1">&#39;var&#39;</span><span class="p">])</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Коли ми оголошуємо функцію, в її тілі ми можемо використовувати будь-які оператори, у тому числі і оголошення функції. 
+<p>Вище у локальному просторі імен функції <code>add_two</code> міститься два імені. 
+Змінна <code>arg</code> отримує значення при передачі аргумента під час виклику функції. 
+Змінній <code>var</code> значення присвоюється під час виконання функції. </p>
+<p>Зауважте: на відміну від <code>globals()</code> функція <code>locals()</code> повертає не активний словник, 
+а його копію. 
+Отже змінити через цей словинк локальний простір імен не вийде. 
+Ця відмінність між двома функціями може завдати клопоту у майбутньому, 
+отже добре запам'ятайте її! </p>
+<p>Якщо функцію <code>locals()</code> викликати поза межами функції, 
+в основному модулі програми, 
+то її поведінка буде така сама, як у функції <code>globals()</code></p>
+<h3 id="enclosing">Enclosing</h3>
+<p>Коли ми оголошуємо функцію, в її тілі ми можемо використовувати будь-які інструкції, 
+у тому числі і оголошення іншої функції. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start outer()&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start inner()&#39;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End inner()&#39;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="k">return</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End outer()&#39;</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">return</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="n">Start</span> <span class="n">outer</span><span class="p">()</span>
+<span class="n">Start</span> <span class="n">inner</span><span class="p">()</span>
+<span class="n">End</span> <span class="n">inner</span><span class="p">()</span>
+<span class="n">End</span> <span class="n">outer</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    :::python
-    >>> def outer(arg):
-    ...     def inner(x):
-    ...             return x*x
-    ...     if arg > 0:
-    ...             return inner(arg)
-    ...
-    >>>
-    >>> outer(10)
-    100
-    >>> inner(10)
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    NameError: name 'inner' is not defined
-    >>>
+<p>У наведеному прикладі всередині функції <code>outer()</code> оголошується функція <code>inner()</code>. 
+Функція <code>inner()</code> є локальною по відношенню до <code>outer()</code>. 
+У свою чергу <code>outer()</code> є охоплючою функцією для <code>inner()</code>. </p>
+<p>Коли основна програма викликає функцію <code>outer()</code>, 
+Python створює для неї новий простір імен. 
+Аналогічно коли <code>outer()</code> викликає функцію <code>inner()</code>, 
+остання отримує свій власний окремий простір імен. 
+Простір, створений для функції <code>inner()</code>, є локальним, 
+а простір, створений для функції <code>outer()</code> — охоплюючим. </p>
+<p>Обидва простори існують до повернення з відповідної їм функції. </p>
+<h2 id="_2">Область видимості</h2>
+<p>Наявність декількох окремих просторів імен означає, що в процесі виконання програми 
+одночасно можуть існувати однакові імена, кожне у своєму просторі. 
+Але як же інтерпретатор розрізняє яке саме ім'я ви маєте на увазі в певний момент часу, 
+тобто у якому просторі імен його шукати? </p>
+<p>В Python є правило LEGB, яким він користується при пошуці змінних. 
+Якщо  всередині функції виконується звернення до змінної, 
+Python шукає її ім'я по просторам імен у такому порядку (до першого співпадіння): </p>
+<div class="codehilite"><pre><span></span><code>Local — Enclosing — Global — Built-in
+</code></pre></div>
 
-Функція `inner()` є локальною по відношенню до функції `outer()`. Тому до внутрішньої функції, як і до будь-якого локальлного об'єкта, ми не можемо отримати доступу ззовні.
+<p>Якщо ж ім'я не буде знайдено в жодному просторі імен, 
+інтерпретатор видасть помилку. </p>
+<p>Розглянемо декілька прикладів. 
+У наступному ім'я <code>len</code> буде знайдено в локальному просторі імен функції <code>inner()</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">len</span> <span class="o">=</span> <span class="s1">&#39;enclosing&#39;</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="nb">len</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="n">local</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-## LEGB
+<p>Якщо ім'я <code>len</code> не буде визначено у функції <code>inner()</code>, 
+тоді його буде знайдено у просторі імен <code>enclosing</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">len</span> <span class="o">=</span> <span class="s1">&#39;enclosing&#39;</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="n">enclosing</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-В Python існує 4 області видимості:
+<p>Якщо ж ім'я <code>len</code> не буде визначено і в функції <code>outer()</code>, 
+його буде знайдено у просторі імен <code>global</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="k">global</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-* Local — локальна (всередині функції)
-* Enclosing — локальна область функцій-обгорток, які у свою чергу містять інші функції
-* Global — глобальна (модуль)
-* Built-in — вбудована (зарезервовані значення Python)
+<p>Ну і якщо не визначено ніде в нашій програмі, 
+тоді знайдеться в <code>builtins</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">len</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-В Python є правило LEGB, яким він користується при пошуці змінних. 
-Якщо  всередині функції виконується звернення до змінної, Python шукає її ім'я по областям видимості у такому порядку (до першого співпадіння):
+<p>А ось ім'я <code>unknown</code> немає ніде: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="n">outer</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">inner</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;unknown&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    Local — Enclosing — Global — Built-in
+<h2 id="_3">Модифікація об'єктів поза областю видимості</h2>
+<p>Якщо всередині функції змінній присвоїти значення, 
+то така змінна автоматично вважається локальною, 
+тобто ім'я попадає в локальний простір імен. 
+А що, якщо нам знадобиться присвоїти значення імені з іншого простору? </p>
+<h3 id="global_1">Інструкція <code>global</code></h3>
+<p>Існує можливість змінити значення глобальної змінної за допомогою інструкції 'global':</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">function</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">global</span> <span class="n">x</span>
+<span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;global assigned inside function&#39;</span>
+<span class="o">...</span>     <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">function</span><span class="p">()</span>
+<span class="k">global</span> <span class="n">assigned</span> <span class="n">inside</span> <span class="n">function</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+<span class="s1">&#39;global assigned inside function&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-### Local
+<p>Інструкція <code>global</code> змушує інтерпретатор починати пошук імен з глобального простору 
+і дозволяє присвоювати змінним нові значення. 
+Область пошуку простирається аж до простору імен Built-in якщо потрібне ім'я не буде знайдено у модулі, 
+при цьому операція присвоєння значень глобальним іменам завжди буде створювати або змінювати змінні в глобальному просторі імен. </p>
+<p>Можна оголошувати одразу декілька глобальних імен: </p>
+<div class="codehilite"><pre><span></span><code><span class="k">global</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">text</span>
+</code></pre></div>
 
-Цю область видимості мають змінні, котрі ініціалізуються всередині функцій.
+<p>Ім'я оголошене як глобальне не може використовуватись раніше самого оголошення: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">function</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;global assigned inside function&#39;</span>
+<span class="o">...</span>     <span class="k">global</span> <span class="n">x</span>
+<span class="o">...</span>     <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;x&#39;</span> <span class="ow">is</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">before</span> <span class="k">global</span> <span class="n">declaration</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    :::python
-    >>> def add_two(a):
-            x = 2
-            return a + x
+<p>Параметри функцій не можуть бути глобальними: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">global</span> <span class="n">arg</span>
+<span class="o">...</span>     <span class="n">arg</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="o">...</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;arg&#39;</span> <span class="ow">is</span> <span class="n">parameter</span> <span class="ow">and</span> <span class="k">global</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    >>> add_two(3)
-    5
+<h3 id="nonlocal">Інструкція <code>nonlocal</code></h3>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x assigned inside outer&quot;</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x assigned inside inner&quot;</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inner():&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;outer():&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="n">inner</span><span class="p">():</span> <span class="n">x</span> <span class="n">assigned</span> <span class="n">inside</span> <span class="n">inner</span>
+<span class="n">outer</span><span class="p">():</span> <span class="n">x</span> <span class="n">assigned</span> <span class="n">inside</span> <span class="n">outer</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    >>> print(x)
-    Traceback (most recent call last):
-      File "<pyshell#5>", line 1, in <module>
-        print(x)
-    NameError: name 'x' is not defined
+<p>Функції <code>outer()</code> та <code>inner()</code> кожна мають свої локальні змінні <code>x</code>.</p>
+<p>Всередині вкладеної функції ми маємо можливість вказати, що певна змінна не є локальною для цієї вкладеної функції, а є локальною для функції-обгортки. 
+Робиться це за допомогою інструкції <code>nonlocal</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x assigned inside outer&quot;</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="k">nonlocal</span> <span class="n">x</span>
+<span class="o">...</span>         <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x assigned inside inner&quot;</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inner():&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;outer():&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">outer</span><span class="p">()</span>
+<span class="n">inner</span><span class="p">():</span> <span class="n">x</span> <span class="n">assigned</span> <span class="n">inside</span> <span class="n">inner</span>
+<span class="n">outer</span><span class="p">():</span> <span class="n">x</span> <span class="n">assigned</span> <span class="n">inside</span> <span class="n">inner</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-У наведеному прикладі оголошена функція `add_two()`, 
-яка додає двійку до  переданого їй числа і повертає отриманий результат. 
-Всередині цієї функції  використовується змінна `x`, доступ до якої ззовні неможливий.
+<p>Всередині функції <code>inner()</code> ми вказали, 
+що змінна <code>x</code> є локальною для функції <code>outer()</code>. 
+Тобто змінна <code>x</code> як би попадає з функції <code>outer()</code> в простір імен функції <code>inner()</code>. 
+Якщо ми змінемо значення нелокальної змінної, це відобразиться і на локальній змінній. </p>
+<p><code>nonlocal</code> обмежує пошук простором імен функцій-обгорток. 
+В область пошуку не входять глобальний та вбудований простори імен. </p>
+<p>Інструкція <code>nonlocal</code> вимагає, щоб перераховані імена вже існували: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+<span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x assigned inside outer&quot;</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+<span class="o">...</span>         <span class="k">nonlocal</span> <span class="n">x</span><span class="p">,</span> <span class="n">unknown</span>
+<span class="o">...</span>         <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x assigned inside inner&quot;</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inner():&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">inner</span><span class="p">()</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;outer():&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="o">...</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">no</span> <span class="n">binding</span> <span class="k">for</span> <span class="k">nonlocal</span> <span class="s1">&#39;unknown&#39;</span> <span class="n">found</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Кожного разу, коли ми викликаємо функцію, у неї створюються локальні змінні (якщо вони у неї є), а після завершення — знищуються. 
-При черговому виклику функції ця процедура повторюється.
-
-
-
-
-
-### Enclosing
-
-Суть даної області видимості полягає у том, що всередині функції можуть бути вкладені функції і локальні змінні. 
-Локальна змінна функції для її вкладеної функції знаходиться в области видимости `enclosing`.
-
-    :::python
-    >>> def outer():
-    ...     x = "x modified inside outer"
-    ...     def inner():
-    ...         print("inner():", x)
-    ...     inner()
-    ...     print("outer():", x)
-    ...
-    >>> outer()
-    inner(): x modified inside outer
-    outer(): x modified inside outer
-    >>>
-
-У наведеному прикладі змінна `x` має область видимості `enclosing` для функції `inner()`.
-
-#### Інструкція `nonlocal`
-
-    :::python
-    >>> def outer():
-    ...     x = "x modified inside outer"
-    ...     def inner():
-    ...         x = "x modified inside inner"
-    ...         print("inner():", x)
-    ...     inner()
-    ...     print("outer():", x)
-    ...
-    >>> outer()
-    inner(): x modified inside inner
-    outer(): x modified inside outer
-    >>>    
-
-Функції `outer()` та `inner()` кожна мають свої локальні змінні `x`.
-
-Всередині вкладеної функції ми маємо можливість вказати, що певна змінна не є локальною для цієї вкладеної функції, а є локальною для функції-обгортки. 
-Робиться це за допомогою інструкції `nonlocal`:
-
-    :::python
-    >>> def outer():
-    ...     x = "x modified inside outer"
-    ...     def inner():
-    ...         nonlocal x
-    ...         x = "x modified inside inner"
-    ...         print("inner():", x)
-    ...     inner()
-    ...     print("outer():", x)
-    ...
-    >>> outer()
-    inner(): x modified inside inner
-    outer(): x modified inside inner
-    >>>
-
-Всередині функції `inner()` ми вказали, що змінна `x` є локальною для функції `outer()`. 
-Тобто змінна `x` як би попадає з функції `outer()` в простір імен функції `inner()`. 
-Якщо ми змінемо значення нелокальної змінної, це відобразиться і на локальній змінній. 
-
-`nonlocal` обмежує пошук областями видимості функцій-обгорток. 
-Вона вимагає, щоб перераховані імена вже існували та дозволяє просвоювати їм нові значення. 
-В область пошуку не входять глобальна і вбудована області видимості.
-
-### Global
-
-Змінні області видимості `global` — це глобальні змінні рівня модуля (тобто `.py`-файла).
-
-    :::python
-    >>> x = 4
-    >>> def fun():
-            print(x+3)
-
-    >>> fun()
-    7
-
-#### Інструкція `global`
-
-Існує можливість змінити значення глобальної змінної за допомогою інструкції 'global':
-
-    :::python
-    >>> x = 'global'
-    >>> def f():
-    ...     global x
-    ...     x = 'global modified in function'
-    ...     print (x)
-    ...
-    >>> f()
-    global modified in function
-    >>>
-
-`global` змушує інтерпретатор починати пошук імен з області модуля і  дозволяє присвоювати змінним нові значення. 
-Область пошуку простирається аж до області видимости Built-in якщо потрібне ім'я не буде знайдено у модулі, 
-при цьому операція присвоєння значень глобальним іменам завжди буде створювати або змінювати змінні в області видимості модуля.
-
-### Built-in
-
-Рівень інтерпретатора Python. 
-
-В межах цієї області видимості знаходяться функції `len()`, `print()` і т.ін. 
-Ці сутності знаходиться у модулі `__builtins__` і завжди доступні у будь-якому модулі Python. 
-Вміст цього модуля імпортується автоматично, отже вам не треба попередньо нічого імпортувати.
-
-`Built-in` — це максимально широка область видимості.
-
-## Резюме
-
-* В Python існує чотирио бласті видимості: вбудована, глобальна, обгортаюча і локальна.
-* Правило LEGB: пошук імен відбувається від локальної до вбудованої.
-* При використанні і операції присвоєння ім'я вважається локальним. Цю поведінку можна змінити за допомогою операторів `global` та `nonlocal`.
-
-## Додаткові матеріали
-
-* [Вікіпедія: Область видимості](https://uk.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C_%D0%B2%D0%B8%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%96_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F))
-
--->
+<h3 id="_4">Кращі практики</h3>
+<p>Не дивлячись на те, що Python надає можливість 
+міняти об'єкти поза межами функції за допомогою <code>global</code> і <code>nonlocal</code> 
+у більшості випадків це не є хорошою практикою. 
+І це стосується не лише Python, а взагалі багатьох мов програмування. </p>
+<p>Зміна глобальних об'єктів всередині функції — це свого роду "побічний ефект" функції. 
+Основні недоліки використання глобальних змінних: </p>
+<ul>
+<li>дуже важко відстежувати де саме відбувається доступ до глобальних об'єктів</li>
+<li>виникають помилки, які дуже важко локалізувати</li>
+<li>зменшується читабельність початкового кода</li>
+<li>з'являється багато "непередбачуваних" зв'язків у системі, 
+що призводить до непередбачливої її поведінки 
+а також затруднює її розвиток і масштабування</li>
+<li>затруднюється модульне тестування</li>
+</ul>
+<p>Бувають ситуації, коли модифікація глобальних змінних сильно спрощує код, 
+але таке зустрічається рідко. 
+Замість того існують більш "безпечні" практики. </p>
+<p>Серед розробників є таке "заклинання":</p>
+<blockquote>
+<p>глобальні змінні — це зло!</p>
+</blockquote>
+<h2 id="_5">Резюме</h2>
+<ul>
+<li>в Python є чотири простори імен: вбудований, глобальний, охоплюючий і локальний</li>
+<li>правило LEGB: пошук імен відбувається від локальної до вбудованої.</li>
+<li>при використанні і операції присвоєння ім'я вважається локальним. Цю поведінку можна змінити за допомогою операторів <code>global</code> та <code>nonlocal</code>.</li>
+</ul>
+<h2 id="_6">Додаткові матеріали</h2>
+<ul>
+<li><a href="https://uk.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C_%D0%B2%D0%B8%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%96_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F)">Вікіпедія: Область видимості</a></li>
+</ul>
+                
+                  
                 
               
               
@@ -690,6 +1097,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="strategies.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Стратегії обчислення" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Стратегії обчислення
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="call_stack.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Стек викликів" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Стек викликів
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

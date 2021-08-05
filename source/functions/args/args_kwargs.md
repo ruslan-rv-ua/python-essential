@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Функції з довільною кількістю аргументів
 
 Напишемо функцію, яка визначає суму трьох чисел:

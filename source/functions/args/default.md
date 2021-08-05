@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Опціональні аргументи
 
 Деякі параметри функції можна зробити необов'язковими. 

@@ -54,6 +54,9 @@
 список безкоштовних API для використання у програмному забезпеченні та веброзробці.
 - [Design Resources for Developers](https://github.com/bradtraversy/design-resources-for-developers) — 
 величезна збірка ресурсів для фронтенда і графічного дизайну. Хай тут буде. 
+- [100 Python Code Snippets for Everyday Problems
+](https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/) — 
+100 сніпетів на коже день
 
 
 ## Статті
