@@ -450,8 +450,95 @@
   
     <li class="md-nav__item">
       <a href="../oop/oop_basis.html" class="md-nav__link">
-        Що таке ООП
+        Парадигма ООП
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/classes.html" class="md-nav__link">
+        Класи і об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/object_lifecycle.html" class="md-nav__link">
+        Життєвий цикл об'єкта
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/init.html" class="md-nav__link">
+        Ініціалізація об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/object_presentation.html" class="md-nav__link">
+        Представлення об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      <label class="md-nav__link" for="__nav_5_6">
+        Інкапсуляція
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Інкапсуляція
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+        Інкапсуляція в ООП
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -494,6 +581,11 @@
                 
                 <h1 id="functools">Модуль <code>functools</code></h1>
 <!-- https://dev.to/martinheinz/functools-the-power-of-higher-order-functions-in-python-3dg0 -->
+<p>Кэшированные атрибуты</p>
+<p>Во встроенном пакете functools есть классный декоратор @cached_property, который позволяет кэшировать результат метода и загнать его в атрибут.</p>
+<p>Таким образом, при первом обращении к атрибуту производятся вычисления в методе, а при дальнейших берется уже кэшированное значение.</p>
+<p>Подобное кэшеирование полезно в случаях, когда в методе производятся вычисления, которые нагружают систему и занимают много времени.</p>
+<p>По сути, @cached_property можно сравнить с комбинацией декораторов @property (про это был пост) и @functools.lru_cache (и про это тоже).</p>
                 
               
               

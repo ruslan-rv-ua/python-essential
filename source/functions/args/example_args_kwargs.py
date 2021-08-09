@@ -1,6 +1,8 @@
 def all_i_got(*args):
 	for arg in args:
 		print(arg)
+		
+all_i_got(1, 2)
 
 def all_i_got(*args, **kwargs):
 	for arg in args:

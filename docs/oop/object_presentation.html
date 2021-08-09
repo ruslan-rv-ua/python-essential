@@ -18,7 +18,7 @@
     
     
       
-        <title>Представлення екземпляра класа - Python Essential</title>
+        <title>Представлення об'єктів - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Представлення екземпляра класа
+              Представлення об'єктів
             
           </span>
         </div>
@@ -426,12 +426,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Об'єктно-орієнтоване програмування
@@ -450,8 +452,105 @@
   
     <li class="md-nav__item">
       <a href="oop_basis.html" class="md-nav__link">
-        Що таке ООП
+        Парадигма ООП
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes.html" class="md-nav__link">
+        Класи і об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_lifecycle.html" class="md-nav__link">
+        Життєвий цикл об'єкта
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="init.html" class="md-nav__link">
+        Ініціалізація об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="object_presentation.html" class="md-nav__link md-nav__link--active">
+        Представлення об'єктів
+      </a>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      <label class="md-nav__link" for="__nav_5_6">
+        Інкапсуляція
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Інкапсуляція
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="encapsulation/encapsulation_basis.html" class="md-nav__link">
+        Інкапсуляція в ООП
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -494,7 +593,20 @@
                 
                 <h1 id="_1">Представлення екземпляра класа</h1>
 <p>Часто буває корисним представлення екземпляра класа у вигляді символьного рядка. 
-В Python існує декілька методів, які ви можете визначити для налаштування поведінки вбудованих функцій при представленні вашого класа.</p>
+В Python для цього є дві функції: <code>repr()</code> та <code>str()</code>. 
+Головна відмінність <code>repr()</code> від <code>str()</code> — в цільовій аудиторії. 
+<code>repr()</code> більше призначено для машино-орієнтованого вивода, 
+більш того, це по можливості має бути валідний код на Python для створення екземпляра класа. 
+<code>str()</code> призначено для читання людьми. </p>
+<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; str(&#39;text&#39;)
+&#39;text&#39;
+&gt;&gt;&gt; repr(&#39;text&#39;)
+&quot;&#39;text&#39;&quot;
+&gt;&gt;&gt;
+</code></pre></div>
+
+<p>В Python кожен клас має спеціальні методи, 
+які ви можете перевизначити для налаштування поведінки вбудованих функцій при представленні вашого класа. </p>
 <ul>
 <li>
 <p><code>__str__()</code> — 
@@ -505,9 +617,6 @@
 визначає поведінку вбудованої функції <code>repr()</code>, викликаної для екземпляра вашого класа. </p>
 </li>
 </ul>
-<p>Головна відмінність <code>repr()</code> від <code>str()</code> — в цільовій аудиторії. 
-<code>repr()</code> більше призначено для машино-орієнтованого вивода, більш того, це по можливості має бути валідний код на Python для створення екземпляра класа. 
-<code>str()</code> призначено для читання людьми.</p>
 <p>Створимо клас і визначимо представлення екземпляра:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
@@ -546,6 +655,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="init.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Ініціалізація об&#39;єктів" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Ініціалізація об'єктів
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="encapsulation/encapsulation_basis.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Інкапсуляція в ООП" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Інкапсуляція в ООП
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

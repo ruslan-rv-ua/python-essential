@@ -426,12 +426,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Об'єктно-орієнтоване програмування
@@ -450,8 +452,183 @@
   
     <li class="md-nav__item">
       <a href="oop_basis.html" class="md-nav__link">
-        Що таке ООП
+        Парадигма ООП
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes.html" class="md-nav__link">
+        Класи і об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Життєвий цикл об'єкта
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="object_lifecycle.html" class="md-nav__link md-nav__link--active">
+        Життєвий цикл об'єкта
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-" class="md-nav__link">
+    Час життя Python-об'єкта
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Список атрибутів об'єкта
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Спеціальні атрибути
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Життєвий цикл екземпляра класа
+  </a>
+  
+    <nav class="md-nav" aria-label="Життєвий цикл екземпляра класа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__new__cls" class="md-nav__link">
+    __new__(cls, [...])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__init__self" class="md-nav__link">
+    __init__(self, [...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__del__self" class="md-nav__link">
+    __del__(self)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="init.html" class="md-nav__link">
+        Ініціалізація об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_presentation.html" class="md-nav__link">
+        Представлення об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      <label class="md-nav__link" for="__nav_5_6">
+        Інкапсуляція
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Інкапсуляція
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="encapsulation/encapsulation_basis.html" class="md-nav__link">
+        Інкапсуляція в ООП
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -564,7 +741,8 @@
 <li>тип даних</li>
 <li>ідентифікатор</li>
 </ul>
-<p>Для знищення об'єктів Python використовує алгоритм підрахунку посилань. Об'єкти видаляються як тільки на них більше немає посилань.</p>
+<p>Для знищення об'єктів Python використовує алгоритм підрахунку посилань. 
+Об'єкти видаляються коли на них більше немає посилань.</p>
 <p>В Python змінні не зберігають значення, а виступають в ролі посилань на об'єкти. 
 Тобто коли ви присвоюєте значення новій змінній, то спочатку створюється об'єкт з цим значенням, а вже потім змінна починає посилатись на нього. На один об'єкт може посилатись багато змінних.</p>
 <p>У Python-об'єкта є ще одна характеристика — лічильник посилань на об'єкт (reference counter). 
@@ -579,8 +757,10 @@
 <p>В інтрерпретаторі Python є спеціальний механізм — збиральник сміття (garbage collector). 
 Спрощено це працює так: у певні моменти часу збиральник сміття "пробігається" по усім об'єктам в пам'яті, 
 і якщо лічильник посилань певного об'єкта дорівнює 0, то цей об'єкт знищується — пам'ять, яку займав об'єкт, звільняється і у подальшому може використовуватись повторно. </p>
-<p>Якщо видалений об'єкт містив посилання на інші об'єкти, то ці посилання також видаляються. Таким чином, видалення одного об'єкта може спричинити видалення інших.</p>
-<p>Наприклад, якщо видаляється список, то лічильник посилань у всіх його элементах зміншується на 1. Якщо усі об'єкти всередині списка більше ніде не використовуються, то їх тетакож будеь видалено.</p>
+<p>Якщо видалений об'єкт містив посилання на інші об'єкти, то ці посилання також видаляються. 
+Таким чином, видалення одного об'єкта може спричинити видалення інших. 
+Наприклад, якщо видаляється список, то лічильник посилань у всіх його элементах зміншується на 1. 
+Якщо усі об'єкти всередині списка більше ніде не використовуються, то їх також будеь видалено. </p>
 <p>Змінні, які оголошено поза функціями, називаются глобальными. Як правило, життєвий цикл таких змінних дорівнює життю Python-процеса. Таким чином, кількість посилань на об'єкти на котрі посилаються глобальні змінні ніколи не падає до 0.</p>
 <p>Змінні, котрі оголошено всередині функції, мають локальну видимість. Як тільки інтерпретатор виходить з функції івн знищує усі посилання створені локальними змінними всередині неї. </p>
 <p>Дізнатись кількість посилань на об'єкт можна за допомогою функції getrefcount з модуля sys:</p>
@@ -705,6 +885,41 @@ x.__del__()
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="classes.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Класи і об&#39;єкти" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Класи і об'єкти
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="init.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ініціалізація об&#39;єктів" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Ініціалізація об'єктів
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -18,7 +18,7 @@
     
     
       
-        <title>Класи і екземпляри класів - Python Essential</title>
+        <title>Класи і об'єкти - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Класи і екземпляри класів
+              Класи і об'єкти
             
           </span>
         </div>
@@ -426,12 +426,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Об'єктно-орієнтоване програмування
@@ -450,8 +452,183 @@
   
     <li class="md-nav__item">
       <a href="oop_basis.html" class="md-nav__link">
-        Що таке ООП
+        Парадигма ООП
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Класи і об'єкти
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="classes.html" class="md-nav__link md-nav__link--active">
+        Класи і об'єкти
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення класів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Клас як модуль
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Клас як створювач екземплярів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Атрибути екземплярів
+  </a>
+  
+    <nav class="md-nav" aria-label="Атрибути екземплярів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Поля екземплярів
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Методи
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Зміна полів об'єкта
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_lifecycle.html" class="md-nav__link">
+        Життєвий цикл об'єкта
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="init.html" class="md-nav__link">
+        Ініціалізація об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_presentation.html" class="md-nav__link">
+        Представлення об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      <label class="md-nav__link" for="__nav_5_6">
+        Інкапсуляція
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Інкапсуляція
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="encapsulation/encapsulation_basis.html" class="md-nav__link">
+        Інкапсуляція в ООП
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -567,7 +744,7 @@
     pass
 </code></pre></div>
 
-<p>Імена класів прийнято записувати в Pascal Case. </p>
+<p>Імена класів прийнято записувати в <code>PascalCase</code>. </p>
 <p>Тіло класа може містити будь-який валідний код Python. 
 Тіло буде виконано при створенні класа: </p>
 <div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; class Printer:
@@ -684,7 +861,7 @@ TypeError: add() takes 1 positional argument but 2 were given
 <div class="codehilite"><pre><span></span><code>a.add(4)
 </code></pre></div>
 
-<p>перетвоюється у вираз</p>
+<p>перетворюється у вираз</p>
 <div class="codehilite"><pre><span></span><code>Adder.add(a, 4)
 </code></pre></div>
 
@@ -704,7 +881,7 @@ TypeError: add() takes 1 positional argument but 2 were given
 &gt;&gt;&gt;
 </code></pre></div>
 
-<p>Змінна <code>self</code> зв'язується з об'ктом, до якого було застосовано даний метод, 
+<p>Змінна <code>self</code> зв'язується з об'єктом, до якого було застосовано даний метод, 
 і через цю змінну ми отримуємо доступ до атрибутів екземпляра. 
 Коли цей же метод застосовується до іншого екземпляра, 
 то <code>self</code> зв'яжеться вже з саме цим іншим екземпляром, і через цю змінну будуть вилучатись тільки його поля.</p>
@@ -725,9 +902,9 @@ TypeError: add() takes 1 positional argument but 2 were given
 </code></pre></div>
 
 <p>Тут від класа <code>Adder</code> створюється два екземпляра – <code>a</code> та <code>b</code>. 
-Для екземпляра <code>a</code> свторюється власне поле <code>n</code>. 
-Екземпляр <code>b</code>, не має такого поля, отже успадковує його від клас <code>Adder</code>. 
-Переконаємось у цьому:</p>
+Для екземпляра <code>a</code> створюється власне поле <code>n</code>. 
+Екземпляр <code>b</code>, не має такого поля, отже успадковує його від класа <code>Adder</code>. 
+Переконаємось у цьому: </p>
 <div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; a.n is Adder.n
 False
 &gt;&gt;&gt; b.n is Adder.n
@@ -765,6 +942,41 @@ AttributeError: type object &#39;Adder&#39; has no attribute &#39;test&#39;
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="oop_basis.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Парадигма ООП" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Парадигма ООП
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="object_lifecycle.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Життєвий цикл об&#39;єкта" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Життєвий цикл об'єкта
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

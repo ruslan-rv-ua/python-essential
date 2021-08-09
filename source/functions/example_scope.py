@@ -1,15 +1,15 @@
 ## intro
-x = 'global'
-def f():
-	x = 'local'
+len = 'global'
+def f(x):
 	print(x)
-f()
+# f()
 
 ## global
 my_name = 'my_name'
 from random import *
-print(globals().keys())
-
+g = list(globals().keys())
+print(g)
+1/0
 ## local
 def add_two(arg):
     var = 2
