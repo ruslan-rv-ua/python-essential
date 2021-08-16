@@ -1,7 +1,7 @@
 class Person:
 	def __init__(self, name, age):
 		self.name = name
-		self._age = age
+		self.age = age
 		
 p = Person('Alice', -35)
 
@@ -40,5 +40,5 @@ class Person:
 		assert age >= 0
 		self._age = age
 
-p = Person('Alice', -25)
+p = Person('Alice', 25)
 
