@@ -208,3 +208,6 @@
 	>>> uptime.seconds
 	70930
 	>>>
+## Додаткові матеріали
+
+- [Документація: модуль datetime](https://docs.python.org/3/library/datetime.html)

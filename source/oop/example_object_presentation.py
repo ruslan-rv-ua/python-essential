@@ -1,6 +1,6 @@
-t = 'text'
-# print(str(t))
-# print(repr(t))
+t = 'some text'
+print(str(t))
+print(repr(t))
 
 class Person:
 	def __init__(self, name, age):

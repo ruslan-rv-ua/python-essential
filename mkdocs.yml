@@ -138,12 +138,12 @@ nav:
     - Представлення об'єктів: oop/object_presentation.md
     - Інкапсуляція:
       - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
-      # - Приховування атрибутів: oop/encapsulation/hiding_attrs.md
-      # - Сетери і гетери: oop/encapsulation/setters_and_getters.md
-      # - Властивості: oop/encapsulation/properties.md
-      # - Обчислювані властивості: oop/encapsulation/calc_props.md
-    # - Успадкування:
-      # - Успадкування в ООП: oop/inheritance/inheritance_basis.md
+      - Приховування атрибутів: oop/encapsulation/hiding_attrs.md
+      - Сетери і гетери: oop/encapsulation/setters_and_getters.md
+      - Властивості: oop/encapsulation/properties.md
+      - Обчислювані властивості: oop/encapsulation/calc_props.md
+    - Успадкування:
+      - Успадкування в ООП: oop/inheritance/inheritance_basis.md
       # - Успадкування в Python: oop/inheritance/inheritance_python.md
       # - Ієрархія класів: oop/inheritance/hierarchy.md
       # - Успадкування і приватні атрибути: oop/inheritance/private_attrs.md
@@ -155,41 +155,58 @@ nav:
     # - Поліморфізм:
       # - Поліморфізм в ООП: oop/polymorphism/polymorphism.md
       # - Качина типізація: oop/polymorphism/duck_typing.md
-    # - Поведінка об'єктів:
-  # - Виняткові ситуації:
-    # - Винятки
-    # - assert
-    # - Обробка винятків
-    # - Попередження
-    # - EAFP vs LBYL
-    # - Менеджери контекста
+  - Виняткові ситуації:
+    - Винятки: exceptions/exceptions.md
+    # # - assert
+    # - Обробка винятків: exceptions/exceptions_handling.md
+    # - Попередження: exceptions/warnings.md
+    # - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
+    # - Менеджери контекста: exceptions/context_manager.md
   # - Ітератори та генератори:
     # - Ітератори
     # - Реалізація за допомогою __iter__
     # - Реалізація за допомогою __getitem__
     # - Генератори
     # - Генератори-вирази
-  # - Ввід та вивід:
-    # - Файли і потоки
+  - Елементи функціонального програмування:
+    - Функціональне програмування: functional_programming/intro.md
+    # - Чисті функції: functional_programming/pure_functions.md
+    # - Функції вищого порядку: functional_programming/higher_order_functions.md
+    # - Анонімні функції: functional_programming/lambda.md
+    # - Функції map(), filter(), reduce(): functional_programming/map_filter_reduce.md
+    # - Рекурсія: functional_programming/recursion.md
+    # - Замикання: functional_programming/closure.md
+    # - Декоратори: functional_programming/decorator.md
+  - Ввід та вивід:
+    - Файли і потоки: io/files_and_streams.md
     # - Відкриття і закриття потоків
     # - Читання і запис
     # - Серіалізація об'єктів
-  # - Модулі і пакети:
-    # - Модулі у програмуванні
+  - Модулі і пакети:
+    - Модулі у програмуванні: modules_and_packages/module.md
     # - Модулі в Python
     # - Модулі як об'єкти
     # - Пакети
     # - Встановлення пакетів
-  # - Виконання програм:
-    # - Інтерпретатор Python
+  - Виконання програм:
+    - Інтерпретатор Python: interpreter/interpreter.md
     # - Програмне виконання коду
     # - Передача аргументів скрипту
     # - Віртуальні оточення
-  # - Типи та структури даних:
+  # - Знову про Python-об'єкти:
+    # - Моржовий оператор: assignment/walrus.md
+    # - Упаковка та розпаковка ітерабельних об'єктів: assignment/starr.md
+    # - Функція enumerate: assignment/enumerate.md
+    # - Видалення об'єктів: assignment/enumerate.md
+    # - Глибока та поверхнева копії
+  # - Поведінка об'єктів:
+    # - Доступ до атрибутів: oop/behavior/attributes.md
+    # - Контейнери: oop/behavior/containers.md
+  - Типи та структури даних:
     # - Типізація у програмуванні: types_and_data_structures/typing.md
     # - Підказки типів в Python: types_and_data_structures/type_hinting.md
-    # - Числа:
-      # - Системи числення: types_and_data_structures/numbers/number_system.md
+    - Числа:
+      - Системи числення: types_and_data_structures/numbers/number_system.md
       # - Цілі числа: types_and_data_structures/numbers/int.md
       # - Дробові числа: types_and_data_structures/numbers/float.md
       # - Комплексні числа: types_and_data_structures/numbers/complex.md
@@ -208,21 +225,9 @@ nav:
         # - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
         # - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
         # - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
-  # - Присвоєння значень:
-    # - Моржовий оператор: assignment/walrus.md
-    # - Упаковка та розпаковка ітерабельних об'єктів: assignment/starr.md
-    # - Функція enumerate: assignment/enumerate.md
-  # - Елементи функціонального програмування:
-    # - Функціональне програмування: functional_programming/intro.md
-    # - Чисті функції: functional_programming/pure_functions.md
-    # - Функції вищого порядку: functional_programming/higher_order_functions.md
-    # - Анонімні функції: functional_programming/lambda.md
-    # - Функції map(), filter(), reduce(): functional_programming/map_filter_reduce.md
-    # - Рекурсія: functional_programming/recursion.md
-    # - Замикання: functional_programming/closure.md
-    # - Декоратори: functional_programming/decorator.md
-  # - Батарейки:
-    # - Модуль datetime: batteries/datetime.md
+  - Батарейки:
+    - Модуль datetime: batteries/datetime.md
+    # - Модуль collections: batteries/collections.md
     # - Модуль itertools: batteries/itertools.md
   # - Наступні кроки:
     # - Що далі?: go_ahead/whats_next.md
