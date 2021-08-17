@@ -460,9 +460,30 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Класи і об'єкти
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Класи і об'єкти" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Класи і об'єкти
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../classes.html" class="md-nav__link">
-        Класи і об'єкти
+        ООП в Python
       </a>
     </li>
   
@@ -504,6 +525,12 @@
   
 
           
+        </ul>
+      </nav>
+    </li>
+  
+
+          
             
   
   
@@ -512,14 +539,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_3">
         Інкапсуляція
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Інкапсуляція
         </label>
@@ -599,14 +626,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_4">
         Успадкування
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Успадкування" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
           Успадкування
         </label>
@@ -976,6 +1003,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Ієрархія успадкування
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -988,40 +1030,106 @@
                 
                 
                 <h1 id="python">Успадкування в Python</h1>
-<p>В Python синтаксис для наслідування класів виглядає наступним чином:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="err">&lt;</span><span class="nc">subclass</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">superclass</span><span class="o">&gt;</span><span class="p">):</span>
-    <span class="o">&lt;</span><span class="n">subclass</span> <span class="n">attributes</span><span class="o">&gt;</span>
+<p>В Python синтаксис для наслідування класів виглядає наступним чином: 
+при створенні класа після його імені в круглих дужках можна вказати імена одного або декількох суперкласів. </p>
+<p>Приклад:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="k">pass</span>
 </code></pre></div>
 
-<p>Розглянемо на прикладі.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Base</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">base_prop</span> <span class="o">=</span> <span class="s1">&#39;base property&#39;</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Це метод з класа Base.&quot;</span><span class="p">)</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;У об&#39;єкта класа Base є атрибут base_prop, його значення:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_prop</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">child_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Це метод з класа Child.&quot;</span><span class="p">)</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Об&#39;єкт класа Child має атрибут base_prop. Його створено в успадкованому конструкторі класа Base:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_prop</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
-<span class="n">Це</span> <span class="n">метод</span> <span class="n">з</span> <span class="n">класа</span> <span class="n">Base</span><span class="o">.</span>
-<span class="n">У</span> <span class="n">об</span><span class="s1">&#39;єкта класа Base є атрибут base_prop, його значення: base property</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">child_method</span><span class="p">()</span>
-<span class="n">Це</span> <span class="n">метод</span> <span class="n">з</span> <span class="n">класа</span> <span class="n">Child</span><span class="o">.</span>
-<span class="n">Об</span><span class="s1">&#39;єкт класа Child має атрибут base_prop. Його створено в успадкованому конструкторі класа Base: base property</span>
+<p>У вищенаведеному прикладі: </p>
+<ul>
+<li><code>Child</code> — це дочірній (похідний) клас, підклас</li>
+<li><code>Base</code> — це базовий (батьківський) клас, суперклас</li>
+</ul>
+<p>В Python є вбудований клас який має назву <code>object</code>. 
+Від цього класа явно чи неявно успадковуються усі інші класи, 
+як вбудовані, так і ті, що створююте ви. 
+Якщо при створенні класа ви не вказуєте базовий клас, 
+то неявним чином ваш клас буде успадковано від <code>object</code>. 
+Отже наступні оголошення класа рівносильні: </p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Base</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<h2 id="_1">Ієрархія успадкування</h2>
+<p>Клас може бути успадкованим від класа, 
+який у свою чергу було успадковано від іншого класа. 
+Коли розглядають увесь ланцюжок успадкованих і базових класів, 
+говорять про <strong>ієрархію успадкування</strong>. </p>
+<p>Розглянемо наступну ієрархію класів: </p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">SuperBase</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="n">SuperBase</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<p>У вищенаведеному прикладі: </p>
+<ul>
+<li>клас <code>SuperBase</code> успадковано від <code>object</code></li>
+<li>клас <code>Base</code> успадковано від <code>SuperBase</code></li>
+<li>клас <code>Child</code> успадковано від <code>Base</code></li>
+</ul>
+<p>Дізнатись, чи є певний клас підкласом іншого класа по всій ієрархії успадкування, 
+можна за допомогою вбудованої функції: </p>
+<div class="codehilite"><pre><span></span><code>issubclass(cls, super_class)
+</code></pre></div>
+
+<p>Функція повертає <code>True</code> якщо <code>cls</code> є дочірнім класом <code>super_class</code> або ж є тим самим класом. </p>
+<p>Розвиваючи вищенаведену ієрархію класів: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="n">Base</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="n">SuperBase</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="nb">object</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="n">Child</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">SuperBase</span><span class="p">,</span> <span class="nb">object</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">SuperBase</span><span class="p">,</span> <span class="n">Base</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">)</span>
+<span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Що відбувається у цьому прикладі?</p>
-<ol>
-<li>Клас Child успадковує від класа Base два методи: конструктор і метод <code>method()</code>.</li>
-<li>Також клас Child має свій власний метод: <code>child_method()</code>.</li>
-<li>При створенні об'єкта класа Child буде викликано успадкований конструктор класа Base. У конструкторі для об'єкта створюється атрибут base_prop. У об'єктів класа Child теж буде створено цей атрибут.</li>
-</ol>
+<p>Функції <code>issubclass</code> другим аргументом можна передати одразу декілька класів об'єднаних у кортеж. 
+У такому разі функція поверне <code>True</code> якщо вказаний клас є дочірнім хоча б одному з перерахованих: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Base</span><span class="p">,</span> <span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="n">SuperBase</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Base</span><span class="p">,</span> <span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="nb">str</span><span class="p">))</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">Base</span><span class="p">,</span> <span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="nb">str</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>А тепер вкотре згадаємо що "в Python усе є об'єкт". 
+І класи тут теж не виключення, тобто класи — це теж об'єкти. 
+І як об'єкти вони мають свої атрибути. </p>
+<p>У кожного класа є спеціальний атрибут <code>__bases__</code>, 
+у якому міститься базовий клас, точніше кортеж який містить усі базові класи 
+(чому їх може бути декілька — дізнаємось у подальшому): </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">Child</span><span class="o">.</span><span class="vm">__bases__</span>
+<span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">Base</span><span class="s1">&#39;&gt;,)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">SuperBase</span><span class="o">.</span><span class="vm">__bases__</span>
+<span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">object</span><span class="s1">&#39;&gt;,)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
                 
               
               

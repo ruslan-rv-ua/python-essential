@@ -460,9 +460,30 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Класи і об'єкти
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Класи і об'єкти" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Класи і об'єкти
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../classes.html" class="md-nav__link">
-        Класи і об'єкти
+        ООП в Python
       </a>
     </li>
   
@@ -504,6 +525,12 @@
   
 
           
+        </ul>
+      </nav>
+    </li>
+  
+
+          
             
   
   
@@ -512,14 +539,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_3">
         Інкапсуляція
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Інкапсуляція
         </label>
@@ -599,14 +626,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_4">
         Успадкування
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Успадкування" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
           Успадкування
         </label>
@@ -976,6 +1003,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Порядок вирішення методів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Перевірка об'єкта на належність класу
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -996,56 +1045,104 @@
 <p>Використовуючи лінеаризацію відбувається пошук атрибутів в ієрархії класів. 
 При простому успадкуванні алгоритм пошуку атрибутів виглядає наступним чином: </p>
 <ul>
-<li>якщо атрибут, до якого відбувається доступ, не знайдено в поточному класі, то виконується його пошук в базовому класі;</li>
-<li>якщо атрибут не знайдено і в базовому класі, то виконується його пошук в базовому класі базового класа;</li>
-<li>пошук відбувається рекурсивно аж до класа <code>object</code>;</li>
+<li>якщо атрибут, до якого відбувається доступ, не знайдено в поточному класі, то виконується його пошук в базовому класі</li>
+<li>якщо атрибут не знайдено і в базовому класі, то виконується його пошук в базовому класі базового класа</li>
+<li>пошук відбувається рекурсивно аж до класа <code>object</code></li>
 <li>якщо атрибут не знайдено і в класі <code>object</code>, то отримуємо вийняткову ситуацію</li>
 </ul>
 <p>Приклад:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1 method in class A&#39;</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">...</span> <span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f2 method in class B&#39;</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">...</span> <span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f2 method in class C&#39;</span><span class="p">)</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f3 method in class C&#39;</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">f3</span><span class="p">()</span>
-<span class="n">f3</span> <span class="n">method</span> <span class="ow">in</span> <span class="k">class</span> <span class="nc">C</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">f2</span><span class="p">()</span>
-<span class="n">f2</span> <span class="n">method</span> <span class="ow">in</span> <span class="k">class</span> <span class="nc">C</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">f1</span><span class="p">()</span>
-<span class="n">f1</span> <span class="n">method</span> <span class="ow">in</span> <span class="k">class</span> <span class="nc">A</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;f&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">SuperBase</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Метод f1() класа SuperBase&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="n">SuperBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Метод f2() класа Base&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Метод f2() класа Child&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Метод f3() класа Child&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>У вищенаведеному прикладі клас <code>Child</code>: </p>
+<ul>
+<li>від класа <code>SuperBase</code> успадкував метод <code>f1()</code></li>
+<li>з батьківського класа метод <code>f2()</code> не успадковується, клас має власний метод <code>f2()</code></li>
+<li>має власний метод <code>f3()</code></li>
+</ul>
+<p>Перевіримо на практиці: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">child_object</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">child_object</span><span class="o">.</span><span class="n">f1</span><span class="p">()</span>
+<span class="n">Метод</span> <span class="n">f1</span><span class="p">()</span> <span class="n">класа</span> <span class="n">SuperBase</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">child_object</span><span class="o">.</span><span class="n">f2</span><span class="p">()</span>
+<span class="n">Метод</span> <span class="n">f2</span><span class="p">()</span> <span class="n">класа</span> <span class="n">Child</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">child_object</span><span class="o">.</span><span class="n">f3</span><span class="p">()</span>
+<span class="n">Метод</span> <span class="n">f3</span><span class="p">()</span> <span class="n">класа</span> <span class="n">Child</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>В Python лінеаризація ще називається MRO — "Method Resolution Order", 
+<h2 id="_2">Порядок вирішення методів</h2>
+<p>В Python лінеаризація також має назву <code>MRO</code> — "Method Resolution Order", 
 порядок вирішення методів. 
 Назва може трошки вводити в оману, 
 тому що таким чином відбувається пошук не тільки методів, а й будь-яких атрибутів. </p>
 <p>Лінеаризація для певного класа знаходиться в його спеціальному атрибуті <code>__mro__</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="o">.</span><span class="vm">__mro__</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="o">.</span><span class="vm">__mro__</span>
-<span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">C</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="sa">B</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">A</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;)</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">Child</span><span class="o">.</span><span class="vm">__mro__</span>
+<span class="p">(</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">Child</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Base</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">SuperBase</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;)</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Але частіше користуються атрибутом-методом класа, який повертає не кортеж, а одразу список:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">C</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
-<span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">C</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="sa">B</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">A</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;]</span>
+<p>Але частіше користуються методом класа, який повертає не кортеж, а одразу список:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">Child</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">Child</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Base</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="n">__main__</span><span class="o">.</span><span class="n">SuperBase</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Ми отримали всю ієрархію успадкування, аж до класа <code>object</code>. </p>
+<h2 id="_3">Перевірка об'єкта на належність класу</h2>
+<p>В Python є будована функція: </p>
+<div class="codehilite"><pre><span></span><code>isinstance(obj, cls)
+</code></pre></div>
+
+<p>Повертає <code>True</code> якщо об'єкт <code>obj</code> є екземпляром класа <code>cls</code> або його суперкласів. 
+Тобто перевірка відбувається по усій ієрархії успадкування: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">child_object</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="n">Child</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="n">Base</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="n">SuperBase</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="nb">object</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Другим аргументом можна передати одразу декілька класів об'єднавши їх у кортеж. 
+У цьому разі відбуватиметься перевірка належності об'єкта до ієрархій одразу декількох класів: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="n">Base</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="p">(</span><span class="n">Child</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_object</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Зауважте: функція <code>isinstance()</code> використовує лінеаризацію. 
+Аналогічну перевірку можна виконати і так: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">child_object</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">Child</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">child_object</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Child</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+<span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
                 

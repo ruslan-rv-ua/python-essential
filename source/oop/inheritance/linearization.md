@@ -8,45 +8,49 @@
 Використовуючи лінеаризацію відбувається пошук атрибутів в ієрархії класів. 
 При простому успадкуванні алгоритм пошуку атрибутів виглядає наступним чином: 
 
-- якщо атрибут, до якого відбувається доступ, не знайдено в поточному класі, то виконується його пошук в базовому класі;
-* якщо атрибут не знайдено і в базовому класі, то виконується його пошук в базовому класі базового класа;
-* пошук відбувається рекурсивно аж до класа `object`;
+- якщо атрибут, до якого відбувається доступ, не знайдено в поточному класі, то виконується його пошук в базовому класі
+* якщо атрибут не знайдено і в базовому класі, то виконується його пошук в базовому класі базового класа
+* пошук відбувається рекурсивно аж до класа `object`
 * якщо атрибут не знайдено і в класі `object`, то отримуємо вийняткову ситуацію
 
 Приклад:
 
 	:::python
-	>>> class A:
-	...     def f1(self):
-	...             print('f1 method in class A')
-	...
-	>>>
-	... class B(A):
-	...     def f2(self):
-	...             print('f2 method in class B')
-	...
-	>>>
-	... class C(B):
-	...     def f2(self):
-	...             print('f2 method in class C')
-	...     def f3(self):
-	...             print('f3 method in class C')
-	...
-	>>> obj = C()
-	>>> obj.f3()
-	f3 method in class C
-	>>> obj.f2()
-	f2 method in class C
-	>>> obj.f1()
-	f1 method in class A
-	>>> obj.f()
-	Traceback (most recent call last):
-	  File "<stdin>", line 1, in <module>
-	AttributeError: 'C' object has no attribute 'f'
+	class SuperBase:
+		def f1(self):
+			print('Метод f1() класа SuperBase')
+
+	class Base(SuperBase):
+		def f2(self):
+			print('Метод f2() класа Base')
+			
+	class Child(Base):
+		def f2(self):
+			print('Метод f2() класа Child')
+		def f3(self):
+			print('Метод f3() класа Child')
+		
+У вищенаведеному прикладі клас `Child`: 
+
+- від класа `SuperBase` успадкував метод `f1()`
+- з батьківського класа метод `f2()` не успадковується, клас має власний метод `f2()`
+- має власний метод `f3()`
+
+Перевіримо на практиці: 
+
+	:::python
+	>>> child_object = Child()
+	>>> child_object.f1()
+	Метод f1() класа SuperBase
+	>>> child_object.f2()
+	Метод f2() класа Child
+	>>> child_object.f3()
+	Метод f3() класа Child
 	>>>
 
+## Порядок вирішення методів
 
-В Python лінеаризація ще називається MRO — "Method Resolution Order", 
+В Python лінеаризація також має назву `MRO` — "Method Resolution Order", 
 порядок вирішення методів. 
 Назва може трошки вводити в оману, 
 тому що таким чином відбувається пошук не тільки методів, а й будь-яких атрибутів. 
@@ -54,17 +58,65 @@
 Лінеаризація для певного класа знаходиться в його спеціальному атрибуті `__mro__`:
 	
 	:::python
-	>>> C.__mro__
-	>>> C.__mro__
-	(<class '__main__.C'>, <class '__main__.B'>, <class '__main__.A'>, <class 'object'>)
+	>>> Child.__mro__
+	(<class '__main__.Child'>, <class '__main__.Base'>, <class '__main__.SuperBase'>, <class 'object'>)
 	>>>
 	
-Але частіше користуються атрибутом-методом класа, який повертає не кортеж, а одразу список:
+Але частіше користуються методом класа, який повертає не кортеж, а одразу список:
 
 	:::python
-	>>> C.mro()
-	[<class '__main__.C'>, <class '__main__.B'>, <class '__main__.A'>, <class 'object'>]
+	>>> Child.mro()
+	[<class '__main__.Child'>, <class '__main__.Base'>, <class '__main__.SuperBase'>, <class 'object'>]
 	>>>
 
+Ми отримали всю ієрархію успадкування, аж до класа `object`. 
+
+## Перевірка об'єкта на належність класу
+
+В Python є будована функція: 
+
+	isinstance(obj, cls)
 	
+Повертає `True` якщо об'єкт `obj` є екземпляром класа `cls` або його суперкласів. 
+Тобто перевірка відбувається по усій ієрархії успадкування: 
+
+	:::python
+	>>> child_object = Child()
+	>>> isinstance(child_object, Child)
+	True
+	>>> isinstance(child_object, Base)
+	True
+	>>> isinstance(child_object, SuperBase)
+	True
+	>>> isinstance(child_object, object)
+	True
+	>>> isinstance(child_object, list)
+	False
+	>>>	
+
+Другим аргументом можна передати одразу декілька класів об'єднавши їх у кортеж. 
+У цьому разі відбуватиметься перевірка належності об'єкта до ієрархій одразу декількох класів: 
+
+	:::python
+	>>> isinstance(child_object, (Child, Base))
+	True
+	>>> isinstance(child_object, (Child, list))
+	True
+	>>> isinstance(child_object, (str, list))
+	False
+	>>> isinstance('text', (str, list))
+	True
+	>>> isinstance('text', (object, list))
+	True
+	>>>
+	
+Зауважте: функція `isinstance()` використовує лінеаризацію. 
+Аналогічну перевірку можна виконати і так: 
+
+	:::python
+	>>> type(child_object)
+	<class '__main__.Child'>
+	>>> type(child_object) in Child.mro()
+	True
+	>>>
 	

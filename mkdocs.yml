@@ -132,10 +132,11 @@ nav:
     - Документування функцій: functions/docstring.md
   - Об'єктно-орієнтоване програмування:
     - Парадигма ООП: oop/oop_basis.md
-    - Класи і об'єкти: oop/classes.md
-    - Життєвий цикл об'єкта: oop/object_lifecycle.md
-    - Ініціалізація об'єктів: oop/init.md
-    - Представлення об'єктів: oop/object_presentation.md
+    - Класи і об'єкти:
+      - ООП в Python: oop/classes.md
+      - Життєвий цикл об'єкта: oop/object_lifecycle.md
+      - Ініціалізація об'єктів: oop/init.md
+      - Представлення об'єктів: oop/object_presentation.md
     - Інкапсуляція:
       - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
       - Приховування атрибутів: oop/encapsulation/hiding_attrs.md
@@ -145,13 +146,12 @@ nav:
     - Успадкування:
       - Успадкування в ООП: oop/inheritance/inheritance_basis.md
       # - Успадкування в Python: oop/inheritance/inheritance_python.md
-      # - Ієрархія класів: oop/inheritance/hierarchy.md
-      # - Успадкування і приватні атрибути: oop/inheritance/private_attrs.md
+      # - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
       # - Лінеаризація: oop/inheritance/linearization.md
-      # - Перевизначення і пошук методів: oop/inheritance/method_redefinition.md
       # - Множинне успадкування: oop/inheritance/multiple_inheritance.md
-      # - Лінеарізація і множинна спадковість: oop/inheritance/multiple_linearization.md
-      # - Пошук методів і лінеарізація: oop/inheritance/methods_scope.md
+      # # - Перевизначення і пошук методів: oop/inheritance/method_redefinition.md
+      # # - Пошук методів і лінеарізація: oop/inheritance/methods_scope.md
+      # # - Резюме: oop/inheritance/recap.md
     # - Поліморфізм:
       # - Поліморфізм в ООП: oop/polymorphism/polymorphism.md
       # - Качина типізація: oop/polymorphism/duck_typing.md

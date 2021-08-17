@@ -18,7 +18,7 @@
     
     
       
-        <title>Успадкування і приватні атрибути - Python Essential</title>
+        <title>Лінеарізація і множинна спадковість - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Успадкування і приватні атрибути
+              Лінеарізація і множинна спадковість
             
           </span>
         </div>
@@ -460,9 +460,30 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Класи і об'єкти
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Класи і об'єкти" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Класи і об'єкти
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../classes.html" class="md-nav__link">
-        Класи і об'єкти
+        ООП в Python
       </a>
     </li>
   
@@ -504,6 +525,12 @@
   
 
           
+        </ul>
+      </nav>
+    </li>
+  
+
+          
             
   
   
@@ -512,14 +539,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_3">
         Інкапсуляція
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Інкапсуляція
         </label>
@@ -599,14 +626,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_4">
         Успадкування
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Успадкування" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
           Успадкування
         </label>
@@ -987,38 +1014,76 @@
               
                 
                 
-                <h1 id="_1">Успадкування і приватні атрибути</h1>
-<p>Як нам вже відомо, 
-атрибути, які починаються з двох символів підкреслення (але не закінчуються ними) 
-є приватними атрибутами класа. 
-Поза видимістю класа до таких атрибутів застосовується механізм <code>name mangling</code> (спотворення імені), 
-тобто такі атрибути "поза класом" будуть мати інші імена (клас+атрибут), 
-у тому числі і в успадкованих класах. 
-Це дозволяє "приховати" внутрішню реалізацію класа навіть для класів, 
-які від нього успадкуються. 
-Приклад:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Base</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="bp">self</span><span class="o">.</span><span class="n">__prop</span> <span class="o">=</span> <span class="s1">&#39;property&#39;</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">base_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Це метод з класа Base.&quot;</span><span class="p">)</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;У об&#39;єкта класа Base є атрибут __prop, його значення:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__prop</span><span class="p">)</span>
+                <h1 id="_1">Лінеарізація і множинна спадковість</h1>
+<p>При множинній спадковості виникає питання: а як саме треба виконувати лінеарізацію класів? Атже варіантів обійти всю ієрархію класів коли у одного класа є більше ніж один базовий клас можна побудувати декілька. При цьому не повинна "ламатись" логічна структура успадкування, це напряму впливає на алгоритм пошуку атрибутів в ієрархії класів.</p>
+<p>Самий простий приклад де виникає неоднозначність пошуку методів — задача ромбовидного успадкування. Вивчіть самостійно наступний код і зробіть припущення, що буде виведено в результаті його виконання:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am Animal&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am Eagle&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">hello</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Підходів побудови лінеаризації при множинній спадковості існує декілька, в різних мовах програмування можуть використовуватись різні підходи. А в декотрих мовах програмування, які підтримують парадигму ООП, множинне успадкування відсутнє.</p>
+<p>В Python використовується алгоритм C3-лінеаризації, котрий дозволяє побудувати стійкий список з самого класа і усіх його предків (батьків і прабатьків). Цей алгоритм вирішує більшість проблем при лінеаризації множинного успадкування. Алгоритм відносно складний, зовсім спрощено його можна представити так:</p>
+<ul>
+<li>у список додається клас об'єкта (далі — дочірній клас)</li>
+<li>у список додаються базові класи дочірнього класа у тому порядку, як вони вказані при декларації дочірнього класа</li>
+<li>у список додаються базові класи базових класів і так далі рекурсивно аж до класа <code>object</code></li>
+<li>якщо якийсь клас опиняється у списку двічі — залишається тільки останнє його входження</li>
+</ul>
+<p>Як результат, ми рухаємось по рівням, не звертаємось до базового класа до того, як звернемось до усіх його нащадків, навіть якщо нащадків у цього базового класа декілька.</p>
+<p>Алгоритм забезпечує пошук перевизначеного метода базового класа, якщо цей метод перевизначено хоча б у одному нащадку цього базового класа.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">pass</span>
 <span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">child_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Це метод з класа Child.&quot;</span><span class="p">)</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Спробуємо дістатись до атрибута з метода успадкованого класа:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__prop</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
 <span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">base_method</span><span class="p">()</span>
-<span class="n">Це</span> <span class="n">метод</span> <span class="n">з</span> <span class="n">класа</span> <span class="n">Base</span><span class="o">.</span>
-<span class="n">У</span> <span class="n">об</span><span class="s1">&#39;єкта класа Base є атрибут __prop, його значення: property</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">child_method</span><span class="p">()</span>
-<span class="n">Це</span> <span class="n">метод</span> <span class="n">з</span> <span class="n">класа</span> <span class="n">Child</span><span class="o">.</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="n">child_method</span>
-<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Child&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;_Child__prop&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Pegasus</span>
+<span class="n">Eagle</span>
+<span class="n">Horse</span>
+<span class="n">Animal</span>
+<span class="nb">object</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Як видно з прикладу, лінеарізація обходить усі класи нашої ієрархії. </p>
+<p>Класи <code>Eagle</code> і <code>Horse</code> йдуть у тій послідовності, як перераховані при визначенні класа <code>Pegasus</code>. Давайте поміняємо їх місцями і подивимось як це вплине на лінеарізацію:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Pegasus</span>
+<span class="n">Horse</span>
+<span class="n">Eagle</span>
+<span class="n">Animal</span>
+<span class="nb">object</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
                 

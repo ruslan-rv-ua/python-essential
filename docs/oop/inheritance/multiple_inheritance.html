@@ -460,9 +460,30 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Класи і об'єкти
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Класи і об'єкти" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Класи і об'єкти
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../classes.html" class="md-nav__link">
-        Класи і об'єкти
+        ООП в Python
       </a>
     </li>
   
@@ -504,6 +525,12 @@
   
 
           
+        </ul>
+      </nav>
+    </li>
+  
+
+          
             
   
   
@@ -512,14 +539,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_3">
         Інкапсуляція
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Інкапсуляція" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Інкапсуляція
         </label>
@@ -599,14 +626,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_4">
         Успадкування
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Успадкування" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
           Успадкування
         </label>
@@ -976,6 +1003,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Лінеарізація і множинна спадковість
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Практики використання
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -992,21 +1041,24 @@
 <p><strong><em>Множинна спадко́вість</em></strong> — властивість деяких обʼєктно-орієнтованих мов програмування, в яких класи можуть успадкувати поведінку і властивості більш ніж від одного суперкласу (безпосереднього батьківського класу). Це відрізняється від простого спадкування, у випадку якого клас може мати тільки один суперклас. </p>
 </blockquote>
 <p>Python підтримує множинну спадковість:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я біжу!&quot;</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">...</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я лечу!&quot;</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">...</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">...</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Horse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я біжу!&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Eagle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я лечу!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<p>У вищенаведеному прикладі клас <code>Pegasus</code>: </p>
+<ul>
+<li>від класа <code>Horse</code> успадкував метод <code>run()</code></li>
+<li>від класа <code>Eagle</code> успадкував метод <code>fly()</code></li>
+</ul>
+<p>Перевіримо: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">Я</span> <span class="n">біжу</span><span class="err">!</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">fly</span><span class="p">()</span>
@@ -1014,10 +1066,109 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>У вищенаведеному прикладі клас <code>Pegasus</code> успадкував від класа <code>Horse</code> метод <code>run()</code>, а від класа <code>Eagle</code> — метод <code>fly()</code>.</p>
-<p>Зауважимо, що у множинної спадковості є як переваги, так і недоліки. 
-До переваг можна віднести те, що множинна спадковість дозволяє проектувати доволі складні і гнучкі ієрархії класів. 
-Але разом з тим використання цього механізму може призвести до появи у коді доволі серйозних помилок. Сама наявність множинної спадковості може бути індикатором наявності помилок в проектуванні архітектури вашого застосунку, тому що множинна спадковість на практиці використовується вкрай рідко. І якщо у вас виникає думка використати множинну спадковість, то треба добре подумати, чи правильно ви розбиваєте предметну область на класи взагалі. І тільки якщо ви дійдете до висновку, що використання множинної спадковості доречне і дійсно може спростити код, тоді вже можете використовувати її.</p>
+<h2 id="_2">Лінеарізація і множинна спадковість</h2>
+<p>При множинній спадковості виникає питання: 
+а як саме треба виконувати лінеарізацію класів? 
+Атже варіантів обійти всю ієрархію класів коли у одного класа є більше ніж один базовий клас 
+можна побудувати декілька. </p>
+<p>Самий простий приклад де виникає неоднозначність пошуку методів — 
+задача ромбовидного успадкування:  </p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я — кінь!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я — орел!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Виникає питання: якого саме класа буде викликано метод <code>say_hello()</code>? </p>
+<p>Підходів побудови лінеаризації при множинній спадковості існує декілька, 
+в різних мовах програмування можуть використовуватись різні підходи. 
+А в декотрих мовах програмування, які підтримують парадигму ООП, множинне успадкування відсутнє взагалі. </p>
+<p>В Python використовується алгоритм C3-лінеаризації, 
+котрий дозволяє побудувати стійкий список з самого класа і усіх його предків 
+(батьків і прабатьків). 
+Цей алгоритм вирішує більшість проблем при лінеаризації множинного успадкування. </p>
+<p>Алгоритм відносно складний, зовсім спрощено його можна представити так: </p>
+<ul>
+<li>у список додається клас об'єкта (далі — дочірній клас)</li>
+<li>у список додаються базові класи дочірнього класа у тому порядку, як вони вказані при декларації дочірнього класа</li>
+<li>у список додаються базові класи базових класів і так далі рекурсивно аж до класа <code>object</code></li>
+<li>якщо якийсь клас опиняється у списку двічі — залишається тільки останнє його входження</li>
+</ul>
+<p>Як результат, ми рухаємось по рівням, 
+не звертаємось до базового класа до того, 
+як звернемось до усіх його нащадків, 
+навіть якщо нащадків у цього базового класа декілька. </p>
+<p>Алгоритм забезпечує пошук перевизначеного метода базового класа, 
+якщо цей метод перевизначено хоча б у одному нащадку цього базового класа. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Pegasus</span>
+<span class="n">Eagle</span>
+<span class="n">Horse</span>
+<span class="n">Animal</span>
+<span class="nb">object</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Як видно з прикладу, лінеарізація обходить усі класи нашої ієрархії. </p>
+<p>Класи <code>Eagle</code> і <code>Horse</code> йдуть у тій послідовності, 
+як перераховані при визначенні класа <code>Pegasus</code>. 
+Давайте поміняємо їх місцями і подивимось як це вплине на лінеарізацію: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">Pegasus</span>
+<span class="n">Horse</span>
+<span class="n">Eagle</span>
+<span class="n">Animal</span>
+<span class="nb">object</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="_3">Практики використання</h2>
+<p>У множинної спадковості є як переваги, так і недоліки. 
+До переваг можна віднести те, 
+що множинна спадковість дозволяє проектувати доволі складні і гнучкі ієрархії класів. 
+Але разом з тим використання цього механізму може призвести до появи у коді доволі серйозних помилок. 
+Сама наявність множинної спадковості 
+може бути індикатором наявності помилок в проектуванні архітектури вашого застосунку, 
+тому що множинна спадковість на практиці використовується вкрай рідко. 
+І якщо у вас виникає думка використати множинну спадковість, 
+то треба добре подумати, 
+чи правильно ви розбиваєте предметну область на класи взагалі. 
+І тільки якщо ви дійдете до висновку, 
+що використання множинної спадковості доречне і дійсно може спростити код, 
+тоді вже можете використовувати її. </p>
                 
               
               
