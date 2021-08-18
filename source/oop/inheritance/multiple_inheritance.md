@@ -5,15 +5,18 @@
 Python підтримує множинну спадковість:
 
 	:::python
-	class Horse:
-		def run(self):
-			print("Я біжу!")
-	class Eagle:
-		def fly(self):
-			print("Я лечу!")
-
-	class Pegasus(Horse, Eagle):
-		pass
+	>>> class Horse:
+	...     def run(self):
+	...         print("Я біжу!")
+	...
+	>>> class Eagle:
+	...     def fly(self):
+	...         print("Я лечу!")
+	...
+	>>> class Pegasus(Horse, Eagle):
+	...     pass
+	...
+	>>>
 	
 У вищенаведеному прикладі клас `Pegasus`: 
 
@@ -41,21 +44,19 @@ Python підтримує множинну спадковість:
 задача ромбовидного успадкування:  
 
 	:::python
-	class Animal:
-		pass
-
-	class Horse(Animal):
-		def say_hello(self):
-			print("Я — кінь!")
-
-	class Eagle(Animal):
-		def say_hello(self):
-			print("Я — орел!")
-
-	class Pegasus(Eagle, Horse):
-		pass
-
-	p.say_hello()
+	>>> class Horse:
+	...     def say_hello(self):
+	...         print("Я - кінь!")
+	...
+	>>> class Eagle:
+	...     def say_hello(self):
+	...         print("Я - орел!")
+	...
+	>>> class Pegasus(Horse, Eagle):
+	...     pass
+	...
+	>>> p = Pegasus()
+	>>> p.say_hello()
 	
 Виникає питання: якого саме класа буде викликано метод `say_hello()`? 
 		
@@ -84,28 +85,12 @@ Python підтримує множинну спадковість:
 якщо цей метод перевизначено хоча б у одному нащадку цього базового класа. 
 
 	:::python
-	>>> class Animal:
-	...     pass
-	...
-	>>>
-	>>> class Eagle(Animal):
-	...     pass
-	...
-	>>>
-	>>> class Horse(Animal):
-	...     pass
-	...
-	>>>
-	>>> class Pegasus(Eagle, Horse):
-	...     pass
-	...
-	>>> for c in Pegasus.mro():
-	...     print(c.__name__)
+	>>> for cls in Pegasus.mro():
+	...     print(cls.__name__)
 	...
 	Pegasus
-	Eagle
 	Horse
-	Animal
+	Eagle
 	object
 	>>>
 
@@ -116,20 +101,20 @@ Python підтримує множинну спадковість:
 Давайте поміняємо їх місцями і подивимось як це вплине на лінеарізацію: 
 
 	:::python
-	>>> class Pegasus(Horse, Eagle):
+	>>> class Pegasus(Eagle, Horse):
 	...     pass
 	...
-	>>> for c in Pegasus.mro():
-	...     print(c.__name__)
+	>>> p = Pegasus()
+	>>> for cls in Pegasus.mro():
+	...     print(cls.__name__)
 	...
 	Pegasus
-	Horse
 	Eagle
-	Animal
+	Horse
 	object
+	>>> p.say_hello()
+	Я - орел!
 	>>>
-
-
 
 ## Практики використання
 
@@ -146,4 +131,13 @@ Python підтримує множинну спадковість:
 І тільки якщо ви дійдете до висновку, 
 що використання множинної спадковості доречне і дійсно може спростити код, 
 тоді вже можете використовувати її. 
+
+Є один патерн програмування, де множинна спадковість використовується. 
+Це так звані "міксіни" (mixins, домішки). 
+Клас-міксін проектується так, щоб при створенні похідного класа він 
+додавав би якісь нові властивості. 
+Як правило екземпляри від міксінів не інстанціюють. 
+
+
+
 	

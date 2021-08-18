@@ -11,6 +11,7 @@
 потім ставиться двокрапка, 
 далі з нового рядка і з відступом реалізується тіло класа:
 
+	:::python
 	class NameOfClass:
 		pass
 		
@@ -19,11 +20,41 @@
 Тіло класа може містити будь-який валідний код Python. 
 Тіло буде виконано при створенні класа: 
 
+	:::python
 	>>> class Printer:
 	...     print('Це клас Printer!')
 	...
 	Це клас Printer!
 	>>>
+	
+Так само як для функцій, 
+для класа можна створити документацію. 
+Docstring розміщується одразу після заголовка класа: 
+
+	:::python
+	>>> class POI:
+	...     '''Point of Interest.
+	...
+	...     Attributes:
+	...         lon: float - longtitude
+	...         lat: float - latitude
+	...         title: str - ...
+	...     '''
+	...     pass
+	...
+	>>> help(POI)
+	Help on class POI in module __main__:
+
+	class POI(builtins.object)
+	 |  Point of Interest.
+	 |
+	 |  Attributes:
+	 |      lon: float - longtitude
+	 |      lat: float - latitude
+	 |      title: str - ...
+	 |
+	 |  Data descriptors defined here:
+	...
 
 ## Клас як модуль
 

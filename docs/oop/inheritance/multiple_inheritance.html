@@ -657,6 +657,45 @@
   
 
           
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      <label class="md-nav__link" for="__nav_5_5">
+        Поліморфізм
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Поліморфізм" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Поліморфізм
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polymorphism/polymorphism_basis.html" class="md-nav__link">
+        Поліморфізм в ООП
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -735,7 +774,7 @@
   
     <li class="md-nav__item">
       <a href="../../functional_programming/intro.html" class="md-nav__link">
-        Функціональне програмування
+        Парадигма ФП
       </a>
     </li>
   
@@ -984,6 +1023,60 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Наступні кроки
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Наступні кроки" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Наступні кроки
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go_ahead/whats_next.html" class="md-nav__link">
+        Що далі?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go_ahead/miths_edu.html" class="md-nav__link">
+        Міфи про навчання
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1041,15 +1134,18 @@
 <p><strong><em>Множинна спадко́вість</em></strong> — властивість деяких обʼєктно-орієнтованих мов програмування, в яких класи можуть успадкувати поведінку і властивості більш ніж від одного суперкласу (безпосереднього батьківського класу). Це відрізняється від простого спадкування, у випадку якого клас може мати тільки один суперклас. </p>
 </blockquote>
 <p>Python підтримує множинну спадковість:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Horse</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я біжу!&quot;</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">Eagle</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я лечу!&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
-    <span class="k">pass</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я біжу!&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я лечу!&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
 <p>У вищенаведеному прикладі клас <code>Pegasus</code>: </p>
@@ -1073,21 +1169,19 @@
 можна побудувати декілька. </p>
 <p>Самий простий приклад де виникає неоднозначність пошуку методів — 
 задача ромбовидного успадкування:  </p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">pass</span>
-
-<span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я — кінь!&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я — орел!&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="n">p</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я - кінь!&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Я - орел!&quot;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
 </code></pre></div>
 
 <p>Виникає питання: якого саме класа буде викликано метод <code>say_hello()</code>? </p>
@@ -1111,28 +1205,12 @@
 навіть якщо нащадків у цього базового класа декілька. </p>
 <p>Алгоритм забезпечує пошук перевизначеного метода базового класа, 
 якщо цей метод перевизначено хоча б у одному нащадку цього базового класа. </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">Pegasus</span>
-<span class="n">Eagle</span>
 <span class="n">Horse</span>
-<span class="n">Animal</span>
+<span class="n">Eagle</span>
 <span class="nb">object</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
@@ -1141,17 +1219,19 @@
 <p>Класи <code>Eagle</code> і <code>Horse</code> йдуть у тій послідовності, 
 як перераховані при визначенні класа <code>Pegasus</code>. 
 Давайте поміняємо їх місцями і подивимось як це вплине на лінеарізацію: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
 <span class="o">...</span>     <span class="k">pass</span>
 <span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">Pegasus</span>
-<span class="n">Horse</span>
 <span class="n">Eagle</span>
-<span class="n">Animal</span>
+<span class="n">Horse</span>
 <span class="nb">object</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="n">Я</span> <span class="o">-</span> <span class="n">орел</span><span class="err">!</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
@@ -1169,6 +1249,11 @@
 І тільки якщо ви дійдете до висновку, 
 що використання множинної спадковості доречне і дійсно може спростити код, 
 тоді вже можете використовувати її. </p>
+<p>Є один патерн програмування, де множинна спадковість використовується. 
+Це так звані "міксіни" (mixins, домішки). 
+Клас-міксін проектується так, щоб при створенні похідного класа він 
+додавав би якісь нові властивості. 
+Як правило екземпляри від міксінів не інстанціюють. </p>
                 
               
               

@@ -16,19 +16,21 @@
 Приклад:
 
 	:::python
-	class SuperBase:
-		def f1(self):
-			print('Метод f1() класа SuperBase')
-
-	class Base(SuperBase):
-		def f2(self):
-			print('Метод f2() класа Base')
-			
-	class Child(Base):
-		def f2(self):
-			print('Метод f2() класа Child')
-		def f3(self):
-			print('Метод f3() класа Child')
+	>>> class SuperBase:
+	...     def f1(self):
+	...         print('Метод f1() класа SuperBase')
+	...
+	>>> class Base(SuperBase):
+	...     def f2(self):
+	...         print('Метод f2() класа Base')
+	...
+	>>> class Child(Base):
+	...     def f2(self):
+	...         print('Метод f2() класа Child')
+	...     def f3(self):
+	...         print('Метод f3() класа Child')
+	...
+	>>>
 		
 У вищенаведеному прикладі клас `Child`: 
 
@@ -92,7 +94,7 @@
 	True
 	>>> isinstance(child_object, list)
 	False
-	>>>	
+	>>>
 
 Другим аргументом можна передати одразу декілька класів об'єднавши їх у кортеж. 
 У цьому разі відбуватиметься перевірка належності об'єкта до ієрархій одразу декількох класів: 

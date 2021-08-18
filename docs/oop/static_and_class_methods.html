@@ -18,7 +18,7 @@
     
     
       
-        <title>Warnings - Python Essential</title>
+        <title>Static and class methods - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Warnings
+              Static and class methods
             
           </span>
         </div>
@@ -449,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/oop_basis.html" class="md-nav__link">
+      <a href="oop_basis.html" class="md-nav__link">
         Парадигма ООП
       </a>
     </li>
@@ -482,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/classes.html" class="md-nav__link">
+      <a href="classes.html" class="md-nav__link">
         ООП в Python
       </a>
     </li>
@@ -494,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/object_lifecycle.html" class="md-nav__link">
+      <a href="object_lifecycle.html" class="md-nav__link">
         Життєвий цикл об'єкта
       </a>
     </li>
@@ -506,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/init.html" class="md-nav__link">
+      <a href="init.html" class="md-nav__link">
         Ініціалізація об'єктів
       </a>
     </li>
@@ -518,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/object_presentation.html" class="md-nav__link">
+      <a href="object_presentation.html" class="md-nav__link">
         Представлення об'єктів
       </a>
     </li>
@@ -557,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+      <a href="encapsulation/encapsulation_basis.html" class="md-nav__link">
         Інкапсуляція в ООП
       </a>
     </li>
@@ -569,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/encapsulation/hiding_attrs.html" class="md-nav__link">
+      <a href="encapsulation/hiding_attrs.html" class="md-nav__link">
         Приховування атрибутів
       </a>
     </li>
@@ -581,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/encapsulation/setters_and_getters.html" class="md-nav__link">
+      <a href="encapsulation/setters_and_getters.html" class="md-nav__link">
         Сетери і гетери
       </a>
     </li>
@@ -593,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/encapsulation/properties.html" class="md-nav__link">
+      <a href="encapsulation/properties.html" class="md-nav__link">
         Властивості
       </a>
     </li>
@@ -605,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/encapsulation/calc_props.html" class="md-nav__link">
+      <a href="encapsulation/calc_props.html" class="md-nav__link">
         Обчислювані властивості
       </a>
     </li>
@@ -644,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/inheritance/inheritance_basis.html" class="md-nav__link">
+      <a href="inheritance/inheritance_basis.html" class="md-nav__link">
         Успадкування в ООП
       </a>
     </li>
@@ -683,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/polymorphism/polymorphism_basis.html" class="md-nav__link">
+      <a href="polymorphism/polymorphism_basis.html" class="md-nav__link">
         Поліморфізм в ООП
       </a>
     </li>
@@ -731,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="exceptions.html" class="md-nav__link">
+      <a href="../exceptions/exceptions.html" class="md-nav__link">
         Винятки
       </a>
     </li>
@@ -1102,14 +1102,48 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    "Підйом" попереджень
+    Методи екземпляра класа
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Додаткові матеріали
+    Класові методи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Статичні методи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    До практики
+  </a>
+  
+    <nav class="md-nav" aria-label="До практики">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Коли використовувати кожен з методів?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Резюме
   </a>
   
 </li>
@@ -1127,82 +1161,150 @@
               
                 
                 
-                  <h1>Warnings</h1>
+                  <h1>Static and class methods</h1>
                 
-                <p>Бувають ситуації, коли не можна однозначно визначити, чи відбулась помилка у програмі, чи ні. Начебто і виникла певна неоднозначна (виняткова) ситуація, але програма може продовжувати роботу. Було б непогано сповістити про цей факт користувача чи програміста, щоб він принаймі знав, що відбулось щось "незвичайне" і звернув на це увагу. </p>
-<p>В Python для цього є механізм так званих "попереджень". Це схоже на винятки, але інформація про виняткову ситуацію виводиться у стандартний потік помилок, і програма не припиняє свою роботу.</p>
-<p>Базовим класом для попереджень є <code>Warning</code>, який успадковано від <code>Exception</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="ne">Warning</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">Warning</span><span class="s1">&#39;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="ne">Warning</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
-<span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">Warning</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">Exception</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">BaseException</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;]</span>
+                <p>Згідно <a href="https://docs.python.org/3.6/">моделі даних</a>, Python пропонує три види методів: статичні, класові і екземпляра класа. </p>
+<h2 id="_1">Методи екземпляра класа</h2>
+<p>Це вже знайомий нам вид методів. Методи екземпляра класа приймають об'єкт класа як перший аргумент, який прийнято називати <code>self</code> і який вказує на сам екземпляр. </p>
+<p>Використовуючи параметр <code>self</code> ми можемо міняти стан об'єкта і звертатись до інших його методів і параметрім. Також через атрибут <code>self.__class__</code> можна отримати доступ до атрибутів класа і можливість міняти стан самого класа. Тобто методи екземплярів класа дозволяють міняти як стан певного об'єкта, так і класа.</p>
+<p>Приклад — <code>str.upper()</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;abc&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="s1">&#39;ABC&#39;</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Від цього класа успадковано класи стандартних для Python попереджень. Також ми можемо створити власні попередження, свої класи успадковуємо від <code>UserWarning</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="ne">UserWarning</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
-<span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">UserWarning</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">Warning</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">Exception</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">BaseException</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;]</span>
+<h2 id="_2">Класові методи</h2>
+<p>Методи класа приймають клас в якості параметра, його прийнято позначати як <code>cls</code>. 
+Він вказує на клас, а не на об'єкт цього класа. 
+При декларації методів цього вида використовують декоратор <code>classmethod</code>.</p>
+<p>Методи класа прив'язані до самого класа, а не його екземпляра. 
+Вони можуть міняти стан класа, що відобразиться на усіх об'єктах цього класа, 
+але не можуть міняти конкретний об`єкт. </p>
+<p>Приклад метода класа — <code>dict.fromkeys()</code> — повертає новий словник з переданими елементами 
+в якості ключів: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h3 id="_1">"Підйом" попереджень</h3>
-<p>Вивести попередження найпростіше за допомогою функції <code>warn</code> з вбудованого модуля <code>warnings</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">warn</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<h2 id="_3">Статичні методи</h2>
+<p>Статичні методи декларуються за допомогою декоратора <code>staticmethod</code>. 
+Їм не потрібно певного першого аргумента (ні <code>self</code>, ні <code>cls</code>). </p>
+<p>Їх можна сприймати як методи, які "не знають, до якого класа відносяться". </p>
+<p>Таким чином, статичні методи прикріплені до класа лише для зручності і не можуть міняти стан ні класа, ні його екземпляра. </p>
+<h2 id="_4">До практики</h2>
+<p>Напишемо клас, де використовуються усі три види методів. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">ToyClass</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">instance_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="s1">&#39;instance method called&#39;</span><span class="p">,</span> <span class="bp">self</span>
+<span class="o">...</span>     <span class="nd">@classmethod</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">class_method</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="s1">&#39;class method called&#39;</span><span class="p">,</span> <span class="bp">cls</span>
+<span class="o">...</span>     <span class="nd">@staticmethod</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">static_method</span><span class="p">():</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="s1">&#39;static method called&#39;</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">ToyClass</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
+<p>Розберемось з роботиою методів. Спочатку метод екземплара:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">instance_method</span><span class="p">()</span>
+<span class="p">(</span><span class="s1">&#39;instance method called&#39;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">ToyClass</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x00000179B2FF4CA0</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Приклад вище підтверджує те, що метод <code>instance_method</code> має доступ до об<code>єкта класа</code>ToyClass<code>через аргумент</code>self<code>.  Зауважте, що метод</code>obj.instance_method()` можна викоикати і так:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ToyClass</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Тепер скористаємось методом класа:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>
+<span class="p">(</span><span class="s1">&#39;class method called&#39;</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">ToyClass</span><span class="s1">&#39;&gt;)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Як видно, метод класа <code>class_method()</code> має доступ до самого класа <code>ToyClass</code>, але не до його конкретного екземпляра.  Пам'ятаєте що в Python усе є об'єктом? 
+Клас — теж об'єкт, 
+який ми можемо передати функції в якості аргумента. </p>
+<p>Викликаємо статичний метод:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>
+<span class="s1">&#39;static method called&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Це може здатися дивним, але статичні методи можна викликати через об'єкт класа. 
+Насправді статичному методу ніякі спеціальні аргументи (<code>self</code> чи <code>cls</code>) не передаються. 
+Тобто статичні методи не можуть отримати доступ до параметрів класа чи об'єкта. 
+Вони працюють тільки з тими даними, які їм передаються як аргументи. </p>
+<p>Тепер давайте викличемо ті ж самі методи, але на самому класі.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ToyClass</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>
+<span class="p">(</span><span class="s1">&#39;class method called&#39;</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">ToyClass</span><span class="s1">&#39;&gt;)</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ToyClass</span><span class="o">.</span><span class="n">instance_method</span><span class="p">()</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">instance_method</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;self&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Виклик метода екземпляра класа видає <code>TypeError</code>. 
+Сталося це через те, що метод очікував екземпляр класа, а було передано клас.</p>
+<p>Зі статичним методом нічого неочікуваного:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ToyClass</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>
+<span class="s1">&#39;static method called&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Розглянемо більш пракичний приклад для розуміння того, 
+коли і який метод варто використовувати. </p>
+<p>class Person:
+    def <strong>init</strong>(self, name, age):
+        self.name = name
+        self.age = age</p>
+<div class="codehilite"><pre><span></span><code>@classmethod
+def from_birth_year(cls, name, year):
+    return cls(name, date.today().year - year)
+
+@staticmethod
+def is_adult(age):
+    return age &gt; 18
+</code></pre></div>
+
+<p>Спробуємо створити об'єкт:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span>
+<span class="mi">25</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Тепер викликаємо метод класа, який у свою чергу створить об'єкт цього ж класа і поверне його:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">from_birth_year</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">1989</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span>
+<span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Person</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x000001D1A0D6ACA0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">age</span>
+<span class="mi">30</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>І, нарешті, статичний метод класа <code>Person</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">Person</span><span class="o">.</span><span class="n">is_adult</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="_5">Коли використовувати кожен з методів?</h3>
+<p>Вибір того, який з методів використовувати, може здатись доволі вкладним. 
+З набутим досвідом цей вибір зробити буде простіше.</p>
+<p>Найчастіше метод класа використовується тоді, коли потрібен генеруючий метод, 
+який повертає об'єкт класа. 
+Статичні методи в основному використовуються як допоміжні функції і працюють з даними, які їм передаються.</p>
+<h2 id="_6">Резюме</h2>
 <ul>
-<li><code>message</code> — обов'язковий параметр. Рядок-повідомлення, або екземпляр класа або підкласа Warning (у цьому випадку параметр <code>category</code> встановлюється автоматично).</li>
-<li><code>category</code> — опціональний параметр, клас попередження.</li>
-<li><code>stacklevel</code> — рівень вкладеності функцій, починаючи з якого необхідно виводити вміст стека викликів. Корисно, наприклад, для функцій-обгорток для вивода попереджень, де необхідно задати <code>stacklevel=2</code>, щоб попередження відносилось до місця виклику даної функції, а не самої функції.</li>
+<li>Методи екземпляра класа отримують доступ до об'єкт класа через параметр <code>self</code> і до класа через <code>self.__class__</code></li>
+<li>Методи класа не можуть отримати доступ до певного екземпляра класа, але мають доступ до самого класа через <code>cls</code></li>
+<li>Статичні методи працюють як звичайні функції, але належать до простору імен класа. Вони не мають доступа ні до самого класа, ні до його екземплярів</li>
 </ul>
-<p>Приклад:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
-
-<span class="k">class</span> <span class="nc">IncorrectNameWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="n">warn</span><span class="p">(</span>
-                <span class="s1">&#39;Name format maybe incorrect:&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">,</span>
-                <span class="n">IncorrectNameWarning</span><span class="p">,</span>
-                <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span>
-            <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Гассан Абдуррахман ібн Хоттаб&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Еріх Марія Ремарк&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</code></pre></div>
-
-<p>В результаті виконання цього коду отримаємо приблизно таке:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">c</span><span class="p">:</span>\<span class="n">dev</span>\<span class="n">warning_test</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span> <span class="n">IncorrectNameWarning</span><span class="p">:</span> <span class="n">Name</span> <span class="nb">format</span> <span class="n">maybe</span> <span class="n">incorrect</span><span class="p">:</span><span class="n">Гассан</span> <span class="n">Абдуррахман</span> <span class="n">ібн</span> <span class="n">Хоттаб</span>
-  <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Гассан Абдуррахман ібн Хоттаб&#39;</span><span class="p">)</span>
-<span class="n">Гассан</span> <span class="n">Абдуррахман</span> <span class="n">ібн</span> <span class="n">Хоттаб</span>
-
-<span class="n">Еріх</span> <span class="n">Марія</span> <span class="n">Ремарк</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Зверніть увагу, що інтерпретатор повідомив нам, що попередження відноситься до наступного рядка програми:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Гассан Абдуррахман ібн Хоттаб&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>Це набагато інформативніше, ніж якби нам повідомили, що попередження віднгоситься до коду в конструкторі класа, атже у такому разі невідомо, конструювання якого конкретного екземпляра призвело до появи попередження. Досягли ми цього задавши параметр <code>stacklevel=2</code> для функції <code>warn</code>, тобто ми почали з другого рівня стеку викликів.</p>
-<p>Детальніше про використання попереджень можна дізнатись з офіційної документації Python.</p>
-<h2 id="_2">Додаткові матеріали</h2>
-<p><a href="https://docs.python.org/3/library/warnings.html">Документація Python: попередження</a></p>
                 
               
               

@@ -149,12 +149,12 @@ nav:
       # - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
       # - Лінеаризація: oop/inheritance/linearization.md
       # - Множинне успадкування: oop/inheritance/multiple_inheritance.md
-      # # - Перевизначення і пошук методів: oop/inheritance/method_redefinition.md
-      # # - Пошук методів і лінеарізація: oop/inheritance/methods_scope.md
-      # # - Резюме: oop/inheritance/recap.md
-    # - Поліморфізм:
-      # - Поліморфізм в ООП: oop/polymorphism/polymorphism.md
-      # - Качина типізація: oop/polymorphism/duck_typing.md
+      # - Атрибути базового класа: oop/inheritance/call_overrided.md
+      # - Резюме: oop/inheritance/recap.md
+    - Поліморфізм:
+      - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
+      # - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
+    # - Статичні та класові методи: oop/static_and_class_methods.md
   - Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
     # # - assert
@@ -169,7 +169,7 @@ nav:
     # - Генератори
     # - Генератори-вирази
   - Елементи функціонального програмування:
-    - Функціональне програмування: functional_programming/intro.md
+    - Парадигма ФП: functional_programming/intro.md
     # - Чисті функції: functional_programming/pure_functions.md
     # - Функції вищого порядку: functional_programming/higher_order_functions.md
     # - Анонімні функції: functional_programming/lambda.md
@@ -229,8 +229,8 @@ nav:
     - Модуль datetime: batteries/datetime.md
     # - Модуль collections: batteries/collections.md
     # - Модуль itertools: batteries/itertools.md
-  # - Наступні кроки:
-    # - Що далі?: go_ahead/whats_next.md
+  - Наступні кроки:
+    - Що далі?: go_ahead/whats_next.md
     # - Корисні ресурси: go_ahead/resources.md
-    # - Міфи про навчання: go_ahead/miths_edu.md
+    - Міфи про навчання: go_ahead/miths_edu.md
 

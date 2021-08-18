@@ -5,17 +5,19 @@
 Розглянемо на прикладі: 
 
 	:::python
-	class Base:
-		def __init__(self):
-			self.attr = 'Атрибут базового класа'
-		def method(self):
-			print('Це метод з класа Base')
-			print(f'У екземпляра класа Base є атрибут {self.attr=}')
-			
-	class Child(Base):
-		def child_method(self):
-			print('Це метод з класа Child')
-			print(f'У екземпляра класа Child є атрибут {self.attr=}')
+	>>> class Base:
+	...     def __init__(self):
+	...         self.attr = 'Атрибут базового класа'
+	...     def method(self):
+	...         print('Це метод з класа Base')
+	...         print(f'У екземпляра класа Base є атрибут {self.attr=}')
+	...
+	>>> class Child(Base):
+	...     def child_method(self):
+	...         print('Це метод з класа Child')
+	...         print(f'У екземпляра класа Child є атрибут {self.attr=}')
+	...
+	>>>
 
 Подивимось що тут відбувається: 
 

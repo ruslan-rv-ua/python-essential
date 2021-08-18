@@ -10,7 +10,13 @@ class Child(Base):
 		print('Це метод з класа Child')
 		print(f'У екземпляра класа Child є атрибут {self.attr=}')
 
-# object_of_child = Child()
+object_of_child = Child()
+object_of_child.method()
+object_of_child.child_method()
+object_of_child.attr
+
+
+
 
 class Base:
 	def __init__(self):

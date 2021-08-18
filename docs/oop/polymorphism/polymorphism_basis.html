@@ -18,7 +18,7 @@
     
     
       
-        <title>Лінеарізація і множинна спадковість - Python Essential</title>
+        <title>Поліморфізм в ООП - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Лінеарізація і множинна спадковість
+              Поліморфізм в ООП
             
           </span>
         </div>
@@ -426,12 +426,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Об'єктно-орієнтоване програмування
@@ -644,9 +646,60 @@
   
   
     <li class="md-nav__item">
-      <a href="inheritance_basis.html" class="md-nav__link">
+      <a href="../inheritance/inheritance_basis.html" class="md-nav__link">
         Успадкування в ООП
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5_5">
+        Поліморфізм
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Поліморфізм" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Поліморфізм
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="polymorphism_basis.html" class="md-nav__link md-nav__link--active">
+        Поліморфізм в ООП
+      </a>
+      
     </li>
   
 
@@ -735,7 +788,7 @@
   
     <li class="md-nav__item">
       <a href="../../functional_programming/intro.html" class="md-nav__link">
-        Функціональне програмування
+        Парадигма ФП
       </a>
     </li>
   
@@ -984,6 +1037,60 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Наступні кроки
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Наступні кроки" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Наступні кроки
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go_ahead/whats_next.html" class="md-nav__link">
+        Що далі?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go_ahead/miths_edu.html" class="md-nav__link">
+        Міфи про навчання
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1014,78 +1121,35 @@
               
                 
                 
-                <h1 id="_1">Лінеарізація і множинна спадковість</h1>
-<p>При множинній спадковості виникає питання: а як саме треба виконувати лінеарізацію класів? Атже варіантів обійти всю ієрархію класів коли у одного класа є більше ніж один базовий клас можна побудувати декілька. При цьому не повинна "ламатись" логічна структура успадкування, це напряму впливає на алгоритм пошуку атрибутів в ієрархії класів.</p>
-<p>Самий простий приклад де виникає неоднозначність пошуку методів — задача ромбовидного успадкування. Вивчіть самостійно наступний код і зробіть припущення, що буде виведено в результаті його виконання:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am Animal&#39;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am Eagle&#39;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">Pegasus</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">hello</span><span class="p">()</span>
-</code></pre></div>
-
-<p>Підходів побудови лінеаризації при множинній спадковості існує декілька, в різних мовах програмування можуть використовуватись різні підходи. А в декотрих мовах програмування, які підтримують парадигму ООП, множинне успадкування відсутнє.</p>
-<p>В Python використовується алгоритм C3-лінеаризації, котрий дозволяє побудувати стійкий список з самого класа і усіх його предків (батьків і прабатьків). Цей алгоритм вирішує більшість проблем при лінеаризації множинного успадкування. Алгоритм відносно складний, зовсім спрощено його можна представити так:</p>
+                <h1 id="_1">Поліморфізм</h1>
+<blockquote>
+<p><strong><em>Поліморфізм в інформатиці</em></strong> — це здатність однаковим чином обробляти
+дані різних типів. </p>
+</blockquote>
+<p>Існує декілька видів поліморфізма. 
+Мови програмування зі статичною типізацією можуть бути статично неполіморфними і статично поліморфними. 
+Для останніх характерні наступні види поліморфізма: </p>
 <ul>
-<li>у список додається клас об'єкта (далі — дочірній клас)</li>
-<li>у список додаються базові класи дочірнього класа у тому порядку, як вони вказані при декларації дочірнього класа</li>
-<li>у список додаються базові класи базових класів і так далі рекурсивно аж до класа <code>object</code></li>
-<li>якщо якийсь клас опиняється у списку двічі — залишається тільки останнє його входження</li>
+<li><strong>спеціальний поліморфізм</strong> — "один інтерфейс — багато реалізацій". Характерні представники: C++, Java, C# — перевантаження (overloading) методів, тобто різні методи з однаковими іменами які приймають параметри різних типів</li>
+<li><strong>параметричний поліморфізм</strong> — "одна реалізація — багато інтерфейсів". Наприклад, "дженеріки" в Java і C#, шаблони в C++</li>
+<li><strong>поліморфізм підтипів</strong> — саме те, що розуміють під поліморфізмом в ООП. Ключове поняття: якщо клас <code>B</code> успадковано від класа <code>A</code>, то екземпляр класа <code>B</code> одночасно є і екземпляром класа <code>A</code>.</li>
 </ul>
-<p>Як результат, ми рухаємось по рівням, не звертаємось до базового класа до того, як звернемось до усіх його нащадків, навіть якщо нащадків у цього базового класа декілька.</p>
-<p>Алгоритм забезпечує пошук перевизначеного метода базового класа, якщо цей метод перевизначено хоча б у одному нащадку цього базового класа.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Eagle</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Horse</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Eagle</span><span class="p">,</span> <span class="n">Horse</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="n">Pegasus</span>
-<span class="n">Eagle</span>
-<span class="n">Horse</span>
-<span class="n">Animal</span>
-<span class="nb">object</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Як видно з прикладу, лінеарізація обходить усі класи нашої ієрархії. </p>
-<p>Класи <code>Eagle</code> і <code>Horse</code> йдуть у тій послідовності, як перераховані при визначенні класа <code>Pegasus</code>. Давайте поміняємо їх місцями і подивимось як це вплине на лінеарізацію:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">Pegasus</span><span class="p">(</span><span class="n">Horse</span><span class="p">,</span> <span class="n">Eagle</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">pass</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">Pegasus</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="n">Pegasus</span>
-<span class="n">Horse</span>
-<span class="n">Eagle</span>
-<span class="n">Animal</span>
-<span class="nb">object</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
+<p>В мовах з динамічною типізацією поліморфізм присутній завжди, 
+він як би є "побічним ефектом" 
+оскільки при динамічній типізації перевірка типів проводиться вже під час виконання програми. </p>
+<p>Поліморфізм ще можна визначити як можливість обробки екземплярів різних типів даних, 
+тобто таких, 
+які створені на основі різних класів, 
+за допомогою функцій (методів) з однаковими іменами. 
+Результати роботи одноімених методів можуть суттєво відрізнятись. 
+В цьому контексті під словом "поліморфізм" можна розуміти "багато форм одного і того ж слова", 
+тобто імені метода. </p>
+<p>Але класи не обов'язково мають бути зв'язані успадкуванням. 
+Поліморфізм як один з ключевых елементів ООП може існувати незалежно від успадкування. 
+Класи можуть бути не пов'язаними ієрархією успадкування, 
+але мати однакові методи, 
+тобто мати однаковий або схожий інтерфейс при зовсім різній реалізації. 
+Створення "єдиних інтерфейсів" дозволяє робити програми більш зрозумілими. </p>
                 
               
               
@@ -1101,6 +1165,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../inheritance/inheritance_basis.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Успадкування в ООП" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Успадкування в ООП
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../exceptions/exceptions.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Винятки" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Винятки
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

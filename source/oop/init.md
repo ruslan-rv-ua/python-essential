@@ -84,5 +84,4 @@
 			self.parser = NewsParser()
 			self.bot = TelegramBot()
 
-
-
+Ініціалізатор завжди має повертати `None`. 
