@@ -145,9 +145,9 @@ nav:
       - Обчислювані властивості: oop/encapsulation/calc_props.md
     - Успадкування:
       - Успадкування в ООП: oop/inheritance/inheritance_basis.md
-      # - Успадкування в Python: oop/inheritance/inheritance_python.md
-      # - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
-      # - Лінеаризація: oop/inheritance/linearization.md
+      - Успадкування в Python: oop/inheritance/inheritance_python.md
+      - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
+      - Лінеаризація: oop/inheritance/linearization.md
       # - Множинне успадкування: oop/inheritance/multiple_inheritance.md
       # - Атрибути базового класа: oop/inheritance/call_overrided.md
       # - Резюме: oop/inheritance/recap.md
