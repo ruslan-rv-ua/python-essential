@@ -1,6 +1,6 @@
 # Модуль `functools`
 
-<!-- https://dev.to/martinheinz/functools-the-power-of-higher-order-functions-in-python-3dg0 -->
+<!-- https://habr.com/ru/company/otus/blog/573164/ -->
 Кэшированные атрибуты
 
 Во встроенном пакете functools есть классный декоратор @cached_property, который позволяет кэшировать результат метода и загнать его в атрибут.

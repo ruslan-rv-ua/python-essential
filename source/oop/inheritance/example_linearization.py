@@ -13,3 +13,4 @@ class Child(Base):
 		print('Метод f3() класа Child')
 		
 child_object = Child()
+print(Child.__mro__)

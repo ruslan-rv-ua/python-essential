@@ -18,7 +18,7 @@
     
     
       
-        <title>Упаковка та розпаковка ітерабельних об'єктів - Python Essential</title>
+        <title>Generator expressions - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Упаковка та розпаковка ітерабельних об'єктів
+              Generator expressions
             
           </span>
         </div>
@@ -127,8 +127,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -847,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterable/iterable.html" class="md-nav__link">
+      <a href="iterable.html" class="md-nav__link">
         Ітерабельні об'єкти
       </a>
     </li>
@@ -1201,17 +1199,13 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1221,36 +1215,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Упаковка переданих у функцію аргументів
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Розпаковка в аргументи функцій
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Упаковка при присвоєнні
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Розпаковка в літералах послідовностей
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Розпаковка в літералах словників
+  <a href="#_1" class="md-nav__link">
+    Шахівниця
   </a>
   
 </li>
@@ -1268,126 +1234,83 @@
               
                 
                 
-                <h1 id="_1">Упаковка та розпаковка ітерабельних об'єктів</h1>
-<p>Символ <code>*</code> (зірочка) в Python використовується у інфіксних операторах множення та підведення у ступінь. 
-Але це не єдині способи застосування цього символа, 
-його також використовують у префіксних операторах. </p>
-<h2 id="_2">Упаковка переданих у функцію аргументів</h2>
-<p>Як нам вже відомо, при визначенні функції за допомогою зірочки можна вказати змінну, 
-у яку при виклику функції буде "збиратись" довільна кількість позиційних аргументів. 
-Усі аргументи буде "упаковано" в кортеж. 
-Так працюють багато функцій, наприклад <code>print()</code> — 
-цій функції ми можемо передати довільну кількість аргументів для виводу. </p>
-<p>Схоже використовується і <code>**</code>: 
-якщо використовувати цей оператор у оголошенні функції, 
-то він "збере" усі передані іменовані аргументи у словник. </p>
-<h2 id="_3">Розпаковка в аргументи функцій</h2>
-<p>При виклику функцій можна використовувати оператор <code>*</code> для "розпаковки" ітерабельного об'єкта в аргументи: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">items</span><span class="p">)</span>
-<span class="mi">1</span> <span class="mi">2</span> <span class="n">string</span> <span class="kc">None</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Конструкція <code>*items</code> передає усі елементи списка <code>items</code> як окремі аргументи. </p>
-<p>Таку розпаковку можна використовувати декілька раз при виклику функції: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">names</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">)</span>
-<span class="n">Alice</span> <span class="n">Bob</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Аналогічно можна розпакувати словник у іменовані аргументи: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">format</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sep&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;| &#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="o">**</span><span class="nb">format</span><span class="p">)</span>
-<span class="n">l</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">e</span><span class="o">|</span> <span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Розпаковку словників можна використовувати декілька раз, 
-але треба слідкувати щоб ключі словників не повторювались, 
-інакше у функцію буде передано декілька іменованих аргументів з однаковими іменами: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sep&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;|&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;~ &#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">**</span><span class="n">f1</span><span class="p">,</span> <span class="o">**</span><span class="n">f2</span><span class="p">)</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="nb">print</span><span class="p">()</span> <span class="n">got</span> <span class="n">multiple</span> <span class="n">values</span> <span class="k">for</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="s1">&#39;end&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sep&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;~ &#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">**</span><span class="n">f1</span><span class="p">,</span> <span class="o">**</span><span class="n">f2</span><span class="p">)</span>
-<span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">~</span> <span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_4">Упаковка при присвоєнні</h2>
-<p>Ітерабельний об'єкт можна "розпакувати" і присвоїти його частинки окремим змінним. 
-При цьому у змінну перед якою буде стояти зірочка усі значення, кількість яких перевищує кількість змінних, знову буде упаковано: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span>
-<span class="s1">&#39;s&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">other</span>
-<span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">other</span>
-<span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span>
-<span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Така розпаковка може бути навіть вкладеною: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">first_letter</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first_letter</span>
-<span class="s1">&#39;A&#39;</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_5">Розпаковка в літералах послідовностей</h2>
-<p>При створенні списків, кортежів та множин за допомогою літералів для розпаковки ітерабельних об'єктів також можна використовувати зірочку:  </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>У списку переставимо перший елемент у кінець і сформуємо кортеж: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">new_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">new_tuple</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Створимо множину розпакувавши список і генератор: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">uppercase_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">uppercase_names</span>
-<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x000001387353ABA0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">all_names</span> <span class="o">=</span> <span class="p">{</span><span class="o">*</span><span class="n">names</span><span class="p">,</span> <span class="o">*</span><span class="n">uppercase_names</span><span class="p">,</span> <span class="o">*</span><span class="n">names</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">all_names</span>
-<span class="p">{</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;BOB&#39;</span><span class="p">,</span> <span class="s1">&#39;ALICE&#39;</span><span class="p">,</span> <span class="s1">&#39;Alice&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_6">Розпаковка в літералах словників</h2>
-<p>При створенні словників за допомогою літерала можна використовувати <code>**</code>. 
-Найчастіше застосування — об'єднання двох словників в один: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="o">**</span><span class="n">d1</span><span class="p">,</span> <span class="o">**</span><span class="n">d2</span><span class="p">}</span>
-<span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="o">**</span><span class="n">d2</span><span class="p">,</span> <span class="o">**</span><span class="n">d1</span><span class="p">}</span>
-<span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Можна отримати копію словника паралельно додаючи нові ключ-значення і перезаписуючи вже існуючі ключі: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2035</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">birthday</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">date</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">:</span><span class="mi">17</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">birthday</span>
-<span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
+                  <h1>Generator expressions</h1>
                 
-                  
+                <p>Деякі прості генератори можна записати у вигляді виразів. Такі вирази виглядають так:</p>
+<ol>
+<li>Вираз з деякими змінними.</li>
+<li>Одне чи декілька ключових слів <code>for</code>. Задається які значення будуть приймати вищезгадані змінні. Синтаксис відповідає заголовку цикла <code>for</code>.</li>
+<li>Нуль або більше умов, які фільтрують значення змінних. Синтаксис відповідає заголовку оператора <code>if</code>. </li>
+</ol>
+<p>Такі вирази називають <strong><em>виразами-генераторами</em></strong> (generator expressions).</p>
+<p>Приклад. Необхідно отримати послідовність парних ступеней числа 2 від 0 до 10 включно. Напишемо спочатку "звичайний" генератор:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">pow2_gen</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+<span class="o">...</span>             <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="o">...</span>                     <span class="k">yield</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">x</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Спробуємо знайти суму цих чисел. Функція <code>sum()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), отже ми сміливо можемо передати їй генератор:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">pow2_gen</span><span class="p">()))</span>
+<span class="mi">1365</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>А тепер напишемо генератор-вираз:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span>
+<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x0000029D8FF1FFC0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="mi">1365</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Зауважте: вираз для генератора ми включили у круглі дужки. Якщо цього не зробити, виникає неоднозначність і Python не може точно інтрерпретувати такий вираз.</p>
+<h3 id="_1">Шахівниця</h3>
+<p>Спробуємо за допомогою генератор-вираза отримати усі клітинки шахівниці білого кольору:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGH&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rows</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">white_fields_generator</span> <span class="o">=</span> <span class="p">(</span>
+<span class="o">...</span>     <span class="n">column</span> <span class="o">+</span> <span class="n">row</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span>
+<span class="o">...</span>     <span class="k">if</span> <span class="p">(</span><span class="n">columns</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="o">...</span> <span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Давайте отримаємо усі білі клітинки одним символьним рядком:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">white_fields_generator</span><span class="p">))</span>
+<span class="n">A2</span> <span class="n">A4</span> <span class="n">A6</span> <span class="n">A8</span> <span class="n">B1</span> <span class="n">B3</span> <span class="n">B5</span> <span class="n">B7</span> <span class="n">C2</span> <span class="n">C4</span> <span class="n">C6</span> <span class="n">C8</span> <span class="n">D1</span> <span class="n">D3</span> <span class="n">D5</span> <span class="n">D7</span> <span class="n">E2</span> <span class="n">E4</span> <span class="n">E6</span> <span class="n">E8</span> <span class="n">F1</span> <span class="n">F3</span> <span class="n">F5</span> <span class="n">F7</span> <span class="n">G2</span> <span class="n">G4</span> <span class="n">G6</span> <span class="n">G8</span> <span class="n">H1</span> <span class="n">H3</span> <span class="n">H5</span> <span class="n">H7</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Метод <code>str.join()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), а  генератор і є ітерабельним об'єктом.</p>
+<p>А давайте отримаємо усі білі клітинки перших двох рядів шахівниці. Будемо використовувати генератор як звичайний ітератор самим "примітивним" способом — використовуючи функцію <code>next()</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">white_fields_generator</span> <span class="o">=</span> <span class="p">(</span><span class="n">column</span> <span class="o">+</span> <span class="n">row</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="p">(</span><span class="n">columns</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">white_fields_generator</span><span class="p">))</span>
+<span class="o">...</span>
+<span class="n">A2</span>
+<span class="n">A4</span>
+<span class="n">A6</span>
+<span class="n">A8</span>
+<span class="n">B1</span>
+<span class="n">B3</span>
+<span class="n">B5</span>
+<span class="n">B7</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Зауважте: перед використанням генератор треба створити знову.</p>
+<p>Можна і по-іншому, подумайте який спосіб краще:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">white_fields_generator</span> <span class="o">=</span> <span class="p">(</span><span class="n">column</span> <span class="o">+</span> <span class="n">row</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="p">(</span><span class="n">columns</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="n">rows</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">row</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">white_fields_generator</span><span class="p">)[:</span><span class="mi">8</span><span class="p">])</span>
+<span class="p">[</span><span class="s1">&#39;A2&#39;</span><span class="p">,</span> <span class="s1">&#39;A4&#39;</span><span class="p">,</span> <span class="s1">&#39;A6&#39;</span><span class="p">,</span> <span class="s1">&#39;A8&#39;</span><span class="p">,</span> <span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B5&#39;</span><span class="p">,</span> <span class="s1">&#39;B7&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
                 
               
               

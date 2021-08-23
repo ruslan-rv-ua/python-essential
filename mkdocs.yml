@@ -148,26 +148,28 @@ nav:
       - Успадкування в Python: oop/inheritance/inheritance_python.md
       - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
       - Лінеаризація: oop/inheritance/linearization.md
-      # - Множинне успадкування: oop/inheritance/multiple_inheritance.md
-      # - Атрибути базового класа: oop/inheritance/call_overrided.md
-      # - Резюме: oop/inheritance/recap.md
+      - Множинне успадкування: oop/inheritance/multiple_inheritance.md
+      - Атрибути базового класа: oop/inheritance/call_overrided.md
+      - Резюме: oop/inheritance/recap.md
     - Поліморфізм:
       - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
       # - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
     # - Статичні та класові методи: oop/static_and_class_methods.md
   - Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
+    # - Створення виняткових ситуацій: exceptions/exceptions_raising.md
     # # - assert
     # - Обробка винятків: exceptions/exceptions_handling.md
     # - Попередження: exceptions/warnings.md
     # - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
     # - Менеджери контекста: exceptions/context_manager.md
-  # - Ітератори та генератори:
-    # - Ітератори
-    # - Реалізація за допомогою __iter__
-    # - Реалізація за допомогою __getitem__
-    # - Генератори
-    # - Генератори-вирази
+  - Ітератори та генератори:
+    - Ітерабельні об'єкти: iterable/iterable.md
+    # - Ітератори: iterable/iterator.md
+    # - Реалізація за допомогою __iter__: iterable/magic_iter.md
+    # - Реалізація за допомогою __getitem__: iterable/magic_getitem.md
+    # - Генератори: iterable/generator.md
+    # - Генератори-вирази: iterable/generator_expressions.md
   - Елементи функціонального програмування:
     - Парадигма ФП: functional_programming/intro.md
     # - Чисті функції: functional_programming/pure_functions.md
