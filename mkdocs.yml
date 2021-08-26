@@ -153,8 +153,8 @@ nav:
       - Резюме: oop/inheritance/recap.md
     - Поліморфізм:
       - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
-      # - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
-    # - Статичні та класові методи: oop/static_and_class_methods.md
+      - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
+    - Статичні та класові методи: oop/static_and_class_methods.md
   - Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
     # - Створення виняткових ситуацій: exceptions/exceptions_raising.md
@@ -232,7 +232,7 @@ nav:
     # - Модуль collections: batteries/collections.md
     # - Модуль itertools: batteries/itertools.md
   - Наступні кроки:
-    - Що далі?: go_ahead/whats_next.md
+    # - Що далі?: go_ahead/whats_next.md
     # - Корисні ресурси: go_ahead/resources.md
     - Міфи про навчання: go_ahead/miths_edu.md
 

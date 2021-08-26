@@ -18,7 +18,7 @@
     
     
       
-        <title>Static and class methods - Python Essential</title>
+        <title>Статичні та класові методи - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Static and class methods
+              Статичні та класові методи
             
           </span>
         </div>
@@ -426,12 +426,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Об'єктно-орієнтоване програмування
@@ -762,8 +764,107 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="polymorphism/polymorphism_python.html" class="md-nav__link">
+        Поліморфізм в Python
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Статичні та класові методи
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="static_and_class_methods.html" class="md-nav__link md-nav__link--active">
+        Статичні та класові методи
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методи екземпляра класа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Класові методи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Статичні методи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    До практики
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Практики використання
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Резюме
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1166,18 +1267,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../go_ahead/whats_next.html" class="md-nav__link">
-        Що далі?
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../go_ahead/miths_edu.html" class="md-nav__link">
         Міфи про навчання
       </a>
@@ -1207,6 +1296,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1215,48 +1306,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     Методи екземпляра класа
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     Класові методи
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     Статичні методи
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     До практики
   </a>
-  
-    <nav class="md-nav" aria-label="До практики">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Коли використовувати кожен з методів?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    Практики використання
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     Резюме
   </a>
   
@@ -1275,22 +1360,34 @@
               
                 
                 
-                  <h1>Static and class methods</h1>
-                
-                <p>Згідно <a href="https://docs.python.org/3.6/">моделі даних</a>, Python пропонує три види методів: статичні, класові і екземпляра класа. </p>
-<h2 id="_1">Методи екземпляра класа</h2>
-<p>Це вже знайомий нам вид методів. Методи екземпляра класа приймають об'єкт класа як перший аргумент, який прийнято називати <code>self</code> і який вказує на сам екземпляр. </p>
-<p>Використовуючи параметр <code>self</code> ми можемо міняти стан об'єкта і звертатись до інших його методів і параметрім. Також через атрибут <code>self.__class__</code> можна отримати доступ до атрибутів класа і можливість міняти стан самого класа. Тобто методи екземплярів класа дозволяють міняти як стан певного об'єкта, так і класа.</p>
-<p>Приклад — <code>str.upper()</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;abc&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="s1">&#39;ABC&#39;</span>
+                <h1 id="_1">Статичні та класові методи</h1>
+<p>Згідно <a href="https://docs.python.org/3.6/">моделі даних</a>, 
+Python пропонує три види методів: 
+статичні, класові і екземпляра класа. </p>
+<h2 id="_2">Методи екземпляра класа</h2>
+<p>Це вже знайомий нам вид методів. 
+Методи екземпляра класа приймають об'єкт класа як перший аргумент, 
+який прийнято називати <code>self</code> і який вказує на сам екземпляр. </p>
+<p>Використовуючи параметр <code>self</code> ми можемо міняти стан об'єкта і звертатись до інших його методів 
+і параметрів. 
+Також через атрибут <code>self.__class__</code> можна отримати доступ до атрибутів класа 
+і можливість міняти стан самого класа. 
+Тобто методи екземплярів класа дозволяють міняти як стан певного об'єкта, так і класа. </p>
+<h2 id="_3">Класові методи</h2>
+<p>Методи класа приймають клас в якості параметра, 
+його прийнято позначати як <code>cls</code>. 
+Він вказує на клас, а не на об'єкт цього класа. 
+При декларації методів цього вида використовують наступний синтаксис: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nd">@classmethod</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="o">...</span>             <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">f</span>
+<span class="o">&lt;</span><span class="n">bound</span> <span class="n">method</span> <span class="n">A</span><span class="o">.</span><span class="n">f</span> <span class="n">of</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">A</span><span class="s1">&#39;&gt;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h2 id="_2">Класові методи</h2>
-<p>Методи класа приймають клас в якості параметра, його прийнято позначати як <code>cls</code>. 
-Він вказує на клас, а не на об'єкт цього класа. 
-При декларації методів цього вида використовують декоратор <code>classmethod</code>.</p>
 <p>Методи класа прив'язані до самого класа, а не його екземпляра. 
 Вони можуть міняти стан класа, що відобразиться на усіх об'єктах цього класа, 
 але не можуть міняти конкретний об`єкт. </p>
@@ -1301,12 +1398,22 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h2 id="_3">Статичні методи</h2>
-<p>Статичні методи декларуються за допомогою декоратора <code>staticmethod</code>. 
-Їм не потрібно певного першого аргумента (ні <code>self</code>, ні <code>cls</code>). </p>
+<h2 id="_4">Статичні методи</h2>
+<p>Статичні методи декларуються за допомогою наступного синтаксиса: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nd">@staticmethod</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+<span class="o">...</span>             <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">f</span>
+<span class="o">&lt;</span><span class="n">function</span> <span class="n">A</span><span class="o">.</span><span class="n">f</span> <span class="n">at</span> <span class="mh">0x0000028FECA8C1F0</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
 <p>Їх можна сприймати як методи, які "не знають, до якого класа відносяться". </p>
-<p>Таким чином, статичні методи прикріплені до класа лише для зручності і не можуть міняти стан ні класа, ні його екземпляра. </p>
-<h2 id="_4">До практики</h2>
+<p>Таким чином, статичні методи прикріплені до класа лише для зручності 
+і не можуть міняти стан ні класа, ні його екземпляра. </p>
+<h2 id="_5">До практики</h2>
 <p>Напишемо клас, де використовуються усі три види методів. </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">ToyClass</span><span class="p">:</span>
 <span class="o">...</span>     <span class="k">def</span> <span class="nf">instance_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1322,32 +1429,39 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Розберемось з роботиою методів. Спочатку метод екземплара:</p>
+<p>Розберемось з роботиою методів. 
+Спочатку метод екземпляра: </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">instance_method</span><span class="p">()</span>
 <span class="p">(</span><span class="s1">&#39;instance method called&#39;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">ToyClass</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x00000179B2FF4CA0</span><span class="o">&gt;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Приклад вище підтверджує те, що метод <code>instance_method</code> має доступ до об<code>єкта класа</code>ToyClass<code>через аргумент</code>self<code>.  Зауважте, що метод</code>obj.instance_method()` можна викоикати і так:</p>
+<p>Приклад вище підтверджує те, 
+що метод <code>instance_method</code> має доступ до об<code>єкта класа</code>ToyClass<code>через аргумент</code>self<code>. 
+Зауважте: метод</code>obj.instance_method()` можна викоикати і так: </p>
 <div class="codehilite"><pre><span></span><code><span class="n">ToyClass</span><span class="o">.</span><span class="n">instance_method</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Тепер скористаємось методом класа:</p>
+<p>Тепер скористаємось методом класа: </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>
 <span class="p">(</span><span class="s1">&#39;class method called&#39;</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">__main__</span><span class="o">.</span><span class="n">ToyClass</span><span class="s1">&#39;&gt;)</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Як видно, метод класа <code>class_method()</code> має доступ до самого класа <code>ToyClass</code>, але не до його конкретного екземпляра.  Пам'ятаєте що в Python усе є об'єктом? 
+<p>Як видно, 
+метод класа <code>class_method()</code> має доступ до самого класа <code>ToyClass</code>, 
+але не до його конкретного екземпляра. 
+Пам'ятаєте що в Python усе є об'єкт? 
 Клас — теж об'єкт, 
 який ми можемо передати функції в якості аргумента. </p>
-<p>Викликаємо статичний метод:</p>
+<p>Викликаємо статичний метод: </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>
 <span class="s1">&#39;static method called&#39;</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Це може здатися дивним, але статичні методи можна викликати через об'єкт класа. 
+<p>Це може здатися дивним, 
+але статичні методи можна викликати через об'єкт класа. 
 Насправді статичному методу ніякі спеціальні аргументи (<code>self</code> чи <code>cls</code>) не передаються. 
 Тобто статичні методи не можуть отримати доступ до параметрів класа чи об'єкта. 
 Вони працюють тільки з тими даними, які їм передаються як аргументи. </p>
@@ -1363,8 +1477,8 @@
 </code></pre></div>
 
 <p>Виклик метода екземпляра класа видає <code>TypeError</code>. 
-Сталося це через те, що метод очікував екземпляр класа, а було передано клас.</p>
-<p>Зі статичним методом нічого неочікуваного:</p>
+Сталося це через те, що метод очікував екземпляр класа, а було передано клас. </p>
+<p>Зі статичним методом нічого неочікуваного: </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">ToyClass</span><span class="o">.</span><span class="n">static_method</span><span class="p">()</span>
 <span class="s1">&#39;static method called&#39;</span>
 <span class="o">&gt;&gt;&gt;</span>
@@ -1401,19 +1515,19 @@ def is_adult(age):
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>І, нарешті, статичний метод класа <code>Person</code>:</p>
+<p>І, нарешті, статичний метод класа <code>Person</code>: </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">Person</span><span class="o">.</span><span class="n">is_adult</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 <span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h3 id="_5">Коли використовувати кожен з методів?</h3>
-<p>Вибір того, який з методів використовувати, може здатись доволі вкладним. 
-З набутим досвідом цей вибір зробити буде простіше.</p>
+<h2 id="_6">Практики використання</h2>
+<p>Вибір того, який з методів використовувати, може здатись доволі складним. 
+З набутим досвідом цей вибір зробити буде простіше. </p>
 <p>Найчастіше метод класа використовується тоді, коли потрібен генеруючий метод, 
 який повертає об'єкт класа. 
 Статичні методи в основному використовуються як допоміжні функції і працюють з даними, які їм передаються.</p>
-<h2 id="_6">Резюме</h2>
+<h2 id="_7">Резюме</h2>
 <ul>
 <li>Методи екземпляра класа отримують доступ до об'єкт класа через параметр <code>self</code> і до класа через <code>self.__class__</code></li>
 <li>Методи класа не можуть отримати доступ до певного екземпляра класа, але мають доступ до самого класа через <code>cls</code></li>
@@ -1434,6 +1548,41 @@ def is_adult(age):
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="polymorphism/polymorphism_python.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Поліморфізм в Python" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Поліморфізм в Python
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../exceptions/exceptions.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Винятки" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Винятки
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -1,6 +1,5 @@
 class Person:
 	def __init__(self, name):
-		# assert mame != ''
 		self.name = name
 	def say_hello(self):
 		print('Привіт! Я ', self.name)
