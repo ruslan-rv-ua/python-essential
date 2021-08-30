@@ -18,7 +18,7 @@
     
     
       
-        <title>Exceptions raising - Python Essential</title>
+        <title>"Підйом" винятків - Python Essential</title>
       
     
     
@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exceptions raising
+              "Підйом" винятків
             
           </span>
         </div>
@@ -799,12 +804,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Виняткові ситуації
@@ -824,6 +831,82 @@
     <li class="md-nav__item">
       <a href="exceptions.html" class="md-nav__link">
         Винятки
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          "Підйом" винятків
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="exceptions_raising.html" class="md-nav__link md-nav__link--active">
+        "Підйом" винятків
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення власних винятків
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_handling.html" class="md-nav__link">
+        Обробка винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        Попередження
       </a>
     </li>
   
@@ -866,6 +949,18 @@
     <li class="md-nav__item">
       <a href="../iterable/iterable.html" class="md-nav__link">
         Ітерабельні об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/iterator.html" class="md-nav__link">
+        Ітератори
       </a>
     </li>
   
@@ -1150,6 +1245,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/collections.html" class="md-nav__link">
+        Модуль collections
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1205,74 +1312,88 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення власних винятків
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Exceptions raising</h1>
-                
-                <p>Comming soon</p>
-<!--
-### "Підйом" винятків
-
-Python автоматично генерує винятки при виникненні помилки під час виконання. 
+                <h1 id="_1">"Підйом" винятків</h1>
+<p>Python автоматично генерує винятки при виникненні помилки під час виконання. 
 Але також є можливість сгенерувати виняток програмно. 
-Робиться це за допомогою ключового слова `raise`. 
+Робиться це за допомогою ключового слова <code>raise</code>. 
 Після нього вказують об'єкт винятка. 
 При конструюванні екземпляра винятка зазвичай вказують повідомлення, 
 яке більш детально описує проблему, 
-а також деколи інші аргументи: 
+а також деколи інші аргументи: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s1">&#39;Вчіть математику!&#39;</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">Вчіть</span> <span class="n">математику</span><span class="err">!</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-    :::python
-    >>> raise ZeroDivisionError('Вчіть математику!')
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    ZeroDivisionError: Вчіть математику!
-    >>>
+<p>Також можна вказати клас винятка, 
+у цьому разі Python автоматично створить екземпляр класа викликавши відповідний конструктор без параметрів. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">raise</span> <span class="ne">ZeroDivisionError</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ZeroDivisionError</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Також можна вказати клас винятка, у цьому разі Python автоматично створить екземпляр класа викликавши відповідний конструктор без параметрів. 
+<p>Зауважте, що <code>raise</code> може викидати у якості винятків тільки екземпляри класа <code>BaseException</code> 
+і його похідних класів. </p>
+<h2 id="_2">Створення власних винятків</h2>
+<p>При розробці програмного забезпечення, 
+особливо якщо ви створюєте програмний продукт, 
+який можуть використовувати інші розробники, 
+може виникнути потреба створити власні винятки, 
+які будуть обробляти якісь специфічні помилки. 
+Хорошою практикою є створити базовий клас успадкувавши його від <code>Exception</code> або іншого стандартного, 
+а вже потім від цього базового класа успадкувати класи для конкретних помилок чи ситуацій. </p>
+<p>Приклад визначення власних винятків і їх використання:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">CoolFrameworkException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
 
-    :::python
-    >>> raise ZeroDivisionError
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    ZeroDivisionError
-    >>>
+<span class="k">class</span> <span class="nc">VeryRareError</span><span class="p">(</span><span class="n">CoolFrameworkException</span><span class="p">):</span>
+    <span class="k">pass</span>
 
-Зауважте, що `raise` може викидати у якості винятків тільки екземпляри класа `BaseException` і його нащадків.
-
-
-
-
-### Створення власних винятків
-
-При розробці програмного забезпечення, особливо якщо ви створюєте програмний продукт, який можуть використовувати інші розробники, може виникнути потреба створити власні винятки, які будуть обробляти якісь специфічні помилки. Хорошою практикою є створити базовий клас успадкувавши його від `Exception` або іншого стандартного, а вже потім від цього базового класа успадкувати класи для конкретних помилок чи ситуацій. 
-
-Приклад визначення власних винятків і їх використання:
-
-    :::python
-    class CoolFrameworkException(Exception):
-        pass
-
-    class VeryRareError(CoolFrameworkException):
-        pass
-
-    class SomeStrangeError(CoolFrameworkException):
-        pass
-
-    if __name__ == '__main__':
-        raise SomeStrangeError('WTF?')
-
-
-
-
-## Додаткові матеріали:
-
-* [Документація: вбудовані винятки](https://docs.python.org/3.6/library/exceptions.html)
-
--->
+<span class="k">class</span> <span class="nc">SomeStrangeError</span><span class="p">(</span><span class="n">CoolFrameworkException</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
                 
               
               
@@ -1288,6 +1409,41 @@ Python автоматично генерує винятки при виникн�
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="exceptions.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Винятки" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Винятки
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="exceptions_handling.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Обробка винятків" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Обробка винятків
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

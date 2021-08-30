@@ -18,7 +18,7 @@
     
     
       
-        <title>Warnings - Python Essential</title>
+        <title>Попередження - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Warnings
+              Попередження
             
           </span>
         </div>
@@ -804,12 +804,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Виняткові ситуації
@@ -830,6 +832,85 @@
       <a href="exceptions.html" class="md-nav__link">
         Винятки
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_raising.html" class="md-nav__link">
+        "Підйом" винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_handling.html" class="md-nav__link">
+        Обробка винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Попередження
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="warnings.html" class="md-nav__link md-nav__link--active">
+        Попередження
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    "Підйом" попереджень
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -871,6 +952,18 @@
     <li class="md-nav__item">
       <a href="../iterable/iterable.html" class="md-nav__link">
         Ітерабельні об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/iterator.html" class="md-nav__link">
+        Ітератори
       </a>
     </li>
   
@@ -1155,6 +1248,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/collections.html" class="md-nav__link">
+        Модуль collections
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1253,11 +1358,18 @@
               
                 
                 
-                  <h1>Warnings</h1>
+                  <h1>Попередження</h1>
                 
-                <p>Бувають ситуації, коли не можна однозначно визначити, чи відбулась помилка у програмі, чи ні. Начебто і виникла певна неоднозначна (виняткова) ситуація, але програма може продовжувати роботу. Було б непогано сповістити про цей факт користувача чи програміста, щоб він принаймі знав, що відбулось щось "незвичайне" і звернув на це увагу. </p>
-<p>В Python для цього є механізм так званих "попереджень". Це схоже на винятки, але інформація про виняткову ситуацію виводиться у стандартний потік помилок, і програма не припиняє свою роботу.</p>
-<p>Базовим класом для попереджень є <code>Warning</code>, який успадковано від <code>Exception</code>.</p>
+                <p>Бувають ситуації, коли не можна однозначно визначити, чи відбулась помилка у програмі, чи ні. 
+Начебто і виникла певна неоднозначна (виняткова) ситуація, 
+але програма може продовжувати роботу. 
+Було б непогано сповістити про цей факт користувача чи програміста, 
+щоб він принаймі знав, що відбулось щось "незвичайне" і звернув на це увагу. </p>
+<p>В Python для цього є механізм так званих "попереджень". 
+Це схоже на винятки: 
+інформація про виняткову ситуацію виводиться у стандартний потік помилок, 
+але програма не припиняє свою роботу. </p>
+<p>Базовим класом для попереджень є <code>Warning</code>, який успадковано від <code>Exception</code>. </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="ne">Warning</span>
 <span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">Warning</span><span class="s1">&#39;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="ne">Warning</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
@@ -1265,13 +1377,17 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Від цього класа успадковано класи стандартних для Python попереджень. Також ми можемо створити власні попередження, свої класи успадковуємо від <code>UserWarning</code>:</p>
+<p>Від цього класа успадковано класи стандартних для Python попереджень. 
+Також ми можемо створити власні попередження, свої класи успадковуємо від <code>UserWarning</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="ne">UserWarning</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
 <span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">UserWarning</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">Warning</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">Exception</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">BaseException</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">DeprecatedFeature</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h3 id="_1">"Підйом" попереджень</h3>
+<h2 id="_1">"Підйом" попереджень</h2>
 <p>Вивести попередження найпростіше за допомогою функції <code>warn</code> з вбудованого модуля <code>warnings</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">warn</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
@@ -1301,31 +1417,31 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Гассан Абдуррахман ібн Хоттаб&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Еріх Марія Ремарк&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Гассан Абдуррахман ібн Хоттаб&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Еріх Марія Ремарк&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div>
 
 <p>В результаті виконання цього коду отримаємо приблизно таке:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">c</span><span class="p">:</span>\<span class="n">dev</span>\<span class="n">warning_test</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span> <span class="n">IncorrectNameWarning</span><span class="p">:</span> <span class="n">Name</span> <span class="nb">format</span> <span class="n">maybe</span> <span class="n">incorrect</span><span class="p">:</span><span class="n">Гассан</span> <span class="n">Абдуррахман</span> <span class="n">ібн</span> <span class="n">Хоттаб</span>
   <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Гассан Абдуррахман ібн Хоттаб&#39;</span><span class="p">)</span>
 <span class="n">Гассан</span> <span class="n">Абдуррахман</span> <span class="n">ібн</span> <span class="n">Хоттаб</span>
-
-<span class="n">Еріх</span> <span class="n">Марія</span> <span class="n">Ремарк</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Зверніть увагу, що інтерпретатор повідомив нам, що попередження відноситься до наступного рядка програми:</p>
+<p>Зверніть увагу, що інтерпретатор повідомив нам, що попередження відноситься до наступного рядка програми: </p>
 <div class="codehilite"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Гассан Абдуррахман ібн Хоттаб&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Це набагато інформативніше, ніж якби нам повідомили, що попередження віднгоситься до коду в конструкторі класа, атже у такому разі невідомо, конструювання якого конкретного екземпляра призвело до появи попередження. Досягли ми цього задавши параметр <code>stacklevel=2</code> для функції <code>warn</code>, тобто ми почали з другого рівня стеку викликів.</p>
+<p>Це набагато інформативніше, 
+ніж якби нам повідомили, 
+що попередження віднгоситься до коду в конструкторі класа, 
+атже у такому разі невідомо, 
+конструювання якого конкретного екземпляра призвело до появи попередження. 
+Досягли ми цього задавши параметр <code>stacklevel=2</code> для функції <code>warn</code>, 
+тобто ми почали з другого рівня стеку викликів. </p>
 <p>Детальніше про використання попереджень можна дізнатись з офіційної документації Python.</p>
 <h2 id="_2">Додаткові матеріали</h2>
 <p><a href="https://docs.python.org/3/library/warnings.html">Документація Python: попередження</a></p>
@@ -1344,6 +1460,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="exceptions_handling.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Обробка винятків" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Обробка винятків
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../iterable/iterable.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ітерабельні об&#39;єкти" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Ітерабельні об'єкти
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

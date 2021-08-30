@@ -157,15 +157,15 @@ nav:
     - Статичні та класові методи: oop/static_and_class_methods.md
   - Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
-    # - Створення виняткових ситуацій: exceptions/exceptions_raising.md
+    - '"Підйом" винятків': exceptions/exceptions_raising.md
     # # - assert
-    # - Обробка винятків: exceptions/exceptions_handling.md
-    # - Попередження: exceptions/warnings.md
+    - Обробка винятків: exceptions/exceptions_handling.md
+    - Попередження: exceptions/warnings.md
     # - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
     # - Менеджери контекста: exceptions/context_manager.md
   - Ітератори та генератори:
     - Ітерабельні об'єкти: iterable/iterable.md
-    # - Ітератори: iterable/iterator.md
+    - Ітератори: iterable/iterator.md
     # - Реалізація за допомогою __iter__: iterable/magic_iter.md
     # - Реалізація за допомогою __getitem__: iterable/magic_getitem.md
     # - Генератори: iterable/generator.md
@@ -229,8 +229,9 @@ nav:
         # - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
   - Батарейки:
     - Модуль datetime: batteries/datetime.md
-    # - Модуль collections: batteries/collections.md
+    - Модуль collections: batteries/collections.md
     # - Модуль itertools: batteries/itertools.md
+    # - Модуль contextlib: batteries/contextlib.md
   - Наступні кроки:
     # - Що далі?: go_ahead/whats_next.md
     # - Корисні ресурси: go_ahead/resources.md

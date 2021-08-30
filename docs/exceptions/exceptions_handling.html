@@ -18,7 +18,7 @@
     
     
       
-        <title>Exceptions handling - Python Essential</title>
+        <title>Обробка винятків - Python Essential</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти до змісту
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exceptions handling
+              Обробка винятків
             
           </span>
         </div>
@@ -804,12 +804,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Виняткові ситуації
@@ -829,6 +831,103 @@
     <li class="md-nav__item">
       <a href="exceptions.html" class="md-nav__link">
         Винятки
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_raising.html" class="md-nav__link">
+        "Підйом" винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Обробка винятків
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="exceptions_handling.html" class="md-nav__link md-nav__link--active">
+        Обробка винятків
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Обробка винятків в Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Передача винятка на один рівень вгору
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    Блок else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    Блок finally
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        Попередження
       </a>
     </li>
   
@@ -871,6 +970,18 @@
     <li class="md-nav__item">
       <a href="../iterable/iterable.html" class="md-nav__link">
         Ітерабельні об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/iterator.html" class="md-nav__link">
+        Ітератори
       </a>
     </li>
   
@@ -1155,6 +1266,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/collections.html" class="md-nav__link">
+        Модуль collections
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1219,6 +1342,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1234,7 +1359,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     Передача винятка на один рівень вгору
   </a>
   
@@ -1267,17 +1392,16 @@
               
                 
                 
-                  <h1>Exceptions handling</h1>
-                
-                <blockquote>
+                <h1 id="_1">Обробка винятків</h1>
+<blockquote>
 <p><strong><em>Обробка виняткових ситуацій</em></strong> (exception handling) або <strong><em>обрабка винятків</em></strong> — механізм мов програмування, призначений для опису реакції 
 програми на помилки часу виконання та інші можливі проблеми
 (винятки), які можуть виникнути при виконанні програми і призводять до 
 неможливості (або ж безглуздості) подальшого відпрацювання програмою її базового 
-алгоритма.</p>
+алгоритма. </p>
 </blockquote>
-<h3 id="python">Обробка винятків в Python</h3>
-<p>Для обробки виняткових ситуацій в Python використовують спеціальну конструкцію:</p>
+<h2 id="python">Обробка винятків в Python</h2>
+<p>Для обробки виняткових ситуацій в Python використовують спеціальну конструкцію: </p>
 <div class="codehilite"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># область дії обробника</span>
     <span class="k">pass</span>
@@ -1296,7 +1420,11 @@
     <span class="k">pass</span>
 </code></pre></div>
 
-<p>Блок <code>try</code> задає область дії обробника винятків. Якщо при виконанні операторів в даному блоці було піднято виняток, їх виконання переривається і керування переходить до одного з обробників. Якщо не виникло жодного винятка, блоки <code>except</code> пропускаються.</p>
+<p>Блок <code>try</code> задає область дії обробника винятків. 
+Якщо при виконанні інструкцій в даному блоці було піднято виняток, 
+їх виконання переривається 
+і керування переходить до одного з обробників. 
+Якщо не виникло жодного винятка, блоки <code>except</code> пропускаються. </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
 <span class="o">...</span>     <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="o">...</span> <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
@@ -1306,8 +1434,12 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Після <code>except</code> можна вказати клас винятка, який ми плануємо перехопити, або ж одразу декілька класів, об'єднавши їх у кортеж.</p>
-<p>При перехопленні винятка створюється екземпляр відповідного класа, і ми маємо можливість отримати його:</p>
+<p>Після <code>except</code> можна вказати клас винятка, 
+який ми плануємо перехопити, 
+або ж одразу декілька класів, 
+об'єднавши їх у кортеж. </p>
+<p>При перехопленні винятка створюється екземпляр відповідного класа, 
+і ми маємо можливість отримати його: </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
 <span class="o">...</span>     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="o">...</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1320,10 +1452,15 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Якщо ж після <code>except</code> не нічого не вказати, то будуть перехоплені усі винятки які ми не перехопили раніше. Бажано уникати такого перехоплення винятків, треба перехоплювати конкретні винятки.</p>
+<p>Якщо ж після <code>except</code> нічого не вказати, 
+то будуть перехоплені усі винятки які ми не перехопили раніше. 
+Бажано уникати такого перехоплення винятків, треба перехоплювати конкретні винятки. </p>
 <p>Блоки <code>except</code> обробляються від гори до низу і керування передається не більше, ніж одному обробнику. 
-Тому при необхідності по-різному обробляти винятки, які знаходяться в ієрархії успадкування, спочатку треба вказувати обробники меньш загальних винятків, а потім — більш загальних. 
-Саме тому стандартний блок <code>except</code> може бути тільки останнім.</p>
+Тому при необхідності по-різному обробляти винятки, 
+які знаходяться в ієрархії успадкування, 
+спочатку треба вказувати обробники меньш загальних винятків, 
+а потім — більш загальних. 
+Саме тому стандартний блок <code>except</code> може бути тільки останнім. </p>
 <p>Приклад. У наступному коді ми ніколи не перехопимо ділення на нуль:</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
 <span class="o">...</span>     <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
@@ -1336,7 +1473,11 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Якщо жоден з заданих блоків <code>except</code> не перехопив виняток, то його буде перехоплено найближчим зовнішнім блоком <code>try/except</code>, у якому є відповідний обробник. Якщо ж програма зовсім не перехопила виняток, то інтерпретатор завершує виконання програми і виводить 
+<p>Якщо жоден з заданих блоків <code>except</code> не перехопив виняток, 
+то його буде перехоплено найближчим зовнішнім блоком <code>try/except</code>, 
+у якому є відповідний обробник. 
+Якщо ж програма зовсім не перехопила виняток, 
+то інтерпретатор завершує виконання програми і виводить 
 інформацію про виняткову ситуацію в стандартний потік помилок <code>sys.stderr</code>. </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
 <span class="o">...</span>     <span class="k">raise</span> <span class="ne">ValueError</span>
@@ -1349,10 +1490,10 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Але у цього правила є винятки:</p>
-<ul>
-<li>якщо виняток виник в деструкторі об'єкта, виконання програми не завершується, а в стандартний потік помилок виводиться попередження <code>"Exception ignored"</code> з інформацією про сам виняток.</li>
-</ul>
+<p>Але у цього правила є винятки: 
+якщо виняток виник в деструкторі об'єкта, 
+виконання програми не завершується, 
+а в стандартний потік помилок виводиться попередження <code>"Exception ignored"</code> з інформацією про сам виняток. </p>
 <p>Приклад. Наступний код:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1380,8 +1521,11 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h3 id="_1">Передача винятка на один рівень вгору</h3>
-<p>Для того, щоб в обробнику винятка виконати певні дії, а потім передати виняток далі, на один рівень обробників вище (тобто, викинути той самий виняток ще раз), використовується  інструкція <code>raise</code> без параметрів:</p>
+<h2 id="_2">Передача винятка на один рівень вгору</h2>
+<p>Для того, щоб в обробнику винятка виконати певні дії, 
+а потім передати виняток далі, 
+на один рівень обробників вище (тобто, викинути той самий виняток ще раз), 
+використовується  інструкція <code>raise</code> без параметрів: </p>
 <div class="codehilite"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="n">do_some_actions</span><span class="p">()</span> <span class="c1"># дії, які можуть призвести до винятка</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span> <span class="c1"># обробник винятка</span>
@@ -1389,11 +1533,12 @@
     <span class="k">raise</span>
 </code></pre></div>
 
-<h3 id="else">Блок else</h3>
-<p>В конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>else</code>. Оператори всередині нього виконуються, якщо не виникло жодного винятка.</p>
-<h3 id="finally">Блок finally</h3>
+<h2 id="else">Блок else</h2>
+<p>В конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>else</code>. 
+Оператори всередині нього виконуються, якщо не виникло жодного винятка.</p>
+<h2 id="finally">Блок finally</h2>
 <p>Також  конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>finally</code>. 
-Оператори всередині блока <code>finally</code> виконуються незалежно від того, чи виникла виняткова ситуація чи ні.</p>
+Оператори всередині блока <code>finally</code> виконуються незалежно від того, чи виникла виняткова ситуація чи ні. </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">try</span><span class="p">:</span>
 <span class="o">...</span>     <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="o">...</span> <span class="k">finally</span><span class="p">:</span>
@@ -1406,8 +1551,11 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Блок <code>finally</code> використовується для виконання так званих "дій по очистці" (cleanup actions), тобто дій, направлених на звільнення ресурсів: закриття файлів, видалення тимчасових об'єктів, тощо.</p>
-<p>Блок <code>finally</code> виконується перед виходом з оператора <code>try/except</code> завжди, навіть якщо одне з його відгалужень містить оператор <code>return</code> (коли оператор <code>try/except</code> знаходиться всередині функції), <code>break</code> чи <code>continue</code> (коли оператор <code>try/except</code> знаходиться всередині цикла) або ж виник інший необроблений виняток при обробці даного винятка.</p>
+<p>Блок <code>finally</code> використовується для виконання так званих "дій по очистці" (cleanup actions), 
+тобто дій, направлених на звільнення ресурсів: 
+закриття файлів, видалення тимчасових об'єктів, тощо. </p>
+<p>Блок <code>finally</code> виконується перед виходом з оператора <code>try/except</code> завжди, 
+навіть якщо одне з його відгалужень містить оператор <code>return</code> (коли оператор <code>try/except</code> знаходиться всередині функції), <code>break</code> чи <code>continue</code> (коли оператор <code>try/except</code> знаходиться всередині цикла) або ж виник інший необроблений виняток при обробці даного винятка.</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
 <span class="o">...</span>     <span class="k">try</span><span class="p">:</span>
 <span class="o">...</span>             <span class="mi">2</span> <span class="o">/</span> <span class="mi">0</span>
@@ -1436,6 +1584,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="exceptions_raising.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: &#34;Підйом&#34; винятків" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              "Підйом" винятків
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="warnings.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Попередження" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Попередження
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

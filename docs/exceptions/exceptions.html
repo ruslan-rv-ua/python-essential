@@ -866,12 +866,75 @@
     Винятки
   </a>
   
+    <nav class="md-nav" aria-label="Винятки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Синтаксичні помилки
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Помилки часу виконання
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Винятки як класи
+  </a>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_raising.html" class="md-nav__link">
+        "Підйом" винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_handling.html" class="md-nav__link">
+        Обробка винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        Попередження
+      </a>
     </li>
   
 
@@ -913,6 +976,18 @@
     <li class="md-nav__item">
       <a href="../iterable/iterable.html" class="md-nav__link">
         Ітерабельні об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/iterator.html" class="md-nav__link">
+        Ітератори
       </a>
     </li>
   
@@ -1197,6 +1272,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/collections.html" class="md-nav__link">
+        Модуль collections
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1275,6 +1362,33 @@
     Винятки
   </a>
   
+    <nav class="md-nav" aria-label="Винятки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Синтаксичні помилки
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Помилки часу виконання
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Винятки як класи
+  </a>
+  
 </li>
       
     </ul>
@@ -1307,64 +1421,54 @@
 і якимось чином реагувати на це. 
 Говорять: "ми можемо перехопити виняткову ситуацію". </p>
 <p>Спочатку розберемось які виняткові ситуації можуть виникнути. </p>
-<p>To be continued. </p>
-<!--
-### Синтаксичні помилки
-
-Помилка синтаксису (`SyntaxError`) виникає коли синтаксичний аналізатор Python зіштовхується з ділянкою кода, 
+<h3 id="_3">Синтаксичні помилки</h3>
+<p>Помилка синтаксису (<code>SyntaxError</code>) виникає коли синтаксичний аналізатор Python зіштовхується з ділянкою кода, 
 котрий не відповідає специфікації мови програмування 
-і який не може бути інтерпретовано. 
+і який не може бути інтерпретовано. </p>
+<p>Синтаксичні помилки у головному модулі програми виникають до початку виконання програми і не можуть бути перехоплені.</p>
+<p>Ситуації, у яких синтаксична помилка у вигляді винятка <code>SyntaxError</code> може бути
+перехоплена і оброблена:</p>
+<ul>
+<li>помилка синтаксиса у імпортованому модулі;</li>
+<li>помилка синтаксиса у коді, який представлений символьним рядком і передається функції <code>eval</code> або <code>exec</code>.</li>
+</ul>
+<h3 id="_4">Помилки часу виконання</h3>
+<p>Ось деякі класичні приклади виняткових ситуацій:</p>
+<ul>
+<li>ділення на нуль;</li>
+<li>помилка при спробі прочитати зовнішні дані;</li>
+<li>вичерпання доступної пам'яті.</li>
+</ul>
+<h2 id="_5">Винятки як класи</h2>
+<p>Винятки в Python — це насправді не що інше, як класи. 
+Давайте переконаємось: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">ZeroDivisionError</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">ZeroDivisionError</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">ZeroDivisionError</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">ZeroDivisionError</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">ArithmeticError</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">Exception</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="ne">BaseException</span><span class="s1">&#39;&gt;, &lt;class &#39;</span><span class="nb">object</span><span class="s1">&#39;&gt;]</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
-Синтаксичні помилки у головному модулі програми виникають до початку виконання програми і не можуть бути перехоплені.
-
-Ситуації, у яких синтаксична помилка у вигляді винятка `SyntaxError` може бути
-перехоплена і оброблена:
-
-- помилка синтаксиса у імпортованому модулі;
-- помилка синтаксиса у коді, який представлений символьним рядком і передається функції `eval` або `exec`.
-
-### Помилки часу виконання
-
-Ось деякі класичні приклади виняткових ситуацій:
-
-* ділення на нуль;
-* помилка при спробі прочитати зовнішні дані;
-* вичерпання доступної пам'яті.
-
-## Винятки як класи
-
-Винятки в Python — це насправді не що інше, як класи. 
-Давайте переконаємось: 
-
-    :::python
-    >>> 1/0
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    ZeroDivisionError: division by zero
-    >>> ZeroDivisionError
-    <class 'ZeroDivisionError'>
-    >>> ZeroDivisionError.mro()
-    [<class 'ZeroDivisionError'>, <class 'ArithmeticError'>, <class 'Exception'>, <class 'BaseException'>, <class 'object'>]
-    >>>
-
-Базовим класом для винятків є `BaseException`. Від нього успадковуються декілька спеціальних класів, які вказують на обов'язкове завершення програми, а також клас `Exception`. 
-
-Від класа `Exception` успадковуються усі інші стандартні класи. Ось деякі дочірні для `Exception` класи:
-
-* ArithmeticError — базовий клас для усіх винятків, пов'язаних з арифметичними операціями.
-* BufferError — базовий клас для винятків, пов'язаних з операціями 
-над буфером.
-* LookupError — базовий клас для винятків, які виникають при зверненні по неіснуючому ключу чи індексу у послідовностях і відображеннях.
-
-Повний перелік усіх винятків можна знайти у документації, рекомендується ознайомитись з ним.
-
-Також при необхідності ми можемо створити власні винятки, у цьому разі нам треба успадковуватись саме від класа `Exception`, напряму чи опосередковано від інших класів.
-
-## Додаткові матеріали:
-
-* [Документація: вбудовані винятки](https://docs.python.org/3.6/library/exceptions.html)
-
--->
+<p>Базовим класом для винятків є <code>BaseException</code>. 
+Від нього успадковуються декілька спеціальних класів, 
+які вказують на обов'язкове завершення програми, 
+а також клас <code>Exception</code>. </p>
+<p>Від класа <code>Exception</code> успадковуються усі інші стандартні класи. 
+Ось деякі дочірні для <code>Exception</code> класи: </p>
+<ul>
+<li>ArithmeticError — базовий клас для усіх винятків, пов'язаних з арифметичними операціями.</li>
+<li>BufferError — базовий клас для винятків, пов'язаних з операціями 
+над буфером.</li>
+<li>LookupError — базовий клас для винятків, які виникають при зверненні по неіснуючому ключу чи індексу у послідовностях і відображеннях.</li>
+</ul>
+<p>Повний перелік усіх винятків можна знайти у документації, рекомендується ознайомитись з ним.</p>
+<p>Також при необхідності ми можемо створити власні винятки, 
+у цьому разі нам треба успадковуватись від класа <code>Exception</code> 
+або його дочірніх класів. </p>
                 
               
               
@@ -1400,13 +1504,13 @@
       
       
         
-        <a href="../iterable/iterable.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ітерабельні об&#39;єкти" rel="next">
+        <a href="exceptions_raising.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: &#34;Підйом&#34; винятків" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Ітерабельні об'єкти
+              "Підйом" винятків
             </div>
           </div>
           <div class="md-footer__button md-icon">

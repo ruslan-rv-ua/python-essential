@@ -834,6 +834,42 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_raising.html" class="md-nav__link">
+        "Підйом" винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions_handling.html" class="md-nav__link">
+        Обробка винятків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        Попередження
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -871,6 +907,18 @@
     <li class="md-nav__item">
       <a href="../iterable/iterable.html" class="md-nav__link">
         Ітерабельні об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/iterator.html" class="md-nav__link">
+        Ітератори
       </a>
     </li>
   
@@ -1155,6 +1203,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/collections.html" class="md-nav__link">
+        Модуль collections
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1234,40 +1294,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contextlib" class="md-nav__link">
-    contextlib
-  </a>
-  
-    <nav class="md-nav" aria-label="contextlib">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#contextlibcontextmanagerfunc" class="md-nav__link">
-    contextlib.contextmanager(func)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#contextlibnestedmgr1-mgr2-mgrn" class="md-nav__link">
-    contextlib.nested(mgr1, mgr2, ..., mgrN)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#contextlibclosingobject" class="md-nav__link">
-    contextlib.closing(object)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Додаткові матеріали
   </a>
@@ -1297,13 +1323,22 @@
 <blockquote>
 <p><strong><em>Менеджер контекста</em></strong> (context manager) – об'єкт, який створює контекст виконання всередині оператора <code>with</code> і реалізує два методи: <code>_enter_</code> та <code>_exit_</code>. </p>
 </blockquote>
-<p>Менеджери контекста використовуються для збереження і відновлення глобального стану, блокування і розблокування ресурсів, автоматичного закрыття файлів та інше. </p>
-<p>Припустимо, у вас є дві пов'язані операції, які ви хочете виконати у парі, помістивши між ними блок кода. Менеджери контекста дозволяють зробити саме це. Наприклад:</p>
+<p>Менеджери контекста використовуються для збереження і відновлення глобального стану, 
+блокування і розблокування ресурсів, 
+автоматичного закрыття файлів та інше. </p>
+<p>Припустимо, у вас є дві пов'язані операції, 
+які ви хочете виконати у парі, 
+помістивши між ними блок кода. 
+Менеджери контекста дозволяють зробити саме це. 
+Наприклад: </p>
 <div class="codehilite"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;some_file&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_file</span><span class="p">:</span>
     <span class="n">opened_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Цей код відкриває файл, записує в нього дані і закриває після цього файл. При виникненні помилки при запису даних в файл менеджер контекста спробує його закрити. Цей код є еквівалентним наступному:</p>
+<p>Цей код відкриває файл, 
+записує в нього дані і закриває після цього файл. 
+При виникненні помилки при запису даних в файл менеджер контекста спробує його закрити. 
+Цей код є еквівалентним наступному: </p>
 <div class="codehilite"><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;some_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
@@ -1323,7 +1358,9 @@
 </code></pre></div>
 
 <p>Частина <code>as ...</code> є необов'язковою. </p>
-<p>Якщо в конструкції <code>with ... as</code> було декілька виразів, то це еквівалентно декільком вкладеним конструкціям. Наприклад: </p>
+<p>Якщо в конструкції <code>with ... as</code> було декілька виразів, 
+то це еквівалентно декільком вкладеним інструкциіям. 
+Наприклад: </p>
 <div class="codehilite"><pre><span></span><code>with A() as a, B() as b:
     # some code
 </code></pre></div>
@@ -1335,7 +1372,7 @@
 </code></pre></div>
 
 <p>Розглянемо як можна створити власний менеджер контекста. </p>
-<h3 id="-">Контекст-менеджер як клас</h3>
+<h2 id="-">Контекст-менеджер як клас</h2>
 <p>Щоб об'єкт став менеджером контекста він має реалізовувати два спеціальних метода:</p>
 <ul>
 <li><code>__enter__()</code></li>
@@ -1362,18 +1399,18 @@
 <li>traceback — інформація про виняток</li>
 </ul>
 <p>Якщо під час виконання блока жодного винятка не було піднято, усім цим параметрам передається значення <code>None</code>. </p>
-<p>Якщо метод <code>__exit__()</code> повертає <code>True</code> — вважається, що винятки оброблено у цьому методі і нагору вони не піднімаються. </p>
+<p>Якщо метод <code>__exit__()</code> повертає <code>True</code> — вважається, 
+що винятки оброблено у цьому методі і нагору вони не піднімаються. </p>
 <p>Давайте спробуємо створити власний контекст-менеджер. </p>
-<p>Припустимо нам треба виконати певні дії помінявши перед цим поточну робочу директорію нашої програми у файловій системі, а потім встановити поточну директорію такою, як була раніше. Нам знадобляться дві функції з модуля <code>os</code>:</p>
+<p>Припустимо нам треба виконати певні дії 
+помінявши перед цим поточну робочу директорію нашої програми у файловій системі, 
+а потім встановити поточну директорію такою, як була раніше. 
+Нам знадобляться дві функції з модуля <code>os</code>: </p>
 <ul>
 <li><code>os.chdir()</code> — встановлює поточну директорію</li>
 <li><code>os.getcwd()</code> — повертає поточну директорію</li>
 </ul>
 <p>Наш менеджер контекста може виглядати так:</p>
-<div class="codehilite"><pre><span></span><code>
-</code></pre></div>
-
-<p>from os import chdir, getcwd</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">chdir</span><span class="p">,</span> <span class="n">getcwd</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">cd</span><span class="p">:</span>
 <span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
@@ -1400,41 +1437,9 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h3 id="contextlib"><code>contextlib</code></h3>
-<p>Вбудований модуль <code>contextlib</code> надає декоратори та інші корисні функції для створення менеджерів контекста. Далі розглянемо лише деякі з них, з рештою ознайомтесь самостійно. </p>
-<h4 id="contextlibcontextmanagerfunc"><code>contextlib.contextmanager(func)</code></h4>
-<div class="codehilite"><pre><span></span><code>`func` — функція-генероатор
-</code></pre></div>
-
-<p>Декоратор, який створює менеджер контекста з функції-генератора. Використання наступне:</p>
-<div class="codehilite"><pre><span></span><code><span class="nd">@contextmanager</span>
-<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-    <span class="n">statements</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">value</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">error</span> <span class="n">handling</span> <span class="p">(</span><span class="k">if</span> <span class="nb">any</span><span class="p">)</span>
-    <span class="n">инструкции</span>
-</code></pre></div>
-
-<p>Коли інтерпретатор зустрічає інструкцію <code>with foo(args) as value</code>, він викликає функцію-генератор з вказаними аргументами. Ця функція виконується до першої інструкції <code>yield</code>. Значення, яке повертає інструкциія <code>yield</code>, пов'язується зі змінною <code>value</code>. Після цього починається виконання тіла інструкції <code>with</code>. По закінченню виконання тіла інструкції <code>with</code> відновлюється робота функції-генератора. Якщо всередині тіла інструкції <code>with</code> виникає виняткова ситуація, виняток буде передано функції-генератору, де його можна обробити. Якщо помилка не може бути оброблена функциєю-генератором, вона повинна повторно підняти виняток.</p>
-<h4 id="contextlibnestedmgr1-mgr2-mgrn"><code>contextlib.nested(mgr1, mgr2, ..., mgrN)</code></h4>
-<p>Функція, яка викликає декілька менеджерів контекста (<code>mgr1, mgr2 і так далі) у вигляді єдиної операції. Повертає кортеж, який містить різні значення які повертаються инструкціями</code>with`. 
-Інструкція:</p>
-<div class="codehilite"><pre><span></span><code>`with nested(m1,m2) as (x,y)`
-</code></pre></div>
-
-<p>це те ж саме, що і інструкція </p>
-<div class="codehilite"><pre><span></span><code>`with m1 as x: with m2 as y`
-</code></pre></div>
-
-<p>Варто зауважити, що якщо у вкладеному менеджері контекста буде перехоплено і оброблено виняток, то зовнішні менеджери не отримають про це ніякої інформації.</p>
-<h4 id="contextlibclosingobject"><code>contextlib.closing(object)</code></h4>
-<p>Створює менеджер контекста, який автоматично повертає метод <code>object.close()</code> по закінченню виконання тіла інструкції <code>with</code>. </p>
 <h2 id="_1">Додаткові матеріали</h2>
 <ol>
 <li><a href="https://docs.python.org/3/reference/compound_stmts.html#with">Документація Python: оператор <code>with</code></a></li>
-<li><a href="https://docs.python.org/3/library/contextlib.html">Документація Python: модуль contextlib</a></li>
 </ol>
 <!--
 https://python-scripts.com/contextlib
