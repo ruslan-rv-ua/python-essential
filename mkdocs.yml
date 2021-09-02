@@ -161,11 +161,11 @@ nav:
     # # - assert
     - Обробка винятків: exceptions/exceptions_handling.md
     - Попередження: exceptions/warnings.md
-    # - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
-    # - Менеджери контекста: exceptions/context_manager.md
+    - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
+    - Менеджери контекста: exceptions/context_manager.md
   - Ітератори та генератори:
     - Ітерабельні об'єкти: iterable/iterable.md
-    - Ітератори: iterable/iterator.md
+    # - Ітератори: iterable/iterator.md
     # - Реалізація за допомогою __iter__: iterable/magic_iter.md
     # - Реалізація за допомогою __getitem__: iterable/magic_getitem.md
     # - Генератори: iterable/generator.md
@@ -205,11 +205,12 @@ nav:
     # - Доступ до атрибутів: oop/behavior/attributes.md
     # - Контейнери: oop/behavior/containers.md
   - Типи та структури даних:
+    - Системи числення: types_and_data_structures/number_system.md
+    - Хешування даних: types_and_data_structures/hash.md
     # - Типізація у програмуванні: types_and_data_structures/typing.md
     # - Підказки типів в Python: types_and_data_structures/type_hinting.md
     - Числа:
-      - Системи числення: types_and_data_structures/numbers/number_system.md
-      # - Цілі числа: types_and_data_structures/numbers/int.md
+      - Цілі числа: types_and_data_structures/numbers/int.md
       # - Дробові числа: types_and_data_structures/numbers/float.md
       # - Комплексні числа: types_and_data_structures/numbers/complex.md
       # - Булевий тип даних: types_and_data_structures/numbers/bool.md

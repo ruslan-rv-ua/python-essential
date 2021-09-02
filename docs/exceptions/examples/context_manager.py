@@ -1,10 +1,15 @@
+try:
+	file = open('some_file.txt', 'w')
+finally:
+	file.close()
+
 with open('some_file.txt', 'w') as file:
 	pass
 
 	
 # __enter__(self)
 
-# __exit__(self, exc_class, exc_obj, exc_traceback)
+# __exit__(self, exception_class, exception_obj, exception_traceback)
 
 import os
 
@@ -21,6 +26,3 @@ print(os.getcwd())
 with cd("\\"):
     print(os.getcwd())
 print(os.getcwd())
-
-import io
-print(io.IOBase.__enter__)

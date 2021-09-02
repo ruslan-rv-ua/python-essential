@@ -137,7 +137,8 @@
 
 ## Додаткові матеріали
 
-[Документація: модуль itertools](https://docs.python.org/3.7/library/itertools.html)
+- [Документація: модуль itertools](https://docs.python.org/3.7/library/itertools.html)
+- [more-itertools](https://pypi.org/project/more-itertools/) — ще більше корисних ітераторів
 
 <!--
 https://all-python.ru/osnovy/itertools.html

@@ -18,5 +18,3 @@ class Person:
 		
 		
 p = Person('Остап Сулейман Берта Мария Бендер')
-print(p.name)
-print()
