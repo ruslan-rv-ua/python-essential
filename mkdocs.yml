@@ -165,11 +165,11 @@ nav:
     - Менеджери контекста: exceptions/context_manager.md
   - Ітератори та генератори:
     - Ітерабельні об'єкти: iterable/iterable.md
-    # - Ітератори: iterable/iterator.md
-    # - Реалізація за допомогою __iter__: iterable/magic_iter.md
-    # - Реалізація за допомогою __getitem__: iterable/magic_getitem.md
-    # - Генератори: iterable/generator.md
-    # - Генератори-вирази: iterable/generator_expressions.md
+    - Ітератори: iterable/iterator.md
+    - Реалізація за допомогою __iter__: iterable/magic_iter.md
+    - Реалізація за допомогою __getitem__: iterable/magic_getitem.md
+    - Генератори: iterable/generator.md
+    - Генератори-вирази: iterable/generator_expressions.md
   - Елементи функціонального програмування:
     - Парадигма ФП: functional_programming/intro.md
     # - Чисті функції: functional_programming/pure_functions.md
