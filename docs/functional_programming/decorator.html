@@ -792,6 +792,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/behavior/attributes.html" class="md-nav__link">
+        Доступ до атрибутів
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -996,6 +1008,30 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/starr.html" class="md-nav__link">
+        Упаковка та розпаковка ітерабельних об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/enumerate.html" class="md-nav__link">
+        Функція enumerate
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1033,6 +1069,30 @@
     <li class="md-nav__item">
       <a href="intro.html" class="md-nav__link">
         Парадигма ФП
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pure_functions.html" class="md-nav__link">
+        Чисті функції
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="higher_order_functions.html" class="md-nav__link">
+        Функції вищого порядку
       </a>
     </li>
   
@@ -1211,8 +1271,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../types_and_data_structures/hash.html" class="md-nav__link">
-        Хешування даних
+      <a href="../types_and_data_structures/typing.html" class="md-nav__link">
+        Типізація у програмуванні
       </a>
     </li>
   
@@ -1247,6 +1307,84 @@
       <a href="../types_and_data_structures/numbers/int.html" class="md-nav__link">
         Цілі числа
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_4" type="checkbox" id="__nav_12_4" >
+      
+      <label class="md-nav__link" for="__nav_12_4">
+        Контейнери
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Контейнери" data-md-level="2">
+        <label class="md-nav__title" for="__nav_12_4">
+          <span class="md-nav__icon md-icon"></span>
+          Контейнери
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types_and_data_structures/collections/collections.html" class="md-nav__link">
+        Колекції в Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_4_2" type="checkbox" id="__nav_12_4_2" >
+      
+      <label class="md-nav__link" for="__nav_12_4_2">
+        Відображення та множини
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Відображення та множини" data-md-level="3">
+        <label class="md-nav__title" for="__nav_12_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Відображення та множини
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types_and_data_structures/mappings_and_sets/hash.html" class="md-nav__link">
+        Хешування даних
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1306,6 +1444,18 @@
     <li class="md-nav__item">
       <a href="../batteries/collections.html" class="md-nav__link">
         Модуль collections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/os_path.html" class="md-nav__link">
+        Модуль path
       </a>
     </li>
   
@@ -1428,28 +1578,8 @@
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    "Ввічливі" декоратори
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
     Резюме
   </a>
-  
-    <nav class="md-nav" aria-label="Резюме">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    Шаблони декораторів
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1799,107 +1929,12 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h3 id="_8">"Ввічливі" декоратори</h3>
-<p>Розглянемо наступний приклад:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nd">@decorator</span>
-<span class="o">...</span> <span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
-<span class="o">...</span>     <span class="s2">&quot;This is docstring for some_func() function&quot;</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span>
-<span class="o">&lt;</span><span class="n">function</span> <span class="n">decorator</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">wrapper</span> <span class="n">at</span> <span class="mh">0x000002167F6DF2F0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="s1">&#39;wrapper&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">some_func</span><span class="p">)</span>
-<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">wrapper</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
-
-<span class="n">wrapper</span><span class="p">()</span>
-
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Упс... Після декорування функція <code>some_func</code> не тільки "забула як її звати", але ще й втратила докстрінги! Це не є добре. Давайте виправимо ситуацію:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
-<span class="o">...</span>     <span class="n">wrapper</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="o">...</span>     <span class="n">wrapper</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span>
-<span class="o">...</span>     <span class="n">wrapper</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__module__</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nd">@decorator</span>
-<span class="o">...</span> <span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
-<span class="o">...</span>     <span class="s2">&quot;This is docstring for some_func() function&quot;</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span>
-<span class="o">&lt;</span><span class="n">function</span> <span class="n">decorator</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">wrapper</span> <span class="n">at</span> <span class="mh">0x000002167FAB5C80</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="s1">&#39;some_func&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">some_func</span><span class="p">)</span>
-<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">some_func</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
-
-<span class="n">some_func</span><span class="p">()</span>
-    <span class="n">This</span> <span class="ow">is</span> <span class="n">docstring</span> <span class="k">for</span> <span class="n">some_func</span><span class="p">()</span> <span class="n">function</span>
-
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Чудово! А щоб при створенні чергового декоратора уникнути рутини можна скористатись вже готовою функцією <code>wraps</code> з вбудованого модуля <code>functools</code>. І що тут цікаво, що <code>wraps</code> теж є декоратором!</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="o">...</span>     <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="o">...</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-<span class="o">...</span>             <span class="n">func</span><span class="p">()</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="n">wrapper</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">some_func</span><span class="p">():</span>
-<span class="o">...</span>     <span class="s2">&quot;This is docstring for some_func() function&quot;</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">some_func</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="s1">&#39;some_func&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">some_func</span><span class="p">)</span>
-<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">some_func</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
-
-<span class="n">some_func</span><span class="p">()</span>
-    <span class="n">This</span> <span class="ow">is</span> <span class="n">docstring</span> <span class="k">for</span> <span class="n">some_func</span><span class="p">()</span> <span class="n">function</span>
-
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_9">Резюме</h2>
+<h2 id="_8">Резюме</h2>
 <ul>
 <li>декоратор — спосіб модифікувати поведінку функції, зберігаючи читабельність кода</li>
 <li>декоратори дещо сповільнюють виклики функцій</li>
 <li>порядок вказання декораторів має значення </li>
 </ul>
-<h3 id="_10">Шаблони декораторів</h3>
-<p>Декоратор без параметрів:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
-<span class="k">def</span> <span class="nf">назва_декоратора</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">):</span>
-    <span class="nd">@wraps</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">):</span>
-        <span class="o">...</span>
-        <span class="n">функція_що_декорується</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">)</span>
-        <span class="o">...</span>
-    <span class="k">return</span> <span class="n">inner</span>
-</code></pre></div>
-
-<p>Декоратор з параметрами:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
-<span class="k">def</span> <span class="nf">назва_декоратора</span><span class="p">(</span><span class="n">параметри_декоратора</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">):</span>
-        <span class="nd">@wraps</span><span class="p">(</span><span class="n">функція_що_декорується</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">):</span>
-            <span class="o">...</span>
-            <span class="n">функція_що_декорується</span><span class="p">(</span><span class="n">параметри_функції_що_декорується</span><span class="p">)</span>
-            <span class="o">...</span>
-        <span class="k">return</span> <span class="n">inner</span>
-    <span class="k">return</span> <span class="n">decorator</span>
-</code></pre></div>
                 
               
               

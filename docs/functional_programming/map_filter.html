@@ -18,7 +18,7 @@
     
     
       
-        <title>enumerate() - Python Essential</title>
+        <title>Функції map(), filter(), reduce() - Python Essential</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enumerate" class="md-skip">
+        <a href="#map-filter-reduce" class="md-skip">
           Перейти до змісту
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              enumerate()
+              Функції map(), filter(), reduce()
             
           </span>
         </div>
@@ -127,8 +127,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -794,6 +792,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/behavior/attributes.html" class="md-nav__link">
+        Доступ до атрибутів
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -998,6 +1008,30 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/starr.html" class="md-nav__link">
+        Упаковка та розпаковка ітерабельних об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iterable/enumerate.html" class="md-nav__link">
+        Функція enumerate
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1033,8 +1067,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../functional_programming/intro.html" class="md-nav__link">
+      <a href="intro.html" class="md-nav__link">
         Парадигма ФП
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pure_functions.html" class="md-nav__link">
+        Чисті функції
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="higher_order_functions.html" class="md-nav__link">
+        Функції вищого порядку
       </a>
     </li>
   
@@ -1213,8 +1271,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../types_and_data_structures/hash.html" class="md-nav__link">
-        Хешування даних
+      <a href="../types_and_data_structures/typing.html" class="md-nav__link">
+        Типізація у програмуванні
       </a>
     </li>
   
@@ -1249,6 +1307,84 @@
       <a href="../types_and_data_structures/numbers/int.html" class="md-nav__link">
         Цілі числа
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_4" type="checkbox" id="__nav_12_4" >
+      
+      <label class="md-nav__link" for="__nav_12_4">
+        Контейнери
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Контейнери" data-md-level="2">
+        <label class="md-nav__title" for="__nav_12_4">
+          <span class="md-nav__icon md-icon"></span>
+          Контейнери
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types_and_data_structures/collections/collections.html" class="md-nav__link">
+        Колекції в Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_4_2" type="checkbox" id="__nav_12_4_2" >
+      
+      <label class="md-nav__link" for="__nav_12_4_2">
+        Відображення та множини
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Відображення та множини" data-md-level="3">
+        <label class="md-nav__title" for="__nav_12_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Відображення та множини
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types_and_data_structures/mappings_and_sets/hash.html" class="md-nav__link">
+        Хешування даних
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1313,6 +1449,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/os_path.html" class="md-nav__link">
+        Модуль path
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1369,9 +1517,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1381,6 +1527,28 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    map()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    filter()
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1393,68 +1561,33 @@
               
                 
                 
-                <h1 id="enumerate">enumerate()</h1>
-<p>А от було б непогано якби у циклі ми могли б 
-отримати одразу і черговий елемент послідовності, і його індекс? </p>
-<p>На допомогу приходить функція <code>enumerate()</code>. 
-В якості аргументу вона приймає послідовність, 
-і повертає теж послідовність, послідовність з кортежів. 
-Кортеж на кожній ітерації містить індекс елемента і його значення: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">):</span>
-<span class="o">...</span>   <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">)</span>
+                <h1 id="map-filter-reduce">Функції map(), filter(), reduce()</h1>
+<p>Трьома класичними функціями вищого порядка, які приймають функцію і послідовність, є <code>map</code>, <code>filter</code> і <code>reduce</code>. </p>
+<h3 id="map"><code>map()</code></h3>
+<p>Застосовує функцію до кожного елемента послідовності. Повертає ітератор. </p>
+<p>Приклад. Є символьний рядок, у якому числа розділено пробілами. 
+Треба отримати список цих чисел: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;2 4 8 15 42&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Оскільки ми чітко знаємо кількість елементів кожного кортежу, 
-а саме 2 (індекс і елемент), 
-то кортеж можемо розкласти прямо у заголовку циклу:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">):</span>
-<span class="o">...</span>   <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="mi">0</span> <span class="o">-</span> <span class="n">a</span>
-<span class="mi">1</span> <span class="o">-</span> <span class="n">b</span>
-<span class="mi">2</span> <span class="o">-</span> <span class="n">c</span>
-<span class="mi">3</span> <span class="o">-</span> <span class="n">d</span>
-<span class="mi">4</span> <span class="o">-</span> <span class="n">e</span>
-<span class="mi">5</span> <span class="o">-</span> <span class="n">f</span>
+<p>Функції <code>map()</code> ми передали функцію <code>int</code> і список з символьних рядків, до елементів якого і було застосовано цю функцію. </p>
+<h3 id="filter"><code>filter()</code></h3>
+<p>Залишає лише ті елементи послідовності, для яких задана функція повертає істинне значення. 
+Повертає ітератор. </p>
+<p>Приклад. 
+"Відфільтруємо" список цілих чисел і залишимо лише ті, які більше нуля:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">positive_numbers</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">positive_numbers</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Функція <code>enumerate()</code> повертає послідовність спеціального типу: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="o">&lt;</span><span class="nb">enumerate</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x000002A9776A1E10</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">enumerate</span><span class="s1">&#39;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span>
-<span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Розглянемо на прикладі. 
-У списку цілих чисел треба усі елменти 
-які менше ніж 5 помножити на 10. </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="o">...</span>             <span class="n">numbers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">10</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-                
-                  
+<p>Фугкції <code>filter()</code> ми передали анонімну функцію і список. </p>
                 
               
               

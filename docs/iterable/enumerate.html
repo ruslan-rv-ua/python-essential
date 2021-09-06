@@ -18,7 +18,7 @@
     
     
       
-        <title>Упаковка та розпаковка ітерабельних об'єктів - Python Essential</title>
+        <title>Функція enumerate - Python Essential</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#enumerate" class="md-skip">
           Перейти до змісту
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Упаковка та розпаковка ітерабельних об'єктів
+              Функція enumerate
             
           </span>
         </div>
@@ -794,6 +794,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/behavior/attributes.html" class="md-nav__link">
+        Доступ до атрибутів
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -908,12 +920,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
         Ітератори та генератори
@@ -931,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterable/iterable.html" class="md-nav__link">
+      <a href="iterable.html" class="md-nav__link">
         Ітерабельні об'єкти
       </a>
     </li>
@@ -943,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterable/iterator.html" class="md-nav__link">
+      <a href="iterator.html" class="md-nav__link">
         Ітератори
       </a>
     </li>
@@ -955,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterable/magic_iter.html" class="md-nav__link">
+      <a href="magic_iter.html" class="md-nav__link">
         Реалізація за допомогою __iter__
       </a>
     </li>
@@ -967,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterable/magic_getitem.html" class="md-nav__link">
+      <a href="magic_getitem.html" class="md-nav__link">
         Реалізація за допомогою __getitem__
       </a>
     </li>
@@ -979,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterable/generator.html" class="md-nav__link">
+      <a href="generator.html" class="md-nav__link">
         Генератори
       </a>
     </li>
@@ -991,9 +1005,43 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterable/generator_expressions.html" class="md-nav__link">
+      <a href="generator_expressions.html" class="md-nav__link">
         Генератори-вирази
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="starr.html" class="md-nav__link">
+        Упаковка та розпаковка ітерабельних об'єктів
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="enumerate.html" class="md-nav__link md-nav__link--active">
+        Функція enumerate
+      </a>
+      
     </li>
   
 
@@ -1035,6 +1083,30 @@
     <li class="md-nav__item">
       <a href="../functional_programming/intro.html" class="md-nav__link">
         Парадигма ФП
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_programming/pure_functions.html" class="md-nav__link">
+        Чисті функції
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_programming/higher_order_functions.html" class="md-nav__link">
+        Функції вищого порядку
       </a>
     </li>
   
@@ -1213,8 +1285,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../types_and_data_structures/hash.html" class="md-nav__link">
-        Хешування даних
+      <a href="../types_and_data_structures/typing.html" class="md-nav__link">
+        Типізація у програмуванні
       </a>
     </li>
   
@@ -1249,6 +1321,84 @@
       <a href="../types_and_data_structures/numbers/int.html" class="md-nav__link">
         Цілі числа
       </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_4" type="checkbox" id="__nav_12_4" >
+      
+      <label class="md-nav__link" for="__nav_12_4">
+        Контейнери
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Контейнери" data-md-level="2">
+        <label class="md-nav__title" for="__nav_12_4">
+          <span class="md-nav__icon md-icon"></span>
+          Контейнери
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types_and_data_structures/collections/collections.html" class="md-nav__link">
+        Колекції в Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_4_2" type="checkbox" id="__nav_12_4_2" >
+      
+      <label class="md-nav__link" for="__nav_12_4_2">
+        Відображення та множини
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Відображення та множини" data-md-level="3">
+        <label class="md-nav__title" for="__nav_12_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Відображення та множини
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types_and_data_structures/mappings_and_sets/hash.html" class="md-nav__link">
+        Хешування даних
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1308,6 +1458,18 @@
     <li class="md-nav__item">
       <a href="../batteries/collections.html" class="md-nav__link">
         Модуль collections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batteries/os_path.html" class="md-nav__link">
+        Модуль path
       </a>
     </li>
   
@@ -1382,49 +1544,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Упаковка переданих у функцію аргументів
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Розпаковка в аргументи функцій
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Упаковка при присвоєнні
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Розпаковка в літералах послідовностей
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Розпаковка в літералах словників
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1436,122 +1555,64 @@
               
                 
                 
-                <h1 id="_1">Упаковка та розпаковка ітерабельних об'єктів</h1>
-<p>Символ <code>*</code> (зірочка) в Python використовується у інфіксних операторах множення та підведення у ступінь. 
-Але це не єдині способи застосування цього символа, 
-його також використовують у префіксних операторах. </p>
-<h2 id="_2">Упаковка переданих у функцію аргументів</h2>
-<p>Як нам вже відомо, при визначенні функції за допомогою зірочки можна вказати змінну, 
-у яку при виклику функції буде "збиратись" довільна кількість позиційних аргументів. 
-Усі аргументи буде "упаковано" в кортеж. 
-Так працюють багато функцій, наприклад <code>print()</code> — 
-цій функції ми можемо передати довільну кількість аргументів для виводу. </p>
-<p>Схоже використовується і <code>**</code>: 
-якщо використовувати цей оператор у оголошенні функції, 
-то він "збере" усі передані іменовані аргументи у словник. </p>
-<h2 id="_3">Розпаковка в аргументи функцій</h2>
-<p>При виклику функцій можна використовувати оператор <code>*</code> для "розпаковки" ітерабельного об'єкта в аргументи: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">items</span><span class="p">)</span>
-<span class="mi">1</span> <span class="mi">2</span> <span class="n">string</span> <span class="kc">None</span>
+                <h1 id="enumerate">enumerate()</h1>
+<p>А от було б непогано якби у циклі ми могли б 
+отримати одразу і черговий елемент послідовності, і його індекс? </p>
+<p>На допомогу приходить функція <code>enumerate()</code>. 
+В якості аргументу вона приймає послідовність, 
+і повертає теж послідовність, послідовність з кортежів. 
+Кортеж на кожній ітерації містить індекс елемента і його значення: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">):</span>
+<span class="o">...</span>   <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Конструкція <code>*items</code> передає усі елементи списка <code>items</code> як окремі аргументи. </p>
-<p>Таку розпаковку можна використовувати декілька раз при виклику функції: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">names</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">)</span>
-<span class="n">Alice</span> <span class="n">Bob</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<p>Оскільки ми чітко знаємо кількість елементів кожного кортежу, 
+а саме 2 (індекс і елемент), 
+то кортеж можемо розкласти прямо у заголовку циклу:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">):</span>
+<span class="o">...</span>   <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="mi">0</span> <span class="o">-</span> <span class="n">a</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="n">b</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="n">c</span>
+<span class="mi">3</span> <span class="o">-</span> <span class="n">d</span>
+<span class="mi">4</span> <span class="o">-</span> <span class="n">e</span>
+<span class="mi">5</span> <span class="o">-</span> <span class="n">f</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Аналогічно можна розпакувати словник у іменовані аргументи: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">format</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sep&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;| &#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="o">**</span><span class="nb">format</span><span class="p">)</span>
-<span class="n">l</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="n">e</span><span class="o">|</span> <span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Розпаковку словників можна використовувати декілька раз, 
-але треба слідкувати щоб ключі словників не повторювались, 
-інакше у функцію буде передано декілька іменованих аргументів з однаковими іменами: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sep&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;|&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;~ &#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">**</span><span class="n">f1</span><span class="p">,</span> <span class="o">**</span><span class="n">f2</span><span class="p">)</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="nb">print</span><span class="p">()</span> <span class="n">got</span> <span class="n">multiple</span> <span class="n">values</span> <span class="k">for</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="s1">&#39;end&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sep&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="s1">&#39;~ &#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">**</span><span class="n">f1</span><span class="p">,</span> <span class="o">**</span><span class="n">f2</span><span class="p">)</span>
-<span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="o">~</span> <span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_4">Упаковка при присвоєнні</h2>
-<p>Ітерабельний об'єкт можна "розпакувати" і присвоїти його частинки окремим змінним. 
-При цьому у змінну перед якою буде стояти зірочка усі значення, кількість яких перевищує кількість змінних, знову буде упаковано: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span>
-<span class="s1">&#39;s&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">other</span>
-<span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">other</span>
-<span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="p">,</span> <span class="n">last</span>
-<span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<p>Функція <code>enumerate()</code> повертає послідовність спеціального типу: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="o">&lt;</span><span class="nb">enumerate</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x000002A9776A1E10</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">enumerate</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tpl</span>
+<span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<p>Така розпаковка може бути навіть вкладеною: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="n">first_letter</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">),</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first_letter</span>
-<span class="s1">&#39;A&#39;</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_5">Розпаковка в літералах послідовностей</h2>
-<p>При створенні списків, кортежів та множин за допомогою літералів для розпаковки ітерабельних об'єктів також можна використовувати зірочку:  </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>У списку переставимо перший елемент у кінець і сформуємо кортеж: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">new_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">new_tuple</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Створимо множину розпакувавши список і генератор: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">uppercase_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">uppercase_names</span>
-<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x000001387353ABA0</span><span class="o">&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">all_names</span> <span class="o">=</span> <span class="p">{</span><span class="o">*</span><span class="n">names</span><span class="p">,</span> <span class="o">*</span><span class="n">uppercase_names</span><span class="p">,</span> <span class="o">*</span><span class="n">names</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">all_names</span>
-<span class="p">{</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;BOB&#39;</span><span class="p">,</span> <span class="s1">&#39;ALICE&#39;</span><span class="p">,</span> <span class="s1">&#39;Alice&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<h2 id="_6">Розпаковка в літералах словників</h2>
-<p>При створенні словників за допомогою літерала можна використовувати <code>**</code>. 
-Найчастіше застосування — об'єднання двох словників в один: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">d1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="o">**</span><span class="n">d1</span><span class="p">,</span> <span class="o">**</span><span class="n">d2</span><span class="p">}</span>
-<span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="o">**</span><span class="n">d2</span><span class="p">,</span> <span class="o">**</span><span class="n">d1</span><span class="p">}</span>
-<span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-
-<p>Можна отримати копію словника паралельно додаючи нові ключ-значення і перезаписуючи вже існуючі ключі: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">2035</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">birthday</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">date</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span><span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">:</span><span class="mi">17</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">birthday</span>
-<span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">2021</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">}</span>
+<p>Розглянемо на прикладі. 
+У списку цілих чисел треба усі елменти 
+які менше ніж 5 помножити на 10. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="o">...</span>             <span class="n">numbers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">numbers</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
                 
@@ -1571,6 +1632,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="starr.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Упаковка та розпаковка ітерабельних об&#39;єктів" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Упаковка та розпаковка ітерабельних об'єктів
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../functional_programming/intro.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Парадигма ФП" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Парадигма ФП
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

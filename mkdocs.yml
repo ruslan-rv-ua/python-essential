@@ -155,10 +155,12 @@ nav:
       - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
       - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
     - Статичні та класові методи: oop/static_and_class_methods.md
+    # TODO: hasattr, setattr, ...
+    - Доступ до атрибутів: oop/behavior/attributes.md
   - Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
     - '"Підйом" винятків': exceptions/exceptions_raising.md
-    # # - assert
+    # TODO: - assert
     - Обробка винятків: exceptions/exceptions_handling.md
     - Попередження: exceptions/warnings.md
     - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
@@ -170,12 +172,14 @@ nav:
     - Реалізація за допомогою __getitem__: iterable/magic_getitem.md
     - Генератори: iterable/generator.md
     - Генератори-вирази: iterable/generator_expressions.md
+    - Упаковка та розпаковка ітерабельних об'єктів: iterable/starr.md
+    - Функція enumerate: iterable/enumerate.md
   - Елементи функціонального програмування:
     - Парадигма ФП: functional_programming/intro.md
-    # - Чисті функції: functional_programming/pure_functions.md
-    # - Функції вищого порядку: functional_programming/higher_order_functions.md
+    - Чисті функції: functional_programming/pure_functions.md
+    - Функції вищого порядку: functional_programming/higher_order_functions.md
     # - Анонімні функції: functional_programming/lambda.md
-    # - Функції map(), filter(), reduce(): functional_programming/map_filter_reduce.md
+    # - Функції map(), filter(): functional_programming/map_filter.md
     # - Рекурсія: functional_programming/recursion.md
     # - Замикання: functional_programming/closure.md
     # - Декоратори: functional_programming/decorator.md
@@ -195,26 +199,24 @@ nav:
     # - Програмне виконання коду
     # - Передача аргументів скрипту
     # - Віртуальні оточення
-  # - Знову про Python-об'єкти:
+  # - Об'єктна модель Python:
     # - Моржовий оператор: assignment/walrus.md
-    # - Упаковка та розпаковка ітерабельних об'єктів: assignment/starr.md
-    # - Функція enumerate: assignment/enumerate.md
     # - Видалення об'єктів: assignment/enumerate.md
     # - Глибока та поверхнева копії
   # - Поведінка об'єктів:
-    # - Доступ до атрибутів: oop/behavior/attributes.md
-    # - Контейнери: oop/behavior/containers.md
+    
   - Типи та структури даних:
     - Системи числення: types_and_data_structures/number_system.md
-    - Хешування даних: types_and_data_structures/hash.md
-    # - Типізація у програмуванні: types_and_data_structures/typing.md
+    
+    - Типізація у програмуванні: types_and_data_structures/typing.md
     # - Підказки типів в Python: types_and_data_structures/type_hinting.md
     - Числа:
       - Цілі числа: types_and_data_structures/numbers/int.md
       # - Дробові числа: types_and_data_structures/numbers/float.md
       # - Комплексні числа: types_and_data_structures/numbers/complex.md
       # - Булевий тип даних: types_and_data_structures/numbers/bool.md
-    # - Контейнери: types_and_data_structures/containers.md
+    - Контейнери:
+      - Колекції в Python: types_and_data_structures/collections/collections.md
       # - Послідовності:
         # - Послідовності в Python: types_and_data_structures/sequences/sequences.md
         # - Списки: types_and_data_structures/sequences/list.md
@@ -223,15 +225,17 @@ nav:
         # - Символьні рядки: types_and_data_structures/sequences/str.md
         # - Бінарні послідовності: types_and_data_structures/sequences/bin_seq.md
         # - Порівняння послідовностей: types_and_data_structures/sequences/seq_compare.md
-      # - Відображення та множини:
-        # - Хеш: types_and_data_structures/mappings_and_sets/hash.md
+      - Відображення та множини:
+        - Хешування даних: types_and_data_structures/mappings_and_sets/hash.md
         # - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
         # - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
         # - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
   - Батарейки:
     - Модуль datetime: batteries/datetime.md
     - Модуль collections: batteries/collections.md
+    - Модуль path: batteries/os_path.md
     # - Модуль itertools: batteries/itertools.md
+    # - Модуль functools: batteries/functools.md
     # - Модуль contextlib: batteries/contextlib.md
   - Наступні кроки:
     # - Що далі?: go_ahead/whats_next.md
