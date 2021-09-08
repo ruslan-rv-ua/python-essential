@@ -18,7 +18,7 @@
     
     
       
-        <title>Дробові числа - Python Essential</title>
+        <title>Дійсні числа - Python Essential</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Дробові числа
+              Дійсні числа
             
           </span>
         </div>
@@ -1236,12 +1236,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
       
       <label class="md-nav__link" for="__nav_12">
         Типи та структури даних
@@ -1281,12 +1283,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" type="checkbox" id="__nav_12_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" type="checkbox" id="__nav_12_3" checked>
       
       <label class="md-nav__link" for="__nav_12_3">
         Числа
@@ -1306,6 +1310,116 @@
     <li class="md-nav__item">
       <a href="int.html" class="md-nav__link">
         Цілі числа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Дійсні числа
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="float.html" class="md-nav__link md-nav__link--active">
+        Дійсні числа
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#float" class="md-nav__link">
+    Приведення інших типів до float
+  </a>
+  
+    <nav class="md-nav" aria-label="Приведення інших типів до float">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Нескінченність
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nan" class="md-nav__link">
+    NaN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="complex.html" class="md-nav__link">
+        Комплексні числа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bool.html" class="md-nav__link">
+        Булевий тип даних
       </a>
     </li>
   
@@ -1536,6 +1650,40 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    Створення
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#float" class="md-nav__link">
+    Приведення інших типів до float
+  </a>
+  
+    <nav class="md-nav" aria-label="Приведення інших типів до float">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Нескінченність
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nan" class="md-nav__link">
+    NaN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     Додаткові матеріали
   </a>
   
@@ -1554,16 +1702,94 @@
               
                 
                 
-                <h1 id="_1">Дробові числа</h1>
+                <h1 id="_1">Дійсні числа</h1>
+<p>Дійсні числа визначають числа з плаваючою комою. </p>
+<h2 id="_2">Створення</h2>
+<p>Літерали можуть бути представлені у вигляді: </p>
 <ul>
-<li>Нескінченність</li>
-<li>NaN</li>
+<li>чисел, що містять розділювач цілої та дробової частини</li>
+<li>чисел, що містять символ <code>e</code> або <code>E</code> для позначення порядку числа (експонента)</li>
 </ul>
-<p>Not a Number</p>
-<p>В модуле math есть особый объект, который называется NaN (Not a Number).</p>
-<p>Эти объекты NaN не уникальны, и даже не равны самим себе, так что вы можете иметь несколько подобных объектов, взятых из нескольких разных источников.</p>
-<p>Например можно создать подобный объект, просто передав строку 'nan' во float. Кстати говоря, это значит что вы можете использовать NaN в качестве ключа в словаре (хотя мы и не советуем это делать).</p>
-<h2 id="_2">Додаткові матеріали</h2>
+<p>Інтерпретатор Python розпізнає дійсне число за наявністю символу "." ("крапка") 
+або експоненти (символ <code>e</code> або <code>E</code>). 
+Після того, як число розпізнане, створюється відповідний об’єкт дійсного типу. 
+Такий об’єкт використовується у подальших математичних виразах 
+як об’єкт дійсного типу (а не об’єкт цілого чи іншого типу). </p>
+<div class="codehilite"><pre><span></span><code><span class="mf">2.85</span> <span class="c1"># звичайне представлення дійсного числа</span>
+<span class="mf">3.</span> <span class="c1"># число 3.0</span>
+<span class="mf">1.3e-3</span> <span class="c1"># число 0.0013</span>
+<span class="mf">1.52E6</span> <span class="c1"># 1520000.0</span>
+<span class="mf">3e2</span> <span class="c1"># 300.0</span>
+<span class="mf">2.0E-1</span> <span class="c1"># 0.2</span>
+</code></pre></div>
+
+<h2 id="float">Приведення інших типів до <code>float</code></h2>
+<div class="codehilite"><pre><span></span><code>float(x=0, /)
+</code></pre></div>
+
+<p>До <code>float</code> можна привести <code>int</code> або <code>str</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1.&#39;</span><span class="p">)</span>
+<span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1e2&#39;</span><span class="p">)</span>
+<span class="mf">100.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">()</span>
+<span class="mf">0.0</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Передаючи <code>float()</code> певні значення <code>str</code> можна створювати "особливі" об'єкти. </p>
+<h3 id="_3">Нескінченність</h3>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;INFINITY&#39;</span><span class="p">)</span>
+<span class="n">inf</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-infinity&#39;</span><span class="p">)</span>
+<span class="o">-</span><span class="n">inf</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
+<span class="o">-</span><span class="n">inf</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>В модулі <code>math</code> вже є об'єкт <code>inf</code> а також функція-предикат для порівняння з <code>inf</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">inf</span><span class="p">,</span> <span class="n">isinf</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">inf</span>
+<span class="n">inf</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">isinf</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h3 id="nan">NaN</h3>
+<p>Особливий об'єкт типу <code>float</code> — <code>NaN</code> (Not a Number). 
+Означає "значення, яке не є числом". </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;NaN&#39;</span><span class="p">)</span>
+<span class="n">nan</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-nan&#39;</span><span class="p">)</span>
+<span class="n">nan</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Різні об'єкти <code>NaN</code> не рівні по значенню:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>В модулі <code>math</code> вже є об'єкт <code>nan</code> а також функція-предикат для порівняння з <code>NaN</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">nan</span><span class="p">,</span> <span class="n">isnan</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nan</span>
+<span class="n">nan</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">isnan</span><span class="p">(</span><span class="n">nan</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">isnan</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-nan&#39;</span><span class="p">))</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Класи можуть реалізовувати власний метод <code>__float__()</code> для приведення об'єкта до <code>float</code>. </p>
+<h2 id="_4">Додаткові матеріали</h2>
 <ul>
 <li><a href="https://habr.com/ru/post/112953/">Что нужно знать про арифметику с плавающей запятой / Хабр</a></li>
 </ul>
@@ -1578,10 +1804,50 @@
           </div>
         </div>
         
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
       </main>
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="int.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Цілі числа" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Цілі числа
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="complex.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Комплексні числа" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Комплексні числа
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1606,7 +1872,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.top"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>

@@ -1348,6 +1348,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#int" class="md-nav__link">
+    Приведення інших типів до int
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#int_1" class="md-nav__link">
+    Приведення int до інших типів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Бітові операції
   </a>
@@ -1358,6 +1372,42 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="float.html" class="md-nav__link">
+        Дійсні числа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="complex.html" class="md-nav__link">
+        Комплексні числа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bool.html" class="md-nav__link">
+        Булевий тип даних
+      </a>
     </li>
   
 
@@ -1593,6 +1643,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#int" class="md-nav__link">
+    Приведення інших типів до int
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#int_1" class="md-nav__link">
+    Приведення int до інших типів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     Бітові операції
   </a>
@@ -1614,13 +1678,87 @@
                 
                 <h1 id="_1">Цілі числа</h1>
 <h2 id="_2">Створення цілих чисел</h2>
-<p>Для більш легшого візуального сприйняття цифри цілого числа можна розділяти символом підкреслення групуючи по 3: </p>
-<div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; n = 1_345_678
-&gt;&gt;&gt; n
-1345678
-&gt;&gt;&gt; 1_0_0 # насправді підкреслення ігноруються
-100
-&gt;&gt;&gt;
+<p>При створенны за допомогю літерала можна вказати систему числення 
+використовуючи відповідні префікси: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">30</span> <span class="c1"># у десятковій системі числення</span>
+<span class="mi">30</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mh">0x1E</span> <span class="c1"># у шістнадцятковій системі числення</span>
+<span class="mi">30</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mo">0o36</span> <span class="c1"># у вісімковій системі числення</span>
+<span class="mi">30</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mb">0b11110</span> <span class="c1"># у двійковій системі числення</span>
+<span class="mi">30</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Для більш легшого візуального сприйняття 
+цифри цілого числа можна розділяти символом підкреслення групуючи по 3: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1_345_678</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">n</span>
+<span class="mi">1345678</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1_0_0</span> <span class="c1"># насправді підкреслення ігноруються</span>
+<span class="mi">100</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mh">0X10_FF_FF</span>
+<span class="mi">1114111</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Виклик <code>int()</code> без аргументыв дає <code>0</code>. </p>
+<h2 id="int">Приведення інших типів до <code>int</code></h2>
+<div class="codehilite"><pre><span></span><code>int(s, base=10)
+</code></pre></div>
+
+<ul>
+<li><code>s</code> – <code>str</code>, <code>bytes</code> або <code>bytearray</code>: представлення літерала цілого числа</li>
+<li><code>base</code> – ціле число, що визначає кількість цифр у системі числення; допустимы значення: 0, 2-36 </li>
+</ul>
+<p>Приклади:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;  +15  &#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">15</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;17&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="mi">15</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;20&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="mi">32</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;2EF&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="mi">751</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;19&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># помилка, цифра 9 не може бути у 8-й системі числення</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;19&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Дійсні числа приводяться до <code>int</code> шляхом відкидання дробової частини: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1.9999</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Класи можуть реалізовувати власний метод <code>__int__()</code> для приведення об'єкта до <code>int</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">MyDateTime</span><span class="p">(</span><span class="n">datetime</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">MyDateTime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+<span class="n">MyDateTime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">319623</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="mi">1630927184</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="int_1">Приведення <code>int</code> до інших типів</h2>
+<p>Перетворити <code>int</code> на символьний рядок — використовуємо вбудовані функції <code>str(), bin(), oct(), hex()</code>: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># у десятковій системі числення</span>
+<span class="s1">&#39;30&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># у двійковій системі числення</span>
+<span class="s1">&#39;0b11110&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">oct</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># у вісімковій системі числення</span>
+<span class="s1">&#39;0o36&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># у шістнадцятковій системі числення</span>
+<span class="s1">&#39;0x1e&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
 <h2 id="_3">Бітові операції</h2>
@@ -1635,6 +1773,11 @@
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
         
       </main>
       
@@ -1660,13 +1803,13 @@
       
       
         
-        <a href="../collections/collections.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Колекції в Python" rel="next">
+        <a href="float.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Дійсні числа" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Колекції в Python
+              Дійсні числа
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1699,7 +1842,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.top"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>

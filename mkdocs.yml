@@ -46,8 +46,7 @@ theme:
     # - navigation.expand
     # - toc.integrate
     # - navigation.indexes
-    # - navigation.top
-    # - toc.integrate
+    - navigation.top
 
 # css overrides to make high contrast theme
 extra_css:
@@ -203,8 +202,6 @@ nav:
     # - Моржовий оператор: assignment/walrus.md
     # - Видалення об'єктів: assignment/enumerate.md
     # - Глибока та поверхнева копії
-  # - Поведінка об'єктів:
-    
   - Типи та структури даних:
     - Системи числення: types_and_data_structures/number_system.md
     
@@ -212,9 +209,9 @@ nav:
     # - Підказки типів в Python: types_and_data_structures/type_hinting.md
     - Числа:
       - Цілі числа: types_and_data_structures/numbers/int.md
-      # - Дробові числа: types_and_data_structures/numbers/float.md
-      # - Комплексні числа: types_and_data_structures/numbers/complex.md
-      # - Булевий тип даних: types_and_data_structures/numbers/bool.md
+      - Дійсні числа: types_and_data_structures/numbers/float.md
+      - Комплексні числа: types_and_data_structures/numbers/complex.md
+      - Булевий тип даних: types_and_data_structures/numbers/bool.md
     - Контейнери:
       - Колекції в Python: types_and_data_structures/collections/collections.md
       # - Послідовності:

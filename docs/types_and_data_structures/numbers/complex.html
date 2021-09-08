@@ -1236,12 +1236,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
       
       <label class="md-nav__link" for="__nav_12">
         Типи та структури даних
@@ -1281,12 +1283,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" type="checkbox" id="__nav_12_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" type="checkbox" id="__nav_12_3" checked>
       
       <label class="md-nav__link" for="__nav_12_3">
         Числа
@@ -1306,6 +1310,103 @@
     <li class="md-nav__item">
       <a href="int.html" class="md-nav__link">
         Цілі числа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="float.html" class="md-nav__link">
+        Дійсні числа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Комплексні числа
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="complex.html" class="md-nav__link md-nav__link--active">
+        Комплексні числа
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex" class="md-nav__link">
+    Приведення інших типів до complex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Операції
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bool.html" class="md-nav__link">
+        Булевий тип даних
       </a>
     </li>
   
@@ -1528,6 +1629,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Створення
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex" class="md-nav__link">
+    Приведення інших типів до complex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Операції
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1540,17 +1677,56 @@
                 
                 
                 <h1 id="_1">Комплексні числа</h1>
-<p>Никого здесь уже не удивить такими встроенными типами, как например int, float, и подобными. Но кроме них в Python существует еще один довольно интересный тип, а именно, complex.</p>
-<p>В Python комплексные числа представлены в виде x + iy. А точнее говоря, вместо буквы i здесь используется буква j, во избежание некоторой путаницы, поскольку i чаще всего занята под циклы. Python преобразует реальные числа x и y (будь то int или float) в комплексное с помощью функции complex(x,y).</p>
-<p>Комплексное число легко можно превратить в строку с помощью функции str или посчитать его модуль с помощью функции abs, а также для доступа к его реальной или мнимой частям можно воспользоваться методами real и imag.</p>
-<p>Хотя complex и является встроенным типом, для более удобной работы с комплексными операциями рекомендуется импортировать модуль cmath.</p>
-<p>⚡️ Работаем с комплексными числами</p>
-<p>Встроенный тип complex позволяет преобразовать строку в комплексное число. Для этого достаточно написать некое значение и к нему добавить — это будет комплексное число.</p>
-<p>Он принимает в себя строку или real и imag числа. Если же imag не указан, то по умолчанию будет 0.</p>
-<p>Для обработки вызывает <strong>complex</strong>(), а если метод не определён, то используется <strong>float</strong>() или <strong>index</strong>().</p>
-<p>Действия комплексных чисел с действительными будет возвращать тот же класс — complex.</p>
-<p>Также он имеет атрибуты real и image, которые и отвечают за действительное и комплексное числа.</p>
-<h1 id="complex">теория #complex</h1>
+<p>В Python є можливість працювати з комплексними числами. </p>
+<h2 id="_2">Створення</h2>
+<p>Загальна форма представлення літерала комплексного числа наступна: </p>
+<div class="codehilite"><pre><span></span><code>real_part + imag_part j
+</code></pre></div>
+
+<ul>
+<li><code>real_part</code> – дійсна частина комплексного числа, яка є необов’язковою (у випадку, якщо число не містить дійсної частини)</li>
+<li><code>imag_part</code> – уявна частина комплексного числа, </li>
+<li><code>j</code> або <code>J</code> — уявна одиниця </li>
+</ul>
+<p>Приклади:</p>
+<div class="codehilite"><pre><span></span><code>6-8j
+2.5+3.8j
+0.001J
+2.-3.J
+</code></pre></div>
+
+<p>Інтерпретатор представляє комплексне число як два дійсних числа. 
+При використанні у математичних виразах комплексні числа обробляються відповідним чином. </p>
+<p>Ще один спосіб створити комплексне число — функція <code>complex()</code>: </p>
+<div class="codehilite"><pre><span></span><code>complex(real=0, imag=0)
+</code></pre></div>
+
+<p>Значення дійсної та уявної частини можна отримати через відповідні атрибути: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span>
+<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">real</span>
+<span class="mf">2.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">imag</span>
+<span class="mf">3.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">complex</span><span class="p">()</span>
+<span class="mi">0</span><span class="n">j</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="complex">Приведення інших типів до <code>complex</code></h2>
+<!-- TODO -->
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">complex</span><span class="p">(</span><span class="s1">&#39;1+j&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="_3">Операції</h2>
+<p>TODO!</p>
+<h2 id="_4">Додаткові матеріали</h2>
+<ul>
+<li><a href="https://uk.wikipedia.org/wiki/Комплексне_число">Вікіпедія: Комплексне число</a></li>
+</ul>
                 
               
               
@@ -1562,10 +1738,50 @@
           </div>
         </div>
         
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
       </main>
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="float.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Дійсні числа" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Дійсні числа
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="bool.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Булевий тип даних" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Булевий тип даних
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1590,7 +1806,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.top"], "translations": {"clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0448\u0443\u043a", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
