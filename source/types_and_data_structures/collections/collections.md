@@ -57,17 +57,12 @@
 Метод не є частиною протокола послідовності, оскільки Python може самостійно виконувати пошук елемента "перебираючи" всю послідовність.
 
 
+#### Collections and their exceptions:
 
-
-
-
-
-
-
-
-
-
-
-
-
+|           |    List    |    Set     |    Dict    |
+|-----------|------------|------------|------------|
+| getitem() | IndexError |            |  KeyError  |
+| pop()     | IndexError |  KeyError  |  KeyError  |
+| remove()  | ValueError |  KeyError  |            |
+| index()   | ValueError |            |            |
 

@@ -169,10 +169,10 @@ nav:
     - Ітератори: iterable/iterator.md
     - Реалізація за допомогою __iter__: iterable/magic_iter.md
     - Реалізація за допомогою __getitem__: iterable/magic_getitem.md
-    - Генератори: iterable/generator.md
-    - Генератори-вирази: iterable/generator_expressions.md
-    - Упаковка та розпаковка ітерабельних об'єктів: iterable/starr.md
-    - Функція enumerate: iterable/enumerate.md
+    # - Генератори: iterable/generator.md
+    # - Генератори-вирази: iterable/generator_expressions.md
+    # - Упаковка та розпаковка ітерабельних об'єктів: iterable/starr.md
+    # - Функція enumerate: iterable/enumerate.md
   - Елементи функціонального програмування:
     - Парадигма ФП: functional_programming/intro.md
     - Чисті функції: functional_programming/pure_functions.md
@@ -198,22 +198,18 @@ nav:
     # - Програмне виконання коду
     # - Передача аргументів скрипту
     # - Віртуальні оточення
-  # - Об'єктна модель Python:
-    # - Моржовий оператор: assignment/walrus.md
-    # - Видалення об'єктів: assignment/enumerate.md
-    # - Глибока та поверхнева копії
   - Типи та структури даних:
-    - Системи числення: types_and_data_structures/number_system.md
-    
-    - Типізація у програмуванні: types_and_data_structures/typing.md
-    # - Підказки типів в Python: types_and_data_structures/type_hinting.md
+    # - Типізація:
+    # - Типізація у програмуванні: types_and_data_structures/typing.md
+      # - Типізація в Python: types_and_data_structures/type_hinting.md
     - Числа:
+      - Системи числення: types_and_data_structures/numbers/number_system.md
       - Цілі числа: types_and_data_structures/numbers/int.md
-      - Дійсні числа: types_and_data_structures/numbers/float.md
-      - Комплексні числа: types_and_data_structures/numbers/complex.md
-      - Булевий тип даних: types_and_data_structures/numbers/bool.md
+      # - Дійсні числа: types_and_data_structures/numbers/float.md
+      # - Комплексні числа: types_and_data_structures/numbers/complex.md
+      # - Булевий тип даних: types_and_data_structures/numbers/bool.md
     - Контейнери:
-      - Колекції в Python: types_and_data_structures/collections/collections.md
+      # - Колекції в Python: types_and_data_structures/collections/collections.md
       # - Послідовності:
         # - Послідовності в Python: types_and_data_structures/sequences/sequences.md
         # - Списки: types_and_data_structures/sequences/list.md

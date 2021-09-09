@@ -1,10 +1,11 @@
+file = open('some_file.txt', 'w')
 try:
-	file = open('some_file.txt', 'w')
+	file.write(...)
 finally:
 	file.close()
 
 with open('some_file.txt', 'w') as file:
-	pass
+	file.write(...)
 
 	
 # __enter__(self)

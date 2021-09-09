@@ -58,7 +58,6 @@
 ](https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/) — 
 100 сніпетів на коже день
 
-
 ## Статті
 
 - [Учимся читать код, изучая стандартную библиотеку Python
