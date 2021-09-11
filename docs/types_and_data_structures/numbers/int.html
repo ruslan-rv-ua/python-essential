@@ -1308,10 +1308,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="float.html" class="md-nav__link">
+        Дійсні числа
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="complex.html" class="md-nav__link">
+        Комплексні числа
+      </a>
     </li>
   
 
@@ -1555,6 +1586,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1640,6 +1678,7 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
+<p>Для створення <code>int</code> з послідовності байт використовують класовий метод <code>int.from_bytes()</code>. </p>
 <h2 id="int_1">Приведення <code>int</code> до інших типів</h2>
 <p>Перетворити <code>int</code> на символьний рядок — використовуємо вбудовані функції <code>str(), bin(), oct(), hex()</code>: </p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># у десятковій системі числення</span>
@@ -1653,8 +1692,84 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
+<p>Для представлення <code>int</code> у вигляді послідовності байт використовують метод <code>int.to_bytes()</code>. </p>
 <h2 id="_3">Бітові операції</h2>
-<p>Coming soon</p>
+<!-- https://www.bestprog.net/uk/2019/10/21/python-bitwise-operators-ua/#q07 -->
+
+<p>Мова Python підтримує роботу з двійковими розрядами (бітами) цілочисельних величин, 
+де кожен біт числа розглядається окремо. 
+Для забезпечення цього в Python використовуються так звані бітові або порозрядні оператори, 
+що реалізують загальновідомі бітові операції. </p>
+<p>У бітових операторах кожен операнд розглядається як послідовність двійкових розрядів (бітів), 
+що приймають значення 0 або 1 (двійкова система числення). 
+Над цими розрядами можна виконувати відомі операції: логічне "І", логічне "АБО", інші. </p>
+<p>Бітові оператори в порядку спадання пріоритету: </p>
+<table>
+<thead>
+<tr>
+<th>Оператор</th>
+<th>Операція</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code></td>
+<td>інверсія (НІ, NOT)</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code>, <code>&gt;&gt;</code></td>
+<td>зсув вліво/вправо на задану кількість біт (SHIFT LEFT/RIGHT)</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>(І, AND)</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>(виключне АБО, XOR)</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>(АБО, OR)</td>
+</tr>
+</tbody>
+</table>
+<p>Зауважте: Python тип <code>int</code> представлений як знакове ціле число. 
+Відповідно бітові операції проводяться над знаковими цілими. 
+Наприклад при інверсії додатнє число стає від’ємним зі зсувом на -1. 
+Так само від’ємне число стає додатнім зі зсувом на -1. </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mb">0b1001</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="o">~</span><span class="n">a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="o">-</span><span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="s1">&#39;-0b1010&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="o">~</span><span class="mb">0b1111</span><span class="p">)</span>
+<span class="s1">&#39;-0b10000&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="o">~-</span><span class="mb">0b1111</span><span class="p">)</span>
+<span class="s1">&#39;0b1110&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Дізнатись кількість біт необхідних для представлення цілого числа 
+можна за допомогою відповідного метода: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="s1">&#39;-0b1010&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Оскільки Python є мовою програмування з високим ступенем абстракції 
+бітові операції на практиці використовуються досить рідко порівняно з іншими мовами програмування. 
+Тому в рамках даного курса ми не розглядаємо детально бітові операції. 
+Рекомендуємо звернутись до документації Python. </p>
+<h2 id="_4">Додаткові матеріали</h2>
+<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types">Документація Python: бітові операції</a></li>
+</ul>
                 
               
               
@@ -1695,13 +1810,13 @@
       
       
         
-        <a href="../mappings_and_sets/hash.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Хешування даних" rel="next">
+        <a href="float.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Дійсні числа" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Хешування даних
+              Дійсні числа
             </div>
           </div>
           <div class="md-footer__button md-icon">

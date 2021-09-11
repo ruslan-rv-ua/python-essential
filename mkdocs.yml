@@ -205,8 +205,8 @@ nav:
     - Числа:
       - Системи числення: types_and_data_structures/numbers/number_system.md
       - Цілі числа: types_and_data_structures/numbers/int.md
-      # - Дійсні числа: types_and_data_structures/numbers/float.md
-      # - Комплексні числа: types_and_data_structures/numbers/complex.md
+      - Дійсні числа: types_and_data_structures/numbers/float.md
+      - Комплексні числа: types_and_data_structures/numbers/complex.md
       # - Булевий тип даних: types_and_data_structures/numbers/bool.md
     - Контейнери:
       # - Колекції в Python: types_and_data_structures/collections/collections.md
