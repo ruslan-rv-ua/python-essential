@@ -212,3 +212,5 @@
 ## Додаткові матеріали
 
 - [Документація: модуль datetime](https://docs.python.org/3/library/datetime.html)
+- [Delorean](https://pypi.org/project/Delorean/)
+- [Arrow](https://pypi.org/project/arrow/)
