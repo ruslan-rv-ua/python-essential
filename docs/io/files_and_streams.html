@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#python" class="md-skip">
+          Перейти до змісту
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1059,10 +1064,74 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Файли і потоки
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="files_and_streams.html" class="md-nav__link md-nav__link--active">
         Файли і потоки
       </a>
       
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Види файлів в Python
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="open_close.html" class="md-nav__link">
+        Відкриття і закриття потоків
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="read_write.html" class="md-nav__link">
+        Читання і запис
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="serialization.html" class="md-nav__link">
+        Серіалізація об'єктів
+      </a>
     </li>
   
 
@@ -1626,6 +1695,36 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Види файлів в Python
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -1637,51 +1736,56 @@
                 <blockquote>
 <p><strong><em>Файловий об'єкт</em></strong> (file object) або <strong><em>потік</em></strong> (stream) — об'єкт, який представляє файл-орієнтований програмний інтерфейс (методи read(), write() та інші) для доступа до певного ресурсу. </p>
 </blockquote>
-<p>To be continued</p>
-<!--
-Залежно від способа створення, файловий об'єкт може надавати доступ до реального файла на диску або іношого виду пристроя зберігання чи передачі даних (стандартні потоки ввода/вивода, буфери у пам'яті, сокети, інше). 
-
-Як правило операційна система створює три потоки, які називають стандартними. При запуску процеса операційна система надає процесу доступ до цих потоків. 
-
-Стандартними потоками є:
-
-- sys.stdin — за умовчанням пов'язаний з клавіатурою термінала
-- sys.stdout — за умовчанням пов'язаний з екраном тремінала
-- sys.stderr — за умовчанням пов'язаний з екраном тремінала
-
-
-
-### Види файлів в Python
-
-Файли в Python поділяються на:
-
-- бінарні
-- текстові
-
-У свою чергу бінарні файли поділяються на:
-
-- буферизовані
-- небуферизовані
-
-Текстові файли вважаються буферизованими.
-
-В Python усі класи пов'язані з файловими об'єктами знаходяться у вбудованому модулі `io`. Ієрархія класів наступна:
-
-- `IOBase` — базовий абстрактний клас 
-    - `RawIOBase` — абстрактний клас небуферизованих бінарних файлів
-        - `FileIO` — клас для роботи з небуферизованими бінарними потоками
-    - `BufferedIOBase` — абстрактний клас буферизованих бінарних файлів
-        - `BufferedReader` — зчитування даних з буферизованих бінарних потоків
-        - `BufferedWriter` — запис даних у буферизовані бінарні потоки
-        - `BufferedRWPair` — зчитування і запис даних для буферизованих бінарних потоків
-        - `BytesIO` — "віртуальний" потік (як правило у оперативній пам'яті)
-    - `TextIOBase` — абстрактний клас текстових файлів
-        - `StringIO` — "віртуальний" потік символів Unicode
-        - `TextIOWrapper` — робота з текстовими файлами
-
-Також є клас `BufferedRandom`, який успадковано одразу від двох класів: `BufferedReader` та `BufferedWriter`.
-
--->
+<p>Залежно від способа створення, 
+файловий об'єкт може надавати доступ до реального файла на диску 
+або іношого виду пристроя зберігання чи передачі даних 
+(стандартні потоки ввода/вивода, буфери у пам'яті, сокети, інше). </p>
+<p>Як правило операційна система створює три потоки, 
+які називають стандартними. 
+При запуску процеса операційна система надає процесу доступ до цих потоків. </p>
+<p>Стандартними потоками є: </p>
+<ul>
+<li>sys.stdin — за умовчанням пов'язаний з клавіатурою термінала</li>
+<li>sys.stdout — за умовчанням пов'язаний з екраном термінала</li>
+<li>sys.stderr — за умовчанням пов'язаний з екраном термінала</li>
+</ul>
+<h2 id="python">Види файлів в Python</h2>
+<p>Файли в Python поділяються на:</p>
+<ul>
+<li>бінарні</li>
+<li>текстові</li>
+</ul>
+<p>У свою чергу бінарні файли поділяються на:</p>
+<ul>
+<li>буферизовані</li>
+<li>небуферизовані</li>
+</ul>
+<p>Текстові файли вважаються буферизованими. </p>
+<p>В Python усі класи, які пов'язані з файловими об'єктами знаходяться у вбудованому модулі <code>io</code>. 
+Ієрархія класів наступна:</p>
+<ul>
+<li><code>IOBase</code> — базовий абстрактний клас <ul>
+<li><code>RawIOBase</code> — абстрактний клас небуферизованих бінарних файлів<ul>
+<li><code>FileIO</code> — клас для роботи з небуферизованими бінарними потоками</li>
+</ul>
+</li>
+<li><code>BufferedIOBase</code> — абстрактний клас буферизованих бінарних файлів<ul>
+<li><code>BufferedReader</code> — зчитування даних з буферизованих бінарних потоків</li>
+<li><code>BufferedWriter</code> — запис даних у буферизовані бінарні потоки</li>
+<li><code>BufferedRWPair</code> — зчитування і запис даних для буферизованих бінарних потоків</li>
+<li><code>BytesIO</code> — "віртуальний" потік (як правило у оперативній пам'яті)</li>
+</ul>
+</li>
+<li><code>TextIOBase</code> — абстрактний клас текстових файлів<ul>
+<li><code>StringIO</code> — "віртуальний" потік символів Unicode</li>
+<li><code>TextIOWrapper</code> — робота з текстовими файлами</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Також є клас <code>BufferedRandom</code>, 
+який успадковано одразу від двох класів: <code>BufferedReader</code> та <code>BufferedWriter</code>. </p>
                 
               
               
@@ -1722,13 +1826,13 @@
       
       
         
-        <a href="../modules_and_packages/module.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модулі у програмуванні" rel="next">
+        <a href="open_close.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Відкриття і закриття потоків" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Модулі у програмуванні
+              Відкриття і закриття потоків
             </div>
           </div>
           <div class="md-footer__button md-icon">
