@@ -177,7 +177,7 @@ nav:
     # - Чисті функції: functional_programming/pure_functions.md
     # - Функції вищого порядку: functional_programming/higher_order_functions.md
     # - Анонімні функції: functional_programming/lambda.md
-    # - Функції map(), filter(): functional_programming/map_filter.md
+    # - Функції map(), filter(), zip(): functional_programming/map_filter.md
     # - Рекурсія: functional_programming/recursion.md
     # - Замикання: functional_programming/closure.md
     # - Декоратори: functional_programming/decorator.md
@@ -185,18 +185,18 @@ nav:
     - Файли і потоки: io/files_and_streams.md
     - Відкриття і закриття потоків: io/open_close.md
     - Читання і запис: io/read_write.md
-    - Серіалізація об'єктів: io/serialization.md
+    - Серіалізація об'єктів: io/serialization.md    
   - Модулі і пакети:
     - Модулі у програмуванні: modules_and_packages/module.md
-    # - Модулі в Python
-    # - Модулі як об'єкти
-    # - Пакети
-    # - Встановлення пакетів
+    - Модулі в Python: modules_and_packages/module_python.md
+    - Модулі як об'єкти: modules_and_packages/module_object.md
+    - Пакети: modules_and_packages/packages.md
+    - Встановлення пакетів: modules_and_packages/pip.md
   - Виконання програм:
     - Інтерпретатор Python: interpreter/interpreter.md
-    # - Програмне виконання коду
-    # - Передача аргументів скрипту
-    # - Віртуальні оточення
+    # - Програмне виконання коду: interpreter/
+    - Передача аргументів скрипту: interpreter/args.md
+    - Віртуальні оточення: interpreter/venv.md
   - Типи та структури даних:
     # - Типізація:
     - Типізація у програмуванні: types_and_data_structures/typing.md
@@ -228,9 +228,9 @@ nav:
     - Модуль path: batteries/os_path.md
     - Модуль itertools: batteries/itertools.md
     # - Модуль functools: batteries/functools.md
-    - Модуль contextlib: batteries/contextlib.md
+    - Модуль    : batteries/contextlib.md
   - Наступні кроки:
     - Що далі?: go_ahead/whats_next.md
-    # - Корисні ресурси: go_ahead/resources.md
+    - Корисні ресурси: go_ahead/resources.md
     - Міфи про навчання: go_ahead/miths_edu.md
 

@@ -19,7 +19,8 @@ response = requests.get(URL)
 # print(response.encoding)
 # print(response.content)
 # print(response.text)
-# print(response.json())
+print(response.json())
+
 
 if response:
 	'''

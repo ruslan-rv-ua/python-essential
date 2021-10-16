@@ -7,4 +7,4 @@
 - додатком до NVDA: [Virtual Review](https://addons.nvda-project.org/addons/virtualRevision.uk.html)
 - додатком до NVDA: [IndentNav](https://addons.nvda-project.org/addons/indentNav.uk.html)
 - редактором коду [Notepad++](https://notepad-plus-plus.org/downloads/) зі встановленим плагіном [PyNPP](https://github.com/mpcabd/PyNPP)
-- програмою для передачі демонстраційного коду [BlindBoard](https://github.com/ruslan-rv-ua/BlindBoard_idea)
+- програмою для перегляду демонстраційного коду у реальному часы [telecode](http://ruslan.rv.ua/telecode/)

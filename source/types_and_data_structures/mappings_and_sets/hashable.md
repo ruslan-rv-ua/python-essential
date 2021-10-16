@@ -53,3 +53,18 @@
 	TypeError: unhashable type: 'list'
 	>>>
 	
+Функція `hash()` містить дві "пасхалки": 
+
+	:::python
+	>>> hash(float('inf')) # перші цифри числа Пі
+	314159
+	>>> hash(float('NaN'))
+	0
+	>>>
+	
+Трапляються і колізії: 
+
+	:::python
+	>>> hash(-1), hash(-2)
+	(-2, -2)
+	>>>

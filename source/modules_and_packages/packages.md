@@ -18,7 +18,7 @@
 	- `__init__.py` (файл, модуль)
 	- `module1.py` (файл, модуль)
 	- `module2.py` (файл, модуль)
-	- subpackage (тека, пакет)
+	- `subpackage` (тека, пакет)
 		- `__init__.py` (файл, модуль)
 		- `submodule1.py` (файл, модуль)
 		- `submodule2.py` (файл, модуль)
@@ -81,12 +81,12 @@
 
 Розглянемо на прикладі. Припустимо маємо пакет з такою структурою: 
 
-- package
-	- __init__.py
-	- module.py
-	- subpackage
-		- __init__.py
-		- subpackage_module.py
+- `package`
+	- `__init__.py`
+	- `module.py`
+	- `subpackage`
+		- `__init__.py`
+		- `subpackage_module.py`
 		
 Спочатку для пакета `subpackage` ми імпортуємо увесь вміст вкладеного модуля і вказуємо, що це буде вмістом цього пакета: 
 

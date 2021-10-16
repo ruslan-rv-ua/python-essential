@@ -1135,6 +1135,54 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules_and_packages/module_python.html" class="md-nav__link">
+        Модулі в Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules_and_packages/module_object.html" class="md-nav__link">
+        Модулі як об'єкти
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules_and_packages/packages.html" class="md-nav__link">
+        Пакети
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules_and_packages/pip.html" class="md-nav__link">
+        Встановлення пакетів
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1172,6 +1220,30 @@
     <li class="md-nav__item">
       <a href="../../interpreter/interpreter.html" class="md-nav__link">
         Інтерпретатор Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interpreter/args.html" class="md-nav__link">
+        Передача аргументів скрипту
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interpreter/venv.html" class="md-nav__link">
+        Віртуальні оточення
       </a>
     </li>
   
@@ -1593,7 +1665,7 @@
   
     <li class="md-nav__item">
       <a href="../../batteries/contextlib.html" class="md-nav__link">
-        Модуль contextlib
+        Модуль
       </a>
     </li>
   
@@ -1636,6 +1708,18 @@
     <li class="md-nav__item">
       <a href="../../go_ahead/whats_next.html" class="md-nav__link">
         Що далі?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../go_ahead/resources.html" class="md-nav__link">
+        Корисні ресурси
       </a>
     </li>
   
@@ -1716,6 +1800,20 @@
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Функція <code>hash()</code> містить дві "пасхалки": </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">))</span> <span class="c1"># перші цифри числа Пі</span>
+<span class="mi">314159</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;NaN&#39;</span><span class="p">))</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Трапляються і колізії: </p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">hash</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
                 

@@ -50,6 +50,8 @@
 велика збірка довідників по практично усій IT-сфері
 - [Awesome Python](https://github.com/vinta/awesome-python) — 
 список Python-фреймворків, бібліотек, ПЗ та інших ресурсів. Must have! 
+- [Awesome Python Decorator
+](https://github.com/lord63/awesome-python-decorator)
 - [Public APIs](https://github.com/public-apis/public-apis) — 
 список безкоштовних API для використання у програмному забезпеченні та веброзробці.
 - [Design Resources for Developers](https://github.com/bradtraversy/design-resources-for-developers) — 
@@ -57,6 +59,8 @@
 - [100 Python Code Snippets for Everyday Problems
 ](https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/) — 
 100 сніпетів на коже день
+- [Beautiful Soup на русском языке](http://bs4ru.geekwriter.ru/)
+- [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) — Настанови Google по стилю Python. Дізнайтесь, що на думку Google можна робити а чого ні під час розробки на Python.
 
 ## Статті
 
@@ -73,7 +77,3 @@
 - [Python: неочевидное в очевидном
 ](https://habr.com/ru/post/564804/) — 
 як можна неочевидно вдаритись об одну з оптимізацій CPython — інтернування. Ну і інші дивні неочевидні приклади. 
-
-Хотя случайно так, пожалуй, всё-таки не напишешь.
-
-https://habr.com/ru/post/564804/
