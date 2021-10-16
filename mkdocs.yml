@@ -112,6 +112,7 @@ markdown_extensions:
 
 nav:
   - Про цей курс: index.md
+  - Міфи про навчання: go_ahead/miths_edu.md
   - Підготовка: preparations.md
   - Парадигми програмування:
     - Парадигми у програмуванні: paradigmas/paradigmas.md
@@ -232,5 +233,5 @@ nav:
   - Наступні кроки:
     - Що далі?: go_ahead/whats_next.md
     - Корисні ресурси: go_ahead/resources.md
-    - Міфи про навчання: go_ahead/miths_edu.md
+
 
