@@ -8,7 +8,7 @@
     >>> bool.mro()
     [<class 'bool'>, <class 'int'>, <class 'object'>]
     >>>
-
+	
 Успадковуватись від `bool` не можна: 
 
     :::python
@@ -107,7 +107,7 @@
 |-|-|
 |`x or y`|`y` якщо `bool(x) is False`, інакше `x`|
 |`x and y`|`x` якщо `bool(x) is False`, інакше `y`|
-|`not x`|`Ture` якщо `bool(x) is False`, інакше `False`|
+|`not x`|`True` якщо `bool(x) is False`, інакше `False`|
 
 Приклади: 
 
@@ -148,7 +148,7 @@
 
     a == not b
     
-не є коректним і призведе до `SyntaxEroor`. 
+не є коректним і призведе до `SyntaxError`. 
 
 ### "Ліниві" логічні обчислення
 

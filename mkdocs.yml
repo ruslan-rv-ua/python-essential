@@ -173,8 +173,33 @@ nav:
     - Генератори: iterable/generator.md
     - Генератори-вирази: iterable/generator_expressions.md
     - Упаковка та розпаковка ітерабельних об'єктів: iterable/starr.md
-  # - Елементи функціонального програмування:
-    # - Парадигма ФП: functional_programming/intro.md
+  - Типи та структури даних:
+    # - Типізація:
+    - Типізація у програмуванні: types_and_data_structures/typing.md
+      # - Типізація в Python: types_and_data_structures/type_hinting.md
+    - Числа:
+      - Системи числення: types_and_data_structures/numbers/number_system.md
+      - Цілі числа: types_and_data_structures/numbers/int.md
+      - Дійсні числа: types_and_data_structures/numbers/float.md
+      - Комплексні числа: types_and_data_structures/numbers/complex.md
+      - Булевий тип даних: types_and_data_structures/numbers/bool.md
+    - Контейнери:
+      - Колекції в Python: types_and_data_structures/collections/collections.md
+      - Послідовності:
+        - Послідовності в Python: types_and_data_structures/sequences/sequences.md
+        - Списки: types_and_data_structures/sequences/list.md
+        - Кортежі: types_and_data_structures/sequences/tuple.md
+        - Діапазони: types_and_data_structures/sequences/range.md
+        - Символьні рядки: types_and_data_structures/sequences/str.md
+        - Бінарні послідовності: types_and_data_structures/sequences/bin_seq.md
+        # - Порівняння послідовностей: types_and_data_structures/sequences/seq_compare.md
+      - Відображення та множини:
+        - Хешування даних: types_and_data_structures/mappings_and_sets/hash.md
+        - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
+        - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
+        - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
+  - Елементи функційного програмування:
+    - Парадигма ФП: functional_programming/intro.md
     # - Чисті функції: functional_programming/pure_functions.md
     # - Функції вищого порядку: functional_programming/higher_order_functions.md
     # - Анонімні функції: functional_programming/lambda.md
@@ -192,37 +217,15 @@ nav:
     - Модулі в Python: modules_and_packages/module_python.md
     - Модулі як об'єкти: modules_and_packages/module_object.md
     - Пакети: modules_and_packages/packages.md
-    - Встановлення пакетів: modules_and_packages/pip.md
   - Виконання програм:
     - Інтерпретатор Python: interpreter/interpreter.md
-    # - Програмне виконання коду: interpreter/
+    - Програмне виконання коду: interpreter/programmatically.md
+    - Виконання модулів і пакетів: interpreter/exec_module.md
     - Передача аргументів скрипту: interpreter/args.md
-    - Віртуальні оточення: interpreter/venv.md
-  - Типи та структури даних:
-    # - Типізація:
-    - Типізація у програмуванні: types_and_data_structures/typing.md
-      # - Типізація в Python: types_and_data_structures/type_hinting.md
-    - Числа:
-      - Системи числення: types_and_data_structures/numbers/number_system.md
-      - Цілі числа: types_and_data_structures/numbers/int.md
-      - Дійсні числа: types_and_data_structures/numbers/float.md
-      - Комплексні числа: types_and_data_structures/numbers/complex.md
-      # - Булевий тип даних: types_and_data_structures/numbers/bool.md
-    - Контейнери:
-      - Колекції в Python: types_and_data_structures/collections/collections.md
-      - Послідовності:
-        - Послідовності в Python: types_and_data_structures/sequences/sequences.md
-        - Списки: types_and_data_structures/sequences/list.md
-        - Кортежі: types_and_data_structures/sequences/tuple.md
-        - Діапазони: types_and_data_structures/sequences/range.md
-        - Символьні рядки: types_and_data_structures/sequences/str.md
-        - Бінарні послідовності: types_and_data_structures/sequences/bin_seq.md
-        # - Порівняння послідовностей: types_and_data_structures/sequences/seq_compare.md
-      - Відображення та множини:
-        - Хешування даних: types_and_data_structures/mappings_and_sets/hash.md
-        - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
-        - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
-        # - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
+  - Сторонні бібліотеки:
+    - Джерела бібліотек: libs_3rd_party/libs_sources.md
+    - Менеджер пакетів: libs_3rd_party/pip.md
+    - Віртуальні оточення: libs_3rd_party/venv.md
   - Батарейки:
     - Модуль datetime: batteries/datetime.md
     - Модуль collections: batteries/collections.md
