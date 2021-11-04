@@ -173,8 +173,16 @@ nav:
     - Генератори: iterable/generator.md
     - Генератори-вирази: iterable/generator_expressions.md
     - Упаковка та розпаковка ітерабельних об'єктів: iterable/starr.md
+  - Елементи функційного програмування:
+    - Парадигма ФП: functional_programming/intro.md
+    - Чисті функції: functional_programming/pure_functions.md
+    - Функції вищого порядку: functional_programming/higher_order_functions.md
+    - Анонімні функції: functional_programming/lambda.md
+    - '"Класика" вищого порядка': functional_programming/map_filter.md
+    # - Рекурсія: functional_programming/recursion.md
+    # - Замикання: functional_programming/closure.md
+    # - Декоратори: functional_programming/decorator.md
   - Типи та структури даних:
-    # - Типізація:
     - Типізація у програмуванні: types_and_data_structures/typing.md
       # - Типізація в Python: types_and_data_structures/type_hinting.md
     - Числа:
@@ -198,15 +206,6 @@ nav:
         - "Об'єкти, що хешуються": types_and_data_structures/mappings_and_sets/hashable.md
         - Відображення в Python: types_and_data_structures/mappings_and_sets/mapingss.md
         - Множини в Python: types_and_data_structures/mappings_and_sets/sets.md
-  - Елементи функційного програмування:
-    - Парадигма ФП: functional_programming/intro.md
-    # - Чисті функції: functional_programming/pure_functions.md
-    # - Функції вищого порядку: functional_programming/higher_order_functions.md
-    # - Анонімні функції: functional_programming/lambda.md
-    # - Функції map(), filter(), zip(): functional_programming/map_filter.md
-    # - Рекурсія: functional_programming/recursion.md
-    # - Замикання: functional_programming/closure.md
-    # - Декоратори: functional_programming/decorator.md
   - Ввід та вивід:
     - Файли і потоки: io/files_and_streams.md
     - Відкриття і закриття потоків: io/open_close.md
@@ -232,7 +231,7 @@ nav:
     - Модуль path: batteries/os_path.md
     - Модуль itertools: batteries/itertools.md
     # - Модуль functools: batteries/functools.md
-    - Модуль    : batteries/contextlib.md
+    - Модуль contextlib: batteries/contextlib.md
   - Наступні кроки:
     - Що далі?: go_ahead/whats_next.md
     - Корисні ресурси: go_ahead/resources.md
