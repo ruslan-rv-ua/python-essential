@@ -1047,12 +1047,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
       
       <label class="md-nav__link" for="__nav_9">
         Елементи функційного програмування
@@ -1121,6 +1123,86 @@
       <a href="map_filter.html" class="md-nav__link">
         "Класика" вищого порядка
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Рекурсія
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="recursion.html" class="md-nav__link md-nav__link--active">
+        Рекурсія
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Стек викликів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Рекурсивні виклики функцій
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Обчислення факторіалу
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Числа Фібоначчі
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    «Ханойські вежі»
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1991,7 +2073,10 @@
                 
                 
                 <h1 id="_1">Рекурсія</h1>
-<p><em>Замість епіграфу: щоб зрозуміти рекурсію треба спочатку зрозуміти рекурсію.</em></p>
+<div class="admonition note">
+<p class="admonition-title"><strong><em>Замість епіграфа:</em></strong></p>
+<p>щоб зрозуміти рекурсію треба спочатку зрозуміти рекурсію.</p>
+</div>
 <blockquote>
 <p><strong><em>Рекурсія</em></strong> — випадок, коли функція викликає сама себе. </p>
 </blockquote>
@@ -2094,43 +2179,59 @@ F(n) = F(n-1) + F(n-2), n&gt;=2</p>
 <li>з аргументом 5 викликалась 1 раз</li>
 </ul>
 <p>Тобто усього було 9 викликів!</p>
-<p>А чи можна зробити так, щоб уникнути повторних обчислень? Можна! Якщо ми будемо запам'ятовувати значення, які функція порахувала для певних аргументів, то ми можемо уникнути повторних рекурсивних викликів. Прийом називається "мемоізація".</p>
-<blockquote>
-<p><strong><em>Мемоизация</em></strong> (memoization, запам'ятовування) — збережежння результатів виконання функцій для запобігання повторних обчислень. Це один з способів оптимізації, який застосовується для збільшення швидкості виконання комп'ютерних програм. </p>
-</blockquote>
-<p>Перед викликом функції перевіряється, чи викликалась функція раніше: </p>
-<ul>
-<li>якщо не викликалась, функція викликається і результат її виконання зберігається;</li>
-<li>якщо викликалась, використовується збережений результат.</li>
-</ul>
-<p>Найзручніше реалізувати мемоізацію за допомогою декоратора. Напишемо декоратор, який мемоізує конкретно нашу функцію, яка приймає лише один аргумент:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">memoize</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span><span class="p">:</span>
-            <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
-    <span class="n">wrapper</span><span class="o">.</span><span class="n">memo</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
+<!-- TODO
+А чи можна зробити так, 
+щоб уникнути повторних обчислень? 
+Можна! 
+Якщо ми будемо запам'ятовувати значення, 
+які функція порахувала для певних аргументів, 
+то ми можемо уникнути повторних рекурсивних викликів. 
 
-<span class="nd">@memoize</span>
-<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">1</span>
-</code></pre></div>
+Прийом називається "мемоізація".
 
-<p>Тепер обчислення виконуються набагато швидше! Для прикладу знаходження 5-го числа Фібоначчі послідовність виклику функції <code>fib()</code> буде таким:</p>
-<div class="codehilite"><pre><span></span><code>fib(5)
-    fib(4)
-        fib(3)
-            fib(2)
-            fib(1)
-</code></pre></div>
+> ***Мемоізація*** (memoization, запам'ятовування) — збереження результатів виконання функцій для запобігання повторних обчислень. Це один з способів оптимізації, який застосовується для збільшення швидкості виконання комп'ютерних програм. 
 
-<p>Бібліотека Python вже має декоратор для мемоізації функцій, він знаходиться у модулі <code>functools</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">1</span>
-</code></pre></div>
+Перед викликом функції перевіряється, 
+чи викликалась функція раніше з заданими аргументами: 
 
+- якщо не викликалась, функція викликається і результат її виконання зберігається;
+- якщо викликалась, використовується збережений результат.
+
+Найзручніше реалізувати мемоізацію за допомогою декоратора. 
+Напишемо декоратор, який мемоізує конкретно нашу функцію, 
+яка приймає лише один аргумент: 
+
+    :::python
+    def memoize(f):
+        def wrapper(n):
+            if n not in wrapper.memo:
+                wrapper.memo[n] = f(n)
+            return wrapper.memo[n]
+        wrapper.memo = {}
+        return wrapper
+
+    @memoize
+    def fib(n):
+        return fib(n-1) + fib(n-2) if n > 2 else 1
+
+Тепер обчислення виконуються набагато швидше! 
+Для прикладу знаходження 5-го числа Фібоначчі послідовність виклику функції `fib()` буде таким:
+
+    fib(5)
+        fib(4)
+            fib(3)
+                fib(2)
+                fib(1)
+
+Бібліотека Python вже має декоратор для мемоізації функцій, він знаходиться у модулі `functools`:
+
+    :::python
+    @lru_cache(maxsize=5)
+    def fib(n):
+        return fib(n-1) + fib(n-2) if n > 2 else 1
+
+
+-->
 <p>Взагалі питання про доцільність використання рекурсивних функцій у програмуванні неоднозначне: з одного боку, рекурсивна форма може бути структурно простіша і наочніше, особливо коли сам алгоритм, який треба реалізувати, по своїй суті рекурсивний. З іншого боку зазвичай рекомендується уникати рекурсивних програм, котрі призводять (або у деяких умовах можуть призводити) до занадто великої глибини рекурсії.</p>
 <h2 id="_6">«Ханойські вежі»</h2>
 <p>Однією з класичних задач, де рекурсія проявляється у всій своїй красі, є задача про Ханойські вежі.</p>
@@ -2227,6 +2328,41 @@ F(n) = F(n-1) + F(n-2), n&gt;=2</p>
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="map_filter.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: &#34;Класика&#34; вищого порядка" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              "Класика" вищого порядка
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../types_and_data_structures/typing.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Типізація у програмуванні" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Типізація у програмуванні
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

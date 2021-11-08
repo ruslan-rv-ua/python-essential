@@ -1125,6 +1125,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recursion.html" class="md-nav__link">
+        Рекурсія
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1985,7 +1997,21 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Клас-декоратор
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
+    Декорування класів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
     Резюме
   </a>
   
@@ -2337,11 +2363,80 @@
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
 
-<h2 id="_8">Резюме</h2>
+<h3 id="-">Клас-декоратор</h3>
+<!-- https://habr.com/ru/post/587066/ -->
+
+<p>Отже щоб створити декоратор з параметрами ми використовували три вкладені одна в одну функції. 
+Виглядає трішечки монструозно...
+І саме так було прийнято писати параметризовані декоратори, 
+доки комусь у голову не прийшла світла думка, 
+що декоратор можна створити у вигляді класа. </p>
+<p>По суті нам необхідно розділити етапи створення з запам'ятовуванням 
+переданих параметрів і виклика, 
+тобто зробити те, що роблять класи. </p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">sandwich_cover</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cover</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cover</span> <span class="o">=</span> <span class="n">cover</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cover</span><span class="p">)</span>
+            <span class="n">func</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cover</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+</code></pre></div>
+
+<p>Приготуємо "класний" сендвіч:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nd">@sandwich_cover</span><span class="p">(</span><span class="s1">&#39;Тост&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="nd">@sandwich_cover</span><span class="p">(</span><span class="s1">&#39;Хрін&#39;</span><span class="p">)</span>
+<span class="o">...</span> <span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sandwich</span><span class="p">(</span><span class="s2">&quot;Ковбаса&quot;</span><span class="p">)</span>
+<span class="n">Тост</span>
+<span class="n">Хрін</span>
+<span class="n">Ковбаса</span>
+<span class="n">Хрін</span>
+<span class="n">Тост</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<p>Код виглядає набагато читабельнішим. 
+Залишилось лише змиритись з назвою класа з маленької букви, 
+або ж з назвою декоратора з великої 😊.</p>
+<h3 id="_8">Декорування класів</h3>
+<p>Декорувати можна не лише функції, але і класи. 
+Реалізуємо декоратор, 
+який додає до класа метод для представлення класа у вигляді символьного рядка: </p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">auto_str_class</span><span class="p">(</span><span class="n">any_class</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">str</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">variables</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">=</span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">any_class</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">(</span><span class="si">{</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span>
+
+    <span class="n">any_class</span><span class="o">.</span><span class="fm">__str__</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="k">return</span> <span class="n">any_class</span>
+</code></pre></div>
+
+<p>Тепер декоровані класи можуть детальнло розказати про себе:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nd">@auto_str_class</span>
+<span class="o">...</span> <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+<span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+
+<h2 id="_9">Резюме</h2>
 <ul>
 <li>декоратор — спосіб модифікувати поведінку функції, зберігаючи читабельність кода</li>
 <li>декоратори дещо сповільнюють виклики функцій</li>
 <li>порядок вказання декораторів має значення </li>
+<li>клас може виступати декоратором</li>
+<li>декорувати можна не лише функції, але і класи</li>
 </ul>
                 
               
