@@ -179,8 +179,8 @@ nav:
     - Функції вищого порядку: functional_programming/higher_order_functions.md
     - Анонімні функції: functional_programming/lambda.md
     - '"Класика" вищого порядка': functional_programming/map_filter.md
-    # - Замикання: functional_programming/closure.md
-    # - Декоратори: functional_programming/decorator.md
+    - Замикання: functional_programming/closure.md
+    - Декоратори: functional_programming/decorator.md
     - Рекурсія: functional_programming/recursion.md
   - Типи та структури даних:
     - Типізація у програмуванні: types_and_data_structures/typing.md

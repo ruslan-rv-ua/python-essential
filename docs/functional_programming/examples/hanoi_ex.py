@@ -17,10 +17,10 @@ print()
 		
 def hanoi(n, from_, temp, to_):
 	if n == 1:
-		print(f'{from_} → {to_}')
+		print(f'{from_} - {to_}')
 	else:
 		hanoi(n-1, from_, to_, temp)
-		print(f'{from_} → {to_}')
+		print(f'{from_} - {to_}')
 		hanoi(n-1, temp, to_, from_)
 		
 def hanoi(n, from_, to_, temp):

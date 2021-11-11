@@ -39,16 +39,20 @@ def fib(n):
 		return 1
 	else:
 		return fib(n-1) + fib(n-2)
+
 		
 def fib(n):
 	if n == 1 or n == 2:
 		return 1
-	elif n in fib.saved:
+	if n in fib.saved:
 		return fib.saved[n]
-	else:
-		fib.saved[n] = fib(n-1) + fib(n-2)
-		return fib.saved[n]
+	fib.saved[n] = fib(n-1) + fib(n-2)
+	return fib.saved[n]
 fib.saved = {}
 	
-for i in range(300, 1001):
+import sys
+print(sys.getrecursionlimit())
+sys.setrecursionlimit(1500)
+for i in range(1000, 1001):
 	print(i, fib(i))
+	
